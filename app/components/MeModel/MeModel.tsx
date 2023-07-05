@@ -19,8 +19,13 @@ export default function MeModel(props: MeModelProps) {
 
     return (
         <Canvas style={{ height: "100%" }}>
+            <color
+                attach="background"
+                args={["black"]}
+            />
+
             <AsciiRenderer
-                invert={false}
+                invert={true}
                 bgColor={"transparent"}
                 resolution={0.2}
             />
@@ -34,7 +39,7 @@ export default function MeModel(props: MeModelProps) {
             {/*/>*/}
 
             <spotLight
-                intensity={10}
+                intensity={1}
                 color={"white"}
                 position={[5, 25, 10]}
                 castShadow={true}
