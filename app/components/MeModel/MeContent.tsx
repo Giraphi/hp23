@@ -38,8 +38,8 @@ export default function MeContent(props: MeContentProps) {
                 bgColor={"transparent"}
                 resolution={0.18}
                 characters={" .:-+*=%@#FXQRI,?'`´"}
-                fgColor={"rgba(255,0,255,1)"} // Color needs to be in exactly this format or AsciiRenderer throws an Error
             />
+            {/*fgColor={"rgba(255,0,255,1)"} // Color needs to be in exactly this format or AsciiRenderer throws an Error*/}
 
             <OrbitControls />
 
