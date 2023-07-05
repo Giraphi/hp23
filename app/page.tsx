@@ -12,6 +12,9 @@ type GLTFResult = GLTF & {
 export default function Home() {
     return (
         <main className={"h-[100dvh] bg-gray-700"}>
+            <div className={"absolute top-8 flex w-full justify-center text-center text-lg text-white"}>
+                <h1>Drag / Scroll</h1>
+            </div>
             <MeModel />
         </main>
     );
