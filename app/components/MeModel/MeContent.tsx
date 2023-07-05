@@ -41,12 +41,6 @@ export default function MeContent(props: MeContentProps) {
             />
 
             <OrbitControls />
-            {/*<pointLight*/}
-            {/*    intensity={0.5}*/}
-            {/*    color={"white"}*/}
-            {/*    position={[0, 20, 10]}*/}
-            {/*    castShadow={true}*/}
-            {/*/>*/}
 
             <group
                 position={[0, 0, 0]}
@@ -71,7 +65,7 @@ export default function MeContent(props: MeContentProps) {
             <spotLight
                 intensity={1}
                 color={"white"}
-                position={[5, 15, 10]}
+                position={[3, 15, 9]}
                 castShadow={true}
             />
 
