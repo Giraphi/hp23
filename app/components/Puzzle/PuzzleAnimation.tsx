@@ -113,6 +113,8 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
     // Previously we had "rect3Height" set to 1 instead of 1.1 in the first block which made the glitch appear
     // The reason for the glitch or how to safely avoid it is currently unknown.
 
+    console.log(props.dimensions);
+
     return (
         <motion.div
             style={{ width: "100%", height: "100%", gridRow: 1, gridColumn: 1 }}
@@ -140,6 +142,22 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
                                 className={"rect1"}
                                 dimensions={dimensions}
                                 rectConfig={clipPathConfig.rect1}
+                                times={times}
+                                duration={duration}
+                            />
+
+                            <PuzzleAnimationRect
+                                className={"rect2"}
+                                dimensions={dimensions}
+                                rectConfig={clipPathConfig.rect2}
+                                times={times}
+                                duration={duration}
+                            />
+
+                            <PuzzleAnimationRect
+                                className={"rect3"}
+                                dimensions={dimensions}
+                                rectConfig={clipPathConfig.rect3}
                                 times={times}
                                 duration={duration}
                             />
