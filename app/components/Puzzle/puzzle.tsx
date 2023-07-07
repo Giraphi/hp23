@@ -1,17 +1,16 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import ArrowRight32 from "./cursor-svgs/arrow-right-32.svg";
 import ArrowLeft32 from "./cursor-svgs/arrow-left-32.svg";
 
 import desk from "@/app/components/Puzzle/images/desk.jpg";
 import floor from "@/app/components/Puzzle/images/floor.jpg";
 import paint from "@/app/components/Puzzle/images/paint.jpg";
-import PuzzleSlide from "@/app/components/Puzzle/puzzle-slide";
+
 import { zIndexes } from "@/app/components/Puzzle/style-constants";
-import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
 import useIsFirstRender from "@/app/components/Puzzle/use-is-first-render";
 import PuzzleContainer from "@/app/components/Puzzle/PuzzleContainer";
@@ -73,6 +72,7 @@ export default function Puzzle() {
     }
 
     const images = [desk, floor];
+
     // recalculate on resize
     const dimensions = ref.current ? { width: ref.current.clientWidth, height: ref.current?.clientHeight } : undefined;
 
