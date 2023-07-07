@@ -104,17 +104,10 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
     );
 
     function random() {
-        // return 1;
         const min = 0.9;
         const max = 1.1;
         return Math.random() * (max - min) + min;
     }
-
-    // For some configurations, that "white triangle" graphic glitch is happening in chrome during the animation
-    // (but only on high res screens?).
-    // The glitch doesn't seem to appear in the current configuration, but be careful when changing it.
-    // Previously we had "rect3Height" set to 1 instead of 1.1 in the first block which made the glitch appear
-    // The reason for the glitch or how to safely avoid it is currently unknown.
 
     return (
         <motion.div
