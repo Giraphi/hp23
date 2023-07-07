@@ -74,9 +74,6 @@ export default function Puzzle() {
 
     const images = [desk, floor];
 
-    // recalculate on resize
-    // const dimensions = ref.current ? { width: ref.current.clientWidth, height: ref.current?.clientHeight } : undefined;
-
     useEffect(() => {
         function handleResize() {
             if (!ref.current) {
