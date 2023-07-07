@@ -36,7 +36,11 @@ export default function PuzzleAnimationRect(props: PuzzleAnimationRectProps) {
             exit={{
                 scale: [1, props.rectConfig.scale, props.rectConfig.scale, 0],
             }}
-            transition={{ times: props.times, duration: props.duration }}
+            transition={{
+                duration: props.duration,
+                times: props.times,
+                ease: ["circOut", "linear", "circIn"],
+            }}
         />
     );
 }

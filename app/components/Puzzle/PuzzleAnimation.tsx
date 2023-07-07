@@ -46,8 +46,8 @@ export interface PuzzleBackgroundProps {
 
 export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
     const { dimensions } = props;
-    const times = [0, 0.4, 0.6, 1];
-    const duration = props.muted ? 0 : 0.8;
+    const times = [0, 0.45, 0.55, 1];
+    const duration = props.muted ? 0 : 1;
     const clipId = `PuzzleSlide-svgClip-${props.index}`;
 
     // With useState we keep clipPathConfig consistent during re-renders! Otherwise framer-motion may re-execute the animations
@@ -57,44 +57,44 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
                   rect1: {
                       scale: 0.2 * random(),
                       width: 1.2 * random(),
-                      height: 1,
+                      height: 0.8,
                       originX: 0.15 * random(),
                       originY: 0,
                   },
                   rect2: {
                       scale: 0.1 * random(),
                       width: 0.8 * random(),
-                      height: 2,
+                      height: 1.8,
                       originX: 0.58 * random(),
                       originY: 0.3 * random(),
                   },
                   rect3: {
                       scale: 0.1 * random(),
                       width: 2.2 * random(),
-                      height: 1.1,
+                      height: 1,
                       originX: 0.7 * random(),
                       originY: 0.77 * random(),
                   },
               }
             : {
                   rect1: {
-                      scale: 0.2 * random(),
+                      scale: 0.08 * random(),
                       width: 1.7 * random(),
-                      height: 1,
+                      height: 0.9,
                       originX: 0.4 * random(),
                       originY: 0,
                   },
                   rect2: {
-                      scale: 0.25 * random(),
+                      scale: 0.15 * random(),
                       width: 1.3 * random(),
-                      height: 1.4 * random(),
+                      height: 1.2 * random(),
                       originX: 0.4 * random(),
                       originY: 0.5 * random(),
                   },
                   rect3: {
                       scale: 0.1 * random(),
                       width: 1.5 * random(),
-                      height: 1.6 * random(),
+                      height: 1.4 * random(),
                       originX: 0.73 * random(),
                       originY: 0.4 * random(),
                   },
@@ -162,48 +162,6 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
                                 times={times}
                                 duration={duration}
                             />
-
-                            {/*<motion.rect*/}
-                            {/*    key={clipId}*/}
-                            {/*    className={"rect1"}*/}
-                            {/*    x={0}*/}
-                            {/*    y={0}*/}
-                            {/*    width={`${dimensions.width * clipPathConfig.rect1Width}px`}*/}
-                            {/*    height={`${dimensions.height * clipPathConfig.rect1Height}px`}*/}
-                            {/*    style={{*/}
-                            {/*        transformOrigin: `${dimensions.width * clipPathConfig.rect1OriginX}px*/}
-                            {/*             ${dimensions.height * clipPathConfig.rect1OriginY}px`,*/}
-                            {/*    }}*/}
-                            {/*    animate={{*/}
-                            {/*        scale: [1, clipPathConfig.rect1Scale, clipPathConfig.rect1Scale, 1],*/}
-                            {/*    }}*/}
-                            {/*    exit={{*/}
-                            {/*        scale: [1, clipPathConfig.rect1Scale, clipPathConfig.rect1Scale, 0],*/}
-                            {/*    }}*/}
-                            {/*    transition={{ times, duration }}*/}
-                            {/*/>*/}
-                            {/*<rect*/}
-                            {/*    className={"rect2"}*/}
-                            {/*    x={0}*/}
-                            {/*    y={0}*/}
-                            {/*    width={`${dimensions.width * props.clipPathConfig.rect2Width}px`}*/}
-                            {/*    height={`${dimensions.height * props.clipPathConfig.rect2Height}px`}*/}
-                            {/*    style={{*/}
-                            {/*        transformOrigin: `${dimensions.width * props.clipPathConfig.rect2OriginX}px*/}
-                            {/*               ${dimensions.height * props.clipPathConfig.rect2OriginY}px`,*/}
-                            {/*    }}*/}
-                            {/*/>*/}
-                            {/*<rect*/}
-                            {/*    className={"rect3"}*/}
-                            {/*    x={0}*/}
-                            {/*    y={0}*/}
-                            {/*    width={`${dimensions.width * props.clipPathConfig.rect3Width}px`}*/}
-                            {/*    height={`${dimensions.height * props.clipPathConfig.rect3Height}px`}*/}
-                            {/*    style={{*/}
-                            {/*        transformOrigin: `${dimensions.width * props.clipPathConfig.rect3OriginX}px*/}
-                            {/*               ${dimensions.height * props.clipPathConfig.rect3OriginY}px`,*/}
-                            {/*    }}*/}
-                            {/*/>*/}
                         </clipPath>
                     </defs>
                 </svg>
