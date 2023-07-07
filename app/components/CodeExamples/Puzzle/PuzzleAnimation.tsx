@@ -58,22 +58,22 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
             ? {
                   rect1: {
                       scale: 0.3 * 0.6 * random(),
-                      width: 1.2 * random(),
-                      height: 1 * random(),
+                      width: 1.2,
+                      height: 1,
                       originX: 0.15 * random(),
                       originY: 0,
                   },
                   rect2: {
                       scale: 0.15 * 0.6 * random(),
-                      width: 0.8 * random(),
-                      height: 2 * random(),
+                      width: 0.8,
+                      height: 2,
                       originX: 0.58 * random(),
                       originY: 0.3 * random(),
                   },
                   rect3: {
                       scale: 0.15 * 0.6 * random(),
-                      width: 2.2 * random(),
-                      height: random(),
+                      width: 2.2,
+                      height: 1,
                       originX: 0.7 * random(),
                       originY: 0.77 * random(),
                   },
@@ -81,22 +81,22 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
             : {
                   rect1: {
                       scale: 0.2 * 0.6 * random(),
-                      width: 1.7 * random(),
-                      height: random(),
+                      width: 1.7,
+                      height: 1,
                       originX: 0.4 * random(),
                       originY: 0,
                   },
                   rect2: {
                       scale: 0.25 * 0.6 * random(),
-                      width: 1.3 * random(),
-                      height: 1.4 * random(),
+                      width: 1.3,
+                      height: 1.4,
                       originX: 0.4 * random(),
                       originY: 0.5 * random(),
                   },
                   rect3: {
                       scale: 0.1 * 0.6 * random(),
-                      width: 1.5 * random(),
-                      height: 1.6 * random(),
+                      width: 1.5,
+                      height: 1.6,
                       originX: 0.73 * random(),
                       originY: 0.4 * random(),
                   },
@@ -105,8 +105,8 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
 
     function random() {
         // return 1;
-        const min = 0.85;
-        const max = 1.15;
+        const min = 0.9;
+        const max = 1.1;
         return Math.random() * (max - min) + min;
     }
 
