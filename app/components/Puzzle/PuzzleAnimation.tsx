@@ -55,22 +55,22 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
         props.index % 2 === 0
             ? {
                   rect1: {
-                      scale: 0.2 * random(),
-                      width: 1.2 * random(),
+                      scale: 0.2,
+                      width: 1.2,
                       height: 0.8,
                       originX: 0.15 * random(),
                       originY: 0,
                   },
                   rect2: {
-                      scale: 0.1 * random(),
-                      width: 0.8 * random(),
+                      scale: 0.1,
+                      width: 0.8,
                       height: 1.8,
                       originX: 0.58 * random(),
                       originY: 0.3 * random(),
                   },
                   rect3: {
-                      scale: 0.1 * random(),
-                      width: 2.2 * random(),
+                      scale: 0.1,
+                      width: 2.2,
                       height: 1,
                       originX: 0.7 * random(),
                       originY: 0.77 * random(),
@@ -78,23 +78,23 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
               }
             : {
                   rect1: {
-                      scale: 0.08 * random(),
-                      width: 1.7 * random(),
+                      scale: 0.1,
+                      width: 1.7,
                       height: 0.9,
                       originX: 0.4 * random(),
                       originY: 0,
                   },
                   rect2: {
-                      scale: 0.15 * random(),
-                      width: 1.3 * random(),
-                      height: 1.2 * random(),
+                      scale: 0.15,
+                      width: 1.3,
+                      height: 1.2,
                       originX: 0.4 * random(),
                       originY: 0.5 * random(),
                   },
                   rect3: {
-                      scale: 0.1 * random(),
-                      width: 1.5 * random(),
-                      height: 1.4 * random(),
+                      scale: 0.2,
+                      width: 1.5,
+                      height: 1.4,
                       originX: 0.73 * random(),
                       originY: 0.4 * random(),
                   },
@@ -102,10 +102,10 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
     );
 
     function random() {
-        return 1;
-        // const min = 0.7;
-        // const max = 1.3;
-        // return Math.random() * (max - min) + min;
+        // return 1;
+        const min = 0.8;
+        const max = 1.2;
+        return Math.random() * (max - min) + min;
     }
 
     // For some configurations, that "white triangle" graphic glitch is happening in chrome during the animation
