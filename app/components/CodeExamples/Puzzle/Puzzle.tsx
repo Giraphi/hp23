@@ -108,23 +108,27 @@ export default function Puzzle() {
                     />
                 ))}
             </Head>
-            <StyledSizing ref={ref}>
+
+            <div
+                ref={ref}
+                className={"aspect-[1.61] max-h-[70vh]"}
+            >
                 {!!dimensions && (
                     <>
-                        <StyledGrid>
+                        <div className={"grid h-full"}>
                             <PuzzleContainer
                                 images={images}
                                 activeSlide={activeSlide}
                                 dimensions={dimensions}
                             />
-                        </StyledGrid>
+                        </div>
                     </>
                 )}
                 <>
                     <button onClick={onLeftClick}>left</button>
                     <button onClick={onRightClick}>right</button>
                 </>
-            </StyledSizing>
+            </div>
         </>
     );
 }
