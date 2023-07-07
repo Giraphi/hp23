@@ -9,6 +9,7 @@ import ArrowLeft32 from "./cursor-svgs/arrow-left-32.svg";
 import desk from "@/app/components/Puzzle/images/desk.jpg";
 import floor from "@/app/components/Puzzle/images/floor.jpg";
 import paint from "@/app/components/Puzzle/images/paint.jpg";
+import office from "@/app/components/Puzzle/images/office.jpg";
 
 import { zIndexes } from "@/app/components/Puzzle/puzzle-style-constants";
 import Head from "next/head";
@@ -18,6 +19,7 @@ import PuzzleContainer from "@/app/components/Puzzle/PuzzleContainer";
 const StyledSizing = styled.div`
     width: 100%;
     aspect-ratio: 1.61;
+    max-height: 70vh;
 `;
 
 const StyledClickLeftArea = styled.div`
@@ -64,10 +66,9 @@ export type PuzzleDimensions = { width: number; height: number };
 
 export default function Puzzle() {
     const [activeSlide, setActiveSlide] = useState(0);
-    const images = [desk, floor, paint];
+    const images = [desk, floor, paint, office];
     const numSlides = images.length;
     const ref = useRef<HTMLDivElement>(null);
-    const isFirstRender = useIsFirstRender();
     const [dimensions, setDimensions] = useState<PuzzleDimensions | undefined>(undefined);
 
     function modulo(n: number, m: number) {

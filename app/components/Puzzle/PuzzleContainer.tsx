@@ -5,7 +5,7 @@ import desk from "@/app/components/Puzzle/images/desk.jpg";
 import floor from "@/app/components/Puzzle/images/floor.jpg";
 import styled from "styled-components";
 import PuzzleAnimation from "@/app/components/Puzzle/PuzzleAnimation";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 const StyledImage = styled.div<{ $imageSrc: string }>`
     background-image: url(${(props) => props.$imageSrc});
