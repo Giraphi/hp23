@@ -16,7 +16,7 @@ import useIsFirstRender from "@/app/components/Puzzle/useIsFirstRender";
 import PuzzleContainer from "@/app/components/Puzzle/PuzzleContainer";
 
 const StyledSizing = styled.div`
-    height: 70vh;
+    width: 100%;
     aspect-ratio: 1.61;
 `;
 
@@ -47,7 +47,7 @@ const StyledImage = styled.div<{ $imageSrc: string }>`
     background-position: center right;
 `;
 
-const StyledContainer = styled.div`
+const StyledGrid = styled.div`
     width: 100%;
     height: 100%;
     display: grid;
@@ -64,20 +64,24 @@ export type PuzzleDimensions = { width: number; height: number };
 
 export default function Puzzle() {
     const [activeSlide, setActiveSlide] = useState(0);
-    const numSlides = 2;
+    const images = [desk, floor, paint];
+    const numSlides = images.length;
     const ref = useRef<HTMLDivElement>(null);
     const isFirstRender = useIsFirstRender();
     const [dimensions, setDimensions] = useState<PuzzleDimensions | undefined>(undefined);
 
+    function modulo(n: number, m: number) {
+        // will deal correctly with negative numbers, unlike the "%" operator
+        return ((n % m) + m) % m;
+    }
+
     function onLeftClick() {
-        setActiveSlide((activeSlide - 1 + numSlides) % numSlides);
+        setActiveSlide(modulo(activeSlide - 1, numSlides));
     }
 
     function onRightClick() {
-        setActiveSlide((activeSlide + 1) % numSlides);
+        setActiveSlide(modulo(activeSlide + 1, numSlides));
     }
-
-    const images = [desk, floor];
 
     useEffect(() => {
         function handleResize() {
@@ -91,6 +95,8 @@ export default function Puzzle() {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
+
+    // console.log()
 
     return (
         <>
@@ -107,12 +113,13 @@ export default function Puzzle() {
             <StyledSizing ref={ref}>
                 {!!dimensions && (
                     <>
-                        <StyledContainer>
+                        <StyledGrid>
                             <PuzzleContainer
+                                images={images}
                                 activeSlide={activeSlide}
                                 dimensions={dimensions}
                             />
-                        </StyledContainer>
+                        </StyledGrid>
                     </>
                 )}
                 <>

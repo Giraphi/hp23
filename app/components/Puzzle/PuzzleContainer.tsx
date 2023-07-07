@@ -5,6 +5,7 @@ import desk from "@/app/components/Puzzle/images/desk.jpg";
 import floor from "@/app/components/Puzzle/images/floor.jpg";
 import styled from "styled-components";
 import PuzzleAnimation from "@/app/components/Puzzle/PuzzleAnimation";
+import { StaticImageData } from "next/image";
 
 const StyledImage = styled.div<{ $imageSrc: string }>`
     background-image: url(${(props) => props.$imageSrc});
@@ -17,10 +18,10 @@ const StyledImage = styled.div<{ $imageSrc: string }>`
 export interface PuzzleContainerProps {
     activeSlide: number;
     dimensions: PuzzleDimensions;
+    images: StaticImageData[];
 }
 
 export default function PuzzleContainer(props: PuzzleContainerProps) {
-    const images = [desk, floor];
     const [muted, setMuted] = useState(true);
 
     useEffect(() => {
@@ -36,7 +37,7 @@ export default function PuzzleContainer(props: PuzzleContainerProps) {
                     dimensions={props.dimensions}
                     muted={muted}
                 >
-                    <StyledImage $imageSrc={images[props.activeSlide].src} />
+                    <StyledImage $imageSrc={props.images[props.activeSlide].src} />
                 </PuzzleAnimation>
             </AnimatePresence>
         </>

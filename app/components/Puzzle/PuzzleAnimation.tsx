@@ -15,6 +15,7 @@ export const StyledAnimation = styled(motion.div)<{ $clipId: string; $muted?: bo
     grid-row: 1;
     grid-column: 1;
     clip-path: ${(props) => `url(#${props.$clipId})`};
+    overflow: hidden;
 `;
 
 export interface AnimationClipPathConfig {
@@ -103,8 +104,8 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
 
     function random() {
         // return 1;
-        const min = 0.8;
-        const max = 1.2;
+        const min = 0.9;
+        const max = 1.1;
         return Math.random() * (max - min) + min;
     }
 
@@ -113,8 +114,6 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
     // The glitch doesn't seem to appear in the current configuration, but be careful when changing it.
     // Previously we had "rect3Height" set to 1 instead of 1.1 in the first block which made the glitch appear
     // The reason for the glitch or how to safely avoid it is currently unknown.
-
-    console.log(props.dimensions);
 
     return (
         <motion.div
@@ -131,7 +130,22 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
                 $clipId={clipId}
                 $muted={props.muted}
             >
-                {props.children}
+                <motion.div
+                    style={{ height: "100%" }}
+                    animate={{
+                        scale: [1, backgroundScaleFactor, backgroundScaleFactor, 1],
+                    }}
+                    exit={{
+                        scale: [1, backgroundScaleFactor, backgroundScaleFactor, backgroundScaleFactor],
+                    }}
+                    transition={{
+                        duration: duration,
+                        times: times,
+                        ease: ["linear"],
+                    }}
+                >
+                    {props.children}
+                </motion.div>
 
                 <svg
                     width="0"
