@@ -36,20 +36,20 @@ export default function Puzzle() {
         setActiveSlide(modulo(activeSlide + 1, numSlides));
     }
 
-    // useEffect(() => {
-    //     if (clickHappened) {
-    //         return;
-    //     }
-    //
-    //     const interval = setInterval(() => {
-    //         if (clickHappened) {
-    //             return;
-    //         }
-    //         setActiveSlide(modulo(activeSlide + 1, numSlides));
-    //     }, autoRotateIntervalMs);
-    //
-    //     return () => clearInterval(interval);
-    // }, [activeSlide, clickHappened, numSlides]);
+    useEffect(() => {
+        if (clickHappened) {
+            return;
+        }
+
+        const interval = setInterval(() => {
+            if (clickHappened) {
+                return;
+            }
+            setActiveSlide(modulo(activeSlide + 1, numSlides));
+        }, autoRotateIntervalMs);
+
+        return () => clearInterval(interval);
+    }, [activeSlide, clickHappened, numSlides]);
 
     useEffect(() => {
         function handleResize() {

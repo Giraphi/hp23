@@ -29,6 +29,7 @@ export default function PuzzleContainer(props: PuzzleContainerProps) {
                 >
                     <div className={"relative h-full"}>
                         <Image
+                            priority={true}
                             placeholder={"blur"}
                             fill={true}
                             className={"object-cover"}
@@ -38,19 +39,6 @@ export default function PuzzleContainer(props: PuzzleContainerProps) {
                     </div>
                 </PuzzleAnimation>
             ))}
-
-            {/* Make browser preload images so they are ready when mounted */}
-            <div className={"hidden"}>
-                {props.images.map((image, index) => (
-                    <Image
-                        priority={true}
-                        placeholder={"blur"}
-                        key={image.src}
-                        src={image}
-                        alt={"preloading image"}
-                    />
-                ))}
-            </div>
         </>
     );
 }
