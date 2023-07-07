@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import styled, { css } from "styled-components";
 import ArrowRight32 from "./cursor-svgs/arrow-right-32.svg";
@@ -10,11 +10,11 @@ import desk from "@/app/components/Puzzle/images/desk.jpg";
 import floor from "@/app/components/Puzzle/images/floor.jpg";
 import paint from "@/app/components/Puzzle/images/paint.jpg";
 import PuzzleSlide from "@/app/components/Puzzle/puzzle-slide";
-import useWindowDimensions from "@/app/components/Puzzle/use-window-dimensions";
 import { zIndexes } from "@/app/components/Puzzle/style-constants";
-import RandomContextProvider from "@/app/components/Puzzle/random-context-provider";
 import { AnimatePresence } from "framer-motion";
 import Head from "next/head";
+import useIsFirstRender from "@/app/components/Puzzle/use-is-first-render";
+import PuzzleContainer from "@/app/components/Puzzle/PuzzleContainer";
 
 const StyledClickLeftArea = styled.div`
     grid-row: 1/-1;
@@ -54,15 +54,15 @@ const StyledGridItem = styled.div`
     grid-column: 1;
 `;
 
-export type PuzzleDimensions = { width?: number; height?: number };
+export type PuzzleDimensions = { width: number; height: number };
 
 // export const autoProgressIntervalMs = 5000 + background$animationDurationMs;
 
 export default function Puzzle() {
     const [activeSlide, setActiveSlide] = useState(0);
     const numSlides = 2;
-    const windowDimensions = useWindowDimensions();
     const ref = useRef<HTMLDivElement>(null);
+    const isFirstRender = useIsFirstRender();
 
     function onLeftClick() {
         setActiveSlide((activeSlide - 1 + numSlides) % numSlides);
@@ -73,9 +73,8 @@ export default function Puzzle() {
     }
 
     const images = [desk, floor];
-    const dimensions = { width: ref.current?.clientWidth, height: ref.current?.clientHeight };
-
-    console.log(activeSlide);
+    // recalculate on resize
+    const dimensions = ref.current ? { width: ref.current.clientWidth, height: ref.current?.clientHeight } : undefined;
 
     return (
         <>
@@ -89,30 +88,34 @@ export default function Puzzle() {
                     />
                 ))}
             </Head>
-            <RandomContextProvider randomSeed={1}>
-                <div
-                    className={"h-[70vh]"}
-                    ref={ref}
-                >
-                    <StyledContainer>
-                        <AnimatePresence>
-                            <StyledGridItem key={activeSlide}>
-                                <PuzzleSlide
-                                    index={activeSlide}
-                                    dimensions={dimensions}
-                                >
-                                    <StyledImage $imageSrc={images[activeSlide].src} />
-                                </PuzzleSlide>
-                            </StyledGridItem>
-                        </AnimatePresence>
-                    </StyledContainer>
-
+            <div
+                className={"h-[70vh]"}
+                ref={ref}
+            >
+                {!isFirstRender && !!dimensions && (
                     <>
-                        <button onClick={onLeftClick}>left</button>
-                        <button onClick={onRightClick}>right</button>
+                        <StyledContainer>
+                            {/*<AnimatePresence initial={false}>*/}
+                            {/*    <PuzzleSlide*/}
+                            {/*        key={activeSlide}*/}
+                            {/*        index={activeSlide}*/}
+                            {/*        dimensions={dimensions}*/}
+                            {/*    >*/}
+                            {/*        <StyledImage $imageSrc={images[activeSlide].src} />*/}
+                            {/*    </PuzzleSlide>*/}
+                            {/*</AnimatePresence>*/}
+                            <PuzzleContainer
+                                activeSlide={activeSlide}
+                                dimensions={dimensions}
+                            />
+                        </StyledContainer>
                     </>
-                </div>
-            </RandomContextProvider>
+                )}
+                <>
+                    <button onClick={onLeftClick}>left</button>
+                    <button onClick={onRightClick}>right</button>
+                </>
+            </div>
         </>
     );
 }

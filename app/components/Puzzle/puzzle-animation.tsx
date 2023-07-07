@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 
 import { Dimensions } from "./puzzle-slide";
@@ -7,68 +7,14 @@ import { motion, useTransform } from "framer-motion";
 import { PuzzleDimensions } from "@/app/components/Puzzle/puzzle";
 
 export const backgroundAnimationDurationMs = 800;
-
 export const backgroundAnimationFreezePercentage = 0.2;
 const backgroundScaleFactor = 1.1;
-const percentageStop = `${50 - (backgroundAnimationFreezePercentage * 100) / 2}%`;
-const percentageContinue = `${50 + (backgroundAnimationFreezePercentage * 100) / 2}%`;
 
-const hideRectKeyframes = (scaleFactor: number) => keyframes`
-    0% {
-        transform: scale(1);
-    }
-    ${percentageStop} {
-        transform: scale(${scaleFactor})
-    }
-    ${percentageContinue} {
-        transform: scale(${scaleFactor})
-    }
-    100% {
-        transform: scale(0);
-    }
-`;
-
-const showRectKeyframes = (scaleFactor: number) => keyframes`
-    0% {
-        transform: scale(1);
-    }
-    ${percentageStop} {
-        transform: scale(${scaleFactor})
-    }
-    ${percentageContinue} {
-        transform: scale(${scaleFactor})
-    }
-    100% {
-        transform: scale(1);
-    }
-`;
-
-const hideChildrenKeyframes = (scaleFactor: number) => keyframes`
-    0% {
-        transform: scale(1);
-    }
-    ${percentageStop}, 100% {
-        transform: scale(${scaleFactor});
-    }
-`;
-
-const showChildrenKeyframes = (scaleFactor: number) => keyframes`
-    0% {
-        transform: scale(1);
-    }
-    ${percentageStop}, ${percentageContinue} {
-        transform: scale(${scaleFactor});
-    }
-    100% {
-        transform: scale(1);
-    }
-`;
-
-export const StyledAnimation = styled.div<{ $clipId: string }>`
-    //position: absolute;
+export const StyledAnimation = styled(motion.div)<{ $clipId: string; $muted?: boolean }>`
     width: 100%;
     height: 100%;
-    //transform: translateZ(0);
+    grid-row: 1;
+    grid-column: 1;
     clip-path: ${(props) => `url(#${props.$clipId})`};
 `;
 
@@ -92,35 +38,43 @@ export interface AnimationClipPathConfig {
     rect3OriginY: number;
 }
 
-export interface StyledAnimationProps {
-    $triggerHide: boolean;
-    $triggerShow: boolean;
-    $isOnTop: boolean;
-    $clipId: string;
-    $animationDurationMs: number;
-    $clipPathConfig: AnimationClipPathConfig;
-    $isAnimationDisabled: boolean;
-}
-
 export interface PuzzleBackgroundProps {
     clipId: string;
     clipPathConfig: AnimationClipPathConfig;
     children: React.ReactNode;
     dimensions: PuzzleDimensions;
+    muted?: boolean;
 }
+
+const scale = [1, 0.2, 0.2, 1];
 
 export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
     const { dimensions } = props;
-    // dimensions={{ width: dimensionsRef.current?.clientWidth, height: dimensionsRef.current?.clientHeight }}
-
-    // const rect1Scale = useMotionValue(0);
-    // const rect1Scale = useTransform([], [1, props.clipPathConfig.rect1Scale, props.clipPathConfig.rect1Scale, 0]);
+    const times = [0, 0.4, 0.6, 1];
+    const duration = props.muted ? 0 : 0.8;
+    const { rect1Scale } = props.clipPathConfig;
+    //
+    // const scale = useMemo(() => {
+    //     return [1, rect1Scale, rect1Scale, 0];
+    // }, [rect1Scale]);
 
     return (
-        <StyledAnimation $clipId={props.clipId}>
-            {props.children}
+        <motion.div
+            style={{ width: "100%", height: "100%", gridRow: 1, gridColumn: 1 }}
+            animate={{
+                zIndex: 20,
+            }}
+            exit={{
+                zIndex: 10,
+            }}
+            transition={{ times, duration, delay: duration / 2 }}
+        >
+            <StyledAnimation
+                $clipId={props.clipId}
+                $muted={props.muted}
+            >
+                {props.children}
 
-            {dimensions.width && dimensions.height && (
                 <svg
                     width="0"
                     height="0"
@@ -128,6 +82,7 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
                     <defs>
                         <clipPath id={props.clipId}>
                             <motion.rect
+                                key={props.clipId}
                                 className={"rect1"}
                                 x={0}
                                 y={0}
@@ -137,10 +92,13 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
                                     transformOrigin: `${dimensions.width * props.clipPathConfig.rect1OriginX}px
                                          ${dimensions.height * props.clipPathConfig.rect1OriginY}px`,
                                 }}
-                                initial={{ scale: 1 }}
-                                animate={{ scale: [1, props.clipPathConfig.rect1Scale, props.clipPathConfig.rect1Scale, 1] }}
-                                exit={{ scale: [1, props.clipPathConfig.rect1Scale, props.clipPathConfig.rect1Scale, 0] }}
-                                transition={{ times: [0, 0.4, 0.6, 1], duration: 0.8 }}
+                                animate={{
+                                    scale: [1, rect1Scale, rect1Scale, 1],
+                                }}
+                                exit={{
+                                    scale: [1, rect1Scale, rect1Scale, 0],
+                                }}
+                                transition={{ times, duration }}
                             />
                             {/*<rect*/}
                             {/*    className={"rect2"}*/}
@@ -167,7 +125,7 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
                         </clipPath>
                     </defs>
                 </svg>
-            )}
-        </StyledAnimation>
+            </StyledAnimation>
+        </motion.div>
     );
 }
