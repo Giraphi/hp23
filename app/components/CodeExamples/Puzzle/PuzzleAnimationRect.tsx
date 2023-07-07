@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { PuzzleDimensions } from "@/app/components/Puzzle/Puzzle";
+import { PuzzleDimensions } from "@/app/components/CodeExamples/Puzzle/Puzzle";
 
 export type RectConfig = {
     width: number;

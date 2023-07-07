@@ -6,15 +6,14 @@ import styled from "styled-components";
 import ArrowRight32 from "./cursor-svgs/arrow-right-32.svg";
 import ArrowLeft32 from "./cursor-svgs/arrow-left-32.svg";
 
-import desk from "@/app/components/Puzzle/images/desk.jpg";
-import floor from "@/app/components/Puzzle/images/floor.jpg";
-import paint from "@/app/components/Puzzle/images/paint.jpg";
-import office from "@/app/components/Puzzle/images/office.jpg";
+import desk from "@/app/components/CodeExamples/Puzzle/images/desk.jpg";
+import floor from "@/app/components/CodeExamples/Puzzle/images/floor.jpg";
+import paint from "@/app/components/CodeExamples/Puzzle/images/paint.jpg";
+import office from "@/app/components/CodeExamples/Puzzle/images/office.jpg";
 
-import { zIndexes } from "@/app/components/Puzzle/puzzle-style-constants";
+import { zIndexes } from "@/app/components/CodeExamples/Puzzle/puzzle-style-constants";
 import Head from "next/head";
-import useIsFirstRender from "@/app/components/Puzzle/useIsFirstRender";
-import PuzzleContainer from "@/app/components/Puzzle/PuzzleContainer";
+import PuzzleContainer from "@/app/components/CodeExamples/Puzzle/PuzzleContainer";
 
 const StyledSizing = styled.div`
     width: 100%;
@@ -65,10 +64,10 @@ export type PuzzleDimensions = { width: number; height: number };
 // export const autoProgressIntervalMs = 5000 + background$animationDurationMs;
 
 export default function Puzzle() {
-    const [activeSlide, setActiveSlide] = useState(0);
     const images = [desk, floor, paint, office];
     const numSlides = images.length;
     const ref = useRef<HTMLDivElement>(null);
+    const [activeSlide, setActiveSlide] = useState(0);
     const [dimensions, setDimensions] = useState<PuzzleDimensions | undefined>(undefined);
 
     function modulo(n: number, m: number) {
@@ -96,8 +95,6 @@ export default function Puzzle() {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-
-    // console.log()
 
     return (
         <>

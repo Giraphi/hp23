@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 import { motion } from "framer-motion";
-import { PuzzleDimensions } from "@/app/components/Puzzle/Puzzle";
+import { PuzzleDimensions } from "@/app/components/CodeExamples/Puzzle/Puzzle";
 import styled from "styled-components";
-import PuzzleAnimationRect, { RectConfig } from "@/app/components/Puzzle/PuzzleAnimationRect";
+import PuzzleAnimationRect, { RectConfig } from "@/app/components/CodeExamples/Puzzle/PuzzleAnimationRect";
 
 export const backgroundAnimationDurationMs = 800;
 export const backgroundAnimationFreezePercentage = 0.2;

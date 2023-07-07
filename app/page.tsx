@@ -1,7 +1,7 @@
 import React from "react";
 import { GLTF } from "three-stdlib";
 import MeModel from "@/app/components/MeModel/MeModel";
-import Puzzle from "@/app/components/Puzzle/Puzzle";
+import Puzzle from "@/app/components/CodeExamples/Puzzle/Puzzle";
 
 type GLTFResult = GLTF & {
     nodes: {
