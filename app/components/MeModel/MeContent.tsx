@@ -19,9 +19,6 @@ export default function MeContent(props: MeContentProps) {
     const rotate2Ref = useRef<Group>(null);
 
     useFrame((state, delta) => {
-        // if (!rotateRef.current) {
-        //     return;
-        // }
         rotateRef.current?.rotateY(delta * 2);
         rotate2Ref.current?.rotateY(delta * 1.2);
     });
@@ -69,18 +66,6 @@ export default function MeContent(props: MeContentProps) {
                 position={[3, 15, 9]}
                 castShadow={true}
             />
-
-            {/*<ambientLight intensity={0.1} />*/}
-            {/*<pointLight*/}
-            {/*    distance={1000}*/}
-            {/*    decay={0.1}*/}
-            {/*    castShadow={true}*/}
-            {/*    intensity={0.6}*/}
-            {/*    color={"white"}*/}
-            {/*    position={[3, 2, 3]}*/}
-            {/*/>*/}
-
-            {/*<gridHelper />*/}
 
             <mesh
                 geometry={nodes.mesh_0.geometry}
