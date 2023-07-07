@@ -55,21 +55,21 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
         props.index % 2 === 0
             ? {
                   rect1: {
-                      scale: 0.2,
+                      scale: 0.3 * 0.7,
                       width: 1.2,
-                      height: 0.8,
+                      height: 1,
                       originX: 0.15 * random(),
                       originY: 0,
                   },
                   rect2: {
-                      scale: 0.1,
+                      scale: 0.15 * 0.7,
                       width: 0.8,
-                      height: 1.8,
+                      height: 2,
                       originX: 0.58 * random(),
                       originY: 0.3 * random(),
                   },
                   rect3: {
-                      scale: 0.1,
+                      scale: 0.15 * 0.7,
                       width: 2.2,
                       height: 1,
                       originX: 0.7 * random(),
@@ -78,23 +78,23 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
               }
             : {
                   rect1: {
-                      scale: 0.1,
+                      scale: 0.2 * 0.7,
                       width: 1.7,
-                      height: 0.9,
+                      height: 1,
                       originX: 0.4 * random(),
                       originY: 0,
                   },
                   rect2: {
-                      scale: 0.15,
+                      scale: 0.25 * 0.7,
                       width: 1.3,
-                      height: 1.2,
+                      height: 1.4,
                       originX: 0.4 * random(),
                       originY: 0.5 * random(),
                   },
                   rect3: {
-                      scale: 0.2,
+                      scale: 0.1 * 0.7,
                       width: 1.5,
-                      height: 1.4,
+                      height: 1.6,
                       originX: 0.73 * random(),
                       originY: 0.4 * random(),
                   },
