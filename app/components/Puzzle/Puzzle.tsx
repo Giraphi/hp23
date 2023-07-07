@@ -15,6 +15,11 @@ import Head from "next/head";
 import useIsFirstRender from "@/app/components/Puzzle/useIsFirstRender";
 import PuzzleContainer from "@/app/components/Puzzle/PuzzleContainer";
 
+const StyledSizing = styled.div`
+    height: 70vh;
+    aspect-ratio: 1.61;
+`;
+
 const StyledClickLeftArea = styled.div`
     grid-row: 1/-1;
     grid-column: screen-left/content-col-7;
@@ -99,10 +104,7 @@ export default function Puzzle() {
                     />
                 ))}
             </Head>
-            <div
-                className={"h-[70vh]"}
-                ref={ref}
-            >
+            <StyledSizing ref={ref}>
                 {!!dimensions && (
                     <>
                         <StyledContainer>
@@ -117,7 +119,7 @@ export default function Puzzle() {
                     <button onClick={onLeftClick}>left</button>
                     <button onClick={onRightClick}>right</button>
                 </>
-            </div>
+            </StyledSizing>
         </>
     );
 }

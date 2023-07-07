@@ -27,8 +27,8 @@ export default function PuzzleAnimationRect(props: PuzzleAnimationRectProps) {
             width={`${props.dimensions.width * props.rectConfig.width}px`}
             height={`${props.dimensions.height * props.rectConfig.height}px`}
             style={{
-                transformOrigin: `${props.dimensions.width * props.rectConfig.originX}px
-                                         ${props.dimensions.height * props.rectConfig.originY}px`,
+                originX: `${props.dimensions.width * props.rectConfig.originX}px`,
+                originY: `${props.dimensions.height * props.rectConfig.originY}px`,
             }}
             animate={{
                 scale: [1, props.rectConfig.scale, props.rectConfig.scale, 1],
