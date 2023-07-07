@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import styled from "styled-components";
 import ArrowRight32 from "./cursor-svgs/arrow-right-32.svg";
@@ -62,6 +62,7 @@ export default function Puzzle() {
     const numSlides = 2;
     const ref = useRef<HTMLDivElement>(null);
     const isFirstRender = useIsFirstRender();
+    const [dimensions, setDimensions] = useState<PuzzleDimensions | undefined>(undefined);
 
     function onLeftClick() {
         setActiveSlide((activeSlide - 1 + numSlides) % numSlides);
@@ -74,7 +75,20 @@ export default function Puzzle() {
     const images = [desk, floor];
 
     // recalculate on resize
-    const dimensions = ref.current ? { width: ref.current.clientWidth, height: ref.current?.clientHeight } : undefined;
+    // const dimensions = ref.current ? { width: ref.current.clientWidth, height: ref.current?.clientHeight } : undefined;
+
+    useEffect(() => {
+        function handleResize() {
+            if (!ref.current) {
+                return;
+            }
+            setDimensions({ width: ref.current.clientWidth, height: ref.current?.clientHeight });
+        }
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     return (
         <>
@@ -92,18 +106,9 @@ export default function Puzzle() {
                 className={"h-[70vh]"}
                 ref={ref}
             >
-                {!isFirstRender && !!dimensions && (
+                {!!dimensions && (
                     <>
                         <StyledContainer>
-                            {/*<AnimatePresence initial={false}>*/}
-                            {/*    <PuzzleSlide*/}
-                            {/*        key={activeSlide}*/}
-                            {/*        index={activeSlide}*/}
-                            {/*        dimensions={dimensions}*/}
-                            {/*    >*/}
-                            {/*        <StyledImage $imageSrc={images[activeSlide].src} />*/}
-                            {/*    </PuzzleSlide>*/}
-                            {/*</AnimatePresence>*/}
                             <PuzzleContainer
                                 activeSlide={activeSlide}
                                 dimensions={dimensions}
