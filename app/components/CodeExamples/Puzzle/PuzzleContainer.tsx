@@ -28,6 +28,7 @@ export default function PuzzleContainer(props: PuzzleContainerProps) {
                 >
                     <div className={"relative h-full"}>
                         <Image
+                            placeholder={"blur"}
                             fill={true}
                             className={"object-cover"}
                             src={props.images[props.activeSlide]}
@@ -39,9 +40,10 @@ export default function PuzzleContainer(props: PuzzleContainerProps) {
 
             {/* Make browser preload images so they are ready when mounted */}
             <div className={"hidden"}>
-                {props.images.map((image) => (
+                {props.images.map((image, index) => (
                     <Image
                         priority={true}
+                        placeholder={"blur"}
                         key={image.src}
                         src={image}
                         alt={"preloading image"}
