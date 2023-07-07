@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { motion } from "framer-motion";
-import { PuzzleDimensions } from "@/app/components/Puzzle/puzzle";
+import { PuzzleDimensions } from "@/app/components/Puzzle/Puzzle";
 import styled from "styled-components";
 
 export const backgroundAnimationDurationMs = 800;

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { PuzzleDimensions } from "@/app/components/Puzzle/puzzle";
+import { PuzzleDimensions } from "@/app/components/Puzzle/Puzzle";
 import desk from "@/app/components/Puzzle/images/desk.jpg";
 import floor from "@/app/components/Puzzle/images/floor.jpg";
 import styled from "styled-components";
-import PuzzleAnimation from "@/app/components/Puzzle/puzzle-animation";
+import PuzzleAnimation from "@/app/components/Puzzle/PuzzleAnimation";
 
 const StyledImage = styled.div<{ $imageSrc: string }>`
     background-image: url(${(props) => props.$imageSrc});

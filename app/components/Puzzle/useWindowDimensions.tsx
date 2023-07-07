@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import useIsFirstRender from "@/app/components/Puzzle/use-is-first-render";
+import useIsFirstRender from "@/app/components/Puzzle/useIsFirstRender";
 
 export interface WindowDimensions {
     width: number;

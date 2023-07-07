@@ -10,9 +10,9 @@ import desk from "@/app/components/Puzzle/images/desk.jpg";
 import floor from "@/app/components/Puzzle/images/floor.jpg";
 import paint from "@/app/components/Puzzle/images/paint.jpg";
 
-import { zIndexes } from "@/app/components/Puzzle/style-constants";
+import { zIndexes } from "@/app/components/Puzzle/puzzle-style-constants";
 import Head from "next/head";
-import useIsFirstRender from "@/app/components/Puzzle/use-is-first-render";
+import useIsFirstRender from "@/app/components/Puzzle/useIsFirstRender";
 import PuzzleContainer from "@/app/components/Puzzle/PuzzleContainer";
 
 const StyledClickLeftArea = styled.div`
