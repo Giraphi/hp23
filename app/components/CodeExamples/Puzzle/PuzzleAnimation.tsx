@@ -43,6 +43,7 @@ export interface PuzzleBackgroundProps {
     dimensions: PuzzleDimensions;
     index: number;
     muted?: boolean;
+    isVisible: boolean;
 }
 
 export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
@@ -103,7 +104,7 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
     );
 
     function random() {
-        // return 1;
+        return 1;
         const min = 0.9;
         const max = 1.1;
         return Math.random() * (max - min) + min;
@@ -118,12 +119,15 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
     return (
         <motion.div
             className={"col-span-2 col-start-1 row-start-1 h-full"}
-            animate={{
-                zIndex: 20,
-            }}
-            exit={{
-                zIndex: 10,
-            }}
+            animate={
+                props.isVisible
+                    ? {
+                          zIndex: 20,
+                      }
+                    : {
+                          zIndex: 10,
+                      }
+            }
             transition={{ times, duration, delay: duration / 2 }}
         >
             <StyledAnimation
@@ -132,12 +136,15 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
             >
                 <motion.div
                     style={{ height: "100%" }}
-                    animate={{
-                        scale: [1, backgroundScaleFactor, backgroundScaleFactor, 1],
-                    }}
-                    exit={{
-                        scale: [1, backgroundScaleFactor, backgroundScaleFactor, backgroundScaleFactor],
-                    }}
+                    animate={
+                        props.isVisible
+                            ? {
+                                  scale: [1, backgroundScaleFactor, backgroundScaleFactor, 1],
+                              }
+                            : {
+                                  scale: [1, backgroundScaleFactor, backgroundScaleFactor, backgroundScaleFactor],
+                              }
+                    }
                     transition={{
                         duration: duration,
                         times: times,
@@ -154,6 +161,7 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
                     <defs>
                         <clipPath id={clipId}>
                             <PuzzleAnimationRect
+                                isVisible={props.isVisible}
                                 className={"rect1"}
                                 dimensions={dimensions}
                                 rectConfig={clipPathConfig.rect1}
@@ -162,6 +170,7 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
                             />
 
                             <PuzzleAnimationRect
+                                isVisible={props.isVisible}
                                 className={"rect2"}
                                 dimensions={dimensions}
                                 rectConfig={clipPathConfig.rect2}
@@ -170,6 +179,7 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
                             />
 
                             <PuzzleAnimationRect
+                                isVisible={props.isVisible}
                                 className={"rect3"}
                                 dimensions={dimensions}
                                 rectConfig={clipPathConfig.rect3}

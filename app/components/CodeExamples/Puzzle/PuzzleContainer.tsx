@@ -19,11 +19,12 @@ export default function PuzzleContainer(props: PuzzleContainerProps) {
 
     return (
         <>
-            <AnimatePresence initial={false}>
+            {props.images.map((image, index) => (
                 <PuzzleAnimation
-                    key={props.activeSlide}
-                    index={props.activeSlide}
+                    key={index}
+                    index={index}
                     dimensions={props.dimensions}
+                    isVisible={index === props.activeSlide}
                     muted={muted}
                 >
                     <div className={"relative h-full"}>
@@ -31,12 +32,12 @@ export default function PuzzleContainer(props: PuzzleContainerProps) {
                             placeholder={"blur"}
                             fill={true}
                             className={"object-cover"}
-                            src={props.images[props.activeSlide]}
+                            src={image}
                             alt={"random demo image"}
                         />
                     </div>
                 </PuzzleAnimation>
-            </AnimatePresence>
+            ))}
 
             {/* Make browser preload images so they are ready when mounted */}
             <div className={"hidden"}>

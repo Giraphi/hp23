@@ -16,6 +16,7 @@ export interface PuzzleAnimationRectProps {
     rectConfig: RectConfig;
     duration: number;
     times: number[];
+    isVisible: boolean;
 }
 
 export default function PuzzleAnimationRect(props: PuzzleAnimationRectProps) {
@@ -30,12 +31,11 @@ export default function PuzzleAnimationRect(props: PuzzleAnimationRectProps) {
                 originX: `${props.dimensions.width * props.rectConfig.originX}px`,
                 originY: `${props.dimensions.height * props.rectConfig.originY}px`,
             }}
-            animate={{
-                scale: [1, props.rectConfig.scale, props.rectConfig.scale, 1],
-            }}
-            exit={{
-                scale: [1, props.rectConfig.scale, props.rectConfig.scale, 0],
-            }}
+            animate={
+                props.isVisible
+                    ? { scale: [1, props.rectConfig.scale, props.rectConfig.scale, 1] }
+                    : { scale: [1, props.rectConfig.scale, props.rectConfig.scale, 0] }
+            }
             transition={{
                 duration: props.duration,
                 times: props.times,
