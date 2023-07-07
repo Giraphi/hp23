@@ -105,8 +105,8 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
 
     function random() {
         // return 1;
-        const min = 0.9;
-        const max = 1.1;
+        const min = 0.85;
+        const max = 1.15;
         return Math.random() * (max - min) + min;
     }
 
