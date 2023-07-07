@@ -11,6 +11,10 @@ module.exports = {
                     900: "#111",
                 },
             },
+            cursor: {
+                "left-arrow": "url('./assets/cursor-svgs/arrow-left.svg') 24 24, pointer",
+                "right-arrow": "url('./assets/cursor-svgs/arrow-right.svg') 24 24, pointer",
+            },
         },
     },
     plugins: [],

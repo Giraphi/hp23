@@ -2,66 +2,16 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-import styled from "styled-components";
-import ArrowRight32 from "./cursor-svgs/arrow-right-32.svg";
-import ArrowLeft32 from "./cursor-svgs/arrow-left-32.svg";
-
 import desk from "@/app/components/CodeExamples/Puzzle/images/desk.jpg";
 import floor from "@/app/components/CodeExamples/Puzzle/images/floor.jpg";
 import paint from "@/app/components/CodeExamples/Puzzle/images/paint.jpg";
 import office from "@/app/components/CodeExamples/Puzzle/images/office.jpg";
 
-import { zIndexes } from "@/app/components/CodeExamples/Puzzle/puzzle-style-constants";
-import Head from "next/head";
 import PuzzleContainer from "@/app/components/CodeExamples/Puzzle/PuzzleContainer";
-
-const StyledSizing = styled.div`
-    width: 100%;
-    aspect-ratio: 1.61;
-    max-height: 70vh;
-`;
-
-const StyledClickLeftArea = styled.div`
-    grid-row: 1/-1;
-    grid-column: screen-left/content-col-7;
-    cursor: url(${ArrowLeft32}) 8 8, pointer;
-    z-index: ${zIndexes.view};
-`;
-
-const StyledClickRightArea = styled.div`
-    grid-row: 1/-1;
-    grid-column: content-col-7/screen-right;
-    cursor: url(${ArrowRight32}) 8 8, pointer;
-    z-index: ${zIndexes.view};
-    margin-left: -20px;
-`;
-
-const StyledCtaLink = styled.div`
-    z-index: ${zIndexes.viewButtonElements};
-`;
-
-const StyledImage = styled.div<{ $imageSrc: string }>`
-    background-image: url(${(props) => props.$imageSrc});
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center right;
-`;
-
-const StyledGrid = styled.div`
-    width: 100%;
-    height: 100%;
-    display: grid;
-`;
-
-const StyledGridItem = styled.div`
-    grid-row: 1;
-    grid-column: 1;
-`;
 
 export type PuzzleDimensions = { width: number; height: number };
 
-// export const autoProgressIntervalMs = 5000 + background$animationDurationMs;
+const autoRotateIntervalMs = 4000;
 
 export default function Puzzle() {
     const images = [desk, floor, paint, office];
@@ -69,6 +19,7 @@ export default function Puzzle() {
     const ref = useRef<HTMLDivElement>(null);
     const [activeSlide, setActiveSlide] = useState(0);
     const [dimensions, setDimensions] = useState<PuzzleDimensions | undefined>(undefined);
+    const [clickHappened, setClickHappened] = useState(false);
 
     function modulo(n: number, m: number) {
         // will deal correctly with negative numbers, unlike the "%" operator
@@ -76,12 +27,29 @@ export default function Puzzle() {
     }
 
     function onLeftClick() {
+        setClickHappened(true);
         setActiveSlide(modulo(activeSlide - 1, numSlides));
     }
 
     function onRightClick() {
+        setClickHappened(true);
         setActiveSlide(modulo(activeSlide + 1, numSlides));
     }
+
+    useEffect(() => {
+        if (clickHappened) {
+            return;
+        }
+
+        const interval = setInterval(() => {
+            if (clickHappened) {
+                return;
+            }
+            setActiveSlide(modulo(activeSlide + 1, numSlides));
+        }, autoRotateIntervalMs);
+
+        return () => clearInterval(interval);
+    }, [activeSlide, clickHappened, numSlides]);
 
     useEffect(() => {
         function handleResize() {
@@ -98,36 +66,29 @@ export default function Puzzle() {
 
     return (
         <>
-            <Head>
-                {images.map((image) => (
-                    <link
-                        key={image.src}
-                        rel="preload"
-                        href={image.src}
-                        as="image"
-                    />
-                ))}
-            </Head>
-
             <div
                 ref={ref}
                 className={"aspect-[1.61] max-h-[70vh]"}
             >
                 {!!dimensions && (
                     <>
-                        <div className={"grid h-full"}>
+                        <div className={"grid h-full grid-cols-2 grid-rows-1"}>
                             <PuzzleContainer
                                 images={images}
                                 activeSlide={activeSlide}
                                 dimensions={dimensions}
                             />
+                            <div
+                                onClick={onLeftClick}
+                                className={"z-30 col-start-1 row-start-1 h-full hover:cursor-left-arrow"}
+                            />
+                            <div
+                                onClick={onRightClick}
+                                className={"z-30 col-start-2 row-start-1 h-full hover:cursor-right-arrow"}
+                            />
                         </div>
                     </>
                 )}
-                <>
-                    <button onClick={onLeftClick}>left</button>
-                    <button onClick={onRightClick}>right</button>
-                </>
             </div>
         </>
     );

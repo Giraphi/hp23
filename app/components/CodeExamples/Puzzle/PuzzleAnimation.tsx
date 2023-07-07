@@ -117,7 +117,7 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
 
     return (
         <motion.div
-            style={{ width: "100%", height: "100%", gridRow: 1, gridColumn: 1 }}
+            className={"col-span-2 col-start-1 row-start-1 h-full"}
             animate={{
                 zIndex: 20,
             }}
