@@ -15,9 +15,9 @@ export default function Cover() {
 
     const progress = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
     const overlayOpacity = useTransform(progress, [0, 0.02], [1, 0]);
+    const coverOpacity = useTransform(progress, [0, 0.6, 1], [1, 1, 0]);
     const childrenOpacity = useTransform(progress, [0.4, 1], [0, 1]);
-    const maskOpacity = useTransform(progress, [0, 0.5, 1], [1, 1, 0]);
-    const zoom = useTransform(progress, [0, 0.5, 1], [1, 10, 20]);
+    const zoom = useTransform(progress, [0, 0.5, 1], [1, 15, 25]);
 
     return (
         <>
@@ -25,7 +25,7 @@ export default function Cover() {
                 className="grid grid-cols-1 grid-rows-[100lvh_300lvh] rounded"
                 ref={ref}
             >
-                <div className="sticky top-0 col-start-1 row-start-1">
+                <div className="sticky top-0 col-start-1 row-start-1 bg-lime-700">
                     <video
                         autoPlay
                         loop
@@ -46,31 +46,22 @@ export default function Cover() {
                     <h1>HELLLO</h1>
                 </motion.div>
 
-                {/* Mask trick */}
                 <motion.div
-                    style={{ opacity: maskOpacity }}
+                    className="sticky top-0 col-start-1 row-start-1 bg-white"
+                    style={{ opacity: overlayOpacity }}
+                ></motion.div>
+
+                <motion.div
+                    style={{ opacity: coverOpacity }}
                     className={
                         "sticky top-0 col-start-1 row-start-1 flex w-full items-center justify-center overflow-hidden mix-blend-multiply"
                     }
                 >
                     <motion.div
                         className={"h-full w-full"}
-                        style={{ scale: zoom, transformOrigin: "50% 45%" }}
+                        style={{ scale: zoom, transformOrigin: "center" }}
                     >
-                        <CoverContent mask={true} />
-                    </motion.div>
-                </motion.div>
-
-                {/* Overlay with colored text and no mix-blend-mode */}
-                <motion.div
-                    style={{ opacity: overlayOpacity }}
-                    className={"sticky top-0 col-start-1 row-start-1 flex w-full items-center justify-center overflow-hidden"}
-                >
-                    <motion.div
-                        className={"h-full w-full"}
-                        style={{ scale: zoom, transformOrigin: "50% 45%" }}
-                    >
-                        <CoverContent mask={true} />
+                        <CoverContent />
                     </motion.div>
                 </motion.div>
             </div>
