@@ -2,6 +2,7 @@ import React from "react";
 import { GLTF } from "three-stdlib";
 import MeModel from "@/app/components/MeModel/MeModel";
 import Puzzle from "@/app/components/CodeExamples/Puzzle/Puzzle";
+import DotsRow from "@/app/components/CodeExamples/DotsRow/DotsRow";
 
 type GLTFResult = GLTF & {
     nodes: {
@@ -17,7 +18,8 @@ export default function Home() {
             {/*    <h1>Drag / Scroll</h1>*/}
             {/*</div>*/}
             {/*<MeModel />*/}
-            <Puzzle />
+            {/*<Puzzle />*/}
+            <DotsRow />
         </main>
     );
 }
