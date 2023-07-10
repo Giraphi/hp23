@@ -26,6 +26,7 @@ export default function Cover() {
                 ref={ref}
             >
                 <div className="sticky top-0 col-start-1 row-start-1 bg-lime-700">
+                    {/*TODO: this seems to be very performance heavy. try lower resolution or webm? Maybe performance problem comes because  of mix-blend-mode*/}
                     <video
                         autoPlay
                         loop
