@@ -76,7 +76,7 @@ export default function DotsRow(props: DotsRowProps) {
         <MousePositionContextProvider>
             <div
                 ref={ref}
-                className={"overflow-hidden p-[100px]"}
+                className={"overflow-hidden bg-black p-[100px]"}
             >
                 <div className={"md:hidden"}>
                     <DotsRowSmall
