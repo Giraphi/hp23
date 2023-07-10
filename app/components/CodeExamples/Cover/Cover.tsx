@@ -20,9 +20,9 @@ export default function Cover() {
     const zoom = useTransform(progress, [0, 0.5, 1], [1, 15, 25]);
 
     return (
-        <>
+        <div>
             <div
-                className="grid grid-cols-1 grid-rows-[100lvh_300lvh] rounded"
+                className="grid grid-cols-1 grid-rows-[100dvh_300dvh] rounded"
                 ref={ref}
             >
                 <div className="sticky top-0 col-start-1 row-start-1 bg-lime-700">
@@ -40,10 +40,14 @@ export default function Cover() {
                 </div>
 
                 <motion.div
-                    className="sticky top-0 col-start-1 row-start-1 flex items-center justify-center"
-                    style={{ opacity: childrenOpacity }}
+                    className="sticky top-0 col-start-1 row-start-1 flex flex-col items-center justify-center text-white"
+                    style={{ opacity: childrenOpacity, textShadow: "1px 1px black" }}
                 >
-                    <h1>HELLLO</h1>
+                    <h1 className={"text-7xl text-white"}>Welcome</h1>
+                    <p className={"pl-8 pr-8 pt-8 text-center text-2xl"}>
+                        This animation is making use of the css property <br />
+                        <span className={"font-mono"}>mix-blend-mode: multiply</span>{" "}
+                    </p>
                 </motion.div>
 
                 <motion.div
@@ -65,6 +69,9 @@ export default function Cover() {
                     </motion.div>
                 </motion.div>
             </div>
-        </>
+            <div className={"h-[50dvh] bg-black"}>
+                <h1 className={"text-mono pt-16 text-center text-5xl text-white"}>Site flow continues here ....</h1>
+            </div>
+        </div>
     );
 }
