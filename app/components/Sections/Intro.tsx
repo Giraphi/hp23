@@ -2,6 +2,7 @@ import React from "react";
 import Grid from "@/app/components/Grid/Grid";
 import Button from "@/app/components/Button";
 import MeModel from "@/app/components/MeModel/MeModel";
+import Headline from "@/app/components/Headline";
 
 export interface IntroProps {}
 
@@ -19,12 +20,13 @@ export default function Intro(props: IntroProps) {
             ></div>
 
             <div className={"col-start-[content-left] col-end-[content-right] row-start-2"}>
-                <h1 className={"pb-2 text-center font-delaGothicOne text-4xl md:pb-0 md:text-left md:text-6xl xlg:text-7xl"}>
-                    Raphael Höps
-                </h1>
-                <h1 className={"pb-4 text-center font-delaGothicOne text-4xl text-pink md:pb-10 md:text-left md:text-6xl xlg:text-7xl"}>
+                <Headline type={"h1"}>Raphael Höps</Headline>
+                <Headline
+                    type={"h1"}
+                    className={"pb-4 text-pink"}
+                >
                     Frontend Developer
-                </h1>
+                </Headline>
             </div>
 
             <div className={"col-start-[content-left] col-end-[content-right] row-start-3 lg:col-end-10 xlg:col-end-9"}>

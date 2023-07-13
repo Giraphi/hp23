@@ -7,9 +7,13 @@ export interface HeadlineProps {
 }
 
 export default function Headline(props: HeadlineProps) {
+    const className = `xlg:text-7xl pb-2 text-center font-delaGothicOne text-4xl md:pb-0 md:text-left md:text-6xl ${props.className}`;
+    const type = props.type || "h2";
+
     return (
-        <h1 className={`xlg:text-7xl} pb-2 text-center font-delaGothicOne text-4xl md:pb-0 md:text-left md:text-6xl ${props.className}`}>
-            {props.children}
-        </h1>
+        <>
+            {type === "h1" && <h1 className={className}>{props.children}</h1>}
+            {type === "h2" && <h2 className={className}>{props.children}</h2>}
+        </>
     );
 }
