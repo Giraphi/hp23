@@ -3,10 +3,13 @@ import Grid from "@/app/components/Grid/Grid";
 import Button from "@/app/components/Button";
 import MeModel from "@/app/components/MeModel/MeModel";
 import Headline from "@/app/components/Headline";
+import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 
 export interface IntroProps {}
 
 export default function Intro(props: IntroProps) {
+    const device = useDeviceStore((state) => state.device);
+
     return (
         <Grid
             className={
@@ -15,7 +18,7 @@ export default function Intro(props: IntroProps) {
         >
             <div
                 className={
-                    "sticky top-0 z-[-1] col-start-[screen-left] col-end-[screen-right] row-start-1 h-[100vh] bg-gradient-radial from-gray-3 to-gray-2"
+                    "sticky top-0 z-[-1] col-start-[screen-left] col-end-[screen-right] row-start-1 h-[100vh] bg-gradient-radial from-gray-3 to-gray-2 md:hidden"
                 }
             ></div>
 
@@ -42,18 +45,21 @@ export default function Intro(props: IntroProps) {
 
             {/*mobile only*/}
 
-            <div
-                className={"col-start-[screen-left] col-end-[screen-right] row-span-4 row-start-1 pt-[35lvh] md:row-span-4 md:row-start-1"}
-            >
-                <MeModel />
-            </div>
+            {device < Device.md ? (
+                <div
+                    className={
+                        "col-start-[screen-left] col-end-[screen-right] row-span-4 row-start-1 pt-[35lvh] md:row-span-4 md:row-start-1"
+                    }
+                >
+                    <MeModel />
+                </div>
+            ) : (
+                <div className={"col-start-[screen-left] col-end-[screen-right] row-start-4 md:row-span-4 md:row-start-1"}>
+                    <MeModel />
+                </div>
+            )}
 
             {/*end mobile only*/}
-
-            {/*Desktop*/}
-            {/*<div className={"col-start-[screen-left] col-end-[screen-right] row-start-4 md:row-span-4 md:row-start-1"}>*/}
-            {/*    <MeModel />*/}
-            {/*</div>*/}
         </Grid>
     );
 }

@@ -1,10 +1,12 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
-import { AsciiRenderer, Sphere } from "@react-three/drei";
+import { AsciiRenderer, CameraControls, OrbitControls, Sphere } from "@react-three/drei";
 import { Group } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import ControlsSmall from "@/app/components/MeModel/ControlsSmall";
 import { MotionValue } from "framer-motion";
 import MeGltf from "@/app/components/MeModel/MeGltf";
+import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
+import ControlsLarge from "@/app/components/MeModel/ControlsLarge";
 
 export interface MeContentProps {
     scrollProgress: MotionValue<number>;
@@ -17,6 +19,7 @@ export default function MeContent(props: MeContentProps) {
     const { viewport } = useThree();
     // wait until controls are rendered. this way, the camera zoom is set before the mesh is visible and we don't get a flicker
     const [visible, setVisible] = useState(false);
+    const device = useDeviceStore((store) => store.device);
 
     useFrame((state, delta) => {
         rotateRef.current?.rotateY(delta * 2);
@@ -43,10 +46,17 @@ export default function MeContent(props: MeContentProps) {
                 visible={visible}
             >
                 <group>
-                    <ControlsSmall
-                        scrollProgress={props.scrollProgress}
-                        onReady={() => setVisible(true)}
-                    />
+                    {device < Device.md ? (
+                        <ControlsSmall
+                            scrollProgress={props.scrollProgress}
+                            onReady={() => setVisible(true)}
+                        />
+                    ) : (
+                        <ControlsLarge
+                            scrollProgress={props.scrollProgress}
+                            onReady={() => setVisible(true)}
+                        />
+                    )}
 
                     <group
                         position={[0, 0, 0]}

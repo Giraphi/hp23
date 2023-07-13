@@ -16,20 +16,20 @@ export default function MeModel(props: MeModelProps) {
     return (
         <>
             <div
-                className={"relative h-full"}
+                className={"relative h-full md:static"}
                 ref={ref}
             >
-                <div className={`sticky top-0 h-[100vh] w-full overflow-hidden`}>
+                <div className={`sticky top-0 h-[100vh] w-full overflow-hidden md:static`}>
                     {/* Trick to move Canvas Coordinate System off center */}
                     <Canvas className={styles.canvasWrapper}>
                         <MeContent scrollProgress={scrollYProgress} />
                     </Canvas>
-                    <motion.div
-                        className={"absolute top-0 w-full bg-gray-2 p-1 text-center text-sm text-lime"}
-                        style={{ opacity: hintOpacity }}
-                    >
-                        Swipe right/left to rotate
-                    </motion.div>
+                    {/*<motion.div*/}
+                    {/*    className={"absolute top-0 w-full bg-gray-2 p-1 text-center text-sm text-lime"}*/}
+                    {/*    style={{ opacity: hintOpacity }}*/}
+                    {/*>*/}
+                    {/*    Swipe right/left to rotate*/}
+                    {/*</motion.div>*/}
                 </div>
             </div>
         </>
