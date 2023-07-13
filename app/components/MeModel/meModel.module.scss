@@ -1,0 +1,16 @@
+.canvasWrapper {
+    @media (min-width: theme("screens.lg")) {
+        width: 135vw !important;
+    }
+
+    touch-action: pan-y !important;
+
+    //
+    //> div {
+    //    touch-action: pan-y !important;
+    //}
+
+    //canvas {
+    //    touch-action: pan-y !important;
+    //}
+}

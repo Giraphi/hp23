@@ -1,9 +1,12 @@
-import React, { useRef } from "react";
-import { AsciiRenderer, Box, OrbitControls, Sphere, useGLTF } from "@react-three/drei";
-import { Group, Vector3 } from "three";
+import React, { useRef, useState } from "react";
+import { AsciiRenderer, OrbitControls, Sphere, useGLTF } from "@react-three/drei";
+import { Group, MOUSE, TOUCH } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { GLTF } from "three-stdlib";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
+import * as THREE from "three";
+import { OrbitControls as OrbitControlsType } from "three-stdlib";
+import ControlsSmall from "@/app/components/MeModel/ControlsSmall";
 
 type GLTFResult = GLTF & {
     nodes: {
@@ -43,7 +46,7 @@ export default function MeContent(props: MeContentProps) {
 
             <group scale={viewport.height / 6}>
                 <group>
-                    {/*<OrbitControls />*/}
+                    <ControlsSmall />
 
                     <group
                         position={[0, 0, 0]}
