@@ -9,9 +9,15 @@ export default function Intro(props: IntroProps) {
     return (
         <Grid
             className={
-                "grid-rows-[15vh_auto_auto_5vh_90vh] bg-gradient-radial from-gray-4 to-gray-1 md:h-screen md:grid-rows-[1fr_auto_auto_1fr_auto]"
+                "relative grid-rows-[15vh_auto_auto_200vh] md:h-screen md:grid-rows-[1fr_auto_auto_1fr_auto] md:bg-gradient-radial md:from-gray-4 md:to-gray-1"
             }
         >
+            <div
+                className={
+                    "sticky top-0 z-[-1] col-start-[screen-left] col-end-[screen-right] row-start-1 h-[100vh] bg-gradient-radial from-gray-3 to-gray-2"
+                }
+            ></div>
+
             <div className={"col-start-[content-left] col-end-[content-right] row-start-2"}>
                 <h1 className={"pb-2 text-center font-delaGothicOne text-4xl md:pb-0 md:text-left md:text-6xl xlg:text-7xl"}>
                     Raphael Höps
@@ -32,9 +38,20 @@ export default function Intro(props: IntroProps) {
                 </div>
             </div>
 
-            <div className={"col-start-[screen-left] col-end-[screen-right] row-start-5 md:row-span-4 md:row-start-1"}>
+            {/*mobile only*/}
+
+            <div
+                className={"col-start-[screen-left] col-end-[screen-right] row-span-4 row-start-1 pt-[35lvh] md:row-span-4 md:row-start-1"}
+            >
                 <MeModel />
             </div>
+
+            {/*end mobile only*/}
+
+            {/*Desktop*/}
+            {/*<div className={"col-start-[screen-left] col-end-[screen-right] row-start-4 md:row-span-4 md:row-start-1"}>*/}
+            {/*    <MeModel />*/}
+            {/*</div>*/}
         </Grid>
     );
 }

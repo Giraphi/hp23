@@ -28,6 +28,7 @@ export default function Home() {
 
             {/*<Cover />*/}
             <Intro />
+            <div className={"h-screen bg-gradient-to-b from-gray-2 to-gray-3"}></div>
         </main>
     );
 }

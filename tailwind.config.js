@@ -24,7 +24,7 @@ module.exports = {
                 lime: "#14FF82",
             },
             backgroundImage: {
-                "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+                "gradient-radial": "radial-gradient(closest-side, var(--tw-gradient-stops))",
             },
             cursor: {
                 "left-arrow": "url('./assets/cursor-svgs/arrow-left.svg') 24 24, pointer",

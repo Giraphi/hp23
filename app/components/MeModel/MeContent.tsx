@@ -7,6 +7,7 @@ import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import * as THREE from "three";
 import { OrbitControls as OrbitControlsType } from "three-stdlib";
 import ControlsSmall from "@/app/components/MeModel/ControlsSmall";
+import { MotionValue } from "framer-motion";
 
 type GLTFResult = GLTF & {
     nodes: {
@@ -15,7 +16,9 @@ type GLTFResult = GLTF & {
     materials: {};
 };
 
-export interface MeContentProps {}
+export interface MeContentProps {
+    scrollProgress: MotionValue<number>;
+}
 
 export default function MeContent(props: MeContentProps) {
     const { nodes } = useGLTF("/models/me.glb") as GLTFResult;
@@ -38,7 +41,7 @@ export default function MeContent(props: MeContentProps) {
 
             <AsciiRenderer
                 invert={true}
-                bgColor={"transparent"}
+                bgColor={"rgba(0,0,0,0)"}
                 resolution={0.18}
                 characters={" .:-+*=%@#FXQRI,?'`´"}
             />
@@ -46,7 +49,7 @@ export default function MeContent(props: MeContentProps) {
 
             <group scale={viewport.height / 6}>
                 <group>
-                    <ControlsSmall />
+                    <ControlsSmall scrollProgress={props.scrollProgress} />
 
                     <group
                         position={[0, 0, 0]}

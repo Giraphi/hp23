@@ -1,20 +1,30 @@
-import React, { ReactNode, useRef } from "react";
-import { CameraControls, CameraControlsProps, OrbitControls } from "@react-three/drei";
+import React, { useRef } from "react";
+import { CameraControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import * as THREE from "three";
-import { OrbitControls as OrbitControlsType } from "three-stdlib/controls/OrbitControls";
-import { useScroll } from "framer-motion";
+import { MotionValue, useTransform } from "framer-motion";
+import { ACTION } from "camera-controls/dist/types";
 
-export interface ControlsSmallProps {}
+export interface ControlsSmallProps {
+    scrollProgress: MotionValue<number>;
+}
 
 export default function ControlsSmall(props: ControlsSmallProps) {
     const controlsRef = useRef<any>(null);
-    const isResetting = useRef<boolean>(false);
-    const scrollY = useScroll();
+    const zoom = useTransform(props.scrollProgress, [0, 0.1, 1], [0.2, 0.35, 3]);
+
+    useFrame(() => {
+        if (!controlsRef.current) {
+            return;
+        }
+
+        controlsRef.current.zoomTo(zoom.get());
+    });
 
     return (
         <>
             <CameraControls
+                mouseButtons={{ wheel: 0, left: 1, right: 1, middle: 0 }}
+                minZoom={0.01}
                 ref={controlsRef}
                 minPolarAngle={Math.PI / 2}
                 maxPolarAngle={Math.PI / 2}
