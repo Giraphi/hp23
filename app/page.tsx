@@ -6,6 +6,7 @@ import { GLTF } from "three-stdlib";
 // import Grid from "@/app/components/Grid/Grid";
 import Intro from "@/app/components/Sections/Intro";
 import useDeviceStoreHandler from "@/app/store/useDeviceStoreHandler";
+import Headline from "@/app/components/Headline";
 
 type GLTFResult = GLTF & {
     nodes: {
@@ -28,7 +29,9 @@ export default function Home() {
 
             {/*<Cover />*/}
             <Intro />
-            <div className={"h-screen bg-gradient-to-b from-gray-2 to-gray-3"}></div>
+            <div className={"h-screen bg-gradient-to-b from-gray-2 to-gray-3"}>
+                <Headline className={"pt-8"}>Site continues here</Headline>
+            </div>
         </main>
     );
 }

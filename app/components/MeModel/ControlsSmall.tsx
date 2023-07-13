@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { CameraControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { MotionValue, useTransform } from "framer-motion";
@@ -6,6 +6,7 @@ import { ACTION } from "camera-controls/dist/types";
 
 export interface ControlsSmallProps {
     scrollProgress: MotionValue<number>;
+    onReady: () => void;
 }
 
 export default function ControlsSmall(props: ControlsSmallProps) {
@@ -20,11 +21,15 @@ export default function ControlsSmall(props: ControlsSmallProps) {
         controlsRef.current.zoomTo(zoom.get());
     });
 
+    const { onReady } = props;
+    useEffect(() => {
+        onReady();
+    }, [onReady]);
+
     return (
         <>
             <CameraControls
                 mouseButtons={{ wheel: 0, left: 1, right: 1, middle: 0 }}
-                minZoom={0.01}
                 ref={controlsRef}
                 minPolarAngle={Math.PI / 2}
                 maxPolarAngle={Math.PI / 2}

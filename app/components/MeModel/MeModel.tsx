@@ -25,7 +25,7 @@ export default function MeModel(props: MeModelProps) {
                         <MeContent scrollProgress={scrollYProgress} />
                     </Canvas>
                     <motion.div
-                        className={"absolute bottom-0 w-full bg-gray-2 p-1 text-center text-sm text-lime"}
+                        className={"absolute top-0 w-full bg-gray-2 p-1 text-center text-sm text-lime"}
                         style={{ opacity: hintOpacity }}
                     >
                         Swipe right/left to rotate
