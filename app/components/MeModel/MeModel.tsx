@@ -1,25 +1,21 @@
 "use client";
 
-import React, { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { AsciiRenderer, OrbitControls, Sphere, useGLTF } from "@react-three/drei";
-import { GLTF } from "three-stdlib";
-import { Group, Vector3 } from "three";
+import React from "react";
+import { Canvas } from "@react-three/fiber";
 import MeContent from "@/app/components/MeModel/MeContent";
-
-type GLTFResult = GLTF & {
-    nodes: {
-        mesh_0: THREE.Mesh;
-    };
-    materials: {};
-};
+import { useDeviceStore } from "@/app/store/useDeviceStore";
 
 export interface MeModelProps {}
 
 export default function MeModel(props: MeModelProps) {
+    const device = useDeviceStore((state) => state.device);
+
     return (
-        <Canvas style={{ height: "100%" }}>
-            <MeContent />
-        </Canvas>
+        <div className={"h-full w-full overflow-hidden"}>
+            {/* Trick to move Canvas Coordinate System off center */}
+            <Canvas style={{ width: "135vw" }}>
+                <MeContent />
+            </Canvas>
+        </div>
     );
 }
