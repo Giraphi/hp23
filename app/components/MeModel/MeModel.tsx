@@ -3,7 +3,7 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import MeContent from "@/app/components/MeModel/MeContent";
-import { useDeviceStore } from "@/app/store/useDeviceStore";
+import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 
 export interface MeModelProps {}
 
@@ -13,7 +13,7 @@ export default function MeModel(props: MeModelProps) {
     return (
         <div className={"h-full w-full overflow-hidden"}>
             {/* Trick to move Canvas Coordinate System off center */}
-            <Canvas style={{ width: "135vw" }}>
+            <Canvas style={device >= Device.md ? { width: "135vw" } : {}}>
                 <MeContent />
             </Canvas>
         </div>

@@ -3,6 +3,7 @@ import { AsciiRenderer, Box, OrbitControls, Sphere, useGLTF } from "@react-three
 import { Group, Vector3 } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { GLTF } from "three-stdlib";
+import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 
 type GLTFResult = GLTF & {
     nodes: {
@@ -18,6 +19,7 @@ export default function MeContent(props: MeContentProps) {
     const rotateRef = useRef<Group>(null);
     const rotate2Ref = useRef<Group>(null);
     const { viewport } = useThree();
+    const device = useDeviceStore((state) => state.device);
 
     useFrame((state, delta) => {
         rotateRef.current?.rotateY(delta * 2);
@@ -41,7 +43,7 @@ export default function MeContent(props: MeContentProps) {
 
             <group scale={viewport.height / 6}>
                 <group>
-                    <OrbitControls />
+                    {/*<OrbitControls />*/}
 
                     <group
                         position={[0, 0, 0]}
@@ -73,8 +75,8 @@ export default function MeContent(props: MeContentProps) {
                     <mesh
                         geometry={nodes.mesh_0.geometry}
                         material={nodes.mesh_0.material}
-                        rotation={[0.05, -0.4, 0.07]}
-                        position={[0, -0.6, 0]}
+                        rotation={device < Device.md ? [0.05, -0.1, 0.07] : [0.05, -0.4, 0.07]}
+                        position={device < Device.md ? [-0.2, -0.6, 0] : [0, -0.6, 0]}
                         scale={12}
                     />
                 </group>

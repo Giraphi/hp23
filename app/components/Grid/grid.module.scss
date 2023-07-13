@@ -1,14 +1,19 @@
 .grid {
     display: grid;
     grid-auto-flow: row;
-    column-gap: theme("spacing.8");
 
-    grid-template-columns:
-        [screen-left]
-        minmax(theme("spacing.8"), calc(50% - theme("spacing.8") - theme("grid.maxWidth") / 2))
-        [content-left]
-        repeat(12, minmax(0, 1fr)) // minmax(0,1fr) makes tracks not grow with overflowing content
-        [content-right]
-        minmax(theme("spacing.8"), calc(50% - theme("spacing.8") - theme("grid.maxWidth") / 2))
-        [screen-right];
+    column-gap: theme("spacing.4");
+    grid-template-columns: [screen-left] 0 [content-left] repeat(4, minmax(0, 1fr)) [content-right] 0 [screen-right];
+
+    @media (min-width: theme("screens.lg")) {
+        column-gap: theme("spacing.8");
+        grid-template-columns:
+            [screen-left]
+            minmax(theme("spacing.8"), calc(50% - theme("spacing.8") - theme("grid.maxWidth") / 2))
+            [content-left]
+            repeat(12, minmax(0, 1fr)) // minmax(0,1fr) makes tracks not grow with overflowing content
+            [content-right]
+            minmax(theme("spacing.8"), calc(50% - theme("spacing.8") - theme("grid.maxWidth") / 2))
+            [screen-right];
+    }
 }
