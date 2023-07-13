@@ -76,7 +76,7 @@ export default function MeContent(props: MeContentProps) {
                     />
 
                     <Suspense>
-                        <MeGltf />
+                        <MeGltf progress={props.scrollProgress} />
                     </Suspense>
                 </group>
             </group>
