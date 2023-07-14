@@ -32,7 +32,7 @@ export default function Intro(props: IntroProps) {
     return (
         <Grid
             className={
-                "grid-rows-[15lvh_auto_auto_300lvh] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-gray-3 lg:to-gray-2"
+                "h-[400lvh] grid-rows-[15lvh_auto_auto_1fr] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-gray-3 lg:to-gray-2"
             }
         >
             <div

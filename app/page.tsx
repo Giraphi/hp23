@@ -24,12 +24,13 @@ export default function Home() {
             {/*<DotsRow />*/}
             {/*<Cover />*/}
 
-            <div className={"sticky top-0 lg:static"}>
+            <div className={"sticky top-[-300lvh] lg:static"}>
                 <Intro />
+                {/*<div className={"h-[200vh] bg-gradient-to-b from-lime to-pink"}>hello</div>*/}
             </div>
 
-            <div className={"relative h-screen border-t-2 border-pink bg-gradient-to-b from-gray-2 to-gray-1 lg:static lg:border-none"}>
-                <Headline className={"pt-8"}>Site continues here</Headline>
+            <div className={"relative h-[100vh] border-t-2 border-pink bg-gradient-to-b from-gray-2 to-gray-1 lg:static lg:border-none"}>
+                <Headline className={"pt-8"}>Next Section</Headline>
             </div>
         </main>
     );
