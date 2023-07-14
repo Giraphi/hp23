@@ -4,8 +4,11 @@ import Button from "@/app/components/Button";
 import MeScene from "@/app/components/MeScene/MeScene";
 import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
+import { MotionValue } from "framer-motion";
 
-export interface IntroProps {}
+export interface IntroProps {
+    scrollYProgress?: MotionValue<number>;
+}
 
 export default function Intro(props: IntroProps) {
     const device = useDeviceStore((state) => state.device);

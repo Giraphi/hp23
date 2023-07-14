@@ -4,10 +4,12 @@ import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import MeCanvas from "@/app/components/MeScene/MeCanvas";
 import styles from "./meScene.module.scss";
-import { useScroll } from "framer-motion";
+import { MotionValue, useScroll } from "framer-motion";
 import { useDeviceStore } from "@/app/store/useDeviceStore";
 
-export interface MeSceneProps {}
+export interface MeSceneProps {
+    scrollYProgress?: MotionValue<number>;
+}
 
 export default function MeScene(props: MeSceneProps) {
     const ref = useRef<HTMLDivElement>(null);

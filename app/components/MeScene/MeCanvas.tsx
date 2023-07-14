@@ -9,7 +9,7 @@ import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import ControlsLarge from "@/app/components/MeScene/ControlsLarge";
 
 export interface MeContentProps {
-    scrollProgress: MotionValue<number>;
+    scrollProgress?: MotionValue<number>;
 }
 
 export default function MeCanvas(props: MeContentProps) {
@@ -45,7 +45,7 @@ export default function MeCanvas(props: MeContentProps) {
                 visible={visible}
             >
                 <group>
-                    {device < Device.lg ? (
+                    {device < Device.lg && props.scrollProgress ? (
                         <ControlsSmall
                             scrollProgress={props.scrollProgress}
                             onReady={() => setVisible(true)}
