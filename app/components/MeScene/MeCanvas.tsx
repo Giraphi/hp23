@@ -13,7 +13,6 @@ export interface MeContentProps {
 }
 
 export default function MeCanvas(props: MeContentProps) {
-    // const result = useGLTF("/models/me.glb") as GLTFResult;
     const rotateRef = useRef<Group>(null);
     const rotate2Ref = useRef<Group>(null);
     const { viewport } = useThree();
@@ -46,7 +45,7 @@ export default function MeCanvas(props: MeContentProps) {
                 visible={visible}
             >
                 <group>
-                    {device < Device.md ? (
+                    {device < Device.lg ? (
                         <ControlsSmall
                             scrollProgress={props.scrollProgress}
                             onReady={() => setVisible(true)}

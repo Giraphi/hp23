@@ -24,8 +24,8 @@ export default function MeGltf(props: MeGltfProps) {
             <mesh
                 geometry={nodes.mesh_0.geometry}
                 material={nodes.mesh_0.material}
-                rotation={device < Device.md ? [0.05, -0.1, 0.07] : [0.05, -0.4, 0.07]}
-                position={device < Device.md ? [-0.2, -0.6, 0] : [0, -0.6, 0]}
+                rotation={device < Device.lg ? [0.05, -0.1, 0.07] : [0.05, -0.4, 0.07]}
+                position={device < Device.lg ? [-0.2, -0.6, 0] : [0, -0.6, 0]}
                 scale={12}
             />
         </>
