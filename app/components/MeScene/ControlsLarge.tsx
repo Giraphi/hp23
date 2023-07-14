@@ -5,6 +5,7 @@ import { CameraControls } from "@react-three/drei";
 export interface ControlsLargeProps {
     scrollProgress?: MotionValue<number>;
     onReady: () => void;
+    enabled: boolean;
 }
 
 export default function ControlsLarge(props: ControlsLargeProps) {
@@ -15,7 +16,7 @@ export default function ControlsLarge(props: ControlsLargeProps) {
 
     return (
         <>
-            <CameraControls />
+            <CameraControls enabled={props.enabled} />
         </>
     );
 }

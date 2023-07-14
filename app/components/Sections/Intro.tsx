@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@/app/components/Grid/Grid";
 import Button from "@/app/components/Button";
-import MeModel from "@/app/components/MeModel/MeModel";
+import MeScene from "@/app/components/MeScene/MeScene";
 import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 
@@ -43,23 +43,19 @@ export default function Intro(props: IntroProps) {
                 </div>
             </div>
 
-            {/*mobile only*/}
-
             {device < Device.md ? (
                 <div
                     className={
                         "col-start-[screen-left] col-end-[screen-right] row-span-4 row-start-1 pt-[35lvh] md:row-span-4 md:row-start-1"
                     }
                 >
-                    <MeModel />
+                    <MeScene />
                 </div>
             ) : (
                 <div className={"col-start-[screen-left] col-end-[screen-right] row-start-4 md:row-span-4 md:row-start-1"}>
-                    <MeModel />
+                    <MeScene />
                 </div>
             )}
-
-            {/*end mobile only*/}
         </Grid>
     );
 }

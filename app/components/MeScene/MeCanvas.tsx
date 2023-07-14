@@ -2,17 +2,17 @@ import React, { Suspense, useEffect, useRef, useState } from "react";
 import { AsciiRenderer, CameraControls, OrbitControls, Sphere } from "@react-three/drei";
 import { Group } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
-import ControlsSmall from "@/app/components/MeModel/ControlsSmall";
+import ControlsSmall from "@/app/components/MeScene/ControlsSmall";
 import { MotionValue } from "framer-motion";
-import MeGltf from "@/app/components/MeModel/MeGltf";
+import MeGltf from "@/app/components/MeScene/MeGltf";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
-import ControlsLarge from "@/app/components/MeModel/ControlsLarge";
+import ControlsLarge from "@/app/components/MeScene/ControlsLarge";
 
 export interface MeContentProps {
     scrollProgress: MotionValue<number>;
 }
 
-export default function MeContent(props: MeContentProps) {
+export default function MeCanvas(props: MeContentProps) {
     // const result = useGLTF("/models/me.glb") as GLTFResult;
     const rotateRef = useRef<Group>(null);
     const rotate2Ref = useRef<Group>(null);
@@ -53,6 +53,7 @@ export default function MeContent(props: MeContentProps) {
                         />
                     ) : (
                         <ControlsLarge
+                            enabled={true}
                             scrollProgress={props.scrollProgress}
                             onReady={() => setVisible(true)}
                         />
