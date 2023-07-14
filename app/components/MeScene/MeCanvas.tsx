@@ -9,7 +9,7 @@ import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import ControlsLarge from "@/app/components/MeScene/ControlsLarge";
 
 export interface MeContentProps {
-    scrollProgress?: MotionValue<number>;
+    scrollProgress: MotionValue<number>;
 }
 
 export default function MeCanvas(props: MeContentProps) {
