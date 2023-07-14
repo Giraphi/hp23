@@ -20,7 +20,7 @@ export default function Home() {
             {/*<DotsRow />*/}
             {/*<Cover />*/}
 
-            <div className={"sticky top-[-300lvh] lg:static"}>
+            <div className={"sticky top-[-200lvh] lg:static"}>
                 <Intro />
             </div>
 
