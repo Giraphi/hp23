@@ -17,7 +17,7 @@ export default function MeScene(props: MeSceneProps) {
     return (
         <>
             <div
-                className={"relative h-full lg:static"}
+                className={"h-full lg:static"}
                 ref={ref}
             >
                 {/* re-mount the whole canvas. Otherwise we'd have to manually reset all zoom/rotates etc. */}

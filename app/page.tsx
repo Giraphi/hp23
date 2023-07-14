@@ -20,16 +20,14 @@ export default function Home() {
 
     return (
         <main>
-            {/*<div className={"absolute top-8 flex w-full justify-center text-center text-lg text-white"}>*/}
-            {/*    <h1>Drag / Scroll</h1>*/}
-            {/*</div>*/}
-            {/*<MeModel />*/}
             {/*<Puzzle />*/}
             {/*<DotsRow />*/}
-
             {/*<Cover />*/}
-            <Intro />
-            <div className={"h-screen bg-gradient-to-b from-gray-2 to-gray-3"}>
+
+            <div className={"sticky top-0"}>
+                <Intro />
+            </div>
+            <div className={"relative h-screen bg-gradient-to-b from-gray-3 to-gray-2"}>
                 <Headline className={"pt-8"}>Site continues here</Headline>
             </div>
         </main>
