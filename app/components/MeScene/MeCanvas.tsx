@@ -1,5 +1,5 @@
-import React, { Suspense, useEffect, useRef, useState } from "react";
-import { AsciiRenderer, CameraControls, OrbitControls, Sphere } from "@react-three/drei";
+import React, { Suspense, useRef, useState } from "react";
+import { AsciiRenderer, Sphere } from "@react-three/drei";
 import { Group } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import ControlsSmall from "@/app/components/MeScene/ControlsSmall";
@@ -86,7 +86,7 @@ export default function MeCanvas(props: MeContentProps) {
                     />
 
                     <Suspense>
-                        <MeGltf />
+                        <MeGltf progress={props.scrollProgress} />
                     </Suspense>
                 </group>
             </group>

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import * as THREE from "three";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
+import { MotionValue, useTransform } from "framer-motion";
+import { useFrame } from "@react-three/fiber";
+import { MathUtils, Mesh } from "three";
 
 type GLTFResult = GLTF & {
     nodes: {
@@ -11,17 +14,33 @@ type GLTFResult = GLTF & {
     materials: {};
 };
 
-export interface MeGltfProps {}
+export interface MeGltfProps {
+    progress: MotionValue<number>;
+}
 
 useGLTF.preload("/models/me.glb");
+const initRotationY = -0.1;
 
 export default function MeGltf(props: MeGltfProps) {
     const { nodes } = useGLTF("/models/me.glb") as GLTFResult;
     const device = useDeviceStore((state) => state.device);
+    const ref = useRef<Mesh>(null);
+    const rotation = useTransform(props.progress, [0, 1], [-0.5, 0.5]);
+
+    useFrame(() => {
+        if (!ref.current) {
+            return;
+        }
+        const rotationValue = rotation.get();
+        // const target = initRotationY + rotationValue;
+
+        ref.current.rotation.y = MathUtils.lerp(ref.current.rotation.y, rotationValue, 0.1);
+    });
 
     return (
         <>
             <mesh
+                ref={ref}
                 geometry={nodes.mesh_0.geometry}
                 material={nodes.mesh_0.material}
                 rotation={device < Device.lg ? [0.05, -0.1, 0.07] : [0.05, -0.4, 0.07]}

@@ -9,13 +9,6 @@ import useDeviceStoreHandler from "@/app/store/useDeviceStoreHandler";
 import Headline from "@/app/components/Headline";
 import { useScroll } from "framer-motion";
 
-type GLTFResult = GLTF & {
-    nodes: {
-        mesh_0: THREE.Mesh;
-    };
-    materials: {};
-};
-
 export default function Home() {
     const ref = useRef<HTMLDivElement>(null);
     useDeviceStoreHandler();
