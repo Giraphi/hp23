@@ -3,7 +3,7 @@ import { AsciiRenderer, Sphere } from "@react-three/drei";
 import { Group } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import ControlsSmall from "@/app/components/MeScene/ControlsSmall";
-import { MotionValue } from "framer-motion";
+import { MotionValue, useMotionValueEvent, useTransform } from "framer-motion";
 import MeGltf from "@/app/components/MeScene/MeGltf";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import ControlsLarge from "@/app/components/MeScene/ControlsLarge";
@@ -19,6 +19,10 @@ export default function MeCanvas(props: MeContentProps) {
     // wait until controls are rendered. this way, the camera zoom is set before the mesh is visible and we don't get a flicker
     const [visible, setVisible] = useState(false);
     const device = useDeviceStore((store) => store.device);
+
+    // const progress = useTransform(props.scrollProgress, [0, 1], [0, 1]);
+
+    // useMotionValueEvent(progress, "change", (value) => console.log(value));
 
     useFrame((state, delta) => {
         rotateRef.current?.rotateY(delta * 2);

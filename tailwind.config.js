@@ -32,6 +32,21 @@ module.exports = {
             },
             grid: {
                 maxWidth: "1480px",
+                contentRight: "content-right",
+            },
+            gridColumn: {
+                // "start-content-left": "start-content-left",
+                // "end-content-right": "end-content-left",
+                content: "content-left / content-right",
+                screen: "screen-left / screen-right",
+            },
+            gridColumnStart: {
+                "content-left": "content-left",
+                "screen-left": "screen-left",
+            },
+            gridColumnEnd: {
+                "content-right": "content-right",
+                "screen-right": "screen-right",
             },
             maxWidth: {
                 grid: "1480px",

@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { forwardRef, ReactNode } from "react";
 import styles from "./grid.module.scss";
 
 export interface GridProps {
@@ -6,6 +6,8 @@ export interface GridProps {
     className?: string;
 }
 
-export default function Grid(props: GridProps) {
+const Grid = forwardRef(function Grid(props: GridProps) {
     return <div className={`${styles.grid} ${props.className}`}>{props.children}</div>;
-}
+});
+
+export default Grid;
