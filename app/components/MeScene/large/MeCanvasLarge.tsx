@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { AsciiRenderer, Sphere } from "@react-three/drei";
 import { Group } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
@@ -13,18 +13,19 @@ export default function MeCanvasLarge() {
     const rotateRef = useRef<Group>(null);
     const rotate2Ref = useRef<Group>(null);
     const { viewport } = useThree();
-    // wait until controls are rendered. this way, the camera zoom is set before the mesh is visible and we don't get a flicker
-    const [visible, setVisible] = useState(false);
-    const device = useDeviceStore((store) => store.device);
-
-    // const progress = useTransform(props.scrollProgress, [0, 1], [0, 1]);
-
-    // useMotionValueEvent(progress, "change", (value) => console.log(value));
+    const [isHovered, setIsHovered] = useState(false);
 
     useFrame((state, delta) => {
         rotateRef.current?.rotateY(delta * 2);
         rotate2Ref.current?.rotateY(delta * 1.2);
     });
+
+    useEffect(() => {
+        if (isHovered) {
+            document.body.style.cursor = "grab";
+            return () => void (document.body.style.cursor = "auto");
+        }
+    }, [isHovered]);
 
     return (
         <>
@@ -41,15 +42,9 @@ export default function MeCanvasLarge() {
             />
             {/*fgColor={"rgba(255,0,255,1)"} // Color needs to be in exactly this format or AsciiRenderer throws an Error*/}
 
-            <group
-                scale={viewport.height / 6}
-                visible={visible}
-            >
+            <group scale={viewport.height / 6}>
                 <group>
-                    <ControlsLarge
-                        enabled={true}
-                        onReady={() => setVisible(true)}
-                    />
+                    <ControlsLarge enabled={true} />
 
                     <group
                         position={[0, 0, 0]}
@@ -78,9 +73,14 @@ export default function MeCanvasLarge() {
                         castShadow={true}
                     />
 
-                    <Suspense>
-                        <MeGltfLarge />
-                    </Suspense>
+                    <group
+                        onPointerEnter={() => setIsHovered(true)}
+                        onPointerLeave={() => setIsHovered(false)}
+                    >
+                        <Suspense>
+                            <MeGltfLarge />
+                        </Suspense>
+                    </group>
                 </group>
             </group>
         </>
