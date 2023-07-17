@@ -13,7 +13,6 @@ export interface MeSceneProps {
 
 export default function MeScene(props: MeSceneProps) {
     const ref = useRef<HTMLDivElement>(null);
-    const device = useDeviceStore((state) => state.device);
     const opacity = useTransform(props.scrollYProgress, [0, 0.15, 0.2], [1, 1, 0]);
 
     return (
@@ -22,16 +21,12 @@ export default function MeScene(props: MeSceneProps) {
                 className={"h-full lg:static"}
                 ref={ref}
             >
-                {/* re-mount the whole canvas. Otherwise we'd have to manually reset all zoom/rotates etc. */}
-                <div
-                    className={`sticky top-0 h-[100vh] w-full overflow-hidden lg:static`}
-                    key={device}
-                >
+                <div className={`sticky top-0 h-[100vh] w-full overflow-hidden`}>
                     <Canvas className={"touch-action-y"}>
                         <MeCanvas scrollProgress={props.scrollYProgress} />
                     </Canvas>
 
-                    <Grid className={"absolute bottom-[10vh] lg:hidden"}>
+                    <Grid className={"absolute bottom-[10vh]"}>
                         <motion.p
                             style={{ opacity }}
                             className={"col-span-2 col-start-3 text-center"}
