@@ -4,7 +4,7 @@ import Button from "@/app/components/Button";
 import MeScene from "@/app/components/MeScene/MeScene";
 import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
-import { MotionValue, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import { MotionValue, useScroll, useTransform } from "framer-motion";
 
 export interface IntroProps {
     scrollYProgress?: MotionValue<number>;
@@ -18,8 +18,6 @@ export default function Intro(props: IntroProps) {
     const { scrollY } = useScroll();
     const totalHeight = typeof window !== "undefined" ? window.outerHeight : 99999;
     const scrollYProgress = useTransform(scrollY, [0, totalHeight * 3], [0, 1]);
-
-    useMotionValueEvent(scrollYProgress, "change", (value) => console.log(value));
 
     useEffect(() => {
         if (device >= Device.lg) {
@@ -56,17 +54,22 @@ export default function Intro(props: IntroProps) {
             ></div>
 
             <div className={"col-content row-start-2"}>
-                <Headline type={"h1"}>Raphael Höps</Headline>
                 <Headline
                     type={"h1"}
-                    className={"pb-4 text-pink"}
+                    className={"pb-1"}
+                >
+                    Raphael Höps
+                </Headline>
+                <Headline
+                    type={"h1"}
+                    className={"xlg-pb-8 pb-4 text-pink lg:pb-5"}
                 >
                     Frontend Developer
                 </Headline>
             </div>
 
             <div className={"col-start-content-left col-end-content-right row-start-3 lg:col-end-10 xlg:col-end-9"}>
-                <p className={"pb-4 text-center text-base lg:pb-10 lg:text-left lg:text-2xl"}>
+                <p className={"xlg-pb-8 pb-4 text-center lg:pb-5 lg:text-left xlg:text-2xl"}>
                     Hi! I’m a Munich based frontend developer with a strong background in computer science and a high understanding of
                     modern UI/UX concepts.
                 </p>

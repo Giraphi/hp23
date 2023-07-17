@@ -3,7 +3,6 @@
 import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import MeCanvas from "@/app/components/MeScene/MeCanvas";
-import styles from "./meScene.module.scss";
 import { MotionValue, motion, useTransform } from "framer-motion";
 import { useDeviceStore } from "@/app/store/useDeviceStore";
 import Grid from "@/app/components/Grid/Grid";
@@ -30,14 +29,14 @@ export default function MeScene(props: MeSceneProps) {
                     key={device}
                 >
                     {/* Trick to move Canvas Coordinate System off center */}
-                    <Canvas className={styles.canvasWrapper}>
+                    <Canvas style={{ touchAction: "pan-y", width: "135vw" }}>
                         <MeCanvas scrollProgress={props.scrollYProgress} />
                     </Canvas>
 
                     <Grid className={"absolute bottom-[10vh] lg:hidden"}>
                         <motion.p
                             style={{ opacity }}
-                            className={"col-span-2 col-start-3 text-center text-base"}
+                            className={"col-span-2 col-start-3 text-center"}
                         >
                             ... and I always love challenges :)
                         </motion.p>

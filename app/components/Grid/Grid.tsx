@@ -1,5 +1,5 @@
-import React, { ForwardedRef, forwardRef, MutableRefObject, ReactNode } from "react";
-import styles from "./grid.module.scss";
+import React, { ForwardedRef, forwardRef, ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 
 export interface GridProps {
     children: ReactNode;
@@ -10,7 +10,7 @@ const Grid = forwardRef(function Grid(props: GridProps, ref: ForwardedRef<HTMLDi
     return (
         <div
             ref={ref}
-            className={`${styles.grid} ${props.className}`}
+            className={twMerge("page-grid", props.className)}
         >
             {props.children}
         </div>

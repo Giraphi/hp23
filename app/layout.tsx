@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./globals.scss";
 import { Dela_Gothic_One, Inter, Source_Code_Pro } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             lang="en"
             className={`${inter.variable} ${sourceCodePro.variable} ${delaGothicOne.variable}`}
         >
-            <body className={"font-mono text-base text-white lg:text-xl"}>{children}</body>
+            <body className={"font-mono text-base text-white md:text-xl"}>{children}</body>
         </html>
     );
 }

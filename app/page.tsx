@@ -1,18 +1,12 @@
 "use client";
 
 import React, { useRef } from "react";
-import { GLTF } from "three-stdlib";
-// import Cover from "@/app/components/CodeExamples/Cover/Cover";
-// import Grid from "@/app/components/Grid/Grid";
 import Intro from "@/app/components/Sections/Intro";
 import useDeviceStoreHandler from "@/app/store/useDeviceStoreHandler";
 import Headline from "@/app/components/Headline";
-import { useScroll } from "framer-motion";
 
 export default function Home() {
-    const ref = useRef<HTMLDivElement>(null);
     useDeviceStoreHandler();
-    // const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
 
     return (
         <main>
