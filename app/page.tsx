@@ -28,11 +28,6 @@ export default function Home() {
                 <Intro />
             </div>
 
-            {/*<div*/}
-            {/*    className={"sticky top-[-400lvh] h-[400vh] lg:hidden"}*/}
-            {/*    ref={ref}*/}
-            {/*></div>*/}
-
             <div className={"relative h-[100vh] border-t-2 border-gray-4 bg-gradient-to-b from-gray-2 to-gray-1 lg:static lg:border-none"}>
                 <Headline className={"pt-8"}>Next Section</Headline>
             </div>

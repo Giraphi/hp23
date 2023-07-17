@@ -4,7 +4,7 @@ import Button from "@/app/components/Button";
 import MeScene from "@/app/components/MeScene/MeScene";
 import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
-import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
+import { MotionValue, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 
 export interface IntroProps {
     scrollYProgress?: MotionValue<number>;
@@ -14,11 +14,12 @@ export default function Intro(props: IntroProps) {
     const device = useDeviceStore((state) => state.device);
     const measureRef = useRef<HTMLDivElement>(null);
     const rootRef = useRef<HTMLDivElement>(null);
-    const bottomLineRef = useRef(null);
     const [size, setSize] = useState(0);
-    const { scrollYProgress } = useScroll({ target: rootRef, offset: ["start start", "end end"] });
-    const bottomLineScroll = useScroll({ target: bottomLineRef, offset: ["end end", "start start"] }).scrollYProgress;
-    const opacity = useTransform(bottomLineScroll, [0, 0.15, 0.2], [1, 1, 0]);
+    const { scrollY } = useScroll();
+    const totalHeight = typeof window !== "undefined" ? window.outerHeight : 99999;
+    const scrollYProgress = useTransform(scrollY, [0, totalHeight * 3], [0, 1]);
+
+    useMotionValueEvent(scrollYProgress, "change", (value) => console.log(value));
 
     useEffect(() => {
         if (device >= Device.lg) {
@@ -53,16 +54,6 @@ export default function Intro(props: IntroProps) {
                     "sticky top-0 z-[-1] col-start-screen-left col-end-screen-right row-start-1 h-[100lvh] bg-gradient-radial from-gray-3 to-gray-2 lg:hidden"
                 }
             ></div>
-
-            {/*<div className={"col-span-2 col-start-3 row-span-4 row-start-1 pt-[115vh] lg:hidden"}>*/}
-            {/*    <motion.p*/}
-            {/*        style={{ opacity }}*/}
-            {/*        ref={bottomLineRef}*/}
-            {/*        className={"text-center text-base"}*/}
-            {/*    >*/}
-            {/*        ... and I always love challenges :)*/}
-            {/*    </motion.p>*/}
-            {/*</div>*/}
 
             <div className={"col-content row-start-2"}>
                 <Headline type={"h1"}>Raphael Höps</Headline>
