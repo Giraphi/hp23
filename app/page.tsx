@@ -4,9 +4,11 @@ import React, { useRef } from "react";
 import Intro from "@/app/components/Sections/Intro";
 import useDeviceStoreHandler from "@/app/store/useDeviceStoreHandler";
 import Headline from "@/app/components/Headline";
+import usePointerStoreHandler from "@/app/store/usePointerStoreHandler";
 
 export default function Home() {
     useDeviceStoreHandler();
+    usePointerStoreHandler();
 
     return (
         <main>

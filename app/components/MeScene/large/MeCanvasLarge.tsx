@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
-import { AsciiRenderer, Sphere } from "@react-three/drei";
-import { Group } from "three";
+import { AsciiRenderer, Sphere, PerspectiveCamera } from "@react-three/drei";
+import { Group, PerspectiveCamera as PerspectiveCameraType } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import ControlsSmall from "@/app/components/MeScene/ControlsSmall";
 import { MotionValue, useMotionValueEvent, useTransform } from "framer-motion";
@@ -14,6 +14,7 @@ export default function MeCanvasLarge() {
     const rotate2Ref = useRef<Group>(null);
     const { viewport } = useThree();
     const [isHovered, setIsHovered] = useState(false);
+    const cameraRef = useRef<PerspectiveCameraType>(null);
 
     useFrame((state, delta) => {
         rotateRef.current?.rotateY(delta * 2);
@@ -40,11 +41,20 @@ export default function MeCanvasLarge() {
                 resolution={0.18}
                 characters={" .:-+*=%@#FXQRI,?'`´"}
             />
+
+            {/*<PerspectiveCamera*/}
+            {/*    ref={cameraRef}*/}
+            {/*    makeDefault={true}*/}
+            {/*    position={[0, 0.1, 2]}*/}
+            {/*/>*/}
             {/*fgColor={"rgba(255,0,255,1)"} // Color needs to be in exactly this format or AsciiRenderer throws an Error*/}
 
             <group scale={viewport.height / 6}>
                 <group>
-                    <ControlsLarge enabled={true} />
+                    <ControlsLarge
+                        enabled={true}
+                        cameraRef={cameraRef}
+                    />
 
                     <group
                         position={[0, 0, 0]}
