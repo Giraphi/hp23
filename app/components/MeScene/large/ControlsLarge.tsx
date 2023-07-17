@@ -3,7 +3,6 @@ import { MotionValue } from "framer-motion";
 import { CameraControls } from "@react-three/drei";
 
 export interface ControlsLargeProps {
-    scrollProgress?: MotionValue<number>;
     onReady: () => void;
     enabled: boolean;
 }

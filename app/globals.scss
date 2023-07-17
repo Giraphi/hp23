@@ -29,3 +29,9 @@
         }
     }
 }
+
+@layer utilities {
+    .touch-action-y {
+        touch-action: pan-y !important;
+    }
+}

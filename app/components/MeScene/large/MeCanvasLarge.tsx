@@ -3,16 +3,13 @@ import { AsciiRenderer, Sphere } from "@react-three/drei";
 import { Group } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import ControlsSmall from "@/app/components/MeScene/ControlsSmall";
-import { MotionValue } from "framer-motion";
+import { MotionValue, useMotionValueEvent, useTransform } from "framer-motion";
 import MeGltf from "@/app/components/MeScene/MeGltf";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import ControlsLarge from "@/app/components/MeScene/large/ControlsLarge";
+import MeGltfLarge from "@/app/components/MeScene/large/MeGltfLarge";
 
-export interface MeContentProps {
-    scrollProgress: MotionValue<number>;
-}
-
-export default function MeCanvas(props: MeContentProps) {
+export default function MeCanvasLarge() {
     const rotateRef = useRef<Group>(null);
     const rotate2Ref = useRef<Group>(null);
     const { viewport } = useThree();
@@ -49,17 +46,10 @@ export default function MeCanvas(props: MeContentProps) {
                 visible={visible}
             >
                 <group>
-                    {device < Device.lg && props.scrollProgress ? (
-                        <ControlsSmall
-                            scrollProgress={props.scrollProgress}
-                            onReady={() => setVisible(true)}
-                        />
-                    ) : (
-                        <ControlsLarge
-                            enabled={true}
-                            onReady={() => setVisible(true)}
-                        />
-                    )}
+                    <ControlsLarge
+                        enabled={true}
+                        onReady={() => setVisible(true)}
+                    />
 
                     <group
                         position={[0, 0, 0]}
@@ -89,7 +79,7 @@ export default function MeCanvas(props: MeContentProps) {
                     />
 
                     <Suspense>
-                        <MeGltf progress={props.scrollProgress} />
+                        <MeGltfLarge />
                     </Suspense>
                 </group>
             </group>

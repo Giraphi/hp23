@@ -5,6 +5,7 @@ import MeScene from "@/app/components/MeScene/MeScene";
 import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { MotionValue, useScroll, useTransform } from "framer-motion";
+import MeSceneLarge from "@/app/components/MeScene/large/MeSceneLarge";
 
 export interface IntroProps {
     scrollYProgress?: MotionValue<number>;
@@ -56,7 +57,7 @@ export default function Intro(props: IntroProps) {
             <div className={"col-content row-start-2"}>
                 <Headline
                     type={"h1"}
-                    className={"pb-1"}
+                    className={"relative"}
                 >
                     Raphael Höps
                 </Headline>
@@ -75,7 +76,7 @@ export default function Intro(props: IntroProps) {
                 </p>
 
                 <div className={"flex justify-center lg:justify-start"}>
-                    <Button>Contact</Button>
+                    <Button className={"relative z-10"}>Contact</Button>
                 </div>
             </div>
 
@@ -88,7 +89,7 @@ export default function Intro(props: IntroProps) {
                 </div>
             ) : (
                 <div className={"col-screen row-start-4 lg:row-span-4 lg:row-start-1"}>
-                    <MeScene scrollYProgress={scrollYProgress} />
+                    <MeSceneLarge />
                 </div>
             )}
         </Grid>

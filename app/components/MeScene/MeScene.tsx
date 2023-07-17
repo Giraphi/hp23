@@ -13,7 +13,6 @@ export interface MeSceneProps {
 
 export default function MeScene(props: MeSceneProps) {
     const ref = useRef<HTMLDivElement>(null);
-
     const device = useDeviceStore((state) => state.device);
     const opacity = useTransform(props.scrollYProgress, [0, 0.15, 0.2], [1, 1, 0]);
 
@@ -28,8 +27,7 @@ export default function MeScene(props: MeSceneProps) {
                     className={`sticky top-0 h-[100vh] w-full overflow-hidden lg:static`}
                     key={device}
                 >
-                    {/* Trick to move Canvas Coordinate System off center */}
-                    <Canvas style={{ touchAction: "pan-y", width: "135vw" }}>
+                    <Canvas className={"touch-action-y"}>
                         <MeCanvas scrollProgress={props.scrollYProgress} />
                     </Canvas>
 
