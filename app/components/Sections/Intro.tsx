@@ -56,27 +56,29 @@ export default function Intro(props: IntroProps) {
                 ></div>
 
                 <div className={"col-content row-start-2"}>
-                    <Headline
-                        type={"h1"}
-                        className={"relative pb-2"}
-                    >
-                        Raphael Höps
-                    </Headline>
-                    <Headline
-                        type={"h1"}
-                        className={"pb-4 text-pink lg:pb-5 xlg:pb-8"}
-                    >
-                        Frontend Developer
-                    </Headline>
+                    <div className={"relative z-10 flex-col lg:inline-flex "}>
+                        <Headline
+                            type={"h1"}
+                            className={"pb-2 lg:inline-flex"}
+                        >
+                            Raphael Höps
+                        </Headline>
+                        <Headline
+                            type={"h1"}
+                            className={"pb-4 text-pink lg:inline-flex lg:pb-5 xlg:pb-8"}
+                        >
+                            Frontend Developer
+                        </Headline>
+                    </div>
                 </div>
 
                 <div className={"col-start-content-left col-end-content-right row-start-3 lg:col-end-10 xlg:col-end-9"}>
-                    <p className={"xlg-pb-8 pb-4 text-center lg:pb-5 lg:text-left xlg:text-2xl"}>
+                    <p className={"relative z-10 pb-4 text-center lg:pb-5 lg:text-left xlg:pb-8 xlg:text-2xl"}>
                         Hi! I’m a Munich based frontend developer with a strong background in computer science and a high understanding of
                         modern UI/UX concepts.
                     </p>
 
-                    <div className={"flex justify-center lg:justify-start"}>
+                    <div className={"flex justify-center lg:inline-flex lg:justify-start"}>
                         <Button className={"relative z-10"}>Contact</Button>
                     </div>
                 </div>
@@ -92,8 +94,8 @@ export default function Intro(props: IntroProps) {
                         <div className={"col-start-content-left row-start-4 flex items-end justify-center"}>
                             <div className={"sticky bottom-4"}>
                                 <ScrollHintDelay
-                                    initDelayMs={8000}
-                                    delayMs={5000}
+                                    initDelayMs={5000}
+                                    delayMs={2000}
                                 />
                             </div>
                         </div>
