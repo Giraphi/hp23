@@ -6,6 +6,7 @@ import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { MotionValue, useScroll, useTransform } from "framer-motion";
 import MeSceneLarge from "@/app/components/MeScene/large/MeSceneLarge";
+import ScrollHint from "@/app/components/MeScene/large/ScrollHint";
 
 export interface IntroProps {
     scrollYProgress?: MotionValue<number>;
@@ -82,16 +83,28 @@ export default function Intro(props: IntroProps) {
                 </div>
 
                 {device < Device.lg ? (
-                    <div
-                        className={"col-screen row-span-4 row-start-1  lg:row-span-4 lg:row-start-1"}
-                        style={{ paddingTop: `calc(${size}px - 28lvh)`, visibility: `${size !== 0 ? "visible" : "hidden"}` }}
-                    >
-                        <MeScene scrollYProgress={scrollYProgress} />
-                    </div>
+                    <>
+                        <div
+                            className={"col-screen row-span-4 row-start-1"}
+                            style={{ paddingTop: `calc(${size}px - 28lvh)`, visibility: `${size !== 0 ? "visible" : "hidden"}` }}
+                        >
+                            <MeScene scrollYProgress={scrollYProgress} />
+                        </div>
+                        {/*<div className={"col-start-content-left row-start-4 flex items-end justify-center"}>*/}
+                        {/*    <div className={"sticky bottom-4"}>*/}
+                        {/*        <ScrollHint disableText={true} />*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
+                    </>
                 ) : (
-                    <div className={"col-screen row-start-4 lg:row-span-4 lg:row-start-1"}>
-                        <MeSceneLarge />
-                    </div>
+                    <>
+                        <div className={"col-screen row-span-4 row-start-1 "}>
+                            <MeSceneLarge />
+                        </div>
+                        <div className={"col-screen row-start-4 flex items-end justify-center pb-4"}>
+                            <ScrollHint />
+                        </div>
+                    </>
                 )}
             </Grid>
         </div>
