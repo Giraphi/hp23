@@ -52,9 +52,15 @@ export default function MeCanvas(props: MeContentProps) {
                         ref={rotateRef}
                     >
                         <Sphere
-                            scale={0.1}
+                            scale={0.15}
                             position={[1.4, 1, 0.7]}
-                        />
+                        >
+                            <meshPhongMaterial
+                                color="#fff"
+                                opacity={0.6}
+                                transparent
+                            />
+                        </Sphere>
                     </group>
 
                     <group
@@ -62,9 +68,15 @@ export default function MeCanvas(props: MeContentProps) {
                         ref={rotate2Ref}
                     >
                         <Sphere
-                            scale={0.1}
+                            scale={0.15}
                             position={[1.8, 0.5, -0.2]}
-                        />
+                        >
+                            <meshPhongMaterial
+                                color="#fff"
+                                opacity={0.6}
+                                transparent
+                            />
+                        </Sphere>
                     </group>
 
                     <spotLight

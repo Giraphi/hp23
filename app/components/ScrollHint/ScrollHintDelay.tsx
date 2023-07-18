@@ -23,7 +23,6 @@ export default function ScrollHintDelay(props: ScrollHintDelayProps) {
 
         function handleScroll() {
             const deltaY = Math.abs(window.scrollY - lastDocumentScrollY.current);
-            console.log(deltaY);
 
             if (deltaY < 60) {
                 return;

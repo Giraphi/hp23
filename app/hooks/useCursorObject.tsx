@@ -17,7 +17,7 @@ export default function useCursorObject(objectRef: RefObject<Object3D>, enabled:
             return;
         }
 
-        objectRef.current.rotation.x = rotateX * (mousePosition.clientY - canvasSize.height / 2);
-        objectRef.current.rotation.y = rotateY * (mousePosition.clientX - canvasSize.width / 2);
+        objectRef.current.rotation.x = rotateX * (mousePosition.y - canvasSize.height / 2);
+        objectRef.current.rotation.y = rotateY * (mousePosition.x - canvasSize.width / 2);
     });
 }

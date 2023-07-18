@@ -14,13 +14,6 @@ export default function ControlsLarge(props: ControlsLargeProps) {
     const controlsRef = useRef<any>(null);
     const mousePositionRef = useRef(usePointerStore.getState().mousePosition);
     useEffect(() => usePointerStore.subscribe((state) => (mousePositionRef.current = state.mousePosition)), []);
-    // const { camera } = useThree();
-
-    // useThree(({camera}) => {
-    //     camera.rotation.set(deg2rad(30), 0, 0);
-    // });
-
-    // console.log(controlsRef);
 
     function handleEnd() {
         if (!controlsRef.current) {
