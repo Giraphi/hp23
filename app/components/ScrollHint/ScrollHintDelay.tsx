@@ -50,7 +50,7 @@ export default function ScrollHintDelay(props: ScrollHintDelayProps) {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                 >
-                    <ScrollHint disableText={true} />
+                    <ScrollHint />
                 </motion.div>
             )}{" "}
         </AnimatePresence>

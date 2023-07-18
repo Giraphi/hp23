@@ -6,8 +6,8 @@ import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { MotionValue, useScroll, useTransform } from "framer-motion";
 import MeSceneLarge from "@/app/components/MeScene/large/MeSceneLarge";
-import ScrollHint from "@/app/components/ScrollHint/ScrollHint";
 import ScrollHintDelay from "@/app/components/ScrollHint/ScrollHintDelay";
+import ScrollHintFadeOut from "@/app/components/ScrollHint/ScrollHintFadeOut";
 
 export interface IntroProps {
     scrollYProgress?: MotionValue<number>;
@@ -104,7 +104,7 @@ export default function Intro(props: IntroProps) {
                             <MeSceneLarge />
                         </div>
                         <div className={"col-screen row-start-4 flex items-end justify-center pb-4"}>
-                            <ScrollHint />
+                            <ScrollHintFadeOut />
                         </div>
                     </>
                 )}
