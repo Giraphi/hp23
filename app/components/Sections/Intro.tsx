@@ -6,13 +6,12 @@ import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { MotionValue, useScroll, useTransform } from "framer-motion";
 import MeSceneLarge from "@/app/components/MeScene/large/MeSceneLarge";
-import ScrollHint from "@/app/components/MeScene/large/ScrollHint";
+import ScrollHint from "@/app/components/ScrollHint/ScrollHint";
+import ScrollHintDelay from "@/app/components/ScrollHint/ScrollHintDelay";
 
 export interface IntroProps {
     scrollYProgress?: MotionValue<number>;
 }
-
-const scrollHeight = 300;
 
 export default function Intro(props: IntroProps) {
     const device = useDeviceStore((state) => state.device);
@@ -41,10 +40,10 @@ export default function Intro(props: IntroProps) {
     }, [device]);
 
     return (
-        <div className={`sticky top-[${-scrollHeight + 100}lvh] lg:static`}>
+        <div className={`sticky top-[-200lvh] lg:static`}>
             <Grid
                 ref={rootRef}
-                className={`h-[${scrollHeight}lvh] grid-rows-[15lvh_auto_auto_1fr] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-gray-3 lg:to-gray-2`}
+                className={`h-[300lvh] grid-rows-[15lvh_auto_auto_1fr] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-gray-3 lg:to-gray-2`}
             >
                 <div
                     className={"col-content row-span-3 row-start-1"}
@@ -59,13 +58,13 @@ export default function Intro(props: IntroProps) {
                 <div className={"col-content row-start-2"}>
                     <Headline
                         type={"h1"}
-                        className={"relative lg:pb-2"}
+                        className={"relative pb-2"}
                     >
                         Raphael Höps
                     </Headline>
                     <Headline
                         type={"h1"}
-                        className={"xlg-pb-8 pb-4 text-pink lg:pb-5"}
+                        className={"pb-4 text-pink lg:pb-5 xlg:pb-8"}
                     >
                         Frontend Developer
                     </Headline>
@@ -90,11 +89,14 @@ export default function Intro(props: IntroProps) {
                         >
                             <MeScene scrollYProgress={scrollYProgress} />
                         </div>
-                        {/*<div className={"col-start-content-left row-start-4 flex items-end justify-center"}>*/}
-                        {/*    <div className={"sticky bottom-4"}>*/}
-                        {/*        <ScrollHint disableText={true} />*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
+                        <div className={"col-start-content-left row-start-4 flex items-end justify-center"}>
+                            <div className={"sticky bottom-4"}>
+                                <ScrollHintDelay
+                                    initDelayMs={8000}
+                                    delayMs={5000}
+                                />
+                            </div>
+                        </div>
                     </>
                 ) : (
                     <>

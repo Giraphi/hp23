@@ -53,7 +53,7 @@ module.exports = {
                 grid: "1480px",
             },
             height: {
-                lvh: ["100vh /* fallback for Opera, IE and etc. */", "100dvh"],
+                lvh: ["100vh /* fallback for Opera, IE and etc. */", "100lvh"],
             },
         },
     },

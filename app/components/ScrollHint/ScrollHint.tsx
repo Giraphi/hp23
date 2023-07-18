@@ -21,16 +21,22 @@ export default function ScrollHint(props: ScrollHintProps) {
     const [textVisible, setTextVisible] = useState(false);
 
     useEffect(() => {
+        if (props.disableText) {
+            return;
+        }
         const timeout = setTimeout(() => {
             setTextVisible(true);
         }, 15000);
 
         return () => clearTimeout(timeout);
-    }, []);
+    }, [props.disableText]);
 
     return (
-        <div className={"flex flex-col items-center justify-center"}>
-            {textVisible && !props.disableText && (
+        <motion.div
+            key={"scrollHint"}
+            className={"flex flex-col items-center justify-center"}
+        >
+            {textVisible && (
                 <motion.span
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -64,6 +70,6 @@ export default function ScrollHint(props: ScrollHintProps) {
                     <ChevronDown className={"relative -mt-3 text-2xl xlg:text-3xl"} />
                 </motion.div>
             </motion.div>
-        </div>
+        </motion.div>
     );
 }
