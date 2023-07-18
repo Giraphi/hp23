@@ -15,11 +15,20 @@ export default function MeSceneLarge(props: MeSceneProps) {
                 className={"h-full lg:static"}
                 ref={ref}
             >
-                <div className={`h-[100vh] w-full overflow-hidden `}>
+                <div className={`relative h-screen w-full overflow-hidden`}>
                     {/* Trick to move Canvas Coordinate System off center */}
                     <Canvas style={{ width: "135vw" }}>
                         <MeCanvasLarge />
                     </Canvas>
+
+                    {/*<div className={"absolute bottom-[15vh] right-[20vw] z-10 flex justify-center"}>*/}
+                    {/*    <input*/}
+                    {/*        id="default-range"*/}
+                    {/*        type="range"*/}
+                    {/*        value="50"*/}
+                    {/*        className="h-2 w-40 cursor-pointer appearance-none rounded-lg bg-black accent-white"*/}
+                    {/*    />*/}
+                    {/*</div>*/}
                 </div>
             </div>
         </>

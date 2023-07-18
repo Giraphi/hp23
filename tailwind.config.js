@@ -15,6 +15,7 @@ module.exports = {
         extend: {
             colors: {
                 gray: {
+                    e: "#999",
                     4: "#444",
                     3: "#333",
                     2: "#222",
@@ -50,6 +51,9 @@ module.exports = {
             },
             maxWidth: {
                 grid: "1480px",
+            },
+            height: {
+                lvh: ["100vh /* fallback for Opera, IE and etc. */", "100dvh"],
             },
         },
     },

@@ -20,7 +20,7 @@ export default function Home() {
             exactly when bottom edge meets bottom of viewport
             Can't use bottom:0 here, because that makes element float as long as bottom edge is below viewport.
             */}
-            <div className={"sticky top-[-200lvh] lg:static"}>
+            <div className={`sticky top-[-200lvh] lg:static`}>
                 <Intro />
             </div>
 

@@ -11,6 +11,8 @@ export interface IntroProps {
     scrollYProgress?: MotionValue<number>;
 }
 
+const scrollHeight = 300;
+
 export default function Intro(props: IntroProps) {
     const device = useDeviceStore((state) => state.device);
     const measureRef = useRef<HTMLDivElement>(null);
@@ -38,60 +40,60 @@ export default function Intro(props: IntroProps) {
     }, [device]);
 
     return (
-        <Grid
-            ref={rootRef}
-            className={
-                "h-[300lvh] grid-rows-[15lvh_auto_auto_1fr] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-gray-3 lg:to-gray-2"
-            }
-        >
-            <div
-                className={"col-content row-span-3 row-start-1"}
-                ref={measureRef}
-            ></div>
-            <div
-                className={
-                    "sticky top-0 z-[-1] col-start-screen-left col-end-screen-right row-start-1 h-[100lvh] bg-gradient-radial from-gray-3 to-gray-2 lg:hidden"
-                }
-            ></div>
-
-            <div className={"col-content row-start-2"}>
-                <Headline
-                    type={"h1"}
-                    className={"relative"}
-                >
-                    Raphael Höps
-                </Headline>
-                <Headline
-                    type={"h1"}
-                    className={"xlg-pb-8 pb-4 text-pink lg:pb-5"}
-                >
-                    Frontend Developer
-                </Headline>
-            </div>
-
-            <div className={"col-start-content-left col-end-content-right row-start-3 lg:col-end-10 xlg:col-end-9"}>
-                <p className={"xlg-pb-8 pb-4 text-center lg:pb-5 lg:text-left xlg:text-2xl"}>
-                    Hi! I’m a Munich based frontend developer with a strong background in computer science and a high understanding of
-                    modern UI/UX concepts.
-                </p>
-
-                <div className={"flex justify-center lg:justify-start"}>
-                    <Button className={"relative z-10"}>Contact</Button>
-                </div>
-            </div>
-
-            {device < Device.lg ? (
+        <div className={`sticky top-[${-scrollHeight + 100}lvh] lg:static`}>
+            <Grid
+                ref={rootRef}
+                className={`h-[${scrollHeight}lvh] grid-rows-[15lvh_auto_auto_1fr] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-gray-3 lg:to-gray-2`}
+            >
                 <div
-                    className={"col-screen row-span-4 row-start-1  lg:row-span-4 lg:row-start-1"}
-                    style={{ paddingTop: `calc(${size}px - 28lvh)`, visibility: `${size !== 0 ? "visible" : "hidden"}` }}
-                >
-                    <MeScene scrollYProgress={scrollYProgress} />
+                    className={"col-content row-span-3 row-start-1"}
+                    ref={measureRef}
+                ></div>
+                <div
+                    className={
+                        "sticky top-0 z-[-1] col-start-screen-left col-end-screen-right row-start-1 h-lvh bg-gradient-radial from-gray-3 to-gray-2 lg:hidden"
+                    }
+                ></div>
+
+                <div className={"col-content row-start-2"}>
+                    <Headline
+                        type={"h1"}
+                        className={"relative lg:pb-2"}
+                    >
+                        Raphael Höps
+                    </Headline>
+                    <Headline
+                        type={"h1"}
+                        className={"xlg-pb-8 pb-4 text-pink lg:pb-5"}
+                    >
+                        Frontend Developer
+                    </Headline>
                 </div>
-            ) : (
-                <div className={"col-screen row-start-4 lg:row-span-4 lg:row-start-1"}>
-                    <MeSceneLarge />
+
+                <div className={"col-start-content-left col-end-content-right row-start-3 lg:col-end-10 xlg:col-end-9"}>
+                    <p className={"xlg-pb-8 pb-4 text-center lg:pb-5 lg:text-left xlg:text-2xl"}>
+                        Hi! I’m a Munich based frontend developer with a strong background in computer science and a high understanding of
+                        modern UI/UX concepts.
+                    </p>
+
+                    <div className={"flex justify-center lg:justify-start"}>
+                        <Button className={"relative z-10"}>Contact</Button>
+                    </div>
                 </div>
-            )}
-        </Grid>
+
+                {device < Device.lg ? (
+                    <div
+                        className={"col-screen row-span-4 row-start-1  lg:row-span-4 lg:row-start-1"}
+                        style={{ paddingTop: `calc(${size}px - 28lvh)`, visibility: `${size !== 0 ? "visible" : "hidden"}` }}
+                    >
+                        <MeScene scrollYProgress={scrollYProgress} />
+                    </div>
+                ) : (
+                    <div className={"col-screen row-start-4 lg:row-span-4 lg:row-start-1"}>
+                        <MeSceneLarge />
+                    </div>
+                )}
+            </Grid>
+        </div>
     );
 }

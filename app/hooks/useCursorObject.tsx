@@ -1,5 +1,5 @@
 import { useFrame, useThree } from "@react-three/fiber";
-import { RefObject, useContext, useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef } from "react";
 import { Object3D } from "three/src/core/Object3D";
 import { usePointerStore } from "@/app/store/usePointerStore";
 

@@ -4,7 +4,6 @@ import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import MeCanvas from "@/app/components/MeScene/MeCanvas";
 import { MotionValue, motion, useTransform } from "framer-motion";
-import { useDeviceStore } from "@/app/store/useDeviceStore";
 import Grid from "@/app/components/Grid/Grid";
 
 export interface MeSceneProps {
@@ -21,7 +20,7 @@ export default function MeScene(props: MeSceneProps) {
                 className={"h-full lg:static"}
                 ref={ref}
             >
-                <div className={`sticky top-0 h-[100vh] w-full overflow-hidden`}>
+                <div className={`sticky top-0 h-lvh w-full overflow-hidden`}>
                     <Canvas className={"touch-action-y"}>
                         <MeCanvas scrollProgress={props.scrollYProgress} />
                     </Canvas>
