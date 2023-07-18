@@ -2,8 +2,9 @@ import { usePointerStore } from "@/app/store/usePointerStore";
 import { useEffect, useRef } from "react";
 
 export default function usePointerStoreHandler() {
-    const { mousePosition, setMousePosition } = usePointerStore();
     const lastDocumentScrollY = useRef(0);
+    // setMousePosition is stable
+    const setMousePosition = usePointerStore((state) => state.setMousePosition);
 
     useEffect(() => {
         function onMouseMove(e: MouseEvent) {
@@ -34,6 +35,21 @@ export default function usePointerStoreHandler() {
                 return;
             }
 
+            // With the store's static getState() function we can get the state instantly within a function flow. Not a hook.
+            // This structure is a drastic performance improvement compared to calling
+            // const { mousePosition } = usePointerStore();
+            // at the top of the component.
+            // - Update execution is determined by scroll event, not state change.
+            // - We don't have to put mousePosition as a dependency into the effect
+
+            // See
+            // - https://codesandbox.io/s/peaceful-johnson-txtws?file=/src/store.js:374-376
+            // - https://github.com/pmndrs/zustand#transient-updates-for-often-occurring-state-changes#
+
+            // Note that we prefer getState() over subscribe() in our scenario because update execution is determined by scroll event,
+            // not state change.
+            const { mousePosition } = usePointerStore.getState();
+
             if (!mousePosition) {
                 return;
             }
@@ -57,5 +73,5 @@ export default function usePointerStoreHandler() {
             window.removeEventListener("scroll", onScroll);
             window.removeEventListener("touchstart", onTouchStart);
         };
-    }, [mousePosition, setMousePosition]);
+    }, [setMousePosition]);
 }
