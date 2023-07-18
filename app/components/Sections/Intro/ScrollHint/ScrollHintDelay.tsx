@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import ScrollHint from "@/app/components/ScrollHint/ScrollHint";
+import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
 
 export interface ScrollHintDelayProps {
     delayMs: number;

@@ -2,9 +2,9 @@ import React, { Suspense, useRef, useState } from "react";
 import { AsciiRenderer, Sphere } from "@react-three/drei";
 import { Group } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
-import ControlsSmall from "@/app/components/MeScene/ControlsSmall";
+import ControlsSmall from "@/app/components/Sections/Intro/MeScene/ControlsSmall";
 import { MotionValue } from "framer-motion";
-import MeGltf from "@/app/components/MeScene/MeGltf";
+import MeGltf from "@/app/components/Sections/Intro/MeScene/MeGltf";
 
 export interface MeContentProps {
     scrollProgress: MotionValue<number>;

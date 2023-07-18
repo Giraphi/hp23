@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import MeCanvas from "@/app/components/MeScene/MeCanvas";
+import MeCanvas from "@/app/components/Sections/Intro/MeScene/MeCanvas";
 import { MotionValue, motion, useTransform } from "framer-motion";
 import Grid from "@/app/components/Grid/Grid";
 
@@ -28,7 +28,7 @@ export default function MeScene(props: MeSceneProps) {
                     <Grid className={"absolute bottom-[10vh]"}>
                         <motion.p
                             style={{ opacity }}
-                            className={"col-span-2 col-start-3 text-center"}
+                            className={"col-span-2 col-start-3 text-center md:col-start-4"}
                         >
                             ... and I always love challenges :)
                         </motion.p>

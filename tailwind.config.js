@@ -15,7 +15,7 @@ module.exports = {
         extend: {
             colors: {
                 gray: {
-                    e: "#999",
+                    b: "#bbb",
                     4: "#444",
                     3: "#333",
                     2: "#222",
@@ -23,6 +23,9 @@ module.exports = {
                 },
                 pink: "#FF1493",
                 lime: "#14FF82",
+            },
+            aspectRatio: {
+                image: "1.618 / 1",
             },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(closest-side, var(--tw-gradient-stops))",
@@ -40,6 +43,7 @@ module.exports = {
                 // "end-content-right": "end-content-left",
                 content: "content-left / content-right",
                 screen: "screen-left / screen-right",
+                text: "content-left / 11",
             },
             gridColumnStart: {
                 "content-left": "content-left",

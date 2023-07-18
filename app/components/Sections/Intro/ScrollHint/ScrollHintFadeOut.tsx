@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useScroll, motion, useTransform, useMotionValueEvent } from "framer-motion";
-import ScrollHint from "@/app/components/ScrollHint/ScrollHint";
+import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
 
 export default function ScrollHintFadeOut() {
     const ref = useRef<HTMLDivElement>(null);
