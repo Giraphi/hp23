@@ -27,20 +27,20 @@ export default function ScrollHint() {
                     variants={variants}
                     transition={{ repeat: Infinity }}
                 >
-                    <ChevronDown className={"text-2xl xlg:text-3xl"} />
+                    <ChevronDown className={"text-2xl xl:text-3xl"} />
                 </motion.div>
 
                 <motion.div
                     variants={variants}
                     transition={{ repeat: Infinity }}
                 >
-                    <ChevronDown className={"relative -mt-3 text-2xl xlg:text-3xl"} />
+                    <ChevronDown className={"relative -mt-3 text-2xl xl:text-3xl"} />
                 </motion.div>
                 <motion.div
                     variants={variants}
                     transition={{ repeat: Infinity }}
                 >
-                    <ChevronDown className={"relative -mt-3 text-2xl xlg:text-3xl"} />
+                    <ChevronDown className={"relative -mt-3 text-2xl xl:text-3xl"} />
                 </motion.div>
             </motion.div>
         </motion.div>

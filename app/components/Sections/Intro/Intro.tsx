@@ -67,17 +67,17 @@ export default function Intro(props: IntroProps) {
                     </Headline>
                     <Headline
                         type={"h1"}
-                        className={"pb-4 text-center text-pink lg:inline-flex lg:pb-5 lg:text-left xlg:pb-8"}
+                        className={"pb-4 text-center text-pink lg:inline-flex lg:pb-5 lg:text-left xl:pb-8"}
                     >
                         Frontend Developer
                     </Headline>
                 </div>
             </div>
 
-            <div className={"col-start-content-left col-end-content-right row-start-3 lg:col-end-10 xlg:col-end-9"}>
-                <p className={"relative z-10 pb-4 text-center lg:pb-5 lg:text-left xlg:pb-8 xlg:text-2xl"}>
+            <div className={"col-start-content-left col-end-content-right row-start-3 lg:col-end-10 xl:col-end-9"}>
+                <p className={"relative z-10 pb-4 text-center lg:pb-5 lg:text-left xl:pb-8 xl:text-2xl"}>
                     Hi! I’m a Munich based frontend developer with a strong background in computer science and a high understanding of
-                    modern UI/UX concepts.
+                    design and modern UI/UX concepts.
                 </p>
 
                 <div className={"flex justify-center lg:inline-flex lg:justify-start"}>

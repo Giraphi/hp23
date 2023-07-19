@@ -5,7 +5,7 @@ module.exports = {
         screens: {
             md: "768px",
             lg: "1024px",
-            xlg: "1440px",
+            xl: "1440px",
         },
         fontFamily: {
             sans: ["var(--font-inter)"],

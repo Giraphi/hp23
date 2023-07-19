@@ -9,7 +9,7 @@ export interface CardProps {
 
 export default function Card(props: CardProps) {
     return (
-        <div className={"flex w-full max-w-xl flex-col  gap-8 rounded-2xl bg-black p-8"}>
+        <div className={"flex w-full max-w-md flex-col gap-4 rounded-2xl bg-black p-8 lg:text-base xl:gap-8 xl:text-xl"}>
             <div className={"relative aspect-image overflow-hidden rounded-xl"}>
                 <Image
                     quality={10}

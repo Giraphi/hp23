@@ -8,6 +8,7 @@ import Card from "@/app/components/Cards/Card";
 import designUnit2 from "@/app/assets/projects/design-unit-2.png";
 import iceberg from "@/app/assets/projects/iceberg.png";
 import ubu2 from "@/app/assets/projects/ubu2.png";
+import SectionText from "@/app/components/SectionText";
 
 export interface ProjectsProps {}
 
@@ -22,28 +23,28 @@ export default function Projects(props: ProjectsProps) {
                 <div className={"col-content"}>
                     <SectionHeadline>Projects</SectionHeadline>
                 </div>
-                <div className={"col-content pb-4 lg:col-text lg:pb-8"}>
+                <SectionText>
                     <SectionParagraph>
                         Here’s a small selection of projects I’ve been working on recently, mainly during my employment at the Munich web
                         office funct.
                     </SectionParagraph>
-                    <SectionParagraph>
+                    <SectionParagraph disableSpace={true}>
                         Please note that for legal reasons, some parts of the presented projects needed to be sanitized and most clients
                         can’t be named explicitly. More about that on request.
                     </SectionParagraph>
-                </div>
+                </SectionText>
                 <Cards className={"col-content"}>
                     <Card
                         image={designUnit2}
                         headline={"Homepage for a tech and design unit of a large consulting group"}
                     >
-                        Implementation of a react.js frontend in collaboration with the Italian design studio Vicine.
+                        Implementation of a react frontend in collaboration with the Italian design studio Vicine.
                     </Card>
                     <Card
                         image={iceberg}
-                        headline={"3D presentational website for internal use at a large consulting group "}
+                        headline={"3D presentational website for a large consulting group "}
                     >
-                        Implementation of a three.js/r3f website in collaboration with the designer and 3D artist Michael Flynn.
+                        Implementation of a three.js/r3f internal website in collaboration with the designer and 3D artist Michael Flynn.
                     </Card>
                     <Card
                         image={ubu2}
