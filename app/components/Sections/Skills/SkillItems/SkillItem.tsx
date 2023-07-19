@@ -14,8 +14,10 @@ export default function SkillItem(props: SkillItemProps) {
             href={props.href}
             target={"_blank"}
         >
-            <div className={"flex aspect-square items-center justify-center rounded-lg bg-gray-1 p-2"}>
-                <Icon />
+            <div className={"flex h-10 w-10 items-center justify-center rounded-lg bg-gray-1 p-2"}>
+                <div className={"basis-full"}>
+                    <Icon />
+                </div>
             </div>
             <div className={"flex h-full items-center pr-1"}>{props.children}</div>
         </a>
