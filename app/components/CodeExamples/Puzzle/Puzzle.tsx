@@ -15,7 +15,7 @@ import PuzzleContainer from "@/app/components/CodeExamples/Puzzle/PuzzleContaine
 
 export type PuzzleDimensions = { width: number; height: number };
 
-const autoRotateIntervalMs = 4000;
+const autoRotateIntervalMs = 2500;
 
 export default function Puzzle() {
     const images = [brutal1, brutal2, brutal3, brutal1, brutal2, brutal3];
@@ -72,7 +72,7 @@ export default function Puzzle() {
         <>
             <div
                 ref={ref}
-                className={"aspect-[1.61] max-h-[70vh]"}
+                className={"aspect-image max-h-[70vh]"}
             >
                 {!!dimensions && (
                     <>

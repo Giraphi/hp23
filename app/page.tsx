@@ -6,6 +6,7 @@ import useDeviceStoreHandler from "@/app/store/useDeviceStoreHandler";
 import usePointerStoreHandler from "@/app/store/usePointerStoreHandler";
 import Projects from "@/app/components/Sections/Projects/Projects";
 import Skills from "@/app/components/Sections/Skills/Skills";
+import CodeExamples from "@/app/components/Sections/CodeExamples/CodeExamples";
 
 export default function Home() {
     useDeviceStoreHandler();
@@ -26,6 +27,7 @@ export default function Home() {
             <div className={"relative border-t-2 border-gray-4 lg:static lg:border-none"}>
                 <Projects />
                 <Skills />
+                <CodeExamples />
             </div>
         </main>
     );

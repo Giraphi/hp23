@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 export interface CardsProps {
-    children: ReactNode;
+    children?: ReactNode;
     className?: string;
 }
 
