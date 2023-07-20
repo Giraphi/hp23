@@ -1,21 +1,11 @@
-import React, { RefObject, useMemo } from "react";
+import React from "react";
 
 import { motion } from "framer-motion";
 import { PuzzleDimensions } from "@/app/components/CodeExamples/Puzzle/Puzzle";
-import styled from "styled-components";
 import PuzzleAnimationRect from "@/app/components/CodeExamples/Puzzle/PuzzleAnimationRect";
 import useClipPathConfig, { AnimationClipPathConfig, Mod } from "@/app/components/CodeExamples/Puzzle/useClipPathConfig";
 
 const backgroundScaleFactor = 1.1;
-
-export const StyledAnimation = styled(motion.div)<{ $clipId: string }>`
-    width: 100%;
-    height: 100%;
-    grid-row: 1;
-    grid-column: 1;
-    clip-path: ${(props) => `url(#${props.$clipId})`};
-    overflow: hidden;
-`;
 
 export interface PuzzleBackgroundProps {
     children: React.ReactNode;
@@ -48,7 +38,10 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
             }
             transition={{ times, duration, delay: duration / 2 }}
         >
-            <StyledAnimation $clipId={clipId}>
+            <div
+                className={"col-start-1 row-start-1 h-full overflow-hidden"}
+                style={{ clipPath: `url(#${clipId})` }}
+            >
                 <motion.div
                     style={{ height: "100%" }}
                     animate={
@@ -101,7 +94,7 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
                         </clipPath>
                     </defs>
                 </svg>
-            </StyledAnimation>
+            </div>
         </motion.div>
     );
 }
