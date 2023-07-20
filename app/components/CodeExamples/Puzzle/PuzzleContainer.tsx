@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { PuzzleDimensions } from "@/app/components/CodeExamples/Puzzle/Puzzle";
 import PuzzleAnimation from "@/app/components/CodeExamples/Puzzle/PuzzleAnimation";
 import Image, { StaticImageData } from "next/image";
+import { Mod } from "@/app/components/CodeExamples/Puzzle/useClipPathConfig";
 
 export interface PuzzleContainerProps {
     activeSlide: number;
@@ -17,6 +18,11 @@ export default function PuzzleContainer(props: PuzzleContainerProps) {
         setTimeout(() => setMuted(false));
     }, []);
 
+    function getRandomMod(): Mod {
+        const enumIndexes = Object.values(Mod).filter((v) => !isNaN(Number(v)));
+        return Math.floor(Math.random() * enumIndexes.length);
+    }
+
     return (
         <>
             {props.images.map((image, index) => (
@@ -26,6 +32,7 @@ export default function PuzzleContainer(props: PuzzleContainerProps) {
                     dimensions={props.dimensions}
                     isVisible={index === props.activeSlide}
                     muted={muted}
+                    mod={getRandomMod()}
                 >
                     <div className={"relative h-full"}>
                         <Image

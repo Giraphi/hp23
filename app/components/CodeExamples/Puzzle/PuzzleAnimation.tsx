@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { RefObject, useMemo } from "react";
 
 import { motion } from "framer-motion";
 import { PuzzleDimensions } from "@/app/components/CodeExamples/Puzzle/Puzzle";
 import styled from "styled-components";
-import PuzzleAnimationRect, { RectConfig } from "@/app/components/CodeExamples/Puzzle/PuzzleAnimationRect";
+import PuzzleAnimationRect from "@/app/components/CodeExamples/Puzzle/PuzzleAnimationRect";
+import useClipPathConfig, { AnimationClipPathConfig, Mod } from "@/app/components/CodeExamples/Puzzle/useClipPathConfig";
 
-export const backgroundAnimationDurationMs = 800;
-export const backgroundAnimationFreezePercentage = 0.2;
 const backgroundScaleFactor = 1.1;
 
-export const StyledAnimation = styled(motion.div)<{ $clipId: string; $muted?: boolean }>`
+export const StyledAnimation = styled(motion.div)<{ $clipId: string }>`
     width: 100%;
     height: 100%;
     grid-row: 1;
@@ -18,32 +17,13 @@ export const StyledAnimation = styled(motion.div)<{ $clipId: string; $muted?: bo
     overflow: hidden;
 `;
 
-export interface AnimationClipPathConfig {
-    rect1Scale: number;
-    rect1Width: number;
-    rect1Height: number;
-    rect1OriginX: number;
-    rect1OriginY: number;
-
-    rect2Scale: number;
-    rect2Width: number;
-    rect2Height: number;
-    rect2OriginX: number;
-    rect2OriginY: number;
-
-    rect3Scale: number;
-    rect3Width: number;
-    rect3Height: number;
-    rect3OriginX: number;
-    rect3OriginY: number;
-}
-
 export interface PuzzleBackgroundProps {
     children: React.ReactNode;
     dimensions: PuzzleDimensions;
     index: number;
     muted?: boolean;
     isVisible: boolean;
+    mod: Mod;
 }
 
 export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
@@ -51,68 +31,8 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
     const times = [0, 0.45, 0.55, 1];
     const duration = props.muted ? 0 : 0.8;
     const clipId = `PuzzleSlide-svgClip-${props.index}`;
-
-    function random() {
-        // return 1;
-        const min = 0.9;
-        const max = 1.1;
-        return Math.random() * (max - min) + min;
-    }
-
-    function invert(v: number) {
-        return 1 - v;
-    }
-
-    // With useState we keep clipPathConfig consistent during re-renders! Otherwise framer-motion may re-execute the animations
-    const [clipPathConfig] = useState<Record<string, RectConfig>>(
-        props.index % 2 === 0
-            ? {
-                  rect1: {
-                      scale: 0.3 * 0.6 * random(),
-                      width: 1.2,
-                      height: 1,
-                      originX: 0.15 * random(),
-                      originY: 0,
-                  },
-                  rect2: {
-                      scale: 0.15 * 0.6 * random(),
-                      width: 0.8,
-                      height: 2,
-                      originX: 0.58 * random(),
-                      originY: 0.3 * random(),
-                  },
-                  rect3: {
-                      scale: 0.15 * 0.6 * random(),
-                      width: 2.2,
-                      height: 1,
-                      originX: 0.7 * random(),
-                      originY: 0.77 * random(),
-                  },
-              }
-            : {
-                  rect1: {
-                      scale: 0.2 * 0.6 * random(),
-                      width: 1.7,
-                      height: 1,
-                      originX: 0.4 * random(),
-                      originY: 0,
-                  },
-                  rect2: {
-                      scale: 0.25 * 0.6 * random(),
-                      width: 1.3,
-                      height: 1.4,
-                      originX: 0.4 * random(),
-                      originY: 0.5 * random(),
-                  },
-                  rect3: {
-                      scale: 0.1 * 0.6 * random(),
-                      width: 1.5,
-                      height: 1.6,
-                      originX: 0.73 * random(),
-                      originY: 0.4 * random(),
-                  },
-              }
-    );
+    const isEven = props.index % 2 === 0;
+    const clipPathConfig: AnimationClipPathConfig = useClipPathConfig(isEven, props.mod, props.isVisible);
 
     return (
         <motion.div
@@ -128,10 +48,7 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
             }
             transition={{ times, duration, delay: duration / 2 }}
         >
-            <StyledAnimation
-                $clipId={clipId}
-                $muted={props.muted}
-            >
+            <StyledAnimation $clipId={clipId}>
                 <motion.div
                     style={{ height: "100%" }}
                     animate={
