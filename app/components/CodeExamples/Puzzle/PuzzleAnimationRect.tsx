@@ -11,7 +11,7 @@ export type RectConfig = {
 };
 
 export interface PuzzleAnimationRectProps {
-    className: string;
+    className?: string;
     dimensions: PuzzleDimensions;
     rectConfig: RectConfig;
     duration: number;
@@ -22,7 +22,6 @@ export interface PuzzleAnimationRectProps {
 export default function PuzzleAnimationRect(props: PuzzleAnimationRectProps) {
     return (
         <motion.rect
-            className={"rect1"}
             x={0}
             y={0}
             width={`${props.dimensions.width * props.rectConfig.width}px`}

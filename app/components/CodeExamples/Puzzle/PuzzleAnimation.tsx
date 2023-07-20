@@ -52,6 +52,17 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
     const duration = props.muted ? 0 : 0.8;
     const clipId = `PuzzleSlide-svgClip-${props.index}`;
 
+    function random() {
+        // return 1;
+        const min = 0.9;
+        const max = 1.1;
+        return Math.random() * (max - min) + min;
+    }
+
+    function invert(v: number) {
+        return 1 - v;
+    }
+
     // With useState we keep clipPathConfig consistent during re-renders! Otherwise framer-motion may re-execute the animations
     const [clipPathConfig] = useState<Record<string, RectConfig>>(
         props.index % 2 === 0
@@ -103,12 +114,6 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
               }
     );
 
-    function random() {
-        const min = 0.9;
-        const max = 1.1;
-        return Math.random() * (max - min) + min;
-    }
-
     return (
         <motion.div
             className={"col-span-2 col-start-1 row-start-1 h-full"}
@@ -155,7 +160,6 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
                         <clipPath id={clipId}>
                             <PuzzleAnimationRect
                                 isVisible={props.isVisible}
-                                className={"rect1"}
                                 dimensions={dimensions}
                                 rectConfig={clipPathConfig.rect1}
                                 times={times}
@@ -164,7 +168,6 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
 
                             <PuzzleAnimationRect
                                 isVisible={props.isVisible}
-                                className={"rect2"}
                                 dimensions={dimensions}
                                 rectConfig={clipPathConfig.rect2}
                                 times={times}
@@ -173,7 +176,6 @@ export default function PuzzleAnimation(props: PuzzleBackgroundProps) {
 
                             <PuzzleAnimationRect
                                 isVisible={props.isVisible}
-                                className={"rect3"}
                                 dimensions={dimensions}
                                 rectConfig={clipPathConfig.rect3}
                                 times={times}

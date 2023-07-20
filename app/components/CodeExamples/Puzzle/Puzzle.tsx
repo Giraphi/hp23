@@ -2,10 +2,14 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-import desk from "@/app/components/CodeExamples/Puzzle/images/desk.jpg";
-import floor from "@/app/components/CodeExamples/Puzzle/images/floor.jpg";
-import paint from "@/app/components/CodeExamples/Puzzle/images/paint.jpg";
-import office from "@/app/components/CodeExamples/Puzzle/images/office.jpg";
+// import desk from "@/app/components/CodeExamples/Puzzle/images/desk.jpg";
+// import floor from "@/app/components/CodeExamples/Puzzle/images/floor.jpg";
+// import paint from "@/app/components/CodeExamples/Puzzle/images/paint.jpg";
+// import office from "@/app/components/CodeExamples/Puzzle/images/office.jpg";
+
+import brutal1 from "@/app/components/CodeExamples/Puzzle/images/brutal1.jpg";
+import brutal2 from "@/app/components/CodeExamples/Puzzle/images/brutal2.jpg";
+import brutal3 from "@/app/components/CodeExamples/Puzzle/images/brutal3.jpg";
 
 import PuzzleContainer from "@/app/components/CodeExamples/Puzzle/PuzzleContainer";
 
@@ -14,7 +18,7 @@ export type PuzzleDimensions = { width: number; height: number };
 const autoRotateIntervalMs = 4000;
 
 export default function Puzzle() {
-    const images = [desk, floor, paint, office];
+    const images = [brutal1, brutal2, brutal3, brutal1, brutal2, brutal3];
     const numSlides = images.length;
     const ref = useRef<HTMLDivElement>(null);
     const [activeSlide, setActiveSlide] = useState(0);
