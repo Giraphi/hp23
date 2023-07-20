@@ -10,7 +10,6 @@ export interface DotsRowProps {
     addHalfBottom?: boolean;
     align?: "left" | "right";
     negativeMargin?: "top" | "bottom";
-    numRows?: number | string;
 }
 
 export default function DotsRow(props: DotsRowProps) {
@@ -18,21 +17,21 @@ export default function DotsRow(props: DotsRowProps) {
     const timeout = useRef<NodeJS.Timeout>();
     const [margin, setMargin] = useState(0);
     const [numDotsHorizontal, setNumDotsHorizontal] = useState(0);
-    const [numRows, setNumRows] = useState(2);
+    // const [numRows, setNumRows] = useState(2);
 
-    useEffect(() => {
-        if (typeof props.numRows === "number") {
-            setNumRows(props.numRows);
-            return;
-        }
-
-        if (typeof props.numRows === "string") {
-            setNumRows(Number(props.numRows));
-            return;
-        }
-
-        setNumRows(2);
-    }, [props.numRows]);
+    // useEffect(() => {
+    //     if (typeof props.numRows === "number") {
+    //         setNumRows(props.numRows);
+    //         return;
+    //     }
+    //
+    //     if (typeof props.numRows === "string") {
+    //         setNumRows(Number(props.numRows));
+    //         return;
+    //     }
+    //
+    //     setNumRows(2);
+    // }, [props.numRows]);
 
     function updateParameters(width: number) {
         let n = 0;
@@ -76,7 +75,7 @@ export default function DotsRow(props: DotsRowProps) {
         <MousePositionContextProvider>
             <div
                 ref={ref}
-                className={"overflow-hidden bg-black p-[100px]"}
+                className={"overflow-hidden bg-green-200 p-[200px]"}
             >
                 <div className={"md:hidden"}>
                     <DotsRowSmall

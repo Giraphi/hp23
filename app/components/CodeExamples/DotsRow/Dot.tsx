@@ -103,7 +103,7 @@ export default function Dot(props: AnimatedDotProps) {
                     y: translateY,
                 }}
             >
-                <div className={`${props.isHidden ? "hidden" : ""} h-[4px] w-[4px] rounded-[4px] bg-white`}></div>
+                <div className={`${props.isHidden ? "hidden" : ""} h-[4px] w-[4px] rounded-[4px] bg-black`}></div>
                 {/*<StyledDot isHidden={props.isHidden} />*/}
             </motion.div>
         </div>

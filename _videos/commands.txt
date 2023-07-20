@@ -2,4 +2,7 @@
 ffmpeg -i puzzle.mov -c:v libvpx-vp9 -crf 50 -b:v 0 -b:a 128k -c:a libopus output.webm
 
 // Higher qscale value -> better quality (range: 1 to 31)
-ffmpeg -i puzzle.mov -qscale 20 output.mp4
+ffmpeg -i puzzle.mov output.mp4
+
+// will generate a new file *.webp
+mogrify -quality 70 -format webp puzzle-placeholder.png

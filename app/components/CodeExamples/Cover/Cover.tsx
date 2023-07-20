@@ -25,7 +25,7 @@ export default function Cover() {
                 className="grid grid-cols-1 grid-rows-[100dvh_300dvh] rounded"
                 ref={ref}
             >
-                <div className="sticky top-0 col-start-1 row-start-1 bg-lime-700">
+                <div className="bg-lime-700 sticky top-0 col-start-1 row-start-1">
                     {/*TODO: this seems to be very performance heavy. try lower resolution or webm? Maybe performance problem comes because  of mix-blend-mode*/}
                     <video
                         autoPlay
@@ -42,13 +42,15 @@ export default function Cover() {
 
                 <motion.div
                     className="sticky top-0 col-start-1 row-start-1 flex flex-col items-center justify-center text-white"
-                    style={{ opacity: childrenOpacity, textShadow: "1px 1px black" }}
+                    style={{ opacity: childrenOpacity }}
                 >
-                    <h1 className={"text-7xl text-white"}>Welcome</h1>
-                    <p className={"pl-8 pr-8 pt-8 text-center text-2xl"}>
-                        This animation is making use of the css property <br />
-                        <span className={"font-mono"}>mix-blend-mode: multiply</span>{" "}
-                    </p>
+                    <div className={"rounded-xl bg-[rgba(0,0,0,0.9)] p-4"}>
+                        <h1 className={"font-sans text-5xl text-white"}>Welcome</h1>
+                        {/*<p className={"pl-8 pr-8 pt-8 text-center text-2xl"}>*/}
+                        {/*    This animation is making use of the css property <br />*/}
+                        {/*    <span className={"font-mono"}>mix-blend-mode: multiply</span>{" "}*/}
+                        {/*</p>*/}
+                    </div>
                 </motion.div>
 
                 <motion.div
@@ -64,14 +66,14 @@ export default function Cover() {
                 >
                     <motion.div
                         className={"h-full w-full"}
-                        style={{ scale: zoom, transformOrigin: "center" }}
+                        style={{ scale: zoom, transformOrigin: "49%" }}
                     >
                         <CoverContent />
                     </motion.div>
                 </motion.div>
             </div>
             <div className={"h-[50dvh] bg-black"}>
-                <h1 className={"text-mono pt-16 text-center text-5xl text-white"}>Site flow continues here ....</h1>
+                <h1 className={"pt-16 text-center font-sans text-5xl text-white"}>Site flow continues here ....</h1>
             </div>
         </div>
     );
