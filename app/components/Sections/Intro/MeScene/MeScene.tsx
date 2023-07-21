@@ -21,7 +21,10 @@ export default function MeScene(props: MeSceneProps) {
                 ref={ref}
             >
                 <div className={`sticky top-0 h-lvh w-full overflow-hidden`}>
-                    <Canvas className={"touch-action-y"}>
+                    <Canvas
+                        className={"touch-action-y"}
+                        frameloop="demand"
+                    >
                         <MeCanvas scrollProgress={props.scrollYProgress} />
                     </Canvas>
 

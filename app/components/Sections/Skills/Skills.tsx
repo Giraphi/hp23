@@ -32,6 +32,18 @@ export default function Skills(props: SkillsProps) {
                 <div className={"col-content"}>
                     <SkillItems />
                 </div>
+
+                {/*<SectionText>*/}
+                {/*    <SectionParagraph>*/}
+                {/*        I’m used to productive and healthy team work based on Kanban and Scrum concepts while maintaining a clean git*/}
+                {/*        history.*/}
+                {/*    </SectionParagraph>*/}
+                {/*    <SectionParagraph>*/}
+                {/*        Besides my technical knowledge, I have a high understanding of modern UI and UX concepts, a lot of experience with*/}
+                {/*        Figma, a penchant for motion design and a sharp eye. All of this together helps me to implement even complex project*/}
+                {/*        requirements. And I love challenges.*/}
+                {/*    </SectionParagraph>*/}
+                {/*</SectionText>*/}
             </SectionGrid>
         </Section>
     );
