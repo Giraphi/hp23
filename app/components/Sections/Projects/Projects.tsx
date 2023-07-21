@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import SectionGrid from "@/app/components/SectionGrid";
 import SectionHeadline from "@/app/components/SectionHeadline";
 import SectionParagraph from "@/app/components/SectionParagraph";
@@ -11,7 +11,7 @@ import ubu2 from "@/app/assets/projects/ubu2.png";
 import SectionText from "@/app/components/SectionText";
 import Grid from "@/app/components/Grid/Grid";
 import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
 
 export interface ProjectsProps {}
 
@@ -19,19 +19,30 @@ export default function Projects(props: ProjectsProps) {
     const sectionRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "100px end"] });
     const hintOpacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0]);
+    const [renderHint, setRenderHint] = useState(true);
+
+    useMotionValueEvent(hintOpacity, "change", (value) => {
+        const renderHintUpdate = value !== 0;
+        if (renderHint === renderHintUpdate) {
+            return;
+        }
+        setRenderHint(renderHintUpdate);
+    });
 
     return (
         <>
-            <motion.div
-                style={{ opacity: hintOpacity }}
-                className={"fixed bottom-4 w-full"}
-            >
-                <Grid>
-                    <div className={"col-content flex justify-end lg:justify-center"}>
-                        <ScrollHint />
-                    </div>
-                </Grid>
-            </motion.div>
+            {renderHint && (
+                <motion.div
+                    style={{ opacity: hintOpacity }}
+                    className={"fixed bottom-4 w-full"}
+                >
+                    <Grid>
+                        <div className={"col-content flex justify-end lg:justify-center"}>
+                            <ScrollHint />
+                        </div>
+                    </Grid>
+                </motion.div>
+            )}
 
             <Section
                 startDark={true}
