@@ -11,7 +11,7 @@ import ubu2 from "@/app/assets/projects/ubu2.png";
 import SectionText from "@/app/components/SectionText";
 import Grid from "@/app/components/Grid/Grid";
 import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
-import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 export interface ProjectsProps {}
 
