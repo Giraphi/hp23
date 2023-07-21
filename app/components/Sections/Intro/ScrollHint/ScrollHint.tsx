@@ -56,20 +56,20 @@ export default function ScrollHint(props: ScrollHintProps) {
                     variants={variants}
                     transition={{ repeat: Infinity }}
                 >
-                    <ChevronDown className={"text-xl text-white xl:text-3xl"} />
+                    <ChevronDown className={"text-xl text-white "} />
                 </motion.div>
 
                 <motion.div
                     variants={variants}
                     transition={{ repeat: Infinity }}
                 >
-                    <ChevronDown className={"relative -mt-3 text-xl text-white xl:text-3xl"} />
+                    <ChevronDown className={"relative -mt-3 text-xl text-white "} />
                 </motion.div>
                 <motion.div
                     variants={variants}
                     transition={{ repeat: Infinity }}
                 >
-                    <ChevronDown className={"relative -mt-3 text-xl text-white xl:text-3xl"} />
+                    <ChevronDown className={"relative -mt-3 text-xl text-white"} />
                 </motion.div>
             </motion.div>
         </motion.div>

@@ -7,6 +7,7 @@ import usePointerStoreHandler from "@/app/store/usePointerStoreHandler";
 import Projects from "@/app/components/Sections/Projects/Projects";
 import Skills from "@/app/components/Sections/Skills/Skills";
 import CodeExamples from "@/app/components/Sections/CodeExamples/CodeExamples";
+import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
 
 export default function Home() {
     useDeviceStoreHandler();
@@ -22,6 +23,10 @@ export default function Home() {
             {/*exactly when bottom edge meets bottom of viewport*/}
             {/*Can't use bottom:0 here, because that makes element float as long as bottom edge is below viewport.*/}
             <Intro />
+
+            {/*<div className={"fixed bottom-0"}>*/}
+            {/*    <ScrollHint />*/}
+            {/*</div>*/}
 
             <Projects />
             <Skills />
