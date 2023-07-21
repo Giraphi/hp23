@@ -17,10 +17,10 @@ export default function Intro(props: IntroProps) {
     const device = useDeviceStore((state) => state.device);
     const measureRef = useRef<HTMLDivElement>(null);
     const rootRef = useRef<HTMLDivElement>(null);
-    const [size, setSize] = useState(0);
-    const { scrollY } = useScroll();
-    const totalHeight = typeof window !== "undefined" ? window.outerHeight : 99999;
-    const scrollYProgress = useTransform(scrollY, [0, totalHeight * 3], [0, 1]);
+    const [textContentHeight, setTextContentHeight] = useState(0);
+    const { scrollYProgress } = useScroll({ target: rootRef, offset: ["start start", "end start"] });
+    // const totalHeight = typeof window !== "undefined" ? window.outerHeight : 99999;
+    // const scrollYProgress = useTransform(scrollY, [0, totalHeight * 3], [0, 1]);
 
     useEffect(() => {
         if (device >= Device.lg) {
@@ -31,7 +31,7 @@ export default function Intro(props: IntroProps) {
             if (!measureRef.current) {
                 return;
             }
-            setSize(measureRef.current.clientHeight);
+            setTextContentHeight(measureRef.current.clientHeight);
         }
 
         measure();
@@ -45,7 +45,7 @@ export default function Intro(props: IntroProps) {
     return (
         <Grid
             ref={rootRef}
-            className={`h-[300lvh] grid-rows-[15lvh_auto_auto_1fr] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-gray-3 lg:to-gray-2`}
+            className={`grid-rows-[15lvh_auto_auto_80lvh] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-gray-3 lg:to-gray-2`}
         >
             <div
                 className={"col-content row-span-3 row-start-1"}
@@ -89,18 +89,21 @@ export default function Intro(props: IntroProps) {
                 <>
                     <div
                         className={"col-screen row-span-4 row-start-1"}
-                        style={{ paddingTop: `calc(${size}px - 28lvh)`, visibility: `${size !== 0 ? "visible" : "hidden"}` }}
+                        style={{ visibility: `${textContentHeight !== 0 ? "visible" : "hidden"}` }}
                     >
-                        <MeScene scrollYProgress={scrollYProgress} />
+                        <MeScene
+                            scrollYProgress={scrollYProgress}
+                            textContentHeight={textContentHeight}
+                        />
                     </div>
-                    <div className={"col-start-content-left row-start-4 flex items-end justify-center"}>
-                        <div className={"sticky bottom-4"}>
-                            <ScrollHintDelay
-                                initDelayMs={5000}
-                                delayMs={2000}
-                            />
-                        </div>
-                    </div>
+                    {/*<div className={"col-start-content-left row-start-4 flex items-end justify-center"}>*/}
+                    {/*    <div className={"sticky bottom-4"}>*/}
+                    {/*        <ScrollHintDelay*/}
+                    {/*            initDelayMs={5000}*/}
+                    {/*            delayMs={2000}*/}
+                    {/*        />*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </>
             ) : (
                 <>
