@@ -6,8 +6,6 @@ import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { MotionValue, useScroll, useTransform, motion } from "framer-motion";
 import MeSceneLarge from "@/app/components/Sections/Intro/MeScene/large/MeSceneLarge";
-import ScrollHintFadeOut from "@/app/components/Sections/Intro/ScrollHint/ScrollHintFadeOut";
-import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
 
 export interface IntroProps {
     scrollYProgress?: MotionValue<number>;
@@ -97,22 +95,19 @@ export default function Intro(props: IntroProps) {
                         />
                     </div>
 
-                    <div className={"col-content row-start-4 flex items-end justify-start"}>
-                        <motion.div
-                            className={"sticky bottom-4"}
-                            style={{ opacity: scrollHintOpacity }}
-                        >
-                            <ScrollHint appearDelay={2} />
-                        </motion.div>
-                    </div>
+                    {/*<div className={"col-content row-start-4 flex items-end justify-start"}>*/}
+                    {/*    <motion.div*/}
+                    {/*        className={"sticky bottom-4"}*/}
+                    {/*        style={{ opacity: scrollHintOpacity }}*/}
+                    {/*    >*/}
+                    {/*        <ScrollHint appearDelay={2} />*/}
+                    {/*    </motion.div>*/}
+                    {/*</div>*/}
                 </>
             ) : (
                 <>
                     <div className={"col-screen row-span-4 row-start-1 "}>
                         <MeSceneLarge />
-                    </div>
-                    <div className={"col-screen row-start-4 flex items-end justify-center pb-4"}>
-                        <ScrollHintFadeOut appearDelay={2} />
                     </div>
                 </>
             )}

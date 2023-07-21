@@ -8,6 +8,7 @@ import Projects from "@/app/components/Sections/Projects/Projects";
 import Skills from "@/app/components/Sections/Skills/Skills";
 import CodeExamples from "@/app/components/Sections/CodeExamples/CodeExamples";
 import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
+import Grid from "@/app/components/Grid/Grid";
 
 export default function Home() {
     useDeviceStoreHandler();
@@ -25,7 +26,9 @@ export default function Home() {
             <Intro />
 
             {/*<div className={"fixed bottom-0"}>*/}
-            {/*    <ScrollHint />*/}
+            {/*    <Grid>*/}
+            {/*        <ScrollHint />*/}
+            {/*    </Grid>*/}
             {/*</div>*/}
 
             <Projects />
