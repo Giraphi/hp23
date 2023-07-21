@@ -2,7 +2,11 @@ import React, { useRef, useState } from "react";
 import { useScroll, motion, useTransform, useMotionValueEvent } from "framer-motion";
 import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
 
-export default function ScrollHintFadeOut() {
+export interface ScrollHintFadeOutProps {
+    appearDelay?: number;
+}
+
+export default function ScrollHintFadeOut(props: ScrollHintFadeOutProps) {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollY } = useScroll({ target: ref });
     const opacity = useTransform(scrollY, [0, 25, 75], [1, 1, 0]);
@@ -21,7 +25,7 @@ export default function ScrollHintFadeOut() {
             {componentVisible && (
                 <div className={"fixed bottom-0 pb-4"}>
                     <motion.div style={{ opacity }}>
-                        <ScrollHint />
+                        <ScrollHint appearDelay={props.appearDelay} />
                     </motion.div>
                 </div>
             )}

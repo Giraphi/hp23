@@ -13,7 +13,6 @@ export interface MeSceneProps {
 
 export default function MeScene(props: MeSceneProps) {
     const windowHeight = typeof window !== "undefined" ? window.outerHeight : 99999;
-
     const y = useTransform(props.scrollYProgress, [0, 1], [props.textContentHeight - 0.35 * windowHeight, 1.2 * windowHeight]);
 
     return (

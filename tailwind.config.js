@@ -21,8 +21,9 @@ module.exports = {
                     2: "#222",
                     1: "#111",
                 },
-                pink: "#FF1493",
-                lime: "#14FF82",
+                pink: "#FF00aa",
+                lime: "#00FFaa",
+                blue: "#00aaff",
             },
             aspectRatio: {
                 image: "1.618 / 1",

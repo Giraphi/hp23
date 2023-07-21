@@ -18,7 +18,10 @@ export default function Projects(props: ProjectsProps) {
         // exactly when bottom edge meets bottom of viewport
         // Can't use bottom:0 here, because that makes element float as long as bottom edge is below viewport.
         // <div className={"relative border-t-2 border-gray-4 lg:static lg:border-none"}>
-        <Section startDark={true}>
+        <Section
+            startDark={true}
+            className={"from-gray-1 to-gray-3 lg:from-gray-2 lg:to-gray-3"}
+        >
             <SectionGrid>
                 <div className={"col-content"}>
                     <SectionHeadline>Projects</SectionHeadline>

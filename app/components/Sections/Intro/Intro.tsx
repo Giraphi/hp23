@@ -4,10 +4,10 @@ import Button from "@/app/components/Button";
 import MeScene from "@/app/components/Sections/Intro/MeScene/MeScene";
 import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
-import { MotionValue, useScroll, useTransform } from "framer-motion";
+import { MotionValue, useScroll, useTransform, motion } from "framer-motion";
 import MeSceneLarge from "@/app/components/Sections/Intro/MeScene/large/MeSceneLarge";
-import ScrollHintDelay from "@/app/components/Sections/Intro/ScrollHint/ScrollHintDelay";
 import ScrollHintFadeOut from "@/app/components/Sections/Intro/ScrollHint/ScrollHintFadeOut";
+import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
 
 export interface IntroProps {
     scrollYProgress?: MotionValue<number>;
@@ -19,8 +19,8 @@ export default function Intro(props: IntroProps) {
     const rootRef = useRef<HTMLDivElement>(null);
     const [textContentHeight, setTextContentHeight] = useState(0);
     const { scrollYProgress } = useScroll({ target: rootRef, offset: ["start start", "end start"] });
-    // const totalHeight = typeof window !== "undefined" ? window.outerHeight : 99999;
-    // const scrollYProgress = useTransform(scrollY, [0, totalHeight * 3], [0, 1]);
+    const scrollHintProgress = useScroll({ target: rootRef, offset: ["start start", "end end"] }).scrollYProgress;
+    const scrollHintOpacity = useTransform(scrollHintProgress, [0, 0.95, 1], [1, 1, 0]);
 
     useEffect(() => {
         if (device >= Device.lg) {
@@ -67,7 +67,7 @@ export default function Intro(props: IntroProps) {
                     </Headline>
                     <Headline
                         type={"h1"}
-                        className={"pb-4 text-center text-pink lg:inline-flex lg:pb-5 lg:text-left xl:pb-8"}
+                        className={"text- pb-4 text-center text-pink lg:inline-flex lg:pb-5 lg:text-left xl:pb-8"}
                     >
                         Frontend Developer
                     </Headline>
@@ -96,14 +96,15 @@ export default function Intro(props: IntroProps) {
                             textContentHeight={textContentHeight}
                         />
                     </div>
-                    {/*<div className={"col-start-content-left row-start-4 flex items-end justify-center"}>*/}
-                    {/*    <div className={"sticky bottom-4"}>*/}
-                    {/*        <ScrollHintDelay*/}
-                    {/*            initDelayMs={5000}*/}
-                    {/*            delayMs={2000}*/}
-                    {/*        />*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
+
+                    <div className={"col-content row-start-4 flex items-end justify-start"}>
+                        <motion.div
+                            className={"sticky bottom-4"}
+                            style={{ opacity: scrollHintOpacity }}
+                        >
+                            <ScrollHint appearDelay={2} />
+                        </motion.div>
+                    </div>
                 </>
             ) : (
                 <>
@@ -111,7 +112,7 @@ export default function Intro(props: IntroProps) {
                         <MeSceneLarge />
                     </div>
                     <div className={"col-screen row-start-4 flex items-end justify-center pb-4"}>
-                        <ScrollHintFadeOut />
+                        <ScrollHintFadeOut appearDelay={2} />
                     </div>
                 </>
             )}
