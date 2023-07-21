@@ -25,10 +25,7 @@ export default function MeScene(props: MeSceneProps) {
                     className={`h-lvh w-full overflow-hidden`}
                     style={{ y }}
                 >
-                    <Canvas
-                        className={"touch-action-y"}
-                        frameloop="demand"
-                    >
+                    <Canvas className={"touch-action-y"}>
                         <MeCanvas scrollProgress={props.scrollYProgress} />
                     </Canvas>
                 </motion.div>
