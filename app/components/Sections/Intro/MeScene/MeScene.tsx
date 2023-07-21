@@ -5,6 +5,7 @@ import { Canvas } from "@react-three/fiber";
 import MeCanvas from "@/app/components/Sections/Intro/MeScene/MeCanvas";
 import { MotionValue, motion, useTransform, useScroll } from "framer-motion";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
+import { Background, Parallax } from "react-parallax";
 
 export interface MeSceneProps {
     scrollYProgress: MotionValue<number>;
@@ -22,15 +23,44 @@ export default function MeScene(props: MeSceneProps) {
 
     return (
         <>
-            <div className={`h-full w-full overflow-hidden`}>
-                <motion.div
-                    className={`h-lvh w-full overflow-hidden`}
-                    style={{ y }}
+            <div className={`h-full w-full pt-[200px]`}>
+                <Parallax
+                    strength={200}
+                    className={"h-[115lvh] [&>*]:w-full"}
                 >
-                    <Canvas className={"touch-action-y"}>
-                        <MeCanvas scrollProgress={props.scrollYProgress} />
-                    </Canvas>
-                </motion.div>
+                    <Background className={"h-[130lvh]"}>
+                        <div className={"flex h-full items-center"}>
+                            <Canvas className={"touch-action-y h-lvh]"}>
+                                <MeCanvas scrollProgress={props.scrollYProgress} />
+                            </Canvas>
+                        </div>
+                        <div className={"h-full bg-lime"}>
+                            <p>hello</p>HELLOxxx
+                            <p>hello</p>HELLO
+                            <p>hello</p>HELLO
+                            <p>hello</p>HELLO
+                            <p>hello</p>HELLO
+                            <p>hello</p>HELLO
+                            <p>hello</p>HELLO
+                            <p>hello</p>HELLO
+                            <p>hello</p>HELLO
+                            <p>hello</p>HELLO
+                        </div>
+                    </Background>
+                    {/*<Background className="custom-bg">*/}
+                    {/*    <Canvas className={"touch-action-y"}>*/}
+                    {/*        <MeCanvas scrollProgress={props.scrollYProgress} />*/}
+                    {/*    </Canvas>*/}
+                    {/*</Background>*/}
+                </Parallax>
+                {/*<motion.div*/}
+                {/*    className={`h-lvh w-full overflow-hidden`}*/}
+                {/*    style={{ y }}*/}
+                {/*>*/}
+                {/*    <Canvas className={"touch-action-y"}>*/}
+                {/*        <MeCanvas scrollProgress={props.scrollYProgress} />*/}
+                {/*    </Canvas>*/}
+                {/*</motion.div>*/}
             </div>
         </>
     );
