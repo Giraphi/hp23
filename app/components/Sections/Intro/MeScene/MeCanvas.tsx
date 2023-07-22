@@ -58,7 +58,7 @@ export default function MeCanvas(props: MeContentProps) {
                             <meshPhongMaterial
                                 color="#fff"
                                 opacity={0.6}
-                                transparent
+                                transparent={true}
                             />
                         </Sphere>
                     </group>
@@ -74,7 +74,7 @@ export default function MeCanvas(props: MeContentProps) {
                             <meshPhongMaterial
                                 color="#fff"
                                 opacity={0.6}
-                                transparent
+                                transparent={true}
                             />
                         </Sphere>
                     </group>
@@ -83,7 +83,7 @@ export default function MeCanvas(props: MeContentProps) {
                         intensity={1}
                         color={"white"}
                         position={[3, 15, 9]}
-                        castShadow={true}
+                        // castShadow={true}
                     />
 
                     <Suspense>

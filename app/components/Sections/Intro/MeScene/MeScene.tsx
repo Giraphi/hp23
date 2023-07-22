@@ -30,21 +30,12 @@ export default function MeScene(props: MeSceneProps) {
                 >
                     <Background className={"h-[130lvh]"}>
                         <div className={"flex h-full items-center"}>
-                            <Canvas className={"touch-action-y h-lvh]"}>
+                            <Canvas
+                                gl={{ antialias: false, alpha: true, precision: "lowp", powerPreference: "low-power" }}
+                                className={"touch-action-y h-lvh]"}
+                            >
                                 <MeCanvas scrollProgress={props.scrollYProgress} />
                             </Canvas>
-                        </div>
-                        <div className={"h-full bg-lime"}>
-                            <p>hello</p>HELLOxxx
-                            <p>hello</p>HELLO
-                            <p>hello</p>HELLO
-                            <p>hello</p>HELLO
-                            <p>hello</p>HELLO
-                            <p>hello</p>HELLO
-                            <p>hello</p>HELLO
-                            <p>hello</p>HELLO
-                            <p>hello</p>HELLO
-                            <p>hello</p>HELLO
                         </div>
                     </Background>
                     {/*<Background className="custom-bg">*/}
