@@ -10,7 +10,7 @@ export interface ControlsSmallProps {
 
 export default function ControlsSmall(props: ControlsSmallProps) {
     const controlsRef = useRef<any>(null);
-    const zoom = useTransform(props.scrollProgress, [0, 1], [0.18, 2]);
+    const zoom = useTransform(props.scrollProgress, [0, 0.3, 1], [0.18, 0.8, 2.8]);
     const isFirstFrame = useRef(true);
     const zoomTarget = useRef(0.18);
 
