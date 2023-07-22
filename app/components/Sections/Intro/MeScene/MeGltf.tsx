@@ -23,7 +23,7 @@ useGLTF.preload("/models/me.glb");
 export default function MeGltf(props: MeGltfProps) {
     const { nodes } = useGLTF("/models/me.glb") as GLTFResult;
     const ref = useRef<Mesh>(null);
-    const rotation = useTransform(props.progress, [0, 1], [-0.5, 0.5]);
+    const rotation = useTransform(props.progress, [0, 1], [-0.6, 0.4]);
 
     useFrame(() => {
         if (!ref.current) {
@@ -41,7 +41,7 @@ export default function MeGltf(props: MeGltfProps) {
                 ref={ref}
                 geometry={nodes.mesh_0.geometry}
                 material={nodes.mesh_0.material}
-                rotation={[0.05, -0.1, 0.07]}
+                rotation={[0.05, 0, 0.07]}
                 position={[-0.2, -0.6, 0]}
                 scale={12}
             />
