@@ -43,7 +43,7 @@ export default function Intro(props: IntroProps) {
     return (
         <Grid
             ref={rootRef}
-            className={`grid-rows-[15lvh_auto_auto_auto] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-gray-3 lg:to-gray-2`}
+            className={`grid-rows-[15lvh_auto_auto_85lvh] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-gray-3 lg:to-gray-2`}
         >
             <div
                 className={"col-content row-span-3 row-start-1"}
@@ -89,10 +89,12 @@ export default function Intro(props: IntroProps) {
                         className={"col-screen row-span-4 row-start-1"}
                         style={{ visibility: `${textContentHeight !== 0 ? "visible" : "hidden"}` }}
                     >
-                        <MeScene
-                            scrollYProgress={scrollYProgress}
-                            textContentHeight={textContentHeight}
-                        />
+                        {!!textContentHeight && (
+                            <MeScene
+                                scrollYProgress={scrollYProgress}
+                                textContentHeight={textContentHeight}
+                            />
+                        )}
                     </div>
 
                     {/*<div className={"col-content row-start-4 flex items-end justify-start"}>*/}

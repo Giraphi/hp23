@@ -14,44 +14,36 @@ export interface MeSceneProps {
 
 export default function MeScene(props: MeSceneProps) {
     const windowHeight = typeof window !== "undefined" ? window.outerHeight : 99999;
-    const { device } = useDeviceStore();
-    const heightPercentage = props.textContentHeight / windowHeight;
-    const start = device <= Device.sm ? heightPercentage - 0.35 : heightPercentage - 0.25;
-    const end = 1.3;
+    const contentHeightVH = (props.textContentHeight / windowHeight) * 100;
 
-    const y = useTransform(props.scrollYProgress, [0, 1], [`${Math.floor(start * 100)}lvh`, `${Math.floor(end * 100)}lvh`]);
+    const spaceTop = `${contentHeightVH - 50}lvh`;
+    const strength = Math.floor(windowHeight * 0.82);
 
     return (
         <>
-            <div className={`h-full w-full pt-[200px]`}>
+            <div
+                className={`h-full w-full`}
+                style={{ paddingTop: spaceTop }}
+            >
+                {/*
+                Normally we'd do the parallax-effect with framer-motion. However in this scenario this results in a laggy movement.
+                This seems to be because of some characteristics of the 3D rendering esp. AsciiRenderer when the canvas is moved over the page.
+                */}
                 <Parallax
-                    strength={200}
-                    className={"h-[115lvh] [&>*]:w-full"}
+                    strength={strength}
+                    className={"h-full [&>*]:w-full"}
                 >
-                    <Background className={"h-[130lvh]"}>
-                        <div className={"flex h-full items-center"}>
+                    <Background>
+                        <div className={"flex h-[150lvh] items-center py-[25lvh]"}>
                             <Canvas
                                 gl={{ antialias: false, alpha: true, precision: "lowp", powerPreference: "low-power" }}
-                                className={"touch-action-y h-lvh]"}
+                                className={"touch-action-y"}
                             >
                                 <MeCanvas scrollProgress={props.scrollYProgress} />
                             </Canvas>
                         </div>
                     </Background>
-                    {/*<Background className="custom-bg">*/}
-                    {/*    <Canvas className={"touch-action-y"}>*/}
-                    {/*        <MeCanvas scrollProgress={props.scrollYProgress} />*/}
-                    {/*    </Canvas>*/}
-                    {/*</Background>*/}
                 </Parallax>
-                {/*<motion.div*/}
-                {/*    className={`h-lvh w-full overflow-hidden`}*/}
-                {/*    style={{ y }}*/}
-                {/*>*/}
-                {/*    <Canvas className={"touch-action-y"}>*/}
-                {/*        <MeCanvas scrollProgress={props.scrollYProgress} />*/}
-                {/*    </Canvas>*/}
-                {/*</motion.div>*/}
             </div>
         </>
     );

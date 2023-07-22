@@ -17,7 +17,10 @@ export default function MeSceneLarge(props: MeSceneProps) {
             >
                 <div className={`relative h-screen w-full overflow-hidden`}>
                     {/* Trick to move Canvas Coordinate System off center */}
-                    <Canvas style={{ width: "135vw" }}>
+                    <Canvas
+                        gl={{ antialias: false, alpha: true, precision: "lowp", powerPreference: "low-power" }}
+                        style={{ width: "135vw" }}
+                    >
                         <MeCanvasLarge />
                     </Canvas>
 

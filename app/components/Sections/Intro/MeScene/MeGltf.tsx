@@ -30,8 +30,6 @@ export default function MeGltf(props: MeGltfProps) {
             return;
         }
         const rotationValue = rotation.get();
-        // const target = initRotationY + rotationValue;
-
         ref.current.rotation.y = MathUtils.lerp(ref.current.rotation.y, rotationValue, 0.1);
     });
 

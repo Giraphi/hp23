@@ -12,8 +12,6 @@ export interface ControlsLargeProps {
 
 export default function ControlsLarge(props: ControlsLargeProps) {
     const controlsRef = useRef<any>(null);
-    const mousePositionRef = useRef(usePointerStore.getState().mousePosition);
-    useEffect(() => usePointerStore.subscribe((state) => (mousePositionRef.current = state.mousePosition)), []);
 
     function handleEnd() {
         if (!controlsRef.current) {

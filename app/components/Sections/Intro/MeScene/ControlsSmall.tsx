@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { CameraControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { MotionValue, useMotionValueEvent, useTransform } from "framer-motion";
+import { MotionValue, useTransform } from "framer-motion";
 
 export interface ControlsSmallProps {
     scrollProgress: MotionValue<number>;
@@ -11,32 +11,41 @@ export interface ControlsSmallProps {
 export default function ControlsSmall(props: ControlsSmallProps) {
     const controlsRef = useRef<any>(null);
     const zoom = useTransform(props.scrollProgress, [0, 0.1, 1], [0.18, 0.35, 3]);
+    const zoomTransition = useRef(false);
+
+    const { onReady } = props;
 
     useFrame(() => {
         const target = zoom.get();
         const current = controlsRef.current._zoom;
 
+        // Avoid calling zoomTo too often, instead rely on transition between calls.
+        // This improved performance.
         if (Math.abs(target - current) < 0.05) {
             return;
         }
 
-        controlsRef.current?.zoomTo(target, true);
+        // disable transition for first zoom after mount.
+        controlsRef.current?.zoomTo(target, zoomTransition.current);
+
+        if (zoomTransition.current) {
+            return;
+        }
+
+        zoomTransition.current = true;
+        onReady();
     });
 
-    // useMotionValueEvent(zoom, "change", (value) => {
-    //     controlsRef.current?.zoomTo(value);
-    // });
-
-    const { onReady } = props;
-    useEffect(() => {
-        onReady();
-    }, [onReady]);
+    // const { onReady } = props;
+    // useEffect(() => {
+    //     onReady();
+    // }, [onReady]);
 
     return (
         <>
             <CameraControls
                 touches={{ one: 32, two: 0, three: 0 }}
-                smoothTime={0.15}
+                smoothTime={0.1}
                 mouseButtons={{ wheel: 0, left: 1, right: 1, middle: 0 }}
                 ref={controlsRef}
                 minPolarAngle={Math.PI / 2}
