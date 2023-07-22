@@ -16,9 +16,6 @@ export default function MeScene(props: MeSceneProps) {
     const { device } = useDeviceStore();
     const heightPercentage = Math.floor((props.textContentHeight * 100) / windowHeight);
     const spaceTop = device <= Device.sm ? heightPercentage - 35 : heightPercentage - 25;
-    // const end = 1;
-
-    // console.log(start);
 
     const y = useTransform(props.scrollYProgress, [0, 1], [`0lvh`, `80lvh`]);
 

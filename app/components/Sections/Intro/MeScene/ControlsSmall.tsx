@@ -11,29 +11,29 @@ export interface ControlsSmallProps {
 export default function ControlsSmall(props: ControlsSmallProps) {
     const controlsRef = useRef<any>(null);
     const zoom = useTransform(props.scrollProgress, [0, 1], [0.18, 2]);
-    const zoomTransition = useRef(false);
+    const isFirstFrame = useRef(true);
+    const zoomTarget = useRef(0.18);
 
     const { onReady } = props;
 
     useFrame(() => {
-        const target = zoom.get();
-        const current = controlsRef.current._zoom;
+        const zoomValue = zoom.get();
+
+        if (isFirstFrame.current) {
+            zoomTarget.current = zoomValue;
+            controlsRef.current?.zoomTo(zoomValue, false);
+            isFirstFrame.current = false;
+            onReady();
+            return;
+        }
 
         // Avoid calling zoomTo too often, instead rely on transition between calls.
         // This improved performance.
-        if (Math.abs(target - current) < 0.05) {
+        if (Math.abs(zoomValue - zoomTarget.current) < 0.05) {
             return;
         }
-
-        // disable transition for first zoom after mount.
-        controlsRef.current?.zoomTo(target, zoomTransition.current);
-
-        if (zoomTransition.current) {
-            return;
-        }
-
-        zoomTransition.current = true;
-        onReady();
+        zoomTarget.current = zoomValue;
+        controlsRef.current?.zoomTo(zoomValue, true);
     });
 
     return (
