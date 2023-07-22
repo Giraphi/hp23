@@ -16,24 +16,36 @@ export default function ControlsSmall(props: ControlsSmallProps) {
 
     const { onReady } = props;
 
+    // useFrame(() => {
+    //     const zoomValue = zoom.get();
+    //     //
+    //     if (isFirstFrame.current) {
+    //         controlsRef.current?.zoomTo(zoomValue);
+    //         isFirstFrame.current = false;
+    //         onReady();
+    //         return;
+    //     }
+    //     //
+    //     // // Avoid calling zoomTo too often, instead rely on transition between calls.
+    //     // // This improved performance.
+    //     if (Math.abs(zoomValue - zoomTarget.current) < 0.01) {
+    //         return;
+    //     }
+    //     zoomTarget.current = zoomValue;
+    //     controlsRef.current?.zoomTo(zoomValue, true);
+    // });
+
     useFrame(() => {
         const zoomValue = zoom.get();
-
+        //
+        controlsRef.current?.zoomTo(zoomValue);
         if (isFirstFrame.current) {
-            zoomTarget.current = zoomValue;
-            controlsRef.current?.zoomTo(zoomValue, false);
             isFirstFrame.current = false;
             onReady();
             return;
         }
 
-        // Avoid calling zoomTo too often, instead rely on transition between calls.
-        // This improved performance.
-        if (Math.abs(zoomValue - zoomTarget.current) < 0.05) {
-            return;
-        }
-        zoomTarget.current = zoomValue;
-        controlsRef.current?.zoomTo(zoomValue, true);
+        controlsRef.current?.zoomTo(zoomValue);
     });
 
     return (

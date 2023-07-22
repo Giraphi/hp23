@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useRef } from "react";
-import { Canvas } from "@react-three/fiber";
+import React from "react";
 import MeCanvas from "@/app/components/Sections/Intro/MeScene/MeCanvas";
-import { MotionValue, motion, useTransform, useScroll } from "framer-motion";
+import { MotionValue, motion, useTransform } from "framer-motion";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
+import { MotionCanvas } from "framer-motion-3d";
 
 export interface MeSceneProps {
     scrollYProgress: MotionValue<number>;
@@ -29,12 +29,12 @@ export default function MeScene(props: MeSceneProps) {
                     className={`h-lvh w-full overflow-hidden`}
                     style={{ y }}
                 >
-                    <Canvas
-                        className={"touch-action-y"}
+                    <MotionCanvas
+                        className={"[&>*]:touch-action-y"}
                         gl={{ antialias: false, alpha: true, precision: "lowp", powerPreference: "low-power" }}
                     >
                         <MeCanvas scrollProgress={props.scrollYProgress} />
-                    </Canvas>
+                    </MotionCanvas>
                 </motion.div>
             </div>
         </>
