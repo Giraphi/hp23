@@ -18,7 +18,7 @@ export default function MeScene(props: MeSceneProps) {
     const start = device <= Device.sm ? heightPercentage - 0.35 : heightPercentage - 0.25;
     const end = 1.3;
 
-    const y = useTransform(props.scrollYProgress, [0, 1], [`${Math.floor(start * 100)}lvh`, `${Math.floor(end * 100)}lvh`]);
+    const y = useTransform(props.scrollYProgress, [0, 1], [`200px`, `600px`]);
 
     return (
         <>
