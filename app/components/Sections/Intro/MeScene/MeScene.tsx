@@ -14,15 +14,20 @@ export interface MeSceneProps {
 export default function MeScene(props: MeSceneProps) {
     const windowHeight = typeof window !== "undefined" ? window.outerHeight : 99999;
     const { device } = useDeviceStore();
-    const heightPercentage = props.textContentHeight / windowHeight;
-    const start = device <= Device.sm ? heightPercentage - 0.35 : heightPercentage - 0.25;
-    const end = 1.3;
+    const heightPercentage = Math.floor((props.textContentHeight * 100) / windowHeight);
+    const spaceTop = device <= Device.sm ? heightPercentage - 35 : heightPercentage - 25;
+    // const end = 1;
 
-    const y = useTransform(props.scrollYProgress, [0, 1], [`200px`, `600px`]);
+    // console.log(start);
+
+    const y = useTransform(props.scrollYProgress, [0, 1], [`0lvh`, `80lvh`]);
 
     return (
         <>
-            <div className={`h-full w-full overflow-hidden`}>
+            <div
+                className={`h-full w-full overflow-hidden`}
+                style={{ paddingTop: `${spaceTop}lvh` }}
+            >
                 <motion.div
                     className={`h-lvh w-full overflow-hidden`}
                     style={{ y }}
