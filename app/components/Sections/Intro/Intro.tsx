@@ -17,8 +17,6 @@ export default function Intro(props: IntroProps) {
     const rootRef = useRef<HTMLDivElement>(null);
     const [textContentHeight, setTextContentHeight] = useState(0);
     const { scrollYProgress } = useScroll({ target: rootRef, offset: ["start start", "end start"] });
-    const scrollHintProgress = useScroll({ target: rootRef, offset: ["start start", "end end"] }).scrollYProgress;
-    const scrollHintOpacity = useTransform(scrollHintProgress, [0, 0.95, 1], [1, 1, 0]);
 
     useEffect(() => {
         if (device >= Device.lg) {
@@ -94,15 +92,6 @@ export default function Intro(props: IntroProps) {
                             textContentHeight={textContentHeight}
                         />
                     </div>
-
-                    {/*<div className={"col-content row-start-4 flex items-end justify-start"}>*/}
-                    {/*    <motion.div*/}
-                    {/*        className={"sticky bottom-4"}*/}
-                    {/*        style={{ opacity: scrollHintOpacity }}*/}
-                    {/*    >*/}
-                    {/*        <ScrollHint appearDelay={2} />*/}
-                    {/*    </motion.div>*/}
-                    {/*</div>*/}
                 </>
             ) : (
                 <>

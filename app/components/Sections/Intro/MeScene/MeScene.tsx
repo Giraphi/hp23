@@ -2,7 +2,7 @@
 
 import React from "react";
 import MeCanvas from "@/app/components/Sections/Intro/MeScene/MeCanvas";
-import { MotionValue, motion, useTransform } from "framer-motion";
+import { MotionValue, motion, useTransform, useMotionValueEvent } from "framer-motion";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { MotionCanvas } from "framer-motion-3d";
 
@@ -16,8 +16,7 @@ export default function MeScene(props: MeSceneProps) {
     const { device } = useDeviceStore();
     const heightPercentage = Math.floor((props.textContentHeight * 100) / windowHeight);
     const spaceTop = device <= Device.sm ? heightPercentage - 32 : heightPercentage - 25;
-
-    const y = useTransform(props.scrollYProgress, [0, 1], [`0lvh`, `80lvh`]);
+    const y = useTransform(props.scrollYProgress, [0, 1], [`0lvh`, "90lvh"]);
 
     return (
         <>
