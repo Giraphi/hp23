@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import MeCanvas from "@/app/components/Sections/Intro/MeScene/MeCanvas";
-import { MotionValue, motion, useTransform } from "framer-motion";
+import { MotionValue, motion, useTransform, useScroll } from "framer-motion";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 
 export interface MeSceneProps {
@@ -14,9 +14,11 @@ export interface MeSceneProps {
 export default function MeScene(props: MeSceneProps) {
     const windowHeight = typeof window !== "undefined" ? window.outerHeight : 99999;
     const { device } = useDeviceStore();
-    const start = device <= Device.sm ? props.textContentHeight - 0.35 * windowHeight : props.textContentHeight - 0.25 * windowHeight;
-    const end = device <= Device.sm ? 1.2 * windowHeight : windowHeight;
-    const y = useTransform(props.scrollYProgress, [0, 1], [start, end]);
+    const heightPercentage = props.textContentHeight / windowHeight;
+    const start = device <= Device.sm ? heightPercentage - 0.35 : heightPercentage - 0.25;
+    const end = 1.3;
+
+    const y = useTransform(props.scrollYProgress, [0, 1], [`${Math.floor(start * 100)}lvh`, `${Math.floor(end * 100)}lvh`]);
 
     return (
         <>
