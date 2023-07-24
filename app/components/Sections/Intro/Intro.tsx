@@ -4,14 +4,10 @@ import Button from "@/app/components/Button";
 import MeScene from "@/app/components/Sections/Intro/MeScene/MeScene";
 import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
-import { MotionValue, useScroll, useTransform, motion } from "framer-motion";
+import { useScroll } from "framer-motion";
 import MeSceneLarge from "@/app/components/Sections/Intro/MeScene/large/MeSceneLarge";
 
-export interface IntroProps {
-    scrollYProgress?: MotionValue<number>;
-}
-
-export default function Intro(props: IntroProps) {
+export default function Intro() {
     const device = useDeviceStore((state) => state.device);
     const measureRef = useRef<HTMLDivElement>(null);
     const rootRef = useRef<HTMLDivElement>(null);
@@ -35,9 +31,6 @@ export default function Intro(props: IntroProps) {
         return () => window.removeEventListener("resize", measure);
     }, [device]);
 
-    // start to float when top edge is 200vh above viewport. Since Intro has a height of 300vh this is
-    // exactly when bottom edge meets bottom of viewport
-    // Can't use bottom:0 here, because that makes element float as long as bottom edge is below viewport.
     return (
         <Grid
             ref={rootRef}

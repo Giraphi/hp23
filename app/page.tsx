@@ -7,8 +7,7 @@ import usePointerStoreHandler from "@/app/store/usePointerStoreHandler";
 import Projects from "@/app/components/Sections/Projects/Projects";
 import Skills from "@/app/components/Sections/Skills/Skills";
 import CodeExamples from "@/app/components/Sections/CodeExamples/CodeExamples";
-import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
-import Grid from "@/app/components/Grid/Grid";
+import { MotionConfig } from "framer-motion";
 
 export default function Home() {
     useDeviceStoreHandler();
@@ -16,24 +15,26 @@ export default function Home() {
 
     return (
         <main>
-            {/*<Puzzle />*/}
-            {/*<DotsRow />*/}
-            {/*<Cover />*/}
+            <MotionConfig>
+                {/*<Puzzle />*/}
+                {/*<DotsRow />*/}
+                {/*<Cover />*/}
 
-            {/*start to float when top edge is 200vh above viewport. Since Intro has a height of 300vh this is*/}
-            {/*exactly when bottom edge meets bottom of viewport*/}
-            {/*Can't use bottom:0 here, because that makes element float as long as bottom edge is below viewport.*/}
-            <Intro />
+                {/*start to float when top edge is 200vh above viewport. Since Intro has a height of 300vh this is*/}
+                {/*exactly when bottom edge meets bottom of viewport*/}
+                {/*Can't use bottom:0 here, because that makes element float as long as bottom edge is below viewport.*/}
+                <Intro />
 
-            {/*<div className={"fixed bottom-0"}>*/}
-            {/*    <Grid>*/}
-            {/*        <ScrollHint />*/}
-            {/*    </Grid>*/}
-            {/*</div>*/}
+                {/*<div className={"fixed bottom-0"}>*/}
+                {/*    <Grid>*/}
+                {/*        <ScrollHint />*/}
+                {/*    </Grid>*/}
+                {/*</div>*/}
 
-            <Projects />
-            <Skills />
-            <CodeExamples />
+                <Projects />
+                <Skills />
+                <CodeExamples />
+            </MotionConfig>
         </main>
     );
 }

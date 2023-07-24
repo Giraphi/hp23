@@ -22,13 +22,13 @@ export default function ScrollHint(props: ScrollHintProps) {
     const { device } = useDeviceStore();
 
     function handleClick() {
-        let length = window.innerHeight * 0.2;
+        let length = window.innerHeight * 0.4;
 
         if (device >= Device.md) {
-            length = window.innerHeight * 0.3;
+            length = window.innerHeight * 0.5;
         }
         if (device >= Device.lg) {
-            length = window.innerHeight * 0.4;
+            length = window.innerHeight * 0.6;
         }
 
         console.log(length);

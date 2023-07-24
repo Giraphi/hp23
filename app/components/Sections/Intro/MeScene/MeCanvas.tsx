@@ -5,6 +5,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import ControlsSmall from "@/app/components/Sections/Intro/MeScene/ControlsSmall";
 import { MotionValue } from "framer-motion";
 import MeGltf from "@/app/components/Sections/Intro/MeScene/MeGltf";
+import { LayoutCamera } from "framer-motion-3d";
 
 export interface MeContentProps {
     scrollProgress: MotionValue<number>;

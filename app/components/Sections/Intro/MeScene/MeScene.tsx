@@ -5,6 +5,7 @@ import MeCanvas from "@/app/components/Sections/Intro/MeScene/MeCanvas";
 import { MotionValue, motion, useTransform, useMotionValueEvent } from "framer-motion";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { MotionCanvas } from "framer-motion-3d";
+import { Canvas } from "@react-three/fiber";
 
 export interface MeSceneProps {
     scrollYProgress: MotionValue<number>;
