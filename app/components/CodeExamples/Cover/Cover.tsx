@@ -75,9 +75,9 @@ export default function Cover() {
                     </motion.div>
                 </motion.div>
             </div>
-            <div className={"h-[50dvh] bg-black"}>
-                <h1 className={"pt-16 text-center font-sans text-5xl text-white"}>Site flow continues here ....</h1>
-            </div>
+            {/*<div className={"h-[50dvh] bg-black"}>*/}
+            {/*    <h1 className={"pt-16 text-center font-sans text-5xl text-white"}>Site flow continues here ....</h1>*/}
+            {/*</div>*/}
         </div>
     );
 }

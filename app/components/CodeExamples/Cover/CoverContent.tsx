@@ -15,7 +15,7 @@ export default function CoverContent(props: CoverContentProps) {
                 <Eye className={"h-full"} />
             </div>
             <h1
-                className={`text-center font-sans text-5xl font-bold md:text-6xl lg:text-7xl`}
+                className={`text-center font-sans text-4xl font-bold md:text-6xl lg:text-7xl`}
                 style={{ fontFamily: "var(--font-bungee)" }}
             >
                 Scroll

@@ -21,7 +21,7 @@ export default function CodeExamples(props: CodeExamplesProps) {
                         some interesting components I’ve been coding recently.
                     </SectionParagraph>
                     <SectionParagraph disableSpace={true}>
-                        Each examples comes with a live demo and a link to the code on github.
+                        Each example comes with a live demo and a link to the code on github.
                     </SectionParagraph>
                 </SectionText>
 
