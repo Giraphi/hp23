@@ -1,5 +1,5 @@
 import React from "react";
-import Section from "@/app/components/Section";
+import SectionBackground from "@/app/components/SectionBackground";
 import SectionGrid from "@/app/components/SectionGrid";
 import SectionHeadline from "@/app/components/SectionHeadline";
 import SectionText from "@/app/components/SectionText";
@@ -10,9 +10,9 @@ export interface CodeExamplesProps {}
 
 export default function CodeExamples(props: CodeExamplesProps) {
     return (
-        <Section startDark={true}>
-            <SectionGrid>
-                <div className={"col-content"}>
+        <SectionBackground startDark={true}>
+            <SectionGrid className={"relative z-20"}>
+                <div className={" col-content"}>
                     <SectionHeadline>Code Examples</SectionHeadline>
                 </div>
                 <SectionText>
@@ -29,6 +29,6 @@ export default function CodeExamples(props: CodeExamplesProps) {
                     <CodeExampleItems />
                 </div>
             </SectionGrid>
-        </Section>
+        </SectionBackground>
     );
 }

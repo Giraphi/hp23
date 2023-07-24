@@ -1,5 +1,5 @@
 import React from "react";
-import Section from "@/app/components/Section";
+import SectionBackground from "@/app/components/SectionBackground";
 import SectionGrid from "@/app/components/SectionGrid";
 import SectionHeadline from "@/app/components/SectionHeadline";
 import SectionParagraph from "@/app/components/SectionParagraph";
@@ -10,7 +10,7 @@ export interface SkillsProps {}
 
 export default function Skills(props: SkillsProps) {
     return (
-        <Section>
+        <SectionBackground>
             <SectionGrid>
                 <div className={"col-content"}>
                     <SectionHeadline>Skills</SectionHeadline>
@@ -45,6 +45,6 @@ export default function Skills(props: SkillsProps) {
                 {/*    </SectionParagraph>*/}
                 {/*</SectionText>*/}
             </SectionGrid>
-        </Section>
+        </SectionBackground>
     );
 }

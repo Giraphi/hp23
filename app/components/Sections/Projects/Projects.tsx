@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import SectionGrid from "@/app/components/SectionGrid";
 import SectionHeadline from "@/app/components/SectionHeadline";
 import SectionParagraph from "@/app/components/SectionParagraph";
-import Section from "@/app/components/Section";
+import SectionBackground from "@/app/components/SectionBackground";
 import Cards from "@/app/components/Cards/Cards";
 import Card from "@/app/components/Cards/Card";
 import designUnit from "@/app/assets/projects/design-unit.png";
@@ -45,7 +45,7 @@ export default function Projects(props: ProjectsProps) {
                 </motion.div>
             )}
 
-            <Section
+            <SectionBackground
                 startDark={true}
                 className={"from-gray-1 to-gray-3 lg:from-gray-2 lg:to-gray-3"}
                 ref={sectionRef}
@@ -99,7 +99,7 @@ export default function Projects(props: ProjectsProps) {
                         </Card>
                     </Cards>
                 </SectionGrid>
-            </Section>
+            </SectionBackground>
         </>
     );
 }

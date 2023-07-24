@@ -1,5 +1,5 @@
 import React from "react";
-import Section from "@/app/components/Section";
+import SectionBackground from "@/app/components/SectionBackground";
 import SectionGrid from "@/app/components/SectionGrid";
 import SectionHeadline from "@/app/components/SectionHeadline";
 import HeadlineWText from "@/app/components/HeadlineWText";
@@ -9,8 +9,8 @@ export interface AboutMeProps {}
 
 export default function AboutMe(props: AboutMeProps) {
     return (
-        <Section>
-            <SectionGrid>
+        <SectionBackground>
+            <SectionGrid className={"relative z-10"}>
                 <div className={"col-content"}>
                     <SectionHeadline>About Me</SectionHeadline>
                 </div>
@@ -80,6 +80,6 @@ export default function AboutMe(props: AboutMeProps) {
                     </HeadlineWText>
                 </div>
             </SectionGrid>
-        </Section>
+        </SectionBackground>
     );
 }

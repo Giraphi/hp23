@@ -8,7 +8,7 @@ export interface SectionProps {
     className?: string;
 }
 
-const Section = forwardRef(function Section(props: SectionProps, ref: ForwardedRef<HTMLDivElement>) {
+const SectionBackground = forwardRef(function Section(props: SectionProps, ref: ForwardedRef<HTMLDivElement>) {
     return (
         <div
             className={twMerge(`bg-gradient-to-b ${props.startDark ? "from-gray-2 to-gray-3" : "from-gray-3 to-gray-2"}`, props.className)}
@@ -19,4 +19,4 @@ const Section = forwardRef(function Section(props: SectionProps, ref: ForwardedR
     );
 });
 
-export default Section;
+export default SectionBackground;
