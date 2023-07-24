@@ -4,6 +4,8 @@ import React, { useRef } from "react";
 import { useScroll, useTransform } from "framer-motion";
 import { motion } from "framer-motion";
 import CoverContent from "./CoverContent";
+import { Bungee_Inline } from "next/font/google";
+const bungee = Bungee_Inline({ subsets: ["latin"], weight: "400", variable: "--font-bungee" });
 
 export default function Cover() {
     const ref = useRef<HTMLDivElement>(null);
@@ -20,7 +22,7 @@ export default function Cover() {
     const zoom = useTransform(progress, [0, 0.5, 1], [1, 15, 25]);
 
     return (
-        <div>
+        <div className={`${bungee.variable}`}>
             <div
                 className="grid grid-cols-1 grid-rows-[100dvh_300dvh] rounded"
                 ref={ref}
@@ -44,12 +46,13 @@ export default function Cover() {
                     className="sticky top-0 col-start-1 row-start-1 flex flex-col items-center justify-center text-white"
                     style={{ opacity: childrenOpacity }}
                 >
-                    <div className={"rounded-xl bg-[rgba(0,0,0,0.9)] p-4"}>
-                        <h1 className={"font-sans text-5xl text-white"}>Welcome</h1>
-                        {/*<p className={"pl-8 pr-8 pt-8 text-center text-2xl"}>*/}
-                        {/*    This animation is making use of the css property <br />*/}
-                        {/*    <span className={"font-mono"}>mix-blend-mode: multiply</span>{" "}*/}
-                        {/*</p>*/}
+                    <div>
+                        <h1
+                            className={"text-6xl text-white md:text-8xl lg:text-9xl"}
+                            style={{ fontFamily: "var(--font-bungee)", textShadow: "#FC0 1px 0 10px" }}
+                        >
+                            Welcome
+                        </h1>
                     </div>
                 </motion.div>
 
@@ -66,7 +69,7 @@ export default function Cover() {
                 >
                     <motion.div
                         className={"h-full w-full"}
-                        style={{ scale: zoom, transformOrigin: "49%" }}
+                        style={{ scale: zoom, transformOrigin: "51%" }}
                     >
                         <CoverContent />
                     </motion.div>
