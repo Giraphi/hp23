@@ -23,7 +23,7 @@ export default function WavesBackground(props: WavesBackgroundProps) {
     });
     const x = useTransform(
         progressSmooth,
-        small ? [0, 0.1, 0.5, 1] : [0, 0.5, 1],
+        small ? [0, 0.3, 0.5, 1] : [0, 0.5, 1],
         small ? ["100%", "30%", "0%", "0%"] : ["40%", "0%", "0%"]
     );
 
@@ -32,8 +32,6 @@ export default function WavesBackground(props: WavesBackgroundProps) {
             className={"grid w-full grid-cols-1"}
             ref={ref}
         >
-            {/*/!*todo: hide with animate presence*!/*/}
-            {/*{!isHidden && (*/}
             <div className={"col-start-1 row-start-1 h-full w-full"}>
                 <motion.div
                     className={"fixed left-0 top-0 z-10 h-lvh w-full"}
@@ -42,7 +40,6 @@ export default function WavesBackground(props: WavesBackgroundProps) {
                     <WavesAnimation />
                 </motion.div>
             </div>
-            {/*)}*/}
             <div className={"col-start-1 row-start-1 w-full"}>{props.children}</div>
         </SectionBackground>
     );
