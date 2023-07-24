@@ -12,6 +12,7 @@ import SectionText from "@/app/components/SectionText";
 import Grid from "@/app/components/Grid/Grid";
 import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
 import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
+import TextLink from "@/app/components/TextLink";
 
 export interface ProjectsProps {}
 
@@ -68,14 +69,27 @@ export default function Projects(props: ProjectsProps) {
                             image={designUnit}
                             headline={"Homepage for a tech and design unit of a large consulting group"}
                         >
-                            Implementation of a react frontend in collaboration with the Italian design studio Vicine.
+                            Implementation of a react frontend in collaboration with the Italian design studio{" "}
+                            <TextLink
+                                target={"_blank"}
+                                href={"https://vicinedesign.com/"}
+                            >
+                                Vicine
+                            </TextLink>
+                            .
                         </Card>
                         <Card
                             image={iceberg}
                             headline={"3D presentational website for a large consulting group "}
                         >
-                            Implementation of a three.js/r3f internal website in collaboration with the designer and 3D artist Michael
-                            Flynn.
+                            Implementation of a three.js/r3f internal website in collaboration with the designer and 3D artist{" "}
+                            <TextLink
+                                href={"https://www.michaelflynnbost.com/"}
+                                target={"_blank"}
+                            >
+                                Michael Flynn Bost
+                            </TextLink>
+                            .
                         </Card>
                         <Card
                             image={ubu2}

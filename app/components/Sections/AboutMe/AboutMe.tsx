@@ -3,6 +3,7 @@ import Section from "@/app/components/Section";
 import SectionGrid from "@/app/components/SectionGrid";
 import SectionHeadline from "@/app/components/SectionHeadline";
 import HeadlineWText from "@/app/components/HeadlineWText";
+import TextLink from "@/app/components/TextLink";
 
 export interface AboutMeProps {}
 
@@ -40,19 +41,41 @@ export default function AboutMe(props: AboutMeProps) {
                             <div className={"pb-4 text-gray-c md:pb-0"}>Different Jobs as academic tutor at TU Dresden and LMU Munich</div>
                             <div className={"pr-8 font-bold"}>2016 - 2018:</div>
                             <div className={"pb-4 text-gray-c md:pb-0"}>
-                                Working student jobs in Munich at Siemens and at the robotics startup Magazino.
+                                Working student jobs in Munich at Siemens and at the robotics startup{" "}
+                                <TextLink
+                                    target={"_blank"}
+                                    href={"https://www.magazino.eu/"}
+                                >
+                                    Magazino
+                                </TextLink>
+                                .
                             </div>
                             <div className={"pr-8 font-bold"}>Since 2018:</div>
                             <div className={"text-gray-c"}>
-                                Full time frontend developer at the web agency funct in Munich. Development of Websites, Web Apps and
-                                Desktop Apps in close collaboration with different design teams.
+                                Full time frontend developer at the web agency{" "}
+                                <TextLink
+                                    href={"https://funct.com/"}
+                                    target={"_blank"}
+                                >
+                                    funct
+                                </TextLink>{" "}
+                                in Munich. Development of Websites, Web Apps and Desktop Apps in close collaboration with different design
+                                teams.
                             </div>
                         </div>
                     </HeadlineWText>
 
                     <HeadlineWText headline={"Interests"}>
                         <div className={"pb-1 text-gray-c md:pb-2"}>Art / Digital Art / Design</div>
-                        <div className={"pb-1 text-gray-c md:pb-2"}>Synthesizer at my band Ubu Imperator</div>
+                        <div className={"pb-1 text-gray-c md:pb-2"}>
+                            Synthesizer at my band{" "}
+                            <TextLink
+                                href={"https://www.ubu-imperator.com/"}
+                                target={"_blank"}
+                            >
+                                Ubu Imperator
+                            </TextLink>
+                        </div>
                         <div className={"text-gray-c"}>Modular synthesizers / electronic music</div>
                     </HeadlineWText>
                 </div>

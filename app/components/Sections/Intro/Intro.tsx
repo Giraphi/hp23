@@ -56,7 +56,7 @@ export default function Intro() {
                     </Headline>
                     <Headline
                         type={"h1"}
-                        className={"text- pb-4 text-center text-pink lg:inline-flex lg:pb-5 lg:text-left xl:pb-8"}
+                        className={"text- pb-4 text-center text-pink-600 lg:inline-flex lg:pb-5 lg:text-left xl:pb-8"}
                     >
                         Frontend Developer
                     </Headline>
