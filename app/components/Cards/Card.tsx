@@ -21,7 +21,7 @@ export default function Card(props: CardProps) {
                 />
             </div>
             <h3 className={"font-bold"}>{props.headline}</h3>
-            <p className={"text-gray-b"}>{props.children}</p>
+            <p className={"text-gray-c"}>{props.children}</p>
         </div>
     );
 }

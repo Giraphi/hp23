@@ -8,6 +8,7 @@ import Projects from "@/app/components/Sections/Projects/Projects";
 import Skills from "@/app/components/Sections/Skills/Skills";
 import CodeExamples from "@/app/components/Sections/CodeExamples/CodeExamples";
 import { MotionConfig } from "framer-motion";
+import AboutMe from "@/app/components/Sections/AboutMe/AboutMe";
 
 export default function Home() {
     useDeviceStoreHandler();
@@ -34,6 +35,7 @@ export default function Home() {
                 <Projects />
                 <Skills />
                 <CodeExamples />
+                <AboutMe />
             </MotionConfig>
         </main>
     );

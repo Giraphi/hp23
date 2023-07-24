@@ -28,7 +28,6 @@ export default function Cover() {
                 ref={ref}
             >
                 <div className="bg-lime-700 sticky top-0 col-start-1 row-start-1">
-                    {/*TODO: this seems to be very performance heavy. try lower resolution or webm? Maybe performance problem comes because  of mix-blend-mode*/}
                     <video
                         autoPlay
                         loop
@@ -75,9 +74,9 @@ export default function Cover() {
                     </motion.div>
                 </motion.div>
             </div>
-            {/*<div className={"h-[50dvh] bg-black"}>*/}
-            {/*    <h1 className={"pt-16 text-center font-sans text-5xl text-white"}>Site flow continues here ....</h1>*/}
-            {/*</div>*/}
+            <div className={"h-[50dvh] bg-black"}>
+                <h1 className={"pt-16 text-center font-sans text-5xl text-white"}>Site flow continues here ....</h1>
+            </div>
         </div>
     );
 }
