@@ -21,29 +21,28 @@ export default function WavesBackground(props: WavesBackgroundProps) {
         damping: 30,
         restDelta: 0.001,
     });
-    const x = useTransform(progressSmooth, [0, 0.5, 1], small ? ["70%", "0%", "0%"] : ["40%", "0%", "0%"]);
-    const [isHidden, setIsHidden] = useState(true);
-
-    useMotionValueEvent(scrollYProgress, "change", (v) => {
-        const shouldHide = v === 0;
-        setIsHidden(shouldHide);
-    });
+    const x = useTransform(
+        progressSmooth,
+        small ? [0, 0.1, 0.5, 1] : [0, 0.5, 1],
+        small ? ["100%", "30%", "0%", "0%"] : ["40%", "0%", "0%"]
+    );
 
     return (
         <SectionBackground
             className={"grid w-full grid-cols-1"}
             ref={ref}
         >
-            {!isHidden && (
-                <div className={"col-start-1 row-start-1 h-full w-full"}>
-                    <motion.div
-                        className={"fixed left-0 top-0 z-10 h-lvh w-full"}
-                        style={{ x }}
-                    >
-                        <WavesAnimation />
-                    </motion.div>
-                </div>
-            )}
+            {/*/!*todo: hide with animate presence*!/*/}
+            {/*{!isHidden && (*/}
+            <div className={"col-start-1 row-start-1 h-full w-full"}>
+                <motion.div
+                    className={"fixed left-0 top-0 z-10 h-lvh w-full"}
+                    style={{ x }}
+                >
+                    <WavesAnimation />
+                </motion.div>
+            </div>
+            {/*)}*/}
             <div className={"col-start-1 row-start-1 w-full"}>{props.children}</div>
         </SectionBackground>
     );
