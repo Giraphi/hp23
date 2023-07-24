@@ -12,11 +12,12 @@ export default function Card(props: CardProps) {
         <div className={"flex w-full max-w-md flex-col gap-4 rounded-2xl bg-black p-4 md:p-8 lg:text-base xl:gap-8 xl:text-xl"}>
             <div className={"relative aspect-image overflow-hidden rounded-xl"}>
                 <Image
-                    quality={10}
+                    quality={90}
                     src={props.image.src}
                     alt={"project picture"}
                     fill={true}
                     className={"object-cover"}
+                    sizes={"400px"}
                 />
             </div>
             <h3 className={"font-bold"}>{props.headline}</h3>

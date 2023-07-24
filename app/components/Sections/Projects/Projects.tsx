@@ -5,7 +5,7 @@ import SectionParagraph from "@/app/components/SectionParagraph";
 import Section from "@/app/components/Section";
 import Cards from "@/app/components/Cards/Cards";
 import Card from "@/app/components/Cards/Card";
-import designUnit2 from "@/app/assets/projects/design-unit-2.png";
+import designUnit from "@/app/assets/projects/design-unit.png";
 import iceberg from "@/app/assets/projects/iceberg.png";
 import ubu2 from "@/app/assets/projects/ubu2.png";
 import SectionText from "@/app/components/SectionText";
@@ -65,7 +65,7 @@ export default function Projects(props: ProjectsProps) {
                     </SectionText>
                     <Cards className={"col-content"}>
                         <Card
-                            image={designUnit2}
+                            image={designUnit}
                             headline={"Homepage for a tech and design unit of a large consulting group"}
                         >
                             Implementation of a react frontend in collaboration with the Italian design studio Vicine.
