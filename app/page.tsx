@@ -39,8 +39,8 @@ export default function Home() {
                 <CodeExamples />
                 <WavesBackground>
                     <AboutMe />
-                    <Footer />
                 </WavesBackground>
+                <Footer />
             </MotionConfig>
         </main>
     );

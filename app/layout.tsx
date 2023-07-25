@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html
             lang="en"
-            className={`${inter.variable} ${sourceCodePro.variable} ${delaGothicOne.variable}`}
+            className={`${inter.variable} ${sourceCodePro.variable} ${delaGothicOne.variable} h-full`}
         >
             <body className={"font-mono text-base text-white md:text-xl"}>{children}</body>
         </html>
