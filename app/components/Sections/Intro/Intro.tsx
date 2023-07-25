@@ -6,7 +6,8 @@ import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { useScroll } from "framer-motion";
 import MeSceneLarge from "@/app/components/Sections/Intro/MeScene/large/MeSceneLarge";
-import AppearWords from "@/app/components/AppearWords";
+import Appear from "@/app/components/Effects/Appear";
+import AppearWords from "@/app/components/Effects/AppearWords";
 
 export default function Intro() {
     const device = useDeviceStore((state) => state.device);
@@ -49,24 +50,33 @@ export default function Intro() {
 
             <div className={"col-content row-start-2"}>
                 <div className={"relative z-10 flex-col lg:inline-flex "}>
-                    <Headline
-                        type={"h1"}
-                        className={"text-shadow-pink pb-2 text-center lg:inline-flex lg:text-left"}
+                    <Appear once={true}>
+                        <Headline
+                            type={"h1"}
+                            className={"text-shadow-pink pb-2 text-center lg:inline-flex lg:text-left"}
+                        >
+                            Raphael Höps
+                        </Headline>
+                    </Appear>
+                    <Appear
+                        delay={0.6}
+                        once={true}
                     >
-                        Raphael Höps
-                    </Headline>
-                    <Headline
-                        type={"h1"}
-                        className={"pb-4 text-center text-pink-600 lg:inline-flex lg:pb-5 lg:text-left xl:pb-8"}
-                    >
-                        Frontend Developer
-                    </Headline>
+                        <Headline
+                            type={"h1"}
+                            className={"pb-4 text-center text-pink-600 lg:inline-flex lg:pb-5 lg:text-left xl:pb-8"}
+                        >
+                            Frontend Developer
+                        </Headline>
+                    </Appear>
                 </div>
             </div>
 
             <div className={"col-start-content-left col-end-content-right row-start-3 lg:col-end-10 xl:col-end-9"}>
                 <div className={"relative z-10 pb-4 text-center lg:pb-5 lg:text-left xl:pb-8 xl:text-2xl"}>
                     <AppearWords
+                        once={true}
+                        delay={1.2}
                         text={
                             "Hi! I’m a Munich based frontend developer with a strong background in computer science and a high understanding of design and modern UI/UX concepts."
                         }
@@ -74,7 +84,12 @@ export default function Intro() {
                 </div>
 
                 <div className={"flex justify-center lg:inline-flex lg:justify-start"}>
-                    <Button className={"relative z-10"}>Contact</Button>
+                    <Appear
+                        delay={2}
+                        once={true}
+                    >
+                        <Button className={"relative z-10"}>Contact</Button>
+                    </Appear>
                 </div>
             </div>
 

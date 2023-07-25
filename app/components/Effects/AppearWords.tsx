@@ -6,6 +6,7 @@ export interface AppearProps {
     text: string;
     slow?: boolean;
     delay?: number;
+    once?: boolean;
 }
 
 const variants = {
@@ -22,6 +23,7 @@ export default function AppearWords(props: AppearProps) {
     const isInView = useInView(ref, {
         margin: "0% 0% -20% 0%",
         amount: "some",
+        once: props.once,
     });
 
     const staggerChildren = props.slow ? 0.12 : 0.06;
