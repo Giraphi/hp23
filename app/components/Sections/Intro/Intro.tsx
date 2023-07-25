@@ -58,10 +58,7 @@ export default function Intro() {
                             Raphael Höps
                         </Headline>
                     </Appear>
-                    <Appear
-                        delay={0.6}
-                        once={true}
-                    >
+                    <Appear>
                         <Headline
                             type={"h1"}
                             className={"pb-4 text-center text-pink-600 lg:inline-flex lg:pb-5 lg:text-left xl:pb-8"}
@@ -76,7 +73,7 @@ export default function Intro() {
                 <div className={"relative z-10 pb-4 text-center lg:pb-5 lg:text-left xl:pb-8 xl:text-2xl"}>
                     <AppearWords
                         once={true}
-                        delay={1.2}
+                        delay={0.5}
                         text={
                             "Hi! I’m a Munich based frontend developer with a strong background in computer science and a high understanding of design and modern UI/UX concepts."
                         }
@@ -85,7 +82,8 @@ export default function Intro() {
 
                 <div className={"flex justify-center lg:inline-flex lg:justify-start"}>
                     <Appear
-                        delay={2}
+                        delay={1.5}
+                        disableTransform={true}
                         once={true}
                     >
                         <Button className={"relative z-10"}>Contact</Button>
@@ -99,16 +97,30 @@ export default function Intro() {
                         className={"col-screen row-span-4 row-start-1"}
                         style={{ visibility: `${textContentHeight !== 0 ? "visible" : "hidden"}` }}
                     >
-                        <MeScene
-                            scrollYProgress={scrollYProgress}
-                            textContentHeight={textContentHeight}
-                        />
+                        <Appear
+                            delay={1.5}
+                            disableTransform={true}
+                            once={true}
+                            className={"h-full"}
+                        >
+                            <MeScene
+                                scrollYProgress={scrollYProgress}
+                                textContentHeight={textContentHeight}
+                            />
+                        </Appear>
                     </div>
                 </>
             ) : (
                 <>
                     <div className={"col-screen row-span-4 row-start-1 "}>
-                        <MeSceneLarge />
+                        <Appear
+                            delay={1.5}
+                            disableTransform={true}
+                            once={true}
+                            className={"h-full"}
+                        >
+                            <MeSceneLarge />
+                        </Appear>
                     </div>
                 </>
             )}

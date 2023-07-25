@@ -23,9 +23,7 @@ export default function WavesBackground(props: WavesBackgroundProps) {
     const ref = useRef(null);
     const { device } = useDeviceStore();
     const small = device <= Device.md;
-    const inView = useInView(ref, small ? { margin: "-50% 0% -20% 0%" } : { margin: "0% 0% -33% 0%" });
-
-    console.log(inView);
+    const inView = useInView(ref, small ? { margin: "-50% 0% -20% 0%" } : { margin: "0% 0% -40% 0%" });
 
     return (
         <SectionBackground

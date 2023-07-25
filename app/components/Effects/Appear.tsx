@@ -5,6 +5,8 @@ export interface AppearProps {
     children: ReactNode;
     delay?: number;
     once?: boolean;
+    disableTransform?: boolean;
+    className?: string;
 }
 
 export default function Appear(props: AppearProps) {
@@ -13,10 +15,11 @@ export default function Appear(props: AppearProps) {
 
     return (
         <motion.div
+            className={props.className}
             ref={ref}
-            initial={{ opacity: 0, y: 5 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 5 }}
-            transition={{ duration: 0.6, delay: props.delay }}
+            initial={{ opacity: 0, y: props.disableTransform ? 0 : 5 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: props.disableTransform ? 0 : 5 }}
+            transition={{ duration: 0.5, delay: props.delay }}
         >
             {props.children}
         </motion.div>
