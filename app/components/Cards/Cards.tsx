@@ -8,16 +8,6 @@ export interface CardsProps {
     className?: string;
 }
 
-// const cardsVariants = {
-//     hide: { opacity: 0 },
-//     show: {
-//         opacity: 1,
-//         transition: {
-//             staggerChildren: 0.5,
-//         },
-//     },
-// };
-
 export default function Cards(props: CardsProps) {
     const ref = useRef(null);
     const small = useDeviceStore().device <= Device.md;

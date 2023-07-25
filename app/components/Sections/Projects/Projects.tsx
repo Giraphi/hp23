@@ -60,7 +60,7 @@ export default function Projects(props: ProjectsProps) {
                             web office funct.
                         </SectionParagraph>
                         <SectionParagraph disableSpace={true}>
-                            For legal reasons some of the clients can’t be named explicitly. More about that on request.
+                            For legal reasons some of the clients can’t be named explicitly.
                         </SectionParagraph>
                     </SectionText>
                     <Cards className={"col-content"}>
