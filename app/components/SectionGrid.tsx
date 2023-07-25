@@ -8,5 +8,5 @@ export interface SectionGridProps {
 }
 
 export default function SectionGrid(props: SectionGridProps) {
-    return <Grid className={twMerge("pb-12 pt-8 lg:pb-32", props.className)}>{props.children}</Grid>;
+    return <Grid className={twMerge("relative z-20 pb-12 pt-8 lg:pb-32", props.className)}>{props.children}</Grid>;
 }

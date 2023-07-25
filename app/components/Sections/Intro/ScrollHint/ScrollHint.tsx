@@ -31,8 +31,6 @@ export default function ScrollHint(props: ScrollHintProps) {
             length = window.innerHeight * 0.6;
         }
 
-        console.log(length);
-
         window.scrollBy({
             top: length,
             behavior: "smooth",

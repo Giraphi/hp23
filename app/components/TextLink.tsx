@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 export interface TextLinkProps extends React.HTMLProps<HTMLAnchorElement> {
     children: ReactNode;
+    inverse?: boolean;
 }
 
 export default function TextLink(props: TextLinkProps) {
@@ -10,7 +11,7 @@ export default function TextLink(props: TextLinkProps) {
     return (
         <a
             {...rest}
-            className={twMerge(className, "text-lime-500 hover:text-lime-600")}
+            className={twMerge(className, `${!props.inverse ? "text-lime-500 hover:text-lime-600" : "text-lime-600 hover:text-lime-500"}`)}
         >
             {props.children}
         </a>

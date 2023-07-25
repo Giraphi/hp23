@@ -10,6 +10,7 @@ import CodeExamples from "@/app/components/Sections/CodeExamples/CodeExamples";
 import { MotionConfig } from "framer-motion";
 import AboutMe from "@/app/components/Sections/AboutMe/AboutMe";
 import WavesBackground from "@/app/components/Sections/AboutMe/WavesBackground/WavesBackground";
+import Footer from "@/app/components/Sections/Footer/Footer";
 
 export default function Home() {
     useDeviceStoreHandler();
@@ -38,6 +39,7 @@ export default function Home() {
                 <CodeExamples />
                 <WavesBackground>
                     <AboutMe />
+                    <Footer />
                 </WavesBackground>
             </MotionConfig>
         </main>

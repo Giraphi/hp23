@@ -50,13 +50,13 @@ export default function Intro() {
                 <div className={"relative z-10 flex-col lg:inline-flex "}>
                     <Headline
                         type={"h1"}
-                        className={"pb-2 text-center lg:inline-flex lg:text-left"}
+                        className={"text-shadow-pink pb-2 text-center lg:inline-flex lg:text-left"}
                     >
                         Raphael Höps
                     </Headline>
                     <Headline
                         type={"h1"}
-                        className={"text- pb-4 text-center text-pink-600 lg:inline-flex lg:pb-5 lg:text-left xl:pb-8"}
+                        className={"pb-4 text-center text-pink-600 lg:inline-flex lg:pb-5 lg:text-left xl:pb-8"}
                     >
                         Frontend Developer
                     </Headline>

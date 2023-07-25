@@ -34,4 +34,8 @@
     .touch-action-y {
         touch-action: pan-y !important;
     }
+
+    .shadow-pink {
+        text-shadow: theme("colors.pink.600") 1px 0 10px;
+    }
 }

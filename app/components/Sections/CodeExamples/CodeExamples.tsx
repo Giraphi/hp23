@@ -11,7 +11,7 @@ export interface CodeExamplesProps {}
 export default function CodeExamples(props: CodeExamplesProps) {
     return (
         <SectionBackground startDark={true}>
-            <SectionGrid className={"relative z-20"}>
+            <SectionGrid>
                 <div className={" col-content"}>
                     <SectionHeadline>Code Examples</SectionHeadline>
                 </div>

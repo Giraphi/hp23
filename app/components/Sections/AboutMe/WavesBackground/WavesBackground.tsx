@@ -15,7 +15,7 @@ const variants = {
     },
     hidden: {
         opacity: 0,
-        transition: { ease: "easeOut", duration: 2 },
+        transition: { ease: "easeOut", duration: 1 },
     },
 };
 
@@ -34,6 +34,7 @@ export default function WavesBackground(props: WavesBackgroundProps) {
                 <motion.div
                     className={"fixed left-[10%] top-0 z-10 h-lvh w-full"}
                     variants={variants}
+                    initial={"hidden"}
                     animate={inView ? "visible" : "hidden"}
                 >
                     <WavesAnimation />
