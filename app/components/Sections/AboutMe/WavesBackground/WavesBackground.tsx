@@ -1,31 +1,29 @@
 import React, { ReactNode, useRef, useState } from "react";
 import SectionBackground from "@/app/components/SectionBackground";
-import WavesAnimation from "@/app/components/Sections/AboutMe/WavesBackground/WavesAnimation";
-import { useScroll, useTransform, motion, useSpring, useMotionValueEvent } from "framer-motion";
+import WavesAnimation, { wavesEase } from "@/app/components/Sections/AboutMe/WavesBackground/WavesAnimation";
+import { useScroll, useTransform, motion, useSpring, useMotionValueEvent, useInView } from "framer-motion";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 
 export interface WavesBackgroundProps {
     children: ReactNode;
 }
 
+const variants = {
+    visible: {
+        opacity: 1,
+        transition: { ease: "easeIn", duration: 2 },
+    },
+    hidden: {
+        opacity: 0,
+        transition: { ease: "easeOut", duration: 2 },
+    },
+};
+
 export default function WavesBackground(props: WavesBackgroundProps) {
     const ref = useRef(null);
     const { device } = useDeviceStore();
     const small = device <= Device.md;
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: small ? ["start end", "start start"] : ["start center", "end center"],
-    });
-    const progressSmooth = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001,
-    });
-    const x = useTransform(
-        progressSmooth,
-        small ? [0, 0.3, 0.5, 1] : [0, 0.5, 1],
-        small ? ["100%", "30%", "0%", "0%"] : ["40%", "0%", "0%"]
-    );
+    const inView = useInView(ref, { amount: 0.3 });
 
     return (
         <SectionBackground
@@ -34,8 +32,9 @@ export default function WavesBackground(props: WavesBackgroundProps) {
         >
             <div className={"pointer-events-none col-start-1 row-start-1 h-full w-full"}>
                 <motion.div
-                    className={"fixed left-0 top-0 z-10 h-lvh w-full"}
-                    style={{ x }}
+                    className={"fixed left-[10%] top-0 z-10 h-lvh w-full"}
+                    variants={variants}
+                    animate={inView ? "visible" : "hidden"}
                 >
                     <WavesAnimation />
                 </motion.div>

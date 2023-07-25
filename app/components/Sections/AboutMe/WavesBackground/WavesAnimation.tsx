@@ -5,7 +5,8 @@ import wavePaths from "@/app/components/Sections/AboutMe/WavesBackground/paths";
 
 export interface WavesAnimationProps {}
 
-const pathTransition = { duration: 5, repeat: Infinity, repeatType: "reverse" as "reverse", ease: [0.45, 0, 0.6, 1] };
+export const wavesEase = [0.45, 0, 0.6, 1];
+const pathTransition = { duration: 5, repeat: Infinity, repeatType: "reverse" as "reverse", ease: wavesEase };
 
 export default function WavesAnimation(props: WavesAnimationProps) {
     // viewBox: set up an abstract coordinate system. Svg elements, like paths etc. will refer to that.
