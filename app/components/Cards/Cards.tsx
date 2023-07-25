@@ -1,15 +1,37 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useRef } from "react";
 import { twMerge } from "tailwind-merge";
+import { motion, useInView } from "framer-motion";
+import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 
 export interface CardsProps {
     children?: ReactNode;
     className?: string;
 }
 
+// const cardsVariants = {
+//     hide: { opacity: 0 },
+//     show: {
+//         opacity: 1,
+//         transition: {
+//             staggerChildren: 0.5,
+//         },
+//     },
+// };
+
 export default function Cards(props: CardsProps) {
+    const ref = useRef(null);
+    const small = useDeviceStore().device <= Device.md;
+    const inView = useInView(ref, { margin: "0% 0% -20% 0%" });
+
     return (
-        <div className={twMerge(`flex flex-col items-center gap-4 md:gap-6 lg:flex-row lg:items-stretch lg:gap-8`, props.className)}>
+        <motion.div
+            transition={inView && !small ? { staggerChildren: 0.2 } : {}}
+            ref={ref}
+            initial={small ? "show" : "hide"}
+            animate={inView || small ? "show" : "hide"}
+            className={twMerge(`flex flex-col items-center gap-4 md:gap-6 lg:flex-row lg:items-stretch lg:gap-8`, props.className)}
+        >
             {props.children}
-        </div>
+        </motion.div>
     );
 }

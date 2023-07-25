@@ -17,7 +17,7 @@ export default function Appear(props: AppearProps) {
         <motion.div
             className={props.className}
             ref={ref}
-            initial={{ opacity: 0, y: props.disableTransform ? 0 : 5 }}
+            initial={{ opacity: 0, y: props.disableTransform ? 0 : 15 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: props.disableTransform ? 0 : 5 }}
             transition={{ duration: 0.5, delay: props.delay }}
         >

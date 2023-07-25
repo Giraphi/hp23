@@ -58,7 +58,7 @@ export default function Intro() {
                             Raphael Höps
                         </Headline>
                     </Appear>
-                    <Appear>
+                    <Appear once={true}>
                         <Headline
                             type={"h1"}
                             className={"pb-4 text-center text-pink-600 lg:inline-flex lg:pb-5 lg:text-left xl:pb-8"}
