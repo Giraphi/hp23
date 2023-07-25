@@ -32,7 +32,7 @@ export default function WavesBackground(props: WavesBackgroundProps) {
             className={"grid w-full grid-cols-1"}
             ref={ref}
         >
-            <div className={"col-start-1 row-start-1 h-full w-full"}>
+            <div className={"pointer-events-none col-start-1 row-start-1 h-full w-full"}>
                 <motion.div
                     className={"fixed left-0 top-0 z-10 h-lvh w-full"}
                     style={{ x }}
