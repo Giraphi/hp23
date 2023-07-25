@@ -6,6 +6,7 @@ import Headline from "@/app/components/Headline";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { useScroll } from "framer-motion";
 import MeSceneLarge from "@/app/components/Sections/Intro/MeScene/large/MeSceneLarge";
+import AppearWords from "@/app/components/AppearWords";
 
 export default function Intro() {
     const device = useDeviceStore((state) => state.device);
@@ -64,10 +65,13 @@ export default function Intro() {
             </div>
 
             <div className={"col-start-content-left col-end-content-right row-start-3 lg:col-end-10 xl:col-end-9"}>
-                <p className={"relative z-10 pb-4 text-center lg:pb-5 lg:text-left xl:pb-8 xl:text-2xl"}>
-                    Hi! I’m a Munich based frontend developer with a strong background in computer science and a high understanding of
-                    design and modern UI/UX concepts.
-                </p>
+                <div className={"relative z-10 pb-4 text-center lg:pb-5 lg:text-left xl:pb-8 xl:text-2xl"}>
+                    <AppearWords
+                        text={
+                            "Hi! I’m a Munich based frontend developer with a strong background in computer science and a high understanding of design and modern UI/UX concepts."
+                        }
+                    />
+                </div>
 
                 <div className={"flex justify-center lg:inline-flex lg:justify-start"}>
                     <Button className={"relative z-10"}>Contact</Button>
