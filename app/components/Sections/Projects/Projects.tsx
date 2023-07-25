@@ -35,7 +35,7 @@ export default function Projects(props: ProjectsProps) {
             {renderHint && (
                 <motion.div
                     style={{ opacity: hintOpacity }}
-                    className={"fixed bottom-4 w-full"}
+                    className={"fixed bottom-4 z-30 w-full"}
                 >
                     <Grid>
                         <div className={"col-content flex justify-end lg:justify-center"}>
