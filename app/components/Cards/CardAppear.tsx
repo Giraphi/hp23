@@ -9,7 +9,7 @@ export interface CardAppearProps {
 }
 
 const cardVariants = {
-    hide: { opacity: 0, x: -15, transition: { duration: 0 } },
+    hide: { opacity: 0, x: -15, transition: { duration: 1 } },
     show: { opacity: 1, x: 0, transition: { duration: 0.3, ease: "circOut" } },
 };
 
