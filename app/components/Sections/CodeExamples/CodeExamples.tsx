@@ -17,12 +17,10 @@ export default function CodeExamples(props: CodeExamplesProps) {
                 </div>
                 <SectionText>
                     <SectionParagraph>
-                        If you’d like to dive into some hands on code or maybe get some inspiration for your own projects, I’ve selected
-                        some interesting components I’ve been coding recently.
+                        If you’re up for some hands on code or maybe looking for some inspiration for your own projects, I’ve selected some
+                        interesting components I’ve been coding recently.
                     </SectionParagraph>
-                    <SectionParagraph disableSpace={true}>
-                        Each example comes with a live demo and a link to the code on github.
-                    </SectionParagraph>
+                    <SectionParagraph disableSpace={true}>Each example comes with a live demo on codesandbox.</SectionParagraph>
                 </SectionText>
 
                 <div className={"col-content"}>
