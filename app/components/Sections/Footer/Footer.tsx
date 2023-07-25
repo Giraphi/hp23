@@ -28,7 +28,7 @@ export default function Footer(props: FooterProps) {
 
             <div className={"col-content pb-4 lg:col-span-6 lg:col-start-8 lg:row-span-1 lg:row-start-1"}>
                 <h3 className={"font-bold"}>About this site</h3>
-                <ul className={"list-disc pl-8"}>
+                <ul className={"list-disc pl-4"}>
                     <li>Design, Development and content by Raphael Höps.</li>
                     <li>
                         Full website code on <TextLink href={"https://github.com/Giraphi/hp23"}>Github</TextLink>.
