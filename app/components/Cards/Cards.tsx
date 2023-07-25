@@ -21,7 +21,7 @@ export interface CardsProps {
 export default function Cards(props: CardsProps) {
     const ref = useRef(null);
     const small = useDeviceStore().device <= Device.md;
-    const inView = useInView(ref, { margin: "0% 0% -20% 0%" });
+    const inView = useInView(ref, { margin: "30% 0% -20% 0%" });
 
     return (
         <motion.div
