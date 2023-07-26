@@ -7,7 +7,7 @@ export interface FooterProps {}
 
 export default function Footer(props: FooterProps) {
     return (
-        <SectionGrid className={"text-md border-t bg-gray-4 pb-4 pt-4 text-base text-white lg:pb-4 lg:pt-4"}>
+        <SectionGrid className={"text-md border-t border-gray-c bg-gray-4 pb-4 pt-4 text-base text-white lg:pb-4 lg:pt-4"}>
             <div className={"col-content pb-4 lg:col-span-6 lg:col-start-2 lg:row-span-2"}>
                 <h3 className={"font-bold"}>References</h3>
                 <ul className={"list-disc pl-4"}>
@@ -43,7 +43,6 @@ export default function Footer(props: FooterProps) {
                 <div>
                     <TextLink>Imprint</TextLink> | <TextLink>Data Privacy</TextLink>
                 </div>
-                <div></div>
             </div>
         </SectionGrid>
     );

@@ -1,5 +1,4 @@
-import React, { ReactNode, useRef } from "react";
-import { useScroll, useTransform } from "framer-motion";
+import React, { ReactNode } from "react";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { motion } from "framer-motion";
 
@@ -14,17 +13,13 @@ const cardVariants = {
 };
 
 export default function CardAppear(props: CardAppearProps) {
-    const ref = useRef(null);
-    const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
     const small = useDeviceStore().device <= Device.md;
-    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.7, 1], [0, 1, 1, 0]);
 
     return (
         <motion.div
-            ref={ref}
+            key={`${small}`} // remount if device changes to reset animation
             variants={small ? undefined : cardVariants}
             className={props.className}
-            style={small ? { opacity, x: 0 } : undefined}
         >
             {props.children}
         </motion.div>
