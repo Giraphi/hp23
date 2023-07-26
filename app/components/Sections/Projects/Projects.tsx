@@ -47,7 +47,7 @@ export default function Projects(props: ProjectsProps) {
 
             <SectionBackground
                 startDark={true}
-                className={"border-t border-gray-c"}
+                className={"m border-t border-gray-c lg:border-none"}
                 ref={sectionRef}
             >
                 <SectionGrid>
