@@ -1,16 +1,16 @@
 import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import * as THREE from "three";
+// import * as THREE from "three";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { MotionValue, useTransform } from "framer-motion";
 import { useFrame } from "@react-three/fiber";
-import { Group, MathUtils, Mesh } from "three";
+import { Group, Mesh } from "three";
 import useCursorObject from "@/app/hooks/useCursorObject";
 
 type GLTFResult = GLTF & {
     nodes: {
-        mesh_0: THREE.Mesh;
+        mesh_0: Mesh;
     };
     materials: {};
 };
