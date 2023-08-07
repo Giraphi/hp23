@@ -1,15 +1,7 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import Dot from "./Dot";
 import { MotionValue } from "framer-motion";
 import { MousePosition } from "./DotsRowLarge";
-
-const StyledRoot = styled.div`
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    z-index: 10;
-`;
 
 export interface DotsLineProps {
     numDots: number;
@@ -42,7 +34,7 @@ export default function DotsLine(props: DotsLineProps) {
     }, [props.hide, props.numDots]);
 
     return (
-        <StyledRoot>
+        <div className={"relative z-10 flex justify-between"}>
             {Array.from(Array(props.numDots).keys()).map((index) => (
                 <Dot
                     mousePosition={props.mousePosition}
@@ -50,6 +42,6 @@ export default function DotsLine(props: DotsLineProps) {
                     key={index}
                 />
             ))}
-        </StyledRoot>
+        </div>
     );
 }

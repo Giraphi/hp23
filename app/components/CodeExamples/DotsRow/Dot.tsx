@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import styled, { css } from "styled-components";
 import { MousePosition } from "./DotsRowLarge";
 import { motion, MotionValue, useSpring } from "framer-motion";
 import { round } from "./util/functions";
