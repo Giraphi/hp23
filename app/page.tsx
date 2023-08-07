@@ -19,20 +19,7 @@ export default function Home() {
     return (
         <main>
             <MotionConfig>
-                {/*<Puzzle />*/}
-                {/*<DotsRow />*/}
-                {/*<Cover />*/}
-
-                {/*start to float when top edge is 200vh above viewport. Since Intro has a height of 300vh this is*/}
-                {/*exactly when bottom edge meets bottom of viewport*/}
-                {/*Can't use bottom:0 here, because that makes element float as long as bottom edge is below viewport.*/}
                 <Intro />
-
-                {/*<div className={"fixed bottom-0"}>*/}
-                {/*    <Grid>*/}
-                {/*        <ScrollHint />*/}
-                {/*    </Grid>*/}
-                {/*</div>*/}
 
                 <Projects />
                 <Skills />
