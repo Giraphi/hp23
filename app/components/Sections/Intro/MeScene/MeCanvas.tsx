@@ -32,8 +32,10 @@ export default function MeCanvas(props: MeContentProps) {
             />
 
             <AsciiRenderer
+                renderIndex={0}
                 invert={true}
-                bgColor={"rgba(0,0,0,0)"}
+                fgColor="white"
+                bgColor="transparent"
                 resolution={0.18}
                 characters={" .:-+*=%@#FXQRI,?'`´"}
             />

@@ -5,14 +5,11 @@ import { MotionValue, motion, useTransform, useInView } from "framer-motion";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { MotionCanvas } from "framer-motion-3d";
 import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
 
 export interface MeSceneProps {
     scrollYProgress: MotionValue<number>;
     textContentHeight: number;
 }
-
-const DisableRender = () => useFrame(() => null, 1000);
 
 export default function MeScene(props: MeSceneProps) {
     const windowHeight = typeof window !== "undefined" ? window.outerHeight : 99999;

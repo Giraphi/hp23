@@ -36,10 +36,13 @@ export default function MeCanvasLarge(props: MeCanvasLargeProps) {
             />
 
             <AsciiRenderer
+                renderIndex={0}
                 invert={true}
-                bgColor={"rgba(0,0,0,0)"}
+                // bgColor={"rgba(0,0,0,0)"}
                 resolution={0.18}
                 characters={" .:-+*=%@#FXQRI,?'`´"}
+                fgColor="white"
+                bgColor="transparent"
             />
 
             {/*<PerspectiveCamera*/}
@@ -92,7 +95,7 @@ export default function MeCanvasLarge(props: MeCanvasLargeProps) {
                         intensity={1}
                         color={"white"}
                         position={[3, 15, 9]}
-                        castShadow={true}
+                        castShadow={false}
                     />
 
                     <group
