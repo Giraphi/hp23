@@ -1,5 +1,6 @@
 import "./globals.scss";
 import { Dela_Gothic_One, Inter, Source_Code_Pro } from "next/font/google";
+import { ReactNode } from "react";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const delaGothicOne = Dela_Gothic_One({ subsets: ["latin"], weight: "400", variable: "--font-dela-gothic-one" });
@@ -10,7 +11,7 @@ export const metadata = {
     description: "Portfolio Site",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html
             lang="en"

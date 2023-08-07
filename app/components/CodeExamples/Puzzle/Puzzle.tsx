@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // import desk from "@/app/components/CodeExamples/Puzzle/images/desk.jpg";
 // import floor from "@/app/components/CodeExamples/Puzzle/images/floor.jpg";

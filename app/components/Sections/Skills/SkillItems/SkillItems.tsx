@@ -1,4 +1,3 @@
-import React from "react";
 import SkillItemsGroup from "@/app/components/Sections/Skills/SkillItems/SkillItemsGroup";
 import SkillItem from "@/app/components/Sections/Skills/SkillItems/SkillItem";
 import HtmlIcon from "@/app/assets/skills/html.svg";

@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef } from "react";
+import { ReactNode, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { motion, useInView } from "framer-motion";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";

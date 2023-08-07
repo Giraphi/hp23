@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, ReactNode } from "react";
+import { ForwardedRef, forwardRef, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 export interface GridProps {

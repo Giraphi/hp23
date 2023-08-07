@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 import { PuzzleDimensions } from "@/app/components/CodeExamples/Puzzle/Puzzle";
 import PuzzleAnimation from "@/app/components/CodeExamples/Puzzle/PuzzleAnimation";
 import Image, { StaticImageData } from "next/image";

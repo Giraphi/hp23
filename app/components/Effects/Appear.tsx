@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef } from "react";
+import { ReactNode, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 export interface AppearProps {

@@ -1,7 +1,7 @@
-import React, { ReactNode } from "react";
+import { HTMLProps, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
-export interface TextLinkProps extends React.HTMLProps<HTMLAnchorElement> {
+export interface TextLinkProps extends HTMLProps<HTMLAnchorElement> {
     children: ReactNode;
     inverse?: boolean;
 }

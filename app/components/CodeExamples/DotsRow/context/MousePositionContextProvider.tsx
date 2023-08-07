@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import MousePositionContext from "./MousePositionContext";
 
 export interface MousePositionContextProviderProps {
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
 export default function MousePositionContextProvider(props: MousePositionContextProviderProps) {

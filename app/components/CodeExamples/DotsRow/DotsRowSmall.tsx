@@ -1,4 +1,3 @@
-import React from "react";
 import DotsLine from "./DotsLine";
 
 export interface DotsRowSmallProps {

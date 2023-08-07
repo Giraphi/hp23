@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, useEffect, useRef, useState } from "react";
+import { Fragment, useRef } from "react";
 import { useInView, motion } from "framer-motion";
 
 export interface AppearProps {
@@ -39,7 +39,7 @@ export default function AppearWords(props: AppearProps) {
             transition={isInView ? { staggerChildren, delayChildren } : {}}
         >
             {words.map((word, i) => (
-                <React.Fragment key={i}>
+                <Fragment key={i}>
                     <motion.span
                         variants={variants}
                         className={"inline-block"}
@@ -48,7 +48,7 @@ export default function AppearWords(props: AppearProps) {
                         {word}
                     </motion.span>
                     <span> </span>
-                </React.Fragment>
+                </Fragment>
             ))}
         </motion.div>
     );

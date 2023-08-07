@@ -1,4 +1,3 @@
-import React from "react";
 import ChevronDown from "@/app/assets/chevron-down.svg";
 import { motion } from "framer-motion";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";

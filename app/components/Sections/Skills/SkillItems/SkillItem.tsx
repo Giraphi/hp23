@@ -1,8 +1,8 @@
-import React, { ReactNode } from "react";
+import { FC, ReactNode } from "react";
 import Image, { StaticImageData } from "next/image";
 
 export interface SkillItemProps {
-    Icon?: React.FC;
+    Icon?: FC;
     children?: ReactNode;
     href?: string;
     iconImage?: StaticImageData;

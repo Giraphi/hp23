@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import MeCanvas from "@/app/components/Sections/Intro/MeScene/MeCanvas";
 import { MotionValue, motion, useTransform } from "framer-motion";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";

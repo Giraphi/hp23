@@ -1,4 +1,3 @@
-import React from "react";
 import SectionBackground from "@/app/components/SectionBackground";
 import SectionGrid from "@/app/components/SectionGrid";
 import SectionHeadline from "@/app/components/SectionHeadline";

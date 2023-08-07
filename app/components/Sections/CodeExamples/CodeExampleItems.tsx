@@ -1,4 +1,3 @@
-import React from "react";
 import Cards from "@/app/components/Cards/Cards";
 import VideoCard from "@/app/components/Cards/VideoCard";
 

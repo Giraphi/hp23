@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import { motion } from "framer-motion";
 

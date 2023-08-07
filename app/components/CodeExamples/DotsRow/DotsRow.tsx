@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import DotsRowLarge from "./DotsRowLarge";
 import DotsRowSmall from "./DotsRowSmall";
 import MousePositionContextProvider from "@/app/components/CodeExamples/DotsRow/context/MousePositionContextProvider";

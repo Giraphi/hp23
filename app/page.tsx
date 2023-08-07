@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Intro from "@/app/components/Sections/Intro/Intro";
 import useDeviceStoreHandler from "@/app/store/useDeviceStoreHandler";
 import usePointerStoreHandler from "@/app/store/usePointerStoreHandler";

@@ -1,7 +1,5 @@
-import React from "react";
 import SectionGrid from "@/app/components/SectionGrid";
 import TextLink from "@/app/components/TextLink";
-import SectionBackground from "@/app/components/SectionBackground";
 
 export interface FooterProps {}
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Grid from "@/app/components/Grid/Grid";
 import Button from "@/app/components/Button";
 import MeScene from "@/app/components/Sections/Intro/MeScene/MeScene";

@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import Image, { StaticImageData } from "next/image";
 import CardAppear from "@/app/components/Cards/CardAppear";
 

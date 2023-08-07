@@ -1,14 +1,13 @@
-import React from "react";
-
 import { motion } from "framer-motion";
 import { PuzzleDimensions } from "@/app/components/CodeExamples/Puzzle/Puzzle";
 import PuzzleAnimationRect from "@/app/components/CodeExamples/Puzzle/PuzzleAnimationRect";
 import useClipPathConfig, { AnimationClipPathConfig, Mod } from "@/app/components/CodeExamples/Puzzle/useClipPathConfig";
+import { ReactNode } from "react";
 
 const backgroundScaleFactor = 1.1;
 
 export interface PuzzleBackgroundProps {
-    children: React.ReactNode;
+    children: ReactNode;
     dimensions: PuzzleDimensions;
     index: number;
     muted?: boolean;

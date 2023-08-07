@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import wavePaths from "@/app/components/Sections/AboutMe/WavesBackground/paths";

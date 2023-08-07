@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { PuzzleDimensions } from "@/app/components/CodeExamples/Puzzle/Puzzle";
 import { RectConfig } from "@/app/components/CodeExamples/Puzzle/useClipPathConfig";

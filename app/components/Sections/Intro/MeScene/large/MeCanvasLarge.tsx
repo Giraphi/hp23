@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { AsciiRenderer, Sphere, PerspectiveCamera } from "@react-three/drei";
 import { Group, PerspectiveCamera as PerspectiveCameraType } from "three";
 import { useFrame, useThree } from "@react-three/fiber";

@@ -1,4 +1,4 @@
-import React, { RefObject, useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef } from "react";
 import { CameraControls } from "@react-three/drei";
 import { usePointerStore } from "@/app/store/usePointerStore";
 import { useFrame, useThree } from "@react-three/fiber";

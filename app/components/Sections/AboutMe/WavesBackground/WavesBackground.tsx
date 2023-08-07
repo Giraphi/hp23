@@ -1,7 +1,7 @@
-import React, { ReactNode, useRef, useState } from "react";
+import { ReactNode, useRef } from "react";
 import SectionBackground from "@/app/components/SectionBackground";
-import WavesAnimation, { wavesEase } from "@/app/components/Sections/AboutMe/WavesBackground/WavesAnimation";
-import { useScroll, useTransform, motion, useSpring, useMotionValueEvent, useInView } from "framer-motion";
+import WavesAnimation from "@/app/components/Sections/AboutMe/WavesBackground/WavesAnimation";
+import {  motion, useInView } from "framer-motion";
 import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 
 export interface WavesBackgroundProps {
