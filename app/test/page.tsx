@@ -1,64 +1,35 @@
 "use client";
-import { PageProps } from "@/app/puzzle/page";
-import { useScroll, useTransform, motion, useMotionTemplate, useViewportScroll } from "framer-motion";
-import { useRef } from "react";
-import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
+import { useDeviceStore } from "@/app/store/useDeviceStore";
 import useDeviceStoreHandler from "@/app/store/useDeviceStoreHandler";
 
-export default function Page(props: PageProps) {
+export default function Page() {
     useDeviceStoreHandler();
 
     // Stackblitz: Embed only works in chromium based browsers
+    //
+    // Codesandbox: Seems to have two different views: normal and new.
+    // Normal: Codesandbox as we know it so far ("Browser Sandbox")
+    // New: optimized for github repos ("Cloud Sandbox")
+    // but seems to be more or less under development.
+    // https://codesandbox.io/docs/learn/sandboxes/embedding?tab=cloud-sandboxes
+    //
+    // - VM sometimes doesn't start?
+    // - file icons don't work (or are they ment to be like this?)
+    // - share -> iframe embed button sometimes not there
+    // - if it is there, we don't have a UI to adjust iframe-parameters
+    // - parameters don't work even if we set them to the path manually
+    // - has a lot of buttons/functionality fot git (commit, view history etc.)
+    //
+    // Best approach: Copy-paste code to a "normal" sandbox
 
-    // Currently best approach to embed github code:
-    // Codesandbox: Modify github url by adding 'box' after github:
-    // https://github.com/Giraphi/scroll -> https://githubbox.com/Giraphi/scroll
-
-    const { device } = useDeviceStore();
+    // const { device } = useDeviceStore();
 
     return (
         <>
-            {/*{device < Device.md ? (*/}
-            {/*    <iframe*/}
-            {/*        style={{*/}
-            {/*            width: "100%",*/}
-            {/*            height: 300,*/}
-            {/*            border: 0,*/}
-            {/*            marginBottom: 16,*/}
-            {/*            zIndex: 100,*/}
-            {/*        }}*/}
-            {/*        src="https://stackblitz.com/github/Giraphi/scroll?embed=1&file=README.md&hideExplorer=1&theme=dark&view=preview"*/}
-            {/*    ></iframe>*/}
-            {/*) : (*/}
-            {/*    <iframe*/}
-            {/*        style={{*/}
-            {/*            width: "100%",*/}
-            {/*            height: 700,*/}
-            {/*            border: 0,*/}
-            {/*            marginBottom: 16,*/}
-            {/*            zIndex: 100,*/}
-            {/*        }}*/}
-            {/*        src="https://stackblitz.com/github/Giraphi/scroll?embed=1&file=src%2FScrollCover%2FScrollCover.tsx&theme=dark"*/}
-            {/*    ></iframe>*/}
-            {/*)}*/}
-
-            {/*<iframe*/}
-            {/*    style="border: 1px solid rgba(0, 0, 0, 0.1);border-radius:2px;"*/}
-            {/*    width="800"*/}
-            {/*    height="450"*/}
-            {/*    src="https://codesandbox.io/p/sandbox/github/Giraphi/scroll/tree/main?embed=1"*/}
-            {/*    allowFullScreen*/}
-            {/*></iframe>*/}
-
-            {/*<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);border-radius:2px;" width="800" height="450"*/}
-            {/*        src="https://codesandbox.io/p/sandbox/github/Giraphi/scroll/tree/main?embed=1" allowFullScreen></iframe>*/}
-
-            {/* options see https://codesandbox.io/docs/learn/sandboxes/embedding?tab=browser-sandboxes*/}
-            {/*embed=1&autoresize=1&codemirror=1&eslint=0*/}
             <iframe
                 width="100%"
-                height="650"
-                src="https://codesandbox.io/p/sandbox/github/Giraphi/scroll/tree/main?embed=1&hidedevtools=1"
+                height="750"
+                src="https://codesandbox.io/p/sandbox/github/Giraphi/scroll/tree/main?file=%2Fsrc%2FScrollCover%2FScrollCover.tsx%3A7%2C40&embed=1"
                 allowFullScreen
             ></iframe>
         </>

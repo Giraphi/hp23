@@ -1,6 +1,5 @@
 import "./globals.scss";
 import { Dela_Gothic_One, Inter, Source_Code_Pro } from "next/font/google";
-import useDeviceStoreHandler from "@/app/store/useDeviceStoreHandler";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const delaGothicOne = Dela_Gothic_One({ subsets: ["latin"], weight: "400", variable: "--font-dela-gothic-one" });

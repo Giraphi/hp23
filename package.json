@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tsc": "tsc",
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "@react-three/drei": "^9.78.1",
@@ -36,8 +38,10 @@
     "zustand": "^4.3.9"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^13.4.13",
     "@svgr/webpack": "^8.0.1",
     "@vitejs/plugin-react": "^4.0.3",
+    "cross-env": "^7.0.3",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0"
   }
