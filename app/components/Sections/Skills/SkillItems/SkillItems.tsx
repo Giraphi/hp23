@@ -17,6 +17,7 @@ import ImmerIcon from "@/app/assets/skills/immer.svg";
 import ReduxIcon from "@/app/assets/skills/redux.svg";
 import ZustandIcon from "@/app/assets/skills/zustand.ico";
 import TsIcon from "@/app/assets/skills/ts.svg";
+import Image from "next/image";
 
 export interface SkillItemsProps {}
 
@@ -76,12 +77,7 @@ export default function SkillItems(props: SkillItemsProps) {
 
             <SkillItemsGroup text={"State and data management"}>
                 <SkillItem
-                    Icon={() => (
-                        <img
-                            src={ZustandIcon.src}
-                            alt={"framer-motion icon"}
-                        />
-                    )}
+                    iconImage={ZustandIcon}
                     href={"https://docs.pmnd.rs/zustand/getting-started/introduction"}
                 >
                     Zustand
@@ -103,12 +99,7 @@ export default function SkillItems(props: SkillItemsProps) {
             <SkillItemsGroup text={"Animation"}>
                 <SkillItem
                     href={"https://www.framer.com/motion/"}
-                    Icon={() => (
-                        <img
-                            src={FramerMotionIcon.src}
-                            alt={"framer-motion icon"}
-                        />
-                    )}
+                    iconImage={FramerMotionIcon}
                 >
                     Framer Motion
                 </SkillItem>
@@ -122,12 +113,7 @@ export default function SkillItems(props: SkillItemsProps) {
                     Tailwind CSS
                 </SkillItem>
                 <SkillItem
-                    Icon={() => (
-                        <img
-                            src={SCIcon.src}
-                            alt={"styled-components icon"}
-                        />
-                    )}
+                    iconImage={SCIcon}
                     href={"https://styled-components.com/"}
                 >
                     Styled Components
@@ -149,12 +135,7 @@ export default function SkillItems(props: SkillItemsProps) {
                 </SkillItem>
                 <SkillItem
                     href={"https://github.com/pmndrs/drei#readme"}
-                    Icon={() => (
-                        <img
-                            src={dreiIcon.src}
-                            alt={"styled-components icon"}
-                        />
-                    )}
+                    iconImage={dreiIcon}
                 >
                     Drei
                 </SkillItem>

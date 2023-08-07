@@ -4,7 +4,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
     enabled: process.env.ANALYZE === "true",
 });
 
-withBundleAnalyzer({
+module.exports = withBundleAnalyzer({
     // https://react-svgr.com/docs/next/
     webpack(config) {
         // Grab the existing rule that handles SVG imports
