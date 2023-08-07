@@ -17,10 +17,14 @@ type GLTFResult = GLTF & {
 
 useGLTF.preload("/models/me.glb");
 
-export default function MeGltfLarge() {
+export interface MeGltfLargeProps {
+    isActive: boolean;
+}
+
+export default function MeGltfLarge(props: MeGltfLargeProps) {
     const { nodes } = useGLTF("/models/me.glb") as GLTFResult;
     const groupRef = useRef<Group>(null);
-    useCursorObject(groupRef, true);
+    useCursorObject(groupRef, props.isActive);
 
     return (
         <>

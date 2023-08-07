@@ -9,6 +9,7 @@ import { LayoutCamera } from "framer-motion-3d";
 
 export interface MeContentProps {
     scrollProgress: MotionValue<number>;
+    isActive: boolean;
 }
 
 export default function MeCanvas(props: MeContentProps) {
@@ -88,7 +89,10 @@ export default function MeCanvas(props: MeContentProps) {
                     />
 
                     <Suspense>
-                        <MeGltf progress={props.scrollProgress} />
+                        <MeGltf
+                            progress={props.scrollProgress}
+                            isActive={props.isActive}
+                        />
                     </Suspense>
                 </group>
             </group>

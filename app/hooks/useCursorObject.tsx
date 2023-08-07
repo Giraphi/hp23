@@ -10,10 +10,13 @@ export default function useCursorObject(objectRef: RefObject<Object3D>, enabled:
     const canvasSize = useThree().size;
 
     useFrame(() => {
+        if (!enabled) {
+            return;
+        }
         // get the state with static function getState() instead of calling the hook.
         const { mousePosition } = usePointerStore.getState();
 
-        if (!enabled || !mousePosition || !objectRef.current) {
+        if (!mousePosition || !objectRef.current) {
             return;
         }
 

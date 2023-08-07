@@ -16,6 +16,7 @@ type GLTFResult = GLTF & {
 
 export interface MeGltfProps {
     progress: MotionValue<number>;
+    isActive: boolean;
 }
 
 useGLTF.preload("/models/me.glb");
@@ -26,11 +27,10 @@ export default function MeGltf(props: MeGltfProps) {
     const rotation = useTransform(props.progress, [0, 1], [-0.6, 0.4]);
 
     useFrame(() => {
-        if (!ref.current) {
+        if (!ref.current || !props.isActive) {
             return;
         }
         const rotationValue = rotation.get();
-        // const target = initRotationY + rotationValue;
 
         ref.current.rotation.y = MathUtils.lerp(ref.current.rotation.y, rotationValue, 0.1);
     });

@@ -2,14 +2,14 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { AsciiRenderer, Sphere, PerspectiveCamera } from "@react-three/drei";
 import { Group, PerspectiveCamera as PerspectiveCameraType } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
-import ControlsSmall from "@/app/components/Sections/Intro/MeScene/ControlsSmall";
-import { MotionValue, useMotionValueEvent, useTransform } from "framer-motion";
-import MeGltf from "@/app/components/Sections/Intro/MeScene/MeGltf";
-import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
 import ControlsLarge from "@/app/components/Sections/Intro/MeScene/large/ControlsLarge";
 import MeGltfLarge from "@/app/components/Sections/Intro/MeScene/large/MeGltfLarge";
 
-export default function MeCanvasLarge() {
+export interface MeCanvasLargeProps {
+    isActive: boolean;
+}
+
+export default function MeCanvasLarge(props: MeCanvasLargeProps) {
     const rotateRef = useRef<Group>(null);
     const rotate2Ref = useRef<Group>(null);
     const { viewport } = useThree();
@@ -100,7 +100,7 @@ export default function MeCanvasLarge() {
                         onPointerLeave={() => setIsHovered(false)}
                     >
                         <Suspense>
-                            <MeGltfLarge />
+                            <MeGltfLarge isActive={props.isActive} />
                         </Suspense>
                     </group>
                 </group>

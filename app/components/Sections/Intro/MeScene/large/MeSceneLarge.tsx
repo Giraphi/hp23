@@ -1,13 +1,17 @@
 "use client";
 
 import { useRef } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import MeCanvasLarge from "@/app/components/Sections/Intro/MeScene/large/MeCanvasLarge";
+import { useInView } from "framer-motion";
 
 export interface MeSceneProps {}
 
+const DisableRender = () => useFrame(() => null, 1000);
+
 export default function MeSceneLarge(props: MeSceneProps) {
     const ref = useRef<HTMLDivElement>(null);
+    const inView = useInView(ref);
 
     return (
         <>
@@ -17,8 +21,11 @@ export default function MeSceneLarge(props: MeSceneProps) {
             >
                 <div className={`relative h-screen w-full overflow-hidden`}>
                     {/* Trick to move Canvas Coordinate System off center */}
-                    <Canvas style={{ width: "135vw" }}>
-                        <MeCanvasLarge />
+                    <Canvas
+                        style={{ width: "135vw" }}
+                        frameloop={inView ? "always" : "never"}
+                    >
+                        <MeCanvasLarge isActive={inView} />
                     </Canvas>
 
                     {/*<div className={"absolute bottom-[15vh] right-[20vw] z-10 flex justify-center"}>*/}
