@@ -14,7 +14,7 @@ export default function Card(props: CardProps) {
             <div className={"relative z-20 aspect-image overflow-hidden rounded-xl"}>
                 <Image
                     quality={90}
-                    src={props.image.src}
+                    src={props.image}
                     alt={"project picture"}
                     fill={true}
                     className={"object-cover"}
