@@ -16,8 +16,8 @@ export default function Home() {
     usePointerStoreHandler();
 
     return (
-        <main>
-            <MotionConfig>
+        <MotionConfig>
+            <main>
                 <Intro />
 
                 <Projects />
@@ -26,8 +26,8 @@ export default function Home() {
                 <WavesBackground>
                     <AboutMe />
                 </WavesBackground>
-                <Footer />
-            </MotionConfig>
-        </main>
+            </main>
+            <Footer />
+        </MotionConfig>
     );
 }

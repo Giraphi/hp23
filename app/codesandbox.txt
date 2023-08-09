@@ -1,0 +1,21 @@
+Does not provide embed code
+
+https://codesandbox.io/p/github/Giraphi/scroll/main?file=/src/App.tsx:1,1&workspaceId=03e53c87-1281-4f9b-ba31-db3afba509ec
+(From dashboard, click on the repo)
+
+
+DOES provide embed code
+https://codesandbox.io/p/sandbox/github/Giraphi/scroll/tree/main?file=%2Fsrc%2FScrollCover%2FScrollCoverFront.tsx%3A16%2C1
+(Add "/sandbox/" in the path. OR substitue /p/ with /s/, which will redirect to this)
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);border-radius:2px;" width="800" height="450" src="https://codesandbox.io/p/sandbox/github/Giraphi/scroll/tree/main?embed=1" allowfullscreen></iframe>
+
+
+---------------------------------
+
+
+chromium based desktop: Stackblitz
+
+other desktop: Codesandbox (as good as possible. ideally open files + split right PLZZZ)
+
+mobile: think about it: what do we actually want? Is it good to display (editable) code? or better show a direct implementation + big cta button to codesandbox/github. Maybe with pink frame or something around the component

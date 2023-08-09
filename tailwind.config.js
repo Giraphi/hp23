@@ -11,6 +11,7 @@ module.exports = {
             sans: ["var(--font-inter)"],
             mono: ["var(--font-source-code-pro)"],
             delaGothicOne: ["var(--font-dela-gothic-one)"],
+            bungee: ["var(--font-bungee)"],
         },
         extend: {
             colors: {
