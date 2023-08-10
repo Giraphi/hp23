@@ -18,7 +18,7 @@ type Actions = {
 
 export const useDeviceStore = create(
     immer<State & Actions>((set) => ({
-        device: 2,
+        device: Device.lg,
         setDevice: (device: Device) =>
             set((state) => {
                 state.device = device;

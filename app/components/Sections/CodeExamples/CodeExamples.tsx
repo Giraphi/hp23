@@ -4,12 +4,21 @@ import SectionHeadline from "@/app/components/SectionHeadline";
 import SectionText from "@/app/components/SectionText";
 import SectionParagraph from "@/app/components/SectionParagraph";
 import CodeExampleItems from "@/app/components/Sections/CodeExamples/CodeExampleItems";
+import { useRef } from "react";
+import useNavigationSection from "@/app/hooks/useNavigationSection";
+import { SectionId } from "@/app/store/useActiveSectionStore";
 
 export interface CodeExamplesProps {}
 
 export default function CodeExamples(props: CodeExamplesProps) {
+    const ref = useRef(null);
+    useNavigationSection(ref, SectionId.codeExamples);
+
     return (
-        <SectionBackground startDark={true}>
+        <SectionBackground
+            startDark={true}
+            ref={ref}
+        >
             <SectionGrid>
                 <div className={" col-content"}>
                     <SectionHeadline>Code Examples</SectionHeadline>

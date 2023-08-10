@@ -8,6 +8,8 @@ import { useScroll } from "framer-motion";
 import MeSceneLarge from "@/app/components/Sections/Intro/MeScene/large/MeSceneLarge";
 import Appear from "@/app/components/Effects/Appear";
 import AppearWords from "@/app/components/Effects/AppearWords";
+import useNavigationSection from "@/app/hooks/useNavigationSection";
+import { SectionId } from "@/app/store/useActiveSectionStore";
 
 export default function Intro() {
     const device = useDeviceStore((state) => state.device);
@@ -15,6 +17,7 @@ export default function Intro() {
     const rootRef = useRef<HTMLDivElement>(null);
     const [textContentHeight, setTextContentHeight] = useState(0);
     const { scrollYProgress } = useScroll({ target: rootRef, offset: ["start start", "end start"] });
+    useNavigationSection(rootRef, SectionId.intro);
 
     useEffect(() => {
         if (device >= Device.lg) {

@@ -28,6 +28,7 @@ export default function Home() {
                     scrollHintVisible={scrollHintVisible}
                     setScrollHintVisible={setScrollHintVisible}
                 />
+
                 <Skills />
                 <CodeExamples />
                 <WavesBackground>

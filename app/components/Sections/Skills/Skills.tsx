@@ -4,12 +4,18 @@ import SectionHeadline from "@/app/components/SectionHeadline";
 import SectionParagraph from "@/app/components/SectionParagraph";
 import SectionText from "@/app/components/SectionText";
 import SkillItems from "@/app/components/Sections/Skills/SkillItems/SkillItems";
+import useNavigationSection from "@/app/hooks/useNavigationSection";
+import { SectionId } from "@/app/store/useActiveSectionStore";
+import { useRef } from "react";
 
 export interface SkillsProps {}
 
 export default function Skills(props: SkillsProps) {
+    const ref = useRef(null);
+    useNavigationSection(ref, SectionId.skills);
+
     return (
-        <SectionBackground>
+        <SectionBackground ref={ref}>
             <SectionGrid>
                 <div className={"col-content"}>
                     <SectionHeadline>Skills</SectionHeadline>

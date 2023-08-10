@@ -13,6 +13,8 @@ import Grid from "@/app/components/Grid/Grid";
 import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
 import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
 import TextLink from "@/app/components/TextLink";
+import useNavigationSection from "@/app/hooks/useNavigationSection";
+import { SectionId } from "@/app/store/useActiveSectionStore";
 
 export interface ProjectsProps {
     scrollHintVisible: boolean;
@@ -23,6 +25,7 @@ export default function Projects(props: ProjectsProps) {
     const sectionRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "100px end"] });
     const hintOpacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0]);
+    useNavigationSection(sectionRef, SectionId.projects);
 
     useMotionValueEvent(hintOpacity, "change", (value) => {
         const visibleUpdate = value !== 0;

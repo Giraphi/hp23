@@ -3,12 +3,18 @@ import SectionGrid from "@/app/components/SectionGrid";
 import SectionHeadline from "@/app/components/SectionHeadline";
 import HeadlineWText from "@/app/components/HeadlineWText";
 import TextLink from "@/app/components/TextLink";
+import { useRef } from "react";
+import useNavigationSection from "@/app/hooks/useNavigationSection";
+import { SectionId } from "@/app/store/useActiveSectionStore";
 
 export interface AboutMeProps {}
 
 export default function AboutMe(props: AboutMeProps) {
+    const ref = useRef(null);
+    useNavigationSection(ref, SectionId.aboutMe);
+
     return (
-        <SectionBackground>
+        <SectionBackground ref={ref}>
             <SectionGrid className={"relative z-10"}>
                 <div className={"col-content"}>
                     <SectionHeadline>About Me</SectionHeadline>
