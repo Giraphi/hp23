@@ -45,12 +45,9 @@ export default function MeCanvasLarge(props: MeCanvasLargeProps) {
                 bgColor="transparent"
             />
 
-            {/*<PerspectiveCamera*/}
-            {/*    ref={cameraRef}*/}
-            {/*    makeDefault={true}*/}
-            {/*    position={[0, 0.1, 2]}*/}
-            {/*/>*/}
-            {/*fgColor={"rgba(255,0,255,1)"} // Color needs to be in exactly this format or AsciiRenderer throws an Error*/}
+            {/*<group position={[0, -5, 0]}>*/}
+            {/*    <gridHelper args={[100, 50, "#fff", "#fff"]} />*/}
+            {/*</group>*/}
 
             <group scale={viewport.height / 6}>
                 <group>

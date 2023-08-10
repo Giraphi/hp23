@@ -17,10 +17,9 @@ export default function ScrollAnimation() {
     const zoom = useTransform(progress, [0, 0.5, 1], [1, 15, 25]);
 
     return (
-        // <div className={`${bungee.variable}`}>
         <div>
             <div
-                className="grid grid-cols-1 grid-rows-[100dvh_300dvh] rounded"
+                className="grid grid-cols-1 grid-rows-[100lvh_300lvh]"
                 ref={ref}
             >
                 <div className="sticky top-0 col-start-1 row-start-1 bg-lime-300">
@@ -72,7 +71,7 @@ export default function ScrollAnimation() {
                     </motion.div>
                 </motion.div>
             </div>
-            <div className={"h-[50dvh] bg-black"}>
+            <div className={"h-[50lvh] bg-black"}>
                 <h1 className={"pt-16 text-center text-5xl text-white"}>Site flow continues here ....</h1>
             </div>
         </div>

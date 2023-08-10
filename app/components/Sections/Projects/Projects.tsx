@@ -14,25 +14,24 @@ import ScrollHint from "@/app/components/Sections/Intro/ScrollHint/ScrollHint";
 import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
 import TextLink from "@/app/components/TextLink";
 
-export interface ProjectsProps {}
+export interface ProjectsProps {
+    scrollHintVisible: boolean;
+    setScrollHintVisible: (visible: boolean) => void;
+}
 
 export default function Projects(props: ProjectsProps) {
     const sectionRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "100px end"] });
     const hintOpacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0]);
-    const [renderHint, setRenderHint] = useState(true);
 
     useMotionValueEvent(hintOpacity, "change", (value) => {
-        const renderHintUpdate = value !== 0;
-        if (renderHint === renderHintUpdate) {
-            return;
-        }
-        setRenderHint(renderHintUpdate);
+        const visibleUpdate = value !== 0;
+        props.setScrollHintVisible(visibleUpdate);
     });
 
     return (
         <>
-            {renderHint && (
+            {props.scrollHintVisible && (
                 <motion.div
                     style={{ opacity: hintOpacity }}
                     className={"fixed bottom-4 z-30 w-full"}

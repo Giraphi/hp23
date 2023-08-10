@@ -15,8 +15,8 @@ export default function Page() {
         <main>
             <SectionBackground>
                 <SectionGrid>
-                    <div className={"col-content pb-8"}>
-                        <Headline className={"text-pink-600"}>Demo</Headline>
+                    <div className={"col-content"}>
+                        <Headline className={"pb-1 text-pink-600"}>Code Example</Headline>
                         <SectionHeadline>Zoom into text</SectionHeadline>
                         <SectionParagraph>
                             I believe beeing able to quickly adapt to new technologies is one of the most valueabe skills for developers,

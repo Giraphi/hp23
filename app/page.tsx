@@ -10,17 +10,24 @@ import { MotionConfig } from "framer-motion";
 import AboutMe from "@/app/components/Sections/AboutMe/AboutMe";
 import WavesBackground from "@/app/components/Sections/AboutMe/WavesBackground/WavesBackground";
 import Footer from "@/app/components/Sections/Footer/Footer";
+import TopBar from "@/app/components/TopBar";
+import { useState } from "react";
 
 export default function Home() {
     useDeviceStoreHandler();
     usePointerStoreHandler();
+    const [scrollHintVisible, setScrollHintVisible] = useState(true);
 
     return (
         <MotionConfig>
+            <TopBar visible={!scrollHintVisible} />
             <main>
                 <Intro />
 
-                <Projects />
+                <Projects
+                    scrollHintVisible={scrollHintVisible}
+                    setScrollHintVisible={setScrollHintVisible}
+                />
                 <Skills />
                 <CodeExamples />
                 <WavesBackground>
