@@ -2,6 +2,7 @@ import { useState } from "react";
 import { SectionId } from "@/app/store/useActiveSectionStore";
 import { AnimatePresence, motion } from "framer-motion";
 import TopBarItem from "@/app/components/TopBar/TopBarItem";
+import useOutsideClick from "@/app/hooks/useOutsideClick";
 
 export interface TopBarProps {
     visible: boolean;
@@ -21,12 +22,22 @@ const menuVariants = {
 
 export default function TopBar(props: TopBarProps) {
     const [isOpen, setIsOpen] = useState(false);
+    const ref = useOutsideClick(() => setIsOpen(false));
+
+    function handleItemClick() {
+        setTimeout(() => {
+            setIsOpen(false);
+        }, 400);
+    }
 
     return (
-        <nav className={"fixed left-0 top-0 z-30 grid"}>
+        <nav
+            className={"fixed left-0 top-0 z-30 grid"}
+            ref={ref}
+        >
             <div
                 className={`relative z-20 col-start-1 row-start-1 flex h-12 w-12 cursor-pointer flex-col justify-between rounded-br-md bg-black px-2 py-[1.1rem] transition-opacity ${
-                    props.visible ? "opacity-1" : "opacity-0"
+                    props.visible || isOpen ? "opacity-1" : "opacity-0"
                 } `}
                 onClick={() => setIsOpen((x) => !x)}
             >
@@ -45,11 +56,36 @@ export default function TopBar(props: TopBarProps) {
                         animate={"visible"}
                         exit={"hidden"}
                     >
-                        <TopBarItem id={SectionId.intro}>Intro</TopBarItem>
-                        <TopBarItem id={SectionId.projects}>Projects</TopBarItem>
-                        <TopBarItem id={SectionId.skills}>Skills</TopBarItem>
-                        <TopBarItem id={SectionId.codeExamples}>Code Examples</TopBarItem>
-                        <TopBarItem id={SectionId.aboutMe}>About Me</TopBarItem>
+                        <TopBarItem
+                            handleClick={handleItemClick}
+                            id={SectionId.intro}
+                        >
+                            Intro
+                        </TopBarItem>
+                        <TopBarItem
+                            handleClick={handleItemClick}
+                            id={SectionId.projects}
+                        >
+                            Projects
+                        </TopBarItem>
+                        <TopBarItem
+                            handleClick={handleItemClick}
+                            id={SectionId.skills}
+                        >
+                            Skills
+                        </TopBarItem>
+                        <TopBarItem
+                            handleClick={handleItemClick}
+                            id={SectionId.codeExamples}
+                        >
+                            Code Examples
+                        </TopBarItem>
+                        <TopBarItem
+                            handleClick={handleItemClick}
+                            id={SectionId.aboutMe}
+                        >
+                            About Me
+                        </TopBarItem>
                     </motion.div>
                 )}
             </AnimatePresence>
