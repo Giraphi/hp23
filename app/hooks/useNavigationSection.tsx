@@ -3,9 +3,9 @@ import { SectionId, useActiveSectionStore } from "@/app/store/useActiveSectionSt
 import { useInView } from "framer-motion";
 
 export default function useNavigationSection(ref: RefObject<HTMLElement>, id: SectionId) {
-    // Negative margin reduces the observed area within the viewport. (Positive margin extends it
+    // Negative margins reduce the observed area within the viewport. (Positive margins extend it
     // outside the viewport).
-    // "-50% 0%" means to reduce the observed area both from top and bottom by 50%. The area is now considered a line
+    // "-50% 0%" means to reduce the observed area both from top and bottom by 50%. The area is now treated as a line
     // inView will be true if the referenced element touches the center-line of the screen
     const inView = useInView(ref, { margin: "-50% 0%" });
     const setActiveSectionId = useActiveSectionStore((state) => state.setActiveSectionId);
