@@ -25,7 +25,7 @@ export default function TopBar(props: TopBarProps) {
     return (
         <nav className={"fixed left-0 top-0 z-30 grid"}>
             <div
-                className={`relative z-20 col-start-1 row-start-1 flex h-12 w-12  cursor-pointer flex-col justify-between rounded-br-md bg-black px-2 py-[1.1rem] transition-opacity ${
+                className={`relative z-20 col-start-1 row-start-1 flex h-12 w-12 cursor-pointer flex-col justify-between rounded-br-md bg-black px-2 py-[1.1rem] transition-opacity ${
                     props.visible ? "opacity-1" : "opacity-0"
                 } `}
                 onClick={() => setIsOpen((x) => !x)}
@@ -39,7 +39,7 @@ export default function TopBar(props: TopBarProps) {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className={"relative z-10 col-start-1 row-start-1 flex h-[100lvh] w-40 flex-col bg-black pl-3 pt-16"}
+                        className={"relative z-10 col-start-1 row-start-1 flex h-[100lvh] flex-col bg-black px-3 pt-16 md:pr-16"}
                         variants={menuVariants}
                         initial={"hidden"}
                         animate={"visible"}

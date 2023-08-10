@@ -12,7 +12,7 @@ export default function TopBarItem(props: TopBarItemProps) {
     return (
         <a
             href={`#${props.id}`}
-            className={activeSectionId === props.id ? "text-pink-600" : ""}
+            className={`${activeSectionId === props.id ? "text-pink-600" : ""} pb-2 md:pb-4`}
         >
             {props.children}
         </a>
