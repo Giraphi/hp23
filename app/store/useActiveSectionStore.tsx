@@ -34,3 +34,8 @@ export const useActiveSectionStore = create(
             }),
     }))
 );
+
+// export const useActiveSectionStore = create((set) => ({
+//     activeSectionId: SectionId.intro,
+//     setActiveSectionId: (sectionId: SectionId) => set((state: any) => ({ activeSectionId: sectionId })),
+// }));
