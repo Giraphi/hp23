@@ -10,10 +10,10 @@ export interface TopBarProps {
 
 const menuVariants = {
     visible: {
-        clipPath: "ellipse(50vh 200vh at 0% 1.5rem)",
+        clipPath: "ellipse(50vh 200vh at 100% 1.5rem)",
     },
     hidden: {
-        clipPath: "ellipse(3rem 1.5rem at 0% 1.5rem)",
+        clipPath: "ellipse(3rem 1.5rem at 100% 1.5rem)",
         transition: {
             duration: 0.15,
         },
@@ -30,11 +30,11 @@ export default function TopBar(props: TopBarProps) {
 
     return (
         <nav
-            className={"fixed left-0 top-0 z-30 grid"}
+            className={"fixed right-0 top-0 z-30 grid justify-items-end"}
             ref={ref}
         >
             <div
-                className={`relative z-20 col-start-1 row-start-1 flex h-12 w-12 cursor-pointer flex-col justify-between rounded-br-md bg-black px-2 py-[1.1rem] transition-opacity ${
+                className={`relative z-20 col-start-1 row-start-1 flex h-12 w-12 cursor-pointer flex-col justify-between rounded-bl-md bg-black px-2 py-[1.1rem] transition-opacity ${
                     props.visible || isOpen ? "opacity-1" : "opacity-0"
                 } `}
                 onClick={() => setIsOpen((x) => !x)}
@@ -48,7 +48,9 @@ export default function TopBar(props: TopBarProps) {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className={"relative z-10 col-start-1 row-start-1 flex h-[100lvh] flex-col bg-black pl-3 pr-6 pt-16 md:pr-16"}
+                        className={
+                            "relative z-10 col-start-1 row-start-1 flex h-[100lvh] flex-col items-end bg-black pl-6 pr-3 pt-16 lg:pt-24"
+                        }
                         variants={menuVariants}
                         initial={"hidden"}
                         animate={"visible"}
