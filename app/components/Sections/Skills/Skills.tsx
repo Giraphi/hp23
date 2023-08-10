@@ -7,6 +7,7 @@ import SkillItems from "@/app/components/Sections/Skills/SkillItems/SkillItems";
 import useNavigationSection from "@/app/hooks/useNavigationSection";
 import { SectionId } from "@/app/store/useActiveSectionStore";
 import { useRef } from "react";
+import ScrollTarget from "@/app/components/ScrollTarget";
 
 export interface SkillsProps {}
 
@@ -16,6 +17,8 @@ export default function Skills(props: SkillsProps) {
 
     return (
         <SectionBackground ref={ref}>
+            <ScrollTarget id={SectionId.skills} />
+
             <SectionGrid>
                 <div className={"col-content"}>
                     <SectionHeadline>Skills</SectionHeadline>

@@ -6,6 +6,7 @@ import TextLink from "@/app/components/TextLink";
 import { useRef } from "react";
 import useNavigationSection from "@/app/hooks/useNavigationSection";
 import { SectionId } from "@/app/store/useActiveSectionStore";
+import ScrollTarget from "@/app/components/ScrollTarget";
 
 export interface AboutMeProps {}
 
@@ -15,6 +16,8 @@ export default function AboutMe(props: AboutMeProps) {
 
     return (
         <SectionBackground ref={ref}>
+            <ScrollTarget id={SectionId.aboutMe} />
+
             <SectionGrid className={"relative z-10"}>
                 <div className={"col-content"}>
                     <SectionHeadline>About Me</SectionHeadline>

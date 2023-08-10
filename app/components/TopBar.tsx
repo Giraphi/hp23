@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useActiveSectionStore } from "@/app/store/useActiveSectionStore";
+import { SectionId, useActiveSectionStore } from "@/app/store/useActiveSectionStore";
 import { AnimatePresence, motion } from "framer-motion";
 
 export interface TopBarProps {
@@ -39,17 +39,17 @@ export default function TopBar(props: TopBarProps) {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className={"relative z-10 col-start-1 row-start-1 h-[100lvh] w-40 bg-black pl-3 pt-16"}
+                        className={"relative z-10 col-start-1 row-start-1 flex h-[100lvh] w-40 flex-col bg-black pl-3 pt-16"}
                         variants={menuVariants}
                         initial={"hidden"}
                         animate={"visible"}
                         exit={"hidden"}
                     >
-                        <div>Intro</div>
-                        <div>Projects</div>
-                        <div>Skills</div>
-                        <div>Code Examples</div>
-                        <div>About me</div>
+                        <a href={`#${SectionId.intro}`}>Intro</a>
+                        <a href={`#${SectionId.projects}`}>Projects</a>
+                        <a href={`#${SectionId.skills}`}>Skills</a>
+                        <a href={`#${SectionId.codeExamples}`}>Code Examples</a>
+                        <a href={`#${SectionId.aboutMe}`}>About me</a>
                     </motion.div>
                 )}
             </AnimatePresence>

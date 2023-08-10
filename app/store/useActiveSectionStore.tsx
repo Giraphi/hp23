@@ -10,11 +10,11 @@ import { immer } from "zustand/middleware/immer";
 // };
 
 export enum SectionId {
-    intro,
-    projects,
-    skills,
-    codeExamples,
-    aboutMe,
+    intro = "intro",
+    projects = "projects",
+    skills = "skills",
+    codeExamples = "codeExamples",
+    aboutMe = "aboutMe",
 }
 
 type State = {

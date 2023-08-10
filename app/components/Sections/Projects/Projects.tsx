@@ -15,6 +15,7 @@ import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-mot
 import TextLink from "@/app/components/TextLink";
 import useNavigationSection from "@/app/hooks/useNavigationSection";
 import { SectionId } from "@/app/store/useActiveSectionStore";
+import ScrollTarget from "@/app/components/ScrollTarget";
 
 export interface ProjectsProps {
     scrollHintVisible: boolean;
@@ -46,6 +47,8 @@ export default function Projects(props: ProjectsProps) {
                     </Grid>
                 </motion.div>
             )}
+
+            <ScrollTarget id={SectionId.projects} />
 
             <SectionBackground
                 startDark={true}

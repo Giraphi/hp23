@@ -7,6 +7,7 @@ import CodeExampleItems from "@/app/components/Sections/CodeExamples/CodeExample
 import { useRef } from "react";
 import useNavigationSection from "@/app/hooks/useNavigationSection";
 import { SectionId } from "@/app/store/useActiveSectionStore";
+import ScrollTarget from "@/app/components/ScrollTarget";
 
 export interface CodeExamplesProps {}
 
@@ -19,6 +20,8 @@ export default function CodeExamples(props: CodeExamplesProps) {
             startDark={true}
             ref={ref}
         >
+            <ScrollTarget id={SectionId.codeExamples} />
+
             <SectionGrid>
                 <div className={" col-content"}>
                     <SectionHeadline>Code Examples</SectionHeadline>
