@@ -10,13 +10,18 @@ export interface TopBarItemProps {
 export default function TopBarItem(props: TopBarItemProps) {
     const activeSectionId = useActiveSectionStore((state) => state.activeSectionId);
 
+    function handleClick() {
+        const target = document.querySelector(`#${props.id}`);
+        target && target.scrollIntoView({ behavior: "smooth" });
+        props.handleClick && props.handleClick();
+    }
+
     return (
-        <a
-            href={`#${props.id}`}
-            className={`${activeSectionId === props.id ? "text-pink-600" : ""} pb-3 text-base`}
-            onClick={props.handleClick}
+        <div
+            className={`${activeSectionId === props.id ? "text-pink-600" : ""} cursor-pointer pb-3 text-base`}
+            onClick={handleClick}
         >
             {props.children}
-        </a>
+        </div>
     );
 }

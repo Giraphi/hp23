@@ -7,6 +7,7 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
     return (
         <Cards className={"col-content"}>
             <VideoCard
+                href={"/"}
                 videoName={"puzzle"}
                 headline={"Puzzle Transition"}
             >
@@ -15,6 +16,7 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
             </VideoCard>
 
             <VideoCard
+                href={"/"}
                 videoName={"dots"}
                 headline={"Magnetic Dots"}
             >
@@ -23,6 +25,7 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
             </VideoCard>
 
             <VideoCard
+                href={"/code-examples/scroll"}
                 videoName={"scroll"}
                 headline={"Zoom into Text"}
             >

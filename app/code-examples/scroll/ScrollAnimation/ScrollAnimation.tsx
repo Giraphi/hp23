@@ -24,9 +24,10 @@ export default function ScrollAnimation() {
             >
                 <div className="sticky top-0 col-start-1 row-start-1 bg-lime-300">
                     <video
-                        autoPlay
-                        loop
-                        muted
+                        loop={true}
+                        muted={true}
+                        playsInline={true}
+                        autoPlay={true}
                         className="h-full w-full object-cover object-center"
                         poster={"/video-poster.webp"}
                     >
