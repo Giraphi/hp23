@@ -10,8 +10,8 @@ import { MotionConfig } from "framer-motion";
 import AboutMe from "@/app/components/Sections/AboutMe/AboutMe";
 import WavesBackground from "@/app/components/Sections/AboutMe/WavesBackground/WavesBackground";
 import Footer from "@/app/components/Sections/Footer/Footer";
-import TopBar from "@/app/components/TopBar";
 import { useState } from "react";
+import TopBar from "@/app/components/TopBar/TopBar";
 
 export default function Home() {
     useDeviceStoreHandler();

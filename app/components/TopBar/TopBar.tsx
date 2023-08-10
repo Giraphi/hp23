@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { SectionId, useActiveSectionStore } from "@/app/store/useActiveSectionStore";
+import { SectionId } from "@/app/store/useActiveSectionStore";
 import { AnimatePresence, motion } from "framer-motion";
+import TopBarItem from "@/app/components/TopBar/TopBarItem";
 
 export interface TopBarProps {
     visible: boolean;
@@ -8,7 +9,7 @@ export interface TopBarProps {
 
 const menuVariants = {
     visible: {
-        clipPath: "ellipse(25vw 200vh at 0% 1.5rem)",
+        clipPath: "ellipse(50vh 200vh at 0% 1.5rem)",
     },
     hidden: {
         clipPath: "ellipse(3rem 1.5rem at 0% 1.5rem)",
@@ -20,7 +21,6 @@ const menuVariants = {
 
 export default function TopBar(props: TopBarProps) {
     const [isOpen, setIsOpen] = useState(false);
-    const activeSectionId = useActiveSectionStore((state) => state.activeSectionId);
 
     return (
         <nav className={"fixed left-0 top-0 z-30 grid"}>
@@ -45,11 +45,11 @@ export default function TopBar(props: TopBarProps) {
                         animate={"visible"}
                         exit={"hidden"}
                     >
-                        <a href={`#${SectionId.intro}`}>Intro</a>
-                        <a href={`#${SectionId.projects}`}>Projects</a>
-                        <a href={`#${SectionId.skills}`}>Skills</a>
-                        <a href={`#${SectionId.codeExamples}`}>Code Examples</a>
-                        <a href={`#${SectionId.aboutMe}`}>About me</a>
+                        <TopBarItem id={SectionId.intro}>Intro</TopBarItem>
+                        <TopBarItem id={SectionId.projects}>Projects</TopBarItem>
+                        <TopBarItem id={SectionId.skills}>Skills</TopBarItem>
+                        <TopBarItem id={SectionId.codeExamples}>Code Examples</TopBarItem>
+                        <TopBarItem id={SectionId.aboutMe}>About Me</TopBarItem>
                     </motion.div>
                 )}
             </AnimatePresence>
