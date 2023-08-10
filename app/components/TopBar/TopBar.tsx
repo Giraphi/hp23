@@ -25,9 +25,7 @@ export default function TopBar(props: TopBarProps) {
     const ref = useOutsideClick(() => setIsOpen(false));
 
     function handleItemClick() {
-        setTimeout(() => {
-            setIsOpen(false);
-        }, 400);
+        setIsOpen(false);
     }
 
     return (
@@ -50,7 +48,7 @@ export default function TopBar(props: TopBarProps) {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className={"relative z-10 col-start-1 row-start-1 flex h-[100lvh] flex-col bg-black px-3 pt-16 md:pr-16"}
+                        className={"relative z-10 col-start-1 row-start-1 flex h-[100lvh] flex-col bg-black pl-3 pr-6 pt-16 md:pr-16"}
                         variants={menuVariants}
                         initial={"hidden"}
                         animate={"visible"}
