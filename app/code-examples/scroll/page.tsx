@@ -10,6 +10,7 @@ import CodesandboxIcon from "@/app/assets/codesandbox.svg";
 import IconButton from "@/app/components/IconButton";
 import TextLink from "@/app/components/TextLink";
 import InlineCode from "@/app/components/InlineCode";
+import SectionText from "@/app/components/SectionText";
 
 export const metadata = {
     title: "Scroll Component",
@@ -21,8 +22,9 @@ export default function Page() {
         <main>
             <SectionBackground>
                 <SectionGrid className={"pb-0 lg:pb-0"}>
-                    <div className={"col-content"}>
+                    <SectionText className={"pb-0 lg:pb-8 xl:pb-0"}>
                         <Headline className={"pb-6 lg:pb-8"}>Zoom into text</Headline>
+
                         <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Idea</h3>
                         <SectionParagraph className={"pb-6"}>
                             The design idea is based on similar animations that have been used by{" "}
@@ -39,6 +41,7 @@ export default function Page() {
                             . Layout is build around{" "}
                             <InlineCode href={"https://developer.mozilla.org/en-US/docs/Web/CSS/position"}>position: sticky</InlineCode>.
                         </SectionParagraph>
+
                         <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Code</h3>
                         <SectionParagraph className={"pb-2"}>Find the code for this component on:</SectionParagraph>
                         <div className={"inline-flex flex-wrap gap-2 pb-6 lg:pb-8"}>
@@ -55,8 +58,9 @@ export default function Page() {
                                 CodeSandbox
                             </IconButton>
                         </div>
-                        <h3 className={"pb-2 font-bold text-pink-600"}>Demo</h3>
-                    </div>
+
+                        <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Demo</h3>
+                    </SectionText>
                 </SectionGrid>
             </SectionBackground>
 

@@ -26,7 +26,7 @@ export default function BackTopBar() {
                         className={"inline-flex h-full items-center"}
                     >
                         <ChevronDown className={"mr-1 rotate-90"} />
-                        Back to main page
+                        Back
                     </Link>
                 </div>
             </Grid>

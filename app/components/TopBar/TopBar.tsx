@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { SectionId } from "@/app/store/useActiveSectionStore";
 import { AnimatePresence, motion } from "framer-motion";
