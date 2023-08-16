@@ -16,7 +16,6 @@ import ImmerIcon from "@/app/assets/skills/immer.svg";
 import ReduxIcon from "@/app/assets/skills/redux.svg";
 import ZustandIcon from "@/app/assets/skills/zustand.ico";
 import TsIcon from "@/app/assets/skills/ts.svg";
-import Image from "next/image";
 
 export interface SkillItemsProps {}
 

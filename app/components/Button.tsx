@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
+import { FC, ReactNode } from "react";
+import { cn } from "@/app/util/functions";
 
 export interface ButtonProps {
     href?: string;
@@ -11,8 +11,8 @@ export default function Button(props: ButtonProps) {
     return (
         <a
             href={props.href}
-            className={twMerge(
-                "inline-flex cursor-pointer rounded-lg bg-gray-1 px-8 py-2 font-bold uppercase md:px-16 md:py-4",
+            className={cn(
+                "inline-flex cursor-pointer items-center rounded-lg bg-gray-1 px-8 py-2 font-bold uppercase text-white hover:text-lime-500 md:px-16 md:py-4",
                 props.className
             )}
         >
