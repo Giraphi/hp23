@@ -35,14 +35,14 @@ export default function ScrollAnimation() {
                         playsInline={true}
                         autoPlay={true}
                         className="h-full w-full object-cover object-center"
-                        poster={"/scroll/video-3D-3-poster.webp"}
+                        poster={"/scroll-component/video.webp"}
                     >
                         <source
-                            src={"/scroll/video-3D-3.webm"}
+                            src={"/scroll-component/video.webm"}
                             type={"video/webm"}
                         />
                         <source
-                            src={"/scroll/video-3D-3.mp4"}
+                            src={"/scroll-component/video.mp4"}
                             type={"video/mp4"}
                         />
                     </video>
@@ -85,9 +85,9 @@ export default function ScrollAnimation() {
                     </motion.div>
                 </motion.div>
             </div>
-            <div className={"bg-black p-8"}>
-                <h1 className={"text-center text-xl text-white"}>Site flow continues here ....</h1>
-            </div>
+            {/*<div className={"bg-black p-8"}>*/}
+            {/*    <h1 className={"text-center text-xl text-white"}>Site flow continues here ....</h1>*/}
+            {/*</div>*/}
         </div>
     );
 }

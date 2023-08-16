@@ -20,10 +20,10 @@ export default function VideoCard(props: VideoCardProps) {
                         muted={true}
                         playsInline={true}
                         autoPlay={true}
-                        poster={`/videos/${props.videoName}-placeholder.webp`}
+                        poster={`/card-videos/${props.videoName}-placeholder.webp`}
                     >
-                        <source src={`/videos/${props.videoName}.webm`} />
-                        <source src={`/videos/${props.videoName}.mp4`} />
+                        <source src={`/card-videos/${props.videoName}.webm`} />
+                        <source src={`/card-videos/${props.videoName}.mp4`} />
                     </video>
                 </div>
                 <h3 className={"font-bold"}>{props.headline}</h3>
