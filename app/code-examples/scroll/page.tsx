@@ -25,15 +25,14 @@ export default function Page() {
                         <Headline className={"pb-6 lg:pb-8"}>Zoom into text</Headline>
                         <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Idea</h3>
                         <SectionParagraph className={"pb-6"}>
-                            Design idea is based on similar animations that have been used in the past by{" "}
-                            <TextLink href={"www.apple.com/"}>apple.com</TextLink> on various product pages, like the 2020 site for the
-                            Iphone SE.
+                            The design idea is based on similar animations that have been used by{" "}
+                            <TextLink href={"www.apple.com/"}>apple.com</TextLink> in the past on various product pages.
                         </SectionParagraph>
                         <SectionParagraph className={"pb-6 lg:pb-8"}>
                             This react implementation uses <TextLink href={"https://www.framer.com/motion/"}>framer-motion</TextLink>
                             &rsquo;s <InlineCode href={"https://www.framer.com/motion/use-scroll/"}>useScroll()</InlineCode> to detect the
-                            user&rsquo;s scroll progress and adjust opacity and zoom of the overlay accordingly. Transparency of the text is
-                            achieved with css{" "}
+                            user&rsquo;s scroll progress and adjusts opacity and zoom of the overlay accordingly. Transparency of the text
+                            is achieved with css{" "}
                             <InlineCode href={"https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode"}>
                                 mix-blend-mode: multiply
                             </InlineCode>

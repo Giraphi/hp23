@@ -1,23 +1,40 @@
+"use client";
+
 import React from "react";
 import Grid from "@/app/components/Grid/Grid";
 import ChevronDown from "@/app/assets/chevron-down.svg";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-export interface BackTopBarProps {}
+export default function BackTopBar() {
+    const router = useRouter();
+    //
+    // console.log(document.referrer);
+    //
+    // function handleClick() {
+    //     router.back();
+    // }
+    // console.log(document.referrer);
 
-export default function BackTopBar(props: BackTopBarProps) {
     return (
         <nav className={"sticky top-0 z-30 flex h-10 bg-gray-1 md:h-12"}>
             <Grid>
                 <div className={"col-content font-bold"}>
-                    <a
+                    <Link
                         href={"/"}
+                        replace
                         className={"inline-flex h-full items-center"}
                     >
                         <ChevronDown className={"mr-1 rotate-90"} />
-                        Back
-                    </a>
+                        Back to main page
+                    </Link>
                 </div>
             </Grid>
         </nav>
     );
+}
+
+export async function getServerSideProps(context: any) {
+    console.log("SSP");
+    console.log(context);
 }

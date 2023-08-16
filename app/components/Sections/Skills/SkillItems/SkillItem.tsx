@@ -12,7 +12,7 @@ export default function SkillItem(props: SkillItemProps) {
     const { Icon } = props;
     return (
         <a
-            className={"flex h-14 gap-2 rounded-xl bg-gray-2 p-2"}
+            className={"group flex h-14 gap-2 rounded-xl bg-gray-2 p-2"}
             href={props.href}
             target={"_blank"}
         >
@@ -27,7 +27,7 @@ export default function SkillItem(props: SkillItemProps) {
                     )}
                 </div>
             </div>
-            <div className={"flex h-full items-center pr-1"}>{props.children}</div>
+            <div className={"flex h-full items-center pr-1 group-hover:text-lime-500"}>{props.children}</div>
         </a>
     );
 }

@@ -35,13 +35,16 @@ export default function ScrollAnimation() {
                         playsInline={true}
                         autoPlay={true}
                         className="h-full w-full object-cover object-center"
-                        poster={"/video-poster.webp"}
+                        poster={"/scroll/video-3D-3-poster.webp"}
                     >
                         <source
-                            src={"/videos/dots.webm"}
+                            src={"/scroll/video-3D-3.webm"}
                             type={"video/webm"}
                         />
-                        <source src={"/videos/dots.mp4"} />
+                        <source
+                            src={"/scroll/video-3D-3.mp4"}
+                            type={"video/mp4"}
+                        />
                     </video>
                     <div
                         className="absolute left-0 top-0 h-full w-full"
