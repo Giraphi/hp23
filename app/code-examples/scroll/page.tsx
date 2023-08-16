@@ -8,6 +8,8 @@ import ScrollAnimationContainer from "@/app/code-examples/scroll/ScrollAnimation
 import GithubIcon from "@/app/assets/github.svg";
 import CodesandboxIcon from "@/app/assets/codesandbox.svg";
 import IconButton from "@/app/components/IconButton";
+import TextLink from "@/app/components/TextLink";
+import InlineCode from "@/app/components/InlineCode";
 
 // export const metadata = {
 //     title: "Scroll Component",
@@ -18,17 +20,29 @@ export default function Page() {
     return (
         <main>
             <SectionBackground>
-                <SectionGrid className={"pb-0"}>
+                <SectionGrid className={"pb-0 lg:pb-0"}>
                     <div className={"col-content"}>
-                        <Headline className={"pb-4 pt-4"}>Zoom into text</Headline>
+                        <Headline className={"pb-6 pt-4 lg:pb-8"}>Zoom into text</Headline>
                         <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Idea</h3>
                         <SectionParagraph className={"pb-6"}>
-                            I believe beeing able to quickly adapt to new technologies is one of the most valueabe skills for developers,
-                            especially in the rapidly aternating field of web development.
+                            Design idea is based on similar animations that have been used in the past by{" "}
+                            <TextLink href={"www.apple.com/"}>apple.com</TextLink> on various product pages, like the 2020 site for the
+                            Iphone SE.
                         </SectionParagraph>
-                        <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Links</h3>
+                        <SectionParagraph className={"pb-6 lg:pb-8"}>
+                            This react implementation uses <TextLink href={"https://www.framer.com/motion/"}>framer-motion</TextLink>
+                            &rsquo;s <InlineCode href={"https://www.framer.com/motion/use-scroll/"}>useScroll()</InlineCode> to detect the
+                            user&rsquo;s scroll progress and adjust opacity and zoom of the overlay accordingly. Transparency of the text is
+                            achieved with css{" "}
+                            <InlineCode href={"https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode"}>
+                                mix-blend-mode: multiply
+                            </InlineCode>
+                            . Layout is build around{" "}
+                            <InlineCode href={"https://developer.mozilla.org/en-US/docs/Web/CSS/position"}>position: sticky</InlineCode>.
+                        </SectionParagraph>
+                        <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Code</h3>
                         <SectionParagraph className={"pb-2"}>Find the code for this component on:</SectionParagraph>
-                        <div className={"inline-flex flex-wrap gap-2 pb-6"}>
+                        <div className={"inline-flex flex-wrap gap-2 pb-6 lg:pb-8"}>
                             <IconButton
                                 className={"text-white"}
                                 Icon={GithubIcon}
