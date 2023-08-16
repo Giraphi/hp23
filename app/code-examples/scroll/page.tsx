@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import Headline from "@/app/components/Headline";
 import SectionBackground from "@/app/components/SectionBackground";
@@ -11,10 +11,10 @@ import IconButton from "@/app/components/IconButton";
 import TextLink from "@/app/components/TextLink";
 import InlineCode from "@/app/components/InlineCode";
 
-// export const metadata = {
-//     title: "Scroll Component",
-//     description: "Code Example for a scroll animation component",
-// };
+export const metadata = {
+    title: "Scroll Component",
+    description: "Code Example for a scroll animation component",
+};
 
 export default function Page() {
     return (
@@ -22,7 +22,7 @@ export default function Page() {
             <SectionBackground>
                 <SectionGrid className={"pb-0 lg:pb-0"}>
                     <div className={"col-content"}>
-                        <Headline className={"pb-6 pt-4 lg:pb-8"}>Zoom into text</Headline>
+                        <Headline className={"pb-6 lg:pb-8"}>Zoom into text</Headline>
                         <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Idea</h3>
                         <SectionParagraph className={"pb-6"}>
                             Design idea is based on similar animations that have been used in the past by{" "}
