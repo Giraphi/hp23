@@ -12,6 +12,8 @@ export default function Layout(props: LayoutProps) {
         <div>
             <BackTopBar title={"Code Examples"} />
             <PageNavigation
+                hamburgerClasses={"bg-transparent"}
+                menuClasses={"bg-gray-1 xl:bg-transparent mt-10 pt-10 md:mt-0 md:pt-16 lg:pt-24"}
                 visible={true}
                 alwaysOpenOnXl={true}
                 items={[

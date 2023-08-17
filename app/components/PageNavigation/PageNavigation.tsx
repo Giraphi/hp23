@@ -15,6 +15,8 @@ export interface PageNavigationProps {
     visible: boolean;
     items: Item[];
     alwaysOpenOnXl?: boolean;
+    hamburgerClasses?: string;
+    menuClasses?: string;
 }
 
 const menuVariants = {
@@ -64,7 +66,8 @@ export default function PageNavigation(props: PageNavigationProps) {
                         `relative z-20 col-start-1 row-start-1 flex h-10 w-10 cursor-pointer flex-col justify-between
                         rounded-bl-md bg-black py-[0.9rem]  pl-[0.4rem] pr-[0.3rem]
                         transition-opacity md:h-12 md:w-12 md:py-[1.1rem] md:pl-[0.5rem] md:pr-[0.5rem]`,
-                        props.visible || isOpen ? "opacity-1" : "opacity-0"
+                        props.visible || isOpen ? "opacity-1" : "opacity-0",
+                        props.hamburgerClasses
                     )}
                     onClick={() => setIsOpen((x) => !x)}
                 >
@@ -84,9 +87,10 @@ export default function PageNavigation(props: PageNavigationProps) {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className={`relative z-10 col-start-1 row-start-1 flex h-[100lvh] flex-col items-end ${
-                            keepOpen ? "bg-transparent" : "bg-black"
-                        } pl-6 pr-3 pt-16 lg:pt-24`}
+                        className={cn(
+                            `relative z-10 col-start-1 row-start-1 flex h-[100lvh] flex-col items-end bg-black pl-6 pr-3 pt-16 lg:pt-24`,
+                            props.menuClasses
+                        )}
                         variants={menuVariants}
                         initial={"hidden"}
                         animate={"visible"}
