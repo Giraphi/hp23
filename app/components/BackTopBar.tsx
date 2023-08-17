@@ -22,7 +22,6 @@ export default function BackTopBar(props: BackTopBarProps) {
                 <div className={"col-content row-start-1 font-bold"}>
                     <Link
                         href={"/"}
-                        replace
                         className={"inline-flex h-full items-center"}
                     >
                         <ChevronDown className={"mr-1 rotate-90"} />

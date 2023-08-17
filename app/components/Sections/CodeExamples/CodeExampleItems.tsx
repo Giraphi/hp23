@@ -1,5 +1,6 @@
 import Cards from "@/app/components/Cards/Cards";
 import VideoCard from "@/app/components/Cards/VideoCard";
+import { SectionId } from "@/app/store/useActiveSectionStore";
 
 export interface CodeExampleItemsProps {}
 
@@ -7,7 +8,7 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
     return (
         <Cards className={"col-content"}>
             <VideoCard
-                href={"/"}
+                href={`/code-examples#${SectionId.puzzle}`}
                 videoName={"puzzle"}
                 headline={"Puzzle Transition"}
             >
@@ -16,7 +17,7 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
             </VideoCard>
 
             <VideoCard
-                href={"/"}
+                href={`/code-examples#${SectionId.dots}`}
                 videoName={"dots"}
                 headline={"Magnetic Dots"}
             >
@@ -25,7 +26,7 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
             </VideoCard>
 
             <VideoCard
-                href={"/code-examples"}
+                href={`/code-examples#${SectionId.zoom}`}
                 videoName={"scroll"}
                 headline={"Zoom into Text"}
             >
