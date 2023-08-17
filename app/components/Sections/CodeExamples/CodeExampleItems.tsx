@@ -25,7 +25,7 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
             </VideoCard>
 
             <VideoCard
-                href={"/code-examples/scroll"}
+                href={"/code-examples"}
                 videoName={"scroll"}
                 headline={"Zoom into Text"}
             >

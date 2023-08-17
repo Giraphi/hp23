@@ -1,6 +1,7 @@
+"use client";
 import { useRef } from "react";
 import { useScroll, useTransform, motion, useMotionTemplate } from "framer-motion";
-import ScrollAnimationCover from "@/app/code-examples/scroll/ScrollAnimation/ScrollAnimationCover";
+import ScrollAnimationCover from "@/app/code-examples/components/ScrollAnimation/ScrollAnimationCover";
 
 export default function ScrollAnimation() {
     const ref = useRef<HTMLDivElement>(null);

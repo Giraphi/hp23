@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { PuzzleDimensions } from "@/app/components/CodeExamples/Puzzle/Puzzle";
-import PuzzleAnimation from "@/app/components/CodeExamples/Puzzle/PuzzleAnimation";
+
 import Image, { StaticImageData } from "next/image";
-import { Mod } from "@/app/components/CodeExamples/Puzzle/useClipPathConfig";
+import { PuzzleDimensions } from "@/app/code-examples/components/Puzzle/Puzzle";
+import { Mod } from "@/app/code-examples/components/Puzzle/useClipPathConfig";
+import PuzzleAnimation from "@/app/code-examples/components/Puzzle/PuzzleAnimation";
 
 export interface PuzzleContainerProps {
     activeSlide: number;

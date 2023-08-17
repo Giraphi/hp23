@@ -18,7 +18,7 @@ export default function TopBarItem(props: TopBarItemProps) {
 
     return (
         <div
-            className={`${activeSectionId === props.id ? "text-pink-600" : ""} cursor-pointer pb-3 text-base`}
+            className={`${activeSectionId === props.id ? "text-pink-600" : ""} cursor-pointer whitespace-nowrap pb-3 text-base`}
             onClick={handleClick}
         >
             {props.children}

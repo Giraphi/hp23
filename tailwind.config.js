@@ -70,8 +70,8 @@ module.exports = {
                 "gradient-radial": "radial-gradient(closest-side, var(--tw-gradient-stops))",
             },
             cursor: {
-                "left-arrow": "url('./assets/cursor-svgs/arrow-left.svg') 24 24, pointer",
-                "right-arrow": "url('./assets/cursor-svgs/arrow-right.svg') 24 24, pointer",
+                "left-arrow": "url('/cursor-svgs/arrow-left.svg') 24 24, pointer",
+                "right-arrow": "url('/cursor-svgs/arrow-right.svg') 24 24, pointer",
             },
             grid: {
                 maxWidth: "1480px",

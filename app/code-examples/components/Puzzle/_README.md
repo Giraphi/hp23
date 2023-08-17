@@ -5,3 +5,5 @@ Idea of this animation:
 - css's clip path makes everything visible that is covered by a rectangle
 - to trigger the animation, scale down the rectangels (e.g. `.rect1{scale(0.12)}`)
 - animate this with framer-motion using `<motion.rect>`
+
+The implementation is making use of css

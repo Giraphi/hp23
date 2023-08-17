@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { PuzzleDimensions } from "@/app/components/CodeExamples/Puzzle/Puzzle";
-import PuzzleAnimationRect from "@/app/components/CodeExamples/Puzzle/PuzzleAnimationRect";
-import useClipPathConfig, { AnimationClipPathConfig, Mod } from "@/app/components/CodeExamples/Puzzle/useClipPathConfig";
+
 import { ReactNode } from "react";
+import { PuzzleDimensions } from "@/app/code-examples/components/Puzzle/Puzzle";
+import useClipPathConfig, { AnimationClipPathConfig, Mod } from "@/app/code-examples/components/Puzzle/useClipPathConfig";
+import PuzzleAnimationRect from "@/app/code-examples/components/Puzzle/PuzzleAnimationRect";
 
 const backgroundScaleFactor = 1.1;
 

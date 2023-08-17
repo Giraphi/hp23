@@ -2,16 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// import desk from "@/app/components/CodeExamples/Puzzle/images/desk.jpg";
-// import floor from "@/app/components/CodeExamples/Puzzle/images/floor.jpg";
-// import paint from "@/app/components/CodeExamples/Puzzle/images/paint.jpg";
-// import office from "@/app/components/CodeExamples/Puzzle/images/office.jpg";
-
-import brutal1 from "@/app/components/CodeExamples/Puzzle/images/brutal1.jpg";
-import brutal2 from "@/app/components/CodeExamples/Puzzle/images/brutal2.jpg";
-import brutal3 from "@/app/components/CodeExamples/Puzzle/images/brutal3.jpg";
-
-import PuzzleContainer from "@/app/components/CodeExamples/Puzzle/PuzzleContainer";
+import brutal1 from "./images/brutal1.jpg";
+import brutal2 from "./images/brutal2.jpg";
+import brutal3 from "./images/brutal3.jpg";
+import PuzzleContainer from "@/app/code-examples/components/Puzzle/PuzzleContainer";
 
 export type PuzzleDimensions = { width: number; height: number };
 
