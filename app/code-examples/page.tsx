@@ -20,14 +20,17 @@ export interface PageProps {}
 export default function Page(props: PageProps) {
     return (
         <main className={"text-lg"}>
-            {/*<SectionBackground>*/}
-            {/*    <SectionGrid className={"pb-0 lg:pb-0"}>*/}
-            {/*        <SectionText className={"pb-0 lg:pb-8 xl:pb-0"}>*/}
-            {/*            <Headline className={"pb-6 text-pink-600 lg:pb-8"}>Code Examples</Headline>*/}
-            {/*            <SectionParagraph>Take a look at some code examples</SectionParagraph>*/}
-            {/*        </SectionText>*/}
-            {/*    </SectionGrid>*/}
-            {/*</SectionBackground>*/}
+            <SectionBackground>
+                <SectionGrid className={"pb-0 lg:pb-0"}>
+                    <SectionText className={"pb-0 lg:pb-8 xl:pb-0"}>
+                        <Headline className={"pb-6 lg:pb-8"}>Code Examples</Headline>
+                        <p>
+                            Take a look at some component I&rsquo;ve been coding recently. For each component I&rsquo;ll give a short
+                            explanation of the idea, links to the full code on codesandbox and github and a demo.
+                        </p>
+                    </SectionText>
+                </SectionGrid>
+            </SectionBackground>
 
             <CodeExampleSection
                 DemoComponent={Puzzle}

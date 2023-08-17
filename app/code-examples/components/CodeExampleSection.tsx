@@ -24,7 +24,7 @@ export default function CodeExampleSection(props: CodeExampleSectionProps) {
             <SectionBackground startDark={true}>
                 <SectionGrid className={"pb-0 lg:pb-0"}>
                     <SectionText className={"pb-0 lg:pb-0"}>
-                        <Headline className={"pb-6 lg:pb-8"}>{props.headline}</Headline>
+                        <h2 className={"pb-6 font-delaGothicOne text-3xl lg:pb-8"}>{props.headline}</h2>
                         <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Code</h3>
                         <SectionParagraph className={"pb-2"}>Find the code for this component on:</SectionParagraph>
                         <div className={"inline-flex flex-wrap gap-2 pb-6 lg:pb-8"}>
@@ -53,9 +53,9 @@ export default function CodeExampleSection(props: CodeExampleSectionProps) {
 
             <SectionBackground>
                 <SectionGrid className={"pt-0"}>
-                    <div className={"col-content"}>
+                    <SectionText>
                         <DemoComponent />
-                    </div>
+                    </SectionText>
                 </SectionGrid>
             </SectionBackground>
         </>
