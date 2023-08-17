@@ -10,9 +10,9 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
             <VideoCard
                 href={`/code-examples#${SectionId.puzzle}`}
                 videoName={"puzzle"}
-                headline={"Puzzle Transition"}
+                headline={"Puzzle Slider"}
             >
-                Spice up image sliders with some cool glitch-style visuals to keep the users interested. Implementation is based around svg
+                Spice up image sliders with some cool puzzle-style visuals to keep the users interested. Implementation is based around svg
                 clip paths.
             </VideoCard>
 
