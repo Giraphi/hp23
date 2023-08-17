@@ -7,7 +7,7 @@ export interface TopBarItemProps {
     handleClick?: () => void;
 }
 
-export default function TopBarItem(props: TopBarItemProps) {
+export default function PageNavigationItem(props: TopBarItemProps) {
     const activeSectionId = useActiveSectionStore((state) => state.activeSectionId);
 
     function handleClick() {

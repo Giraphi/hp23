@@ -9,6 +9,7 @@ import SectionGrid from "@/app/components/SectionGrid";
 import SectionText from "@/app/components/SectionText";
 import ScrollAnimation from "@/app/code-examples/components/ScrollAnimation/ScrollAnimation";
 import Puzzle from "@/app/code-examples/components/Puzzle/Puzzle";
+import { SectionId } from "@/app/store/useActiveSectionStore";
 
 export const metadata = {
     title: "Code Examples",
@@ -37,6 +38,7 @@ export default function Page(props: PageProps) {
                 headline={"Puzzle Slider"}
                 githubLink={""}
                 codesandboxLink={""}
+                sectionId={SectionId.puzzle}
             >
                 <SectionParagraph className={"pb-6"}>
                     The design for this component was created by the agcency{" "}
@@ -68,6 +70,7 @@ export default function Page(props: PageProps) {
                 githubLink={""}
                 codesandboxLink={""}
                 headline={"Zoom into Text"}
+                sectionId={SectionId.zoom}
             >
                 <SectionParagraph className={"pb-6"}>
                     The design idea is based on similar animations that have been used by{" "}

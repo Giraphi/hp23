@@ -1,20 +1,15 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
-// export const sectionIds = {
-//     intro: "intro",
-//     projects: "projects",
-//     skills: "skills",
-//     codeExamples: "codeExamples",
-//     aboutMe: "aboutMe",
-// };
-
 export enum SectionId {
     intro = "intro",
     projects = "projects",
     skills = "skills",
     codeExamples = "codeExamples",
     aboutMe = "aboutMe",
+    puzzle = "puzzle",
+    zoom = "zoom",
+    dots = "dots",
 }
 
 type State = {
@@ -34,8 +29,3 @@ export const useActiveSectionStore = create(
             }),
     }))
 );
-
-// export const useActiveSectionStore = create((set) => ({
-//     activeSectionId: SectionId.intro,
-//     setActiveSectionId: (sectionId: SectionId) => set((state: any) => ({ activeSectionId: sectionId })),
-// }));

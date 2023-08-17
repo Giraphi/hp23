@@ -11,7 +11,8 @@ import AboutMe from "@/app/components/Sections/AboutMe/AboutMe";
 import WavesBackground from "@/app/components/Sections/AboutMe/WavesBackground/WavesBackground";
 import Footer from "@/app/components/Sections/Footer/Footer";
 import { useState } from "react";
-import TopBar from "@/app/components/TopBar/TopBar";
+import PageNavigation from "@/app/components/PageNavigation/PageNavigation";
+import { SectionId } from "@/app/store/useActiveSectionStore";
 
 export default function Home() {
     useDeviceStoreHandler();
@@ -20,7 +21,16 @@ export default function Home() {
 
     return (
         <MotionConfig>
-            <TopBar visible={!scrollHintVisible} />
+            <PageNavigation
+                visible={!scrollHintVisible}
+                items={[
+                    { id: SectionId.intro, label: "Intro" },
+                    { id: SectionId.projects, label: "Projects" },
+                    { id: SectionId.skills, label: "Skills" },
+                    { id: SectionId.codeExamples, label: "Code Examples" },
+                    { id: SectionId.aboutMe, label: "About Me" },
+                ]}
+            />
             <main>
                 <Intro />
 
