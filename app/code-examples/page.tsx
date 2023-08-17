@@ -20,17 +20,14 @@ export interface PageProps {}
 export default function Page(props: PageProps) {
     return (
         <main className={"text-lg"}>
-            <SectionBackground>
-                <SectionGrid className={"pb-0 lg:pb-0"}>
-                    <SectionText className={"pb-0 lg:pb-8 xl:pb-0"}>
-                        <Headline className={"pb-6 text-pink-600 lg:pb-8"}>Code Examples</Headline>
-                        <SectionParagraph>
-                            The design idea is based on similar animations that have been used by{" "}
-                            <TextLink href={"www.apple.com/"}>apple.com</TextLink> in the past on various product pages.
-                        </SectionParagraph>
-                    </SectionText>
-                </SectionGrid>
-            </SectionBackground>
+            {/*<SectionBackground>*/}
+            {/*    <SectionGrid className={"pb-0 lg:pb-0"}>*/}
+            {/*        <SectionText className={"pb-0 lg:pb-8 xl:pb-0"}>*/}
+            {/*            <Headline className={"pb-6 text-pink-600 lg:pb-8"}>Code Examples</Headline>*/}
+            {/*            <SectionParagraph>Take a look at some code examples</SectionParagraph>*/}
+            {/*        </SectionText>*/}
+            {/*    </SectionGrid>*/}
+            {/*</SectionBackground>*/}
 
             <CodeExampleSection
                 DemoComponent={Puzzle}
@@ -44,14 +41,17 @@ export default function Page(props: PageProps) {
                     though this component didn&rsquo;t make it to the final website, I had a lot of fun developing it.
                 </SectionParagraph>
                 <SectionParagraph className={"pb-6 lg:pb-8"}>
-                    In this implementation, each of the slides renders a couple of <InlineCode>{"<rect>"}</InlineCode> elements in addition
-                    to the actual image. Those elements are then referenced by css{" "}
+                    In this implementation, each of the slides renders a couple of{" "}
+                    <InlineCode href={"https://developer.mozilla.org/en-US/docs/Web/SVG/Element/"}>{"<rect>"}</InlineCode> elements in
+                    addition to the actual image. Those elements are then referenced by css{" "}
                     <InlineCode href={"https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path"}>clip-path: url(#id)</InlineCode> to cut
                     out the corresponding areas of the image. From here on we can animate the size of the svg{" "}
-                    <InlineCode>{"<rect>"}</InlineCode> elements to create the effect. In our case this is done with{" "}
+                    <InlineCode href={"https://developer.mozilla.org/en-US/docs/Web/SVG/Element/"}>{"<rect>"}</InlineCode> elements to
+                    create the &ldquo;puzzle&rdquo; effect. In our case this is done with{" "}
                     <InlineCode href={"https://www.framer.com/motion/component/"}>{"<motion.rect>"}</InlineCode>. To make it even more
-                    interesting, we apply randomness to the position and size to the <InlineCode>{"<rect>"}</InlineCode> elements such that
-                    the animation always look slightly different every time it is executed.
+                    interesting, we apply randomness to the position and size to the{" "}
+                    <InlineCode href={"https://developer.mozilla.org/en-US/docs/Web/SVG/Element/"}>{"<rect>"}</InlineCode> elements on every
+                    transition. This way that the animation always look slightly different every time it is executed.
                 </SectionParagraph>
                 <SectionParagraph className={"pb-6 lg:pb-8"}>
                     How to use randomness for creative purposes is always a particulary intersting topic for me. While beeing very strict

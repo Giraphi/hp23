@@ -8,7 +8,7 @@ export interface LayoutProps {
 export default function Layout(props: LayoutProps) {
     return (
         <div>
-            <BackTopBar />
+            <BackTopBar title={"Code Examples"} />
             {props.children}
         </div>
     );
