@@ -5,6 +5,7 @@ import Grid from "@/app/components/Grid/Grid";
 import ChevronDown from "@/app/assets/chevron-down.svg";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { SectionId } from "@/app/store/useActiveSectionStore";
 
 export interface BackTopBarProps {
     title?: string;
@@ -21,7 +22,8 @@ export default function BackTopBar(props: BackTopBarProps) {
                 </div>
                 <div className={"col-content row-start-1 font-bold"}>
                     <Link
-                        href={"/"}
+                        href={`/#${SectionId.codeExamples}`}
+                        scroll={true}
                         className={"inline-flex h-full items-center"}
                     >
                         <ChevronDown className={"mr-1 rotate-90"} />
