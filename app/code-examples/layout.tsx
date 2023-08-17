@@ -10,16 +10,15 @@ export interface LayoutProps {
 export default function Layout(props: LayoutProps) {
     return (
         <div>
+            <BackTopBar title={"Code Examples"} />
             <PageNavigation
                 visible={true}
-                alwaysOpen={true}
-                lightBackground={true}
+                alwaysOpenOnXl={true}
                 items={[
                     { id: SectionId.puzzle, label: "Puzzle Slider" },
-                    { id: SectionId.zoom, label: "Scroll Animation" },
+                    { id: SectionId.zoom, label: "Zoom into Text" },
                 ]}
             />
-            <BackTopBar title={"Code Examples"} />
             {props.children}
         </div>
     );

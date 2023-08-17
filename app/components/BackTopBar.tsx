@@ -33,8 +33,3 @@ export default function BackTopBar(props: BackTopBarProps) {
         </nav>
     );
 }
-
-export async function getServerSideProps(context: any) {
-    console.log("SSP");
-    console.log(context);
-}

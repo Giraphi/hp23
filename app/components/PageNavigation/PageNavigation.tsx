@@ -1,18 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SectionId } from "@/app/store/useActiveSectionStore";
 import { AnimatePresence, motion } from "framer-motion";
 import PageNavigationItem from "@/app/components/PageNavigation/PageNavigationItem";
 import useOutsideClick from "@/app/hooks/useOutsideClick";
+import useDeviceStoreHandler from "@/app/store/useDeviceStoreHandler";
+import { Device, useDeviceStore } from "@/app/store/useDeviceStore";
+import { cn } from "@/app/util/functions";
 
 type Item = { id: SectionId; label: string };
 
 export interface PageNavigationProps {
     visible: boolean;
     items: Item[];
-    alwaysOpen?: boolean;
-    lightBackground?: boolean;
+    alwaysOpenOnXl?: boolean;
 }
 
 const menuVariants = {
@@ -28,16 +30,24 @@ const menuVariants = {
 };
 
 export default function PageNavigation(props: PageNavigationProps) {
-    const [isOpen, setIsOpen] = useState(!!props.alwaysOpen);
+    useDeviceStoreHandler();
+    const { device } = useDeviceStore();
+    const keepOpen = device >= Device.xl && props.alwaysOpenOnXl;
+    const [isOpen, setIsOpen] = useState(!!keepOpen);
+
+    useEffect(() => {
+        setIsOpen(!!keepOpen);
+    }, [keepOpen]);
+
     const ref = useOutsideClick(() => {
-        if (props.alwaysOpen) {
+        if (keepOpen) {
             return;
         }
         setIsOpen(false);
     });
 
     function handleItemClick() {
-        if (props.alwaysOpen) {
+        if (keepOpen) {
             return;
         }
         setIsOpen(false);
@@ -48,20 +58,24 @@ export default function PageNavigation(props: PageNavigationProps) {
             className={"fixed right-0 top-0 z-30 grid justify-items-end"}
             ref={ref}
         >
-            {!props.alwaysOpen && (
+            {!keepOpen && (
                 <div
-                    className={`relative z-20 col-start-1 row-start-1 flex h-12 w-12 cursor-pointer flex-col justify-between rounded-bl-md bg-black px-2 py-[1.1rem] transition-opacity ${
+                    className={cn(
+                        `relative z-20 col-start-1 row-start-1 flex h-10 w-10 cursor-pointer flex-col justify-between
+                        rounded-bl-md bg-black px-[0.35rem] py-[0.9rem] transition-opacity md:h-12 md:w-12 md:px-2 md:py-[1.1rem]`,
                         props.visible || isOpen ? "opacity-1" : "opacity-0"
-                    } `}
+                    )}
                     onClick={() => setIsOpen((x) => !x)}
                 >
                     <div
-                        className={`h-1 w-full rounded-sm bg-white transition-transform ${isOpen ? "translate-y-[0.3rem] rotate-45" : ""}`}
+                        className={cn(`h-[0.2rem] w-full rounded-sm bg-white transition-transform md:h-1`, {
+                            "translate-y-[0.25rem] rotate-45 md:translate-y-[0.3rem]": isOpen,
+                        })}
                     />
                     <div
-                        className={`h-1 w-full rounded-sm bg-white transition-transform ${
-                            isOpen ? "-translate-y-[0.3rem] -rotate-45" : ""
-                        }`}
+                        className={cn(`h-[0.2rem] w-full rounded-sm bg-white transition-transform md:h-1`, {
+                            "-translate-y-[0.25rem] -rotate-45 md:-translate-y-[0.3rem]": isOpen,
+                        })}
                     />
                 </div>
             )}
@@ -70,7 +84,7 @@ export default function PageNavigation(props: PageNavigationProps) {
                 {isOpen && (
                     <motion.div
                         className={`relative z-10 col-start-1 row-start-1 flex h-[100lvh] flex-col items-end ${
-                            props.lightBackground ? "bg-transparent" : "bg-black"
+                            keepOpen ? "bg-transparent" : "bg-black"
                         } pl-6 pr-3 pt-16 lg:pt-24`}
                         variants={menuVariants}
                         initial={"hidden"}

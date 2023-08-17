@@ -5,7 +5,7 @@ export enum Device {
     sm,
     md,
     lg,
-    xlg,
+    xl,
 }
 
 type State = {

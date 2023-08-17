@@ -24,8 +24,8 @@ export default function useDeviceStoreHandler() {
     const { setDevice } = useDeviceStore();
 
     function getDevice() {
-        if (matchMedia(`(min-width: ${screens.xlg})`).matches) {
-            return Device.xlg;
+        if (matchMedia(`(min-width: ${screens.xl})`).matches) {
+            return Device.xl;
         }
         if (matchMedia(`(min-width: ${screens.lg})`).matches) {
             return Device.lg;
