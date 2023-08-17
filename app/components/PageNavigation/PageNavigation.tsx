@@ -62,7 +62,8 @@ export default function PageNavigation(props: PageNavigationProps) {
                 <div
                     className={cn(
                         `relative z-20 col-start-1 row-start-1 flex h-10 w-10 cursor-pointer flex-col justify-between
-                        rounded-bl-md bg-black px-[0.35rem] py-[0.9rem] transition-opacity md:h-12 md:w-12 md:px-2 md:py-[1.1rem]`,
+                        rounded-bl-md bg-black py-[0.9rem]  pl-[0.4rem] pr-[0.3rem]
+                        transition-opacity md:h-12 md:w-12 md:py-[1.1rem] md:pl-[0.5rem] md:pr-[0.5rem]`,
                         props.visible || isOpen ? "opacity-1" : "opacity-0"
                     )}
                     onClick={() => setIsOpen((x) => !x)}
