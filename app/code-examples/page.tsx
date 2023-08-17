@@ -26,8 +26,8 @@ export default function Page(props: PageProps) {
                     <SectionText className={"pb-0 lg:pb-8 xl:pb-0"}>
                         <Headline className={"pb-6 lg:pb-8"}>Code Examples</Headline>
                         <p>
-                            Take a look at some component I&rsquo;ve been coding recently. For each component I&rsquo;ll give a short
-                            explanation of the idea, links to the full code on codesandbox and github and a demo.
+                            Take a look at some component I&rsquo;ve been coding recently. For each component there are links to the full
+                            code on codesandbox & github, a short explanation of the development approach and a running demo implementation.
                         </p>
                     </SectionText>
                 </SectionGrid>
