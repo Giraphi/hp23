@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import SectionGrid from "@/src/components/SectionGrid";
 import SectionHeadline from "@/src/components/SectionHeadline";
 import SectionParagraph from "@/src/components/SectionParagraph";
@@ -27,13 +27,12 @@ export default function Projects() {
     useNavigationSection(sectionRef, SectionId.projects);
 
     useMotionValueEvent(hintOpacity, "change", (value) => {
-        const visibleUpdate = value !== 0;
-        if (visibleUpdate === useHomeStore.getState().scrolledIntoProjectsSection) {
-            return;
-        }
-        // TODO: is this the best way to update a zustand state? or should every data-field have its own setter?
-        useHomeStore.setState((state) => ({ ...state, scrolledIntoProjectsSection: visibleUpdate }));
+        useHomeStore.setState((state) => ({ ...state, scrolledIntoProjectsSection: value === 0 }));
     });
+
+    useEffect(() => {
+        useHomeStore.setState((state) => ({ ...state, scrolledIntoProjectsSection: hintOpacity.get() === 0 }));
+    }, [hintOpacity]);
 
     return (
         <>

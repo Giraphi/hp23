@@ -7,19 +7,12 @@ import WavesBackground from "@/src/components/Sections/AboutMe/WavesBackground/W
 import Footer from "@/src/components/Sections/Footer/Footer";
 import PageNavigation from "@/src/components/PageNavigation/PageNavigation";
 import { SectionId } from "@/src/store/useActiveSectionStore";
+import HomeNavigation from "@/src/app/components/HomeNavigation";
 
 export default function Home() {
     return (
         <>
-            <PageNavigation
-                items={[
-                    { id: SectionId.intro, label: "Intro" },
-                    { id: SectionId.projects, label: "Projects" },
-                    { id: SectionId.skills, label: "Skills" },
-                    { id: SectionId.codeExamples, label: "Code Examples" },
-                    { id: SectionId.aboutMe, label: "About Me" },
-                ]}
-            />
+            <HomeNavigation />
             <main>
                 <Intro />
                 <Projects />

@@ -16,6 +16,7 @@ export interface PageNavigationProps {
     alwaysOpenOnXl?: boolean;
     hamburgerClasses?: string;
     menuClasses?: string;
+    visible: boolean;
 }
 
 const menuVariants = {
@@ -34,7 +35,6 @@ export default function PageNavigation(props: PageNavigationProps) {
     const { device } = useDeviceStore();
     const keepOpen = device >= Device.xl && props.alwaysOpenOnXl;
     const [isOpen, setIsOpen] = useState(!!keepOpen);
-    const visible = !useHomeStore().scrolledIntoProjectsSection;
 
     useEffect(() => {
         setIsOpen(!!keepOpen);
@@ -65,7 +65,7 @@ export default function PageNavigation(props: PageNavigationProps) {
                         `relative z-20 col-start-1 row-start-1 flex h-10 w-10 cursor-pointer flex-col justify-between
                         rounded-bl-md bg-black py-[0.9rem]  pl-[0.4rem] pr-[0.3rem]
                         transition-opacity md:h-12 md:w-12 md:py-[1.1rem] md:pl-[0.5rem] md:pr-[0.5rem]`,
-                        visible || isOpen ? "opacity-1" : "opacity-0",
+                        props.visible || isOpen ? "opacity-1" : "opacity-0",
                         props.hamburgerClasses
                     )}
                     onClick={() => setIsOpen((x) => !x)}
@@ -105,32 +105,6 @@ export default function PageNavigation(props: PageNavigationProps) {
                                 {item.label}
                             </PageNavigationItem>
                         ))}
-                        {/*    Intro*/}
-                        {/*</PageNavigationItem>*/}
-                        {/*<PageNavigationItem*/}
-                        {/*    handleClick={handleItemClick}*/}
-                        {/*    id={SectionId.projects}*/}
-                        {/*>*/}
-                        {/*    Projects*/}
-                        {/*</PageNavigationItem>*/}
-                        {/*<PageNavigationItem*/}
-                        {/*    handleClick={handleItemClick}*/}
-                        {/*    id={SectionId.skills}*/}
-                        {/*>*/}
-                        {/*    Skills*/}
-                        {/*</PageNavigationItem>*/}
-                        {/*<PageNavigationItem*/}
-                        {/*    handleClick={handleItemClick}*/}
-                        {/*    id={SectionId.codeExamples}*/}
-                        {/*>*/}
-                        {/*    Code Examples*/}
-                        {/*</PageNavigationItem>*/}
-                        {/*<PageNavigationItem*/}
-                        {/*    handleClick={handleItemClick}*/}
-                        {/*    id={SectionId.aboutMe}*/}
-                        {/*>*/}
-                        {/*    About Me*/}
-                        {/*</PageNavigationItem>*/}
                     </motion.div>
                 )}
             </AnimatePresence>
