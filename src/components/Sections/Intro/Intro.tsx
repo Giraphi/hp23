@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import Grid from "@/src/components/Grid/Grid";
 import Button from "@/src/components/Button";

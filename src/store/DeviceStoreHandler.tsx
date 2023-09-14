@@ -4,15 +4,6 @@ import { useEffect } from "react";
 import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
 import { KeyValuePair, Screen } from "tailwindcss/types/config";
 
-// Tailwind suggests to resolve config
-// https://tailwindcss.com/docs/configuration#referencing-in-java-script
-//
-// import config from "../../tailwind.config";
-// import resolveConfig from "tailwindcss/resolveConfig";
-// const { theme } = resolveConfig(config);
-//
-// Since the unresolved version is enough here, we stick to it and omit the
-// issue with the pulled in dependencies
 import { theme } from "../../tailwind.config";
 
 // theme!.screens is of type ScreensConfig = string[] | KeyValuePair<string, string | Screen | Screen[]>
@@ -20,7 +11,9 @@ import { theme } from "../../tailwind.config";
 // Note that things like theme.colors.black work without that
 const screens = theme!.screens as KeyValuePair<string, string | Screen | Screen[]>;
 
-export default function useDeviceStoreHandler() {
+export interface DeviceStoreHandlerProps {}
+
+export default function DeviceStoreHandler(props: DeviceStoreHandlerProps) {
     const { setDevice } = useDeviceStore();
 
     function getDevice() {
@@ -44,4 +37,6 @@ export default function useDeviceStoreHandler() {
         window.addEventListener("resize", onResize);
         return () => window.removeEventListener("resize", onResize);
     }, [setDevice]);
+
+    return null;
 }

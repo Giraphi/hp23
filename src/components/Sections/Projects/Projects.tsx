@@ -1,4 +1,6 @@
-import { useRef, useState } from "react";
+"use client";
+
+import { useRef } from "react";
 import SectionGrid from "@/src/components/SectionGrid";
 import SectionHeadline from "@/src/components/SectionHeadline";
 import SectionParagraph from "@/src/components/SectionParagraph";
@@ -16,13 +18,9 @@ import TextLink from "@/src/components/TextLink";
 import useNavigationSection from "@/src/hooks/useNavigationSection";
 import { SectionId } from "@/src/store/useActiveSectionStore";
 import ScrollTarget from "@/src/components/ScrollTarget";
+import { useHomeStore } from "@/src/store/useHomeStore";
 
-export interface ProjectsProps {
-    scrollHintVisible: boolean;
-    setScrollHintVisible: (visible: boolean) => void;
-}
-
-export default function Projects(props: ProjectsProps) {
+export default function Projects() {
     const sectionRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "100px end"] });
     const hintOpacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0]);
@@ -30,12 +28,15 @@ export default function Projects(props: ProjectsProps) {
 
     useMotionValueEvent(hintOpacity, "change", (value) => {
         const visibleUpdate = value !== 0;
-        props.setScrollHintVisible(visibleUpdate);
+        if (visibleUpdate === useHomeStore.getState().scrolledIntoProjectsSection) {
+            return;
+        }
+        useHomeStore.setState((state) => ({ ...state, scrolledIntoProjectsSection: visibleUpdate }));
     });
 
     return (
         <>
-            {props.scrollHintVisible && (
+            {!useHomeStore.getState().scrolledIntoProjectsSection && (
                 <motion.div
                     style={{ opacity: hintOpacity }}
                     className={"fixed bottom-4 z-30 w-full"}

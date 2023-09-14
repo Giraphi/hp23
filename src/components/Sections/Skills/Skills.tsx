@@ -1,3 +1,5 @@
+"use client";
+
 import SectionBackground from "@/src/components/SectionBackground";
 import SectionGrid from "@/src/components/SectionGrid";
 import SectionHeadline from "@/src/components/SectionHeadline";

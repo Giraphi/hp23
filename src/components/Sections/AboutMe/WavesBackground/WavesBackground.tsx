@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode, useRef } from "react";
 import SectionBackground from "@/src/components/SectionBackground";
 import WavesAnimation from "@/src/components/Sections/AboutMe/WavesBackground/WavesAnimation";
