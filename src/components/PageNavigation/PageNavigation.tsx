@@ -36,8 +36,6 @@ export default function PageNavigation(props: PageNavigationProps) {
     const [isOpen, setIsOpen] = useState(!!keepOpen);
     const visible = !useHomeStore().scrolledIntoProjectsSection;
 
-    console.log("render");
-
     useEffect(() => {
         setIsOpen(!!keepOpen);
     }, [keepOpen]);

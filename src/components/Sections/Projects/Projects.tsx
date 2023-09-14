@@ -31,6 +31,7 @@ export default function Projects() {
         if (visibleUpdate === useHomeStore.getState().scrolledIntoProjectsSection) {
             return;
         }
+        // TODO: is this the best way to update a zustand state? or should every data-field have its own setter?
         useHomeStore.setState((state) => ({ ...state, scrolledIntoProjectsSection: visibleUpdate }));
     });
 
