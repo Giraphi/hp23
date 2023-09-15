@@ -31,7 +31,7 @@ export default function Home(props: HomeProps) {
             </main>
             <Footer />
 
-            <Modal modalKey={modalKey}>{modalKey === ModalSearchParams.consultingGroup && <ConsultingGroupModal />}</Modal>
+            <Modal open={!!modalKey}>{modalKey === ModalSearchParams.consultingGroup && <ConsultingGroupModal />}</Modal>
         </>
     );
 }

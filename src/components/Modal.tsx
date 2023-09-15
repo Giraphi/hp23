@@ -1,12 +1,11 @@
 "use client";
 
 import { Modal as MuiModal } from "@mui/material";
-import ConsultingGroupModal from "@/src/app/components/ConsultingGroupModal";
 import { useRouter } from "next/navigation";
 import { ReactNode } from "react";
 
 export interface ModalProps {
-    modalKey?: string;
+    open?: boolean;
     children?: ReactNode;
 }
 
@@ -19,7 +18,7 @@ export default function Modal(props: ModalProps) {
 
     return (
         <MuiModal
-            open={!!props.modalKey}
+            open={!!props.open}
             onClose={handleClose}
         >
             <div>{props.children}</div>
