@@ -5,7 +5,7 @@ import useNavigationSection from "@/src/hooks/useNavigationSection";
 import { SectionId } from "@/src/store/useActiveSectionStore";
 
 export interface SectionProps {
-    id: SectionId;
+    sectionId: SectionId;
     children?: ReactNode;
 }
 
@@ -14,7 +14,7 @@ export interface SectionProps {
 
 export default function Section(props: SectionProps) {
     const ref = useRef(null);
-    useNavigationSection(ref, props.id);
+    useNavigationSection(ref, props.sectionId);
 
     return <div ref={ref}>{props.children}</div>;
 }

@@ -14,7 +14,7 @@ export interface SkillsProps {}
 
 export default function Skills(props: SkillsProps) {
     return (
-        <Section id={SectionId.skills}>
+        <Section sectionId={SectionId.skills}>
             <SectionBackground>
                 <ScrollTarget id={SectionId.skills} />
 
