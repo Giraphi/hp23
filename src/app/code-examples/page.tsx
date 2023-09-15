@@ -2,7 +2,7 @@ import React from "react";
 import CodeExampleSection from "@/src/app/code-examples/components/CodeExampleSection";
 import Headline from "@/src/components/Headline";
 import SectionParagraph from "@/src/components/SectionParagraph";
-import TextLink from "@/src/components/TextLink";
+import InlineTextLink from "@/src/components/InlineTextLink";
 import InlineCode from "@/src/components/InlineCode";
 import SectionBackground from "@/src/components/SectionBackground";
 import SectionGrid from "@/src/components/SectionGrid";
@@ -42,8 +42,8 @@ export default function Page(props: PageProps) {
             >
                 <SectionParagraph className={"pb-6"}>
                     The design for this component was created by the agcency{" "}
-                    <TextLink href={"https://www.hellomonday.com/"}>Hello Monday</TextLink> during an early phase for a larger project. Even
-                    though this component didn&rsquo;t make it to the final website, I had a lot of fun developing it.
+                    <InlineTextLink href={"https://www.hellomonday.com/"}>Hello Monday</InlineTextLink> during an early phase for a larger
+                    project. Even though this component didn&rsquo;t make it to the final website, I had a lot of fun developing it.
                 </SectionParagraph>
                 <SectionParagraph className={"pb-6 lg:pb-8"}>
                     In this implementation, each of the slides renders a couple of{" "}
@@ -74,10 +74,10 @@ export default function Page(props: PageProps) {
             >
                 <SectionParagraph className={"pb-6"}>
                     The design idea is based on similar animations that have been used by{" "}
-                    <TextLink href={"www.apple.com/"}>apple.com</TextLink> in the past on various product pages.
+                    <InlineTextLink href={"www.apple.com/"}>apple.com</InlineTextLink> in the past on various product pages.
                 </SectionParagraph>
                 <SectionParagraph className={"pb-6 lg:pb-8"}>
-                    This react implementation uses <TextLink href={"https://www.framer.com/motion/"}>framer-motion</TextLink>
+                    This react implementation uses <InlineTextLink href={"https://www.framer.com/motion/"}>framer-motion</InlineTextLink>
                     &rsquo;s <InlineCode href={"https://www.framer.com/motion/use-scroll/"}>useScroll()</InlineCode> to detect the
                     user&rsquo;s scroll progress and adjusts opacity and zoom of the overlay accordingly. Transparency of the text is
                     achieved with css{" "}

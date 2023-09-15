@@ -2,7 +2,7 @@ import SectionBackground from "@/src/components/SectionBackground";
 import SectionGrid from "@/src/components/SectionGrid";
 import SectionHeadline from "@/src/components/SectionHeadline";
 import HeadlineWText from "@/src/components/HeadlineWText";
-import TextLink from "@/src/components/TextLink";
+import InlineTextLink from "@/src/components/InlineTextLink";
 import { SectionId } from "@/src/store/useActiveSectionStore";
 import ScrollTarget from "@/src/components/ScrollTarget";
 import Section from "@/src/components/Section";
@@ -49,23 +49,23 @@ export default function AboutMe(props: AboutMeProps) {
                                 <div className={"pr-8 font-bold"}>2016 - 2018:</div>
                                 <div className={"pb-4 text-gray-c md:pb-0"}>
                                     Working student jobs in Munich at Siemens and at the robotics startup{" "}
-                                    <TextLink
+                                    <InlineTextLink
                                         target={"_blank"}
                                         href={"https://www.magazino.eu/"}
                                     >
                                         Magazino
-                                    </TextLink>
+                                    </InlineTextLink>
                                     .
                                 </div>
                                 <div className={"pr-8 font-bold"}>Since 2018:</div>
                                 <div className={"text-gray-c"}>
                                     Full time frontend developer at the web agency{" "}
-                                    <TextLink
+                                    <InlineTextLink
                                         href={"https://funct.com/"}
                                         target={"_blank"}
                                     >
                                         funct
-                                    </TextLink>{" "}
+                                    </InlineTextLink>{" "}
                                     in Munich. Development of Websites, Web Apps and Desktop Apps in close collaboration with different
                                     design teams.
                                 </div>
@@ -76,12 +76,12 @@ export default function AboutMe(props: AboutMeProps) {
                             <div className={"pb-1 text-gray-c md:pb-2"}>Art / Digital Art / Design</div>
                             <div className={"pb-1 text-gray-c md:pb-2"}>
                                 Synthesizer at my band{" "}
-                                <TextLink
+                                <InlineTextLink
                                     href={"https://www.ubu-imperator.com/"}
                                     target={"_blank"}
                                 >
                                     Ubu Imperator
-                                </TextLink>
+                                </InlineTextLink>
                             </div>
                             <div className={"text-gray-c"}>Modular synthesizers / electronic music</div>
                         </HeadlineWText>

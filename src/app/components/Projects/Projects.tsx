@@ -14,11 +14,12 @@ import SectionText from "@/src/components/SectionText";
 import Grid from "@/src/components/Grid/Grid";
 import ScrollHint from "@/src/app/components/Intro/ScrollHint/ScrollHint";
 import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
-import TextLink from "@/src/components/TextLink";
+import InlineTextLink from "@/src/components/InlineTextLink";
 import { SectionId } from "@/src/store/useActiveSectionStore";
 import ScrollTarget from "@/src/components/ScrollTarget";
 import { useHomeStore } from "@/src/store/useHomeStore";
 import Section from "@/src/components/Section";
+import { ModalSearchParams } from "@/src/assets/modalSearchParams";
 
 export default function Projects() {
     const ref = useRef(null);
@@ -55,6 +56,7 @@ export default function Projects() {
                 <SectionBackground
                     startDark={true}
                     className={"m border-t border-gray-c lg:border-none"}
+                    ref={ref}
                 >
                     <SectionGrid>
                         <div className={"col-content"}>
@@ -73,32 +75,35 @@ export default function Projects() {
                             <Card
                                 image={designUnit}
                                 headline={"Homepage for a tech and design unit of a large consulting group"}
+                                href={`/?modal=${ModalSearchParams.consultingGroup}`}
                             >
                                 Implementation of a react frontend in collaboration with the Italian design studio{" "}
-                                <TextLink
+                                <InlineTextLink
                                     target={"_blank"}
                                     href={"https://vicinedesign.com/"}
                                 >
                                     Vicine
-                                </TextLink>
+                                </InlineTextLink>
                                 .
                             </Card>
                             <Card
                                 image={iceberg}
                                 headline={"3D presentational website for a large consulting group "}
+                                href={`/?modal=${ModalSearchParams.consultingGroup}`}
                             >
                                 Implementation of a three.js/r3f internal website in collaboration with the designer and 3D artist{" "}
-                                <TextLink
+                                <InlineTextLink
                                     href={"https://www.michaelflynnbost.com/"}
                                     target={"_blank"}
                                 >
                                     Michael Flynn Bost
-                                </TextLink>
+                                </InlineTextLink>
                                 .
                             </Card>
                             <Card
                                 image={ubu2}
                                 headline={"Website for my band Ubu Imperator"}
+                                href={`/?modal=${ModalSearchParams.consultingGroup}`}
                             >
                                 Design and full implementation of a next.js/react website making use of our drummer’s illustrations.
                             </Card>

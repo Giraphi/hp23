@@ -1,5 +1,5 @@
 import SectionGrid from "@/src/components/SectionGrid";
-import TextLink from "@/src/components/TextLink";
+import InlineTextLink from "@/src/components/InlineTextLink";
 
 export interface FooterProps {}
 
@@ -10,16 +10,17 @@ export default function Footer(props: FooterProps) {
                 <h3 className={"font-bold"}>References</h3>
                 <ul className={"list-disc pl-4"}>
                     <li>
-                        Raw 3D scan for intro component made with <TextLink href={"https://www.scandy.co/"}>Scandy</TextLink>.
+                        Raw 3D scan for intro component made with <InlineTextLink href={"https://www.scandy.co/"}>Scandy</InlineTextLink>.
                     </li>
                     <li>
-                        Wave animations based on svgs made with <TextLink href={"https://haikei.app/"}>Haikei</TextLink>.
+                        Wave animations based on svgs made with <InlineTextLink href={"https://haikei.app/"}>Haikei</InlineTextLink>.
                     </li>
                     <li>
-                        Usage of images from <TextLink href={"https://unsplash.com/"}>Unspash</TextLink>.
+                        Usage of images from <InlineTextLink href={"https://unsplash.com/"}>Unspash</InlineTextLink>.
                     </li>
                     <li>
-                        Video in scroll component by <TextLink href={"https://www.pexels.com/video/4667217/"}>Oleg Scherbak</TextLink>.
+                        Video in scroll component by{" "}
+                        <InlineTextLink href={"https://www.pexels.com/video/4667217/"}>Oleg Scherbak</InlineTextLink>.
                     </li>
                 </ul>
             </div>
@@ -29,17 +30,17 @@ export default function Footer(props: FooterProps) {
                 <ul className={"list-disc pl-4"}>
                     <li>Design, Development and content by Raphael Höps.</li>
                     <li>
-                        Full website code on <TextLink href={"https://github.com/Giraphi/hp23"}>Github</TextLink>.
+                        Full website code on <InlineTextLink href={"https://github.com/Giraphi/hp23"}>Github</InlineTextLink>.
                     </li>
                 </ul>
             </div>
 
             <div className={"col-content lg:col-span-6 lg:col-start-8 lg:row-start-2"}>
                 <div>
-                    Also visit my previous <TextLink>Website</TextLink> from 2020.
+                    Also visit my previous <InlineTextLink>Website</InlineTextLink> from 2020.
                 </div>
                 <div>
-                    <TextLink>Imprint</TextLink> | <TextLink>Data Privacy</TextLink>
+                    <InlineTextLink>Imprint</InlineTextLink> | <InlineTextLink>Data Privacy</InlineTextLink>
                 </div>
             </div>
         </SectionGrid>

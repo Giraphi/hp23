@@ -1,19 +1,23 @@
 import { HTMLProps, ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
+import { cn } from "@/src/util/functions";
+import Link from "next/link";
 
-export interface TextLinkProps extends HTMLProps<HTMLAnchorElement> {
+export interface TextLinkProps {
     children: ReactNode;
-    inverse?: boolean;
+    className?: string;
+    href: string;
 }
 
 export default function TextLink(props: TextLinkProps) {
-    const { children, className, ...rest } = props;
     return (
-        <a
-            {...rest}
-            className={twMerge(className, `${!props.inverse ? "text-lime-500 hover:text-lime-600" : "text-lime-600 hover:text-lime-500"}`)}
+        <Link
+            href={props.href}
+            className={cn(
+                props.className,
+                "inline-flex flex-col font-bold after:flex after:h-0.5 after:rounded after:bg-white hover:text-lime-500 hover:after:bg-lime-500"
+            )}
         >
             {props.children}
-        </a>
+        </Link>
     );
 }
