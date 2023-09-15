@@ -15,16 +15,16 @@ import Grid from "@/src/components/Grid/Grid";
 import ScrollHint from "@/src/components/Sections/Intro/ScrollHint/ScrollHint";
 import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
 import TextLink from "@/src/components/TextLink";
-import useNavigationSection from "@/src/hooks/useNavigationSection";
 import { SectionId } from "@/src/store/useActiveSectionStore";
 import ScrollTarget from "@/src/components/ScrollTarget";
 import { useHomeStore } from "@/src/store/useHomeStore";
+import Section from "@/src/components/Section";
 
 export default function Projects() {
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "100px end"] });
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "100px end"] });
     const hintOpacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0]);
-    useNavigationSection(sectionRef, SectionId.projects);
+    const scrolledIntoProjectsSection = useHomeStore((state) => state.scrolledIntoProjectsSection);
 
     useMotionValueEvent(hintOpacity, "change", (value) => {
         useHomeStore.setState((state) => ({ ...state, scrolledIntoProjectsSection: value === 0 }));
@@ -36,7 +36,7 @@ export default function Projects() {
 
     return (
         <>
-            {!useHomeStore.getState().scrolledIntoProjectsSection && (
+            {scrolledIntoProjectsSection && (
                 <motion.div
                     style={{ opacity: hintOpacity }}
                     className={"fixed bottom-4 z-30 w-full"}
@@ -51,60 +51,62 @@ export default function Projects() {
 
             <ScrollTarget id={SectionId.projects} />
 
-            <SectionBackground
-                startDark={true}
-                className={"m border-t border-gray-c lg:border-none"}
-                ref={sectionRef}
-            >
-                <SectionGrid>
-                    <div className={"col-content"}>
-                        <SectionHeadline>Projects</SectionHeadline>
-                    </div>
-                    <SectionText>
-                        <SectionParagraph>
-                            Here’s a small selection of projects I’ve been working on recently, mainly during my employment at the Munich
-                            web office funct.
-                        </SectionParagraph>
-                        <SectionParagraph disableSpace={true}>
-                            For legal reasons some of the clients can’t be named explicitly.
-                        </SectionParagraph>
-                    </SectionText>
-                    <Cards className={"col-content"}>
-                        <Card
-                            image={designUnit}
-                            headline={"Homepage for a tech and design unit of a large consulting group"}
-                        >
-                            Implementation of a react frontend in collaboration with the Italian design studio{" "}
-                            <TextLink
-                                target={"_blank"}
-                                href={"https://vicinedesign.com/"}
+            <Section sectionId={SectionId.projects}>
+                <SectionBackground
+                    ref={ref}
+                    startDark={true}
+                    className={"m border-t border-gray-c lg:border-none"}
+                >
+                    <SectionGrid>
+                        <div className={"col-content"}>
+                            <SectionHeadline>Projects</SectionHeadline>
+                        </div>
+                        <SectionText>
+                            <SectionParagraph>
+                                Here’s a small selection of projects I’ve been working on recently, mainly during my employment at the
+                                Munich web office funct.
+                            </SectionParagraph>
+                            <SectionParagraph disableSpace={true}>
+                                For legal reasons some of the clients can’t be named explicitly.
+                            </SectionParagraph>
+                        </SectionText>
+                        <Cards className={"col-content"}>
+                            <Card
+                                image={designUnit}
+                                headline={"Homepage for a tech and design unit of a large consulting group"}
                             >
-                                Vicine
-                            </TextLink>
-                            .
-                        </Card>
-                        <Card
-                            image={iceberg}
-                            headline={"3D presentational website for a large consulting group "}
-                        >
-                            Implementation of a three.js/r3f internal website in collaboration with the designer and 3D artist{" "}
-                            <TextLink
-                                href={"https://www.michaelflynnbost.com/"}
-                                target={"_blank"}
+                                Implementation of a react frontend in collaboration with the Italian design studio{" "}
+                                <TextLink
+                                    target={"_blank"}
+                                    href={"https://vicinedesign.com/"}
+                                >
+                                    Vicine
+                                </TextLink>
+                                .
+                            </Card>
+                            <Card
+                                image={iceberg}
+                                headline={"3D presentational website for a large consulting group "}
                             >
-                                Michael Flynn Bost
-                            </TextLink>
-                            .
-                        </Card>
-                        <Card
-                            image={ubu2}
-                            headline={"Website for my band Ubu Imperator"}
-                        >
-                            Design and full implementation of a next.js/react website making use of our drummer’s illustrations.
-                        </Card>
-                    </Cards>
-                </SectionGrid>
-            </SectionBackground>
+                                Implementation of a three.js/r3f internal website in collaboration with the designer and 3D artist{" "}
+                                <TextLink
+                                    href={"https://www.michaelflynnbost.com/"}
+                                    target={"_blank"}
+                                >
+                                    Michael Flynn Bost
+                                </TextLink>
+                                .
+                            </Card>
+                            <Card
+                                image={ubu2}
+                                headline={"Website for my band Ubu Imperator"}
+                            >
+                                Design and full implementation of a next.js/react website making use of our drummer’s illustrations.
+                            </Card>
+                        </Cards>
+                    </SectionGrid>
+                </SectionBackground>
+            </Section>
         </>
     );
 }

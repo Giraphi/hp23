@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode } from "react";
 import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
 import { motion } from "framer-motion";
@@ -13,7 +15,7 @@ const cardVariants = {
 };
 
 export default function CardAppear(props: CardAppearProps) {
-    const small = useDeviceStore().device <= Device.md;
+    const small = useDeviceStore((state) => state.device) <= Device.md;
 
     return (
         <motion.div
