@@ -3,7 +3,7 @@ import SectionGrid from "@/src/components/SectionGrid";
 import SectionHeadline from "@/src/components/SectionHeadline";
 import SectionParagraph from "@/src/components/SectionParagraph";
 import SectionText from "@/src/components/SectionText";
-import SkillItems from "@/src/components/Sections/Skills/SkillItems/SkillItems";
+import SkillItems from "@/src/app/components/Skills/SkillItems/SkillItems";
 import useNavigationSection from "@/src/hooks/useNavigationSection";
 import { SectionId } from "@/src/store/useActiveSectionStore";
 import { useRef } from "react";

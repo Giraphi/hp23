@@ -1,5 +1,3 @@
-"use client";
-
 import { ReactNode } from "react";
 import Image, { StaticImageData } from "next/image";
 import CardAppear from "@/src/components/Cards/CardAppear";

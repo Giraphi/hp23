@@ -3,7 +3,7 @@ import SectionGrid from "@/src/components/SectionGrid";
 import SectionHeadline from "@/src/components/SectionHeadline";
 import SectionText from "@/src/components/SectionText";
 import SectionParagraph from "@/src/components/SectionParagraph";
-import CodeExampleItems from "@/src/components/Sections/CodeExamples/CodeExampleItems";
+import CodeExampleItems from "@/src/app/components/CodeExamples/CodeExampleItems";
 import { SectionId } from "@/src/store/useActiveSectionStore";
 import ScrollTarget from "@/src/components/ScrollTarget";
 import Section from "@/src/components/Section";

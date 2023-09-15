@@ -12,7 +12,7 @@ import iceberg from "@/src/assets/projects/iceberg.png";
 import ubu2 from "@/src/assets/projects/ubu2.png";
 import SectionText from "@/src/components/SectionText";
 import Grid from "@/src/components/Grid/Grid";
-import ScrollHint from "@/src/components/Sections/Intro/ScrollHint/ScrollHint";
+import ScrollHint from "@/src/app/components/Intro/ScrollHint/ScrollHint";
 import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
 import TextLink from "@/src/components/TextLink";
 import { SectionId } from "@/src/store/useActiveSectionStore";

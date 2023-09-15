@@ -2,8 +2,8 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { AsciiRenderer, Sphere, PerspectiveCamera } from "@react-three/drei";
 import { Group, PerspectiveCamera as PerspectiveCameraType } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
-import ControlsLarge from "@/src/components/Sections/Intro/MeScene/large/ControlsLarge";
-import MeGltfLarge from "@/src/components/Sections/Intro/MeScene/large/MeGltfLarge";
+import ControlsLarge from "@/src/app/components/Intro/MeScene/large/ControlsLarge";
+import MeGltfLarge from "@/src/app/components/Intro/MeScene/large/MeGltfLarge";
 
 export interface MeCanvasLargeProps {
     isActive: boolean;

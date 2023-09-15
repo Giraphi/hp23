@@ -3,11 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import Grid from "@/src/components/Grid/Grid";
 import Button from "@/src/components/Button";
-import MeScene from "@/src/components/Sections/Intro/MeScene/MeScene";
+import MeScene from "@/src/app/components/Intro/MeScene/MeScene";
 import Headline from "@/src/components/Headline";
 import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
 import { useScroll } from "framer-motion";
-import MeSceneLarge from "@/src/components/Sections/Intro/MeScene/large/MeSceneLarge";
+import MeSceneLarge from "@/src/app/components/Intro/MeScene/large/MeSceneLarge";
 import Appear from "@/src/components/Effects/Appear";
 import AppearWords from "@/src/components/Effects/AppearWords";
 import useNavigationSection from "@/src/hooks/useNavigationSection";

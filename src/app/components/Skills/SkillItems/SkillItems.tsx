@@ -1,5 +1,5 @@
-import SkillItemsGroup from "@/src/components/Sections/Skills/SkillItems/SkillItemsGroup";
-import SkillItem from "@/src/components/Sections/Skills/SkillItems/SkillItem";
+import SkillItemsGroup from "@/src/app/components/Skills/SkillItems/SkillItemsGroup";
+import SkillItem from "@/src/app/components/Skills/SkillItems/SkillItem";
 import HtmlIcon from "@/src/assets/skills/html.svg";
 import CssIcon from "@/src/assets/skills/css.svg";
 import JsIcon from "@/src/assets/skills/js.svg";
