@@ -6,15 +6,16 @@ import AboutMe from "@/src/app/components/AboutMe/AboutMe";
 import WavesBackground from "@/src/app/components/AboutMe/WavesBackground/WavesBackground";
 import Footer from "@/src/app/components/Footer/Footer";
 import HomeNavigation from "@/src/app/components/HomeNavigation";
-// import ConsultingGroupModal from "@/src/app/components/ConsultingGroupModal";
-// import { ModalSearchParams } from "@/src/assets/modalSearchParams";
+import Modal from "@/src/components/Modal";
+import ConsultingGroupModal from "@/src/app/components/ConsultingGroupModal";
+import { ModalSearchParams } from "@/src/assets/modalSearchParams";
 
 export interface HomeProps {
     searchParams: Record<string, string> | null | undefined;
 }
 
 export default function Home(props: HomeProps) {
-    // const modal = props.searchParams?.modal;
+    const modalKey: string | undefined = props.searchParams?.modal;
 
     return (
         <>
@@ -30,7 +31,7 @@ export default function Home(props: HomeProps) {
             </main>
             <Footer />
 
-            {/*{modal === ModalSearchParams.consultingGroup && <ConsultingGroupModal />}*/}
+            <Modal modalKey={modalKey}>{modalKey === ModalSearchParams.consultingGroup && <ConsultingGroupModal />}</Modal>
         </>
     );
 }

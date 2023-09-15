@@ -1,13 +1,12 @@
-// import Modal from "@mui/material/Modal";
-
-import { Modal } from "@mui/material";
+import Link from "next/link";
 
 export interface ConsultingGroupModalProps {}
 
 export default function ConsultingGroupModal(props: ConsultingGroupModalProps) {
     return (
-        <Modal open={true}>
+        <div className={"bg-red-900"}>
             <h1>hello</h1>
-        </Modal>
+            <Link href={"/"}>Close</Link>
+        </div>
     );
 }

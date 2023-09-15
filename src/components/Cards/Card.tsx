@@ -13,7 +13,7 @@ export interface CardProps {
 
 export default function Card(props: CardProps) {
     return (
-        <CardAppear className={"w-full"}>
+        <CardAppear className={"w-full max-w-md"}>
             <div className={"flex h-full flex-col items-start gap-4 rounded-2xl bg-gray-1 p-4 md:p-8 lg:text-base xl:gap-8 xl:text-xl"}>
                 <Link
                     href={props.href}
