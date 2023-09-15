@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ForwardedRef, forwardRef, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 export interface SectionProps {
@@ -7,15 +7,18 @@ export interface SectionProps {
     className?: string;
 }
 
-export default function SectionBackground(props: SectionProps) {
+const SectionBackground = forwardRef(function Section(props: SectionProps, ref: ForwardedRef<HTMLDivElement>) {
     return (
         <div
             className={twMerge(
                 `bg-gradient-to-b md:mb-0 ${props.startDark ? "from-gray-2 to-gray-3" : "from-gray-3 to-gray-2"}`,
                 props.className
             )}
+            ref={ref}
         >
             {props.children}
         </div>
     );
-}
+});
+
+export default SectionBackground;

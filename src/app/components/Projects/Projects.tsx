@@ -53,7 +53,6 @@ export default function Projects() {
 
             <Section sectionId={SectionId.projects}>
                 <SectionBackground
-                    ref={ref}
                     startDark={true}
                     className={"m border-t border-gray-c lg:border-none"}
                 >
