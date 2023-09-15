@@ -37,7 +37,7 @@ export default function Projects() {
 
     return (
         <>
-            {scrolledIntoProjectsSection && (
+            {!scrolledIntoProjectsSection && (
                 <motion.div
                     style={{ opacity: hintOpacity }}
                     className={"fixed bottom-4 z-30 w-full"}
