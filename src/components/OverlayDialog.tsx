@@ -18,7 +18,7 @@ export interface ModalProps {
     children?: ReactNode;
 }
 
-export default function OverlayPage(props: ModalProps) {
+export default function OverlayDialog(props: ModalProps) {
     const router = useRouter();
 
     function handleClose() {
@@ -31,7 +31,7 @@ export default function OverlayPage(props: ModalProps) {
             onClose={handleClose}
             fullScreen
             TransitionComponent={Transition}
-            className={"text-white md:ml-[10%]"}
+            className={"md:ml-[10%]"}
         >
             {props.children}
         </Dialog>

@@ -1,15 +1,14 @@
-import React from "react";
 import Grid from "@/src/components/Grid/Grid";
-import ChevronDown from "@/src/assets/chevron-down.svg";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { SectionId } from "@/src/store/useActiveSectionStore";
+import ChevronDown from "@/src/assets/chevron-down.svg";
+import React from "react";
 
-export interface BackTopBarProps {
-    title?: string;
+export interface OverlayTopBarProps {
+    title: string;
 }
 
-export default function BackTopBar(props: BackTopBarProps) {
+export default function OverlayTopBar(props: OverlayTopBarProps) {
     return (
         <nav className={"sticky top-0 z-30 flex h-10 bg-gray-1 md:h-12"}>
             <Grid>
@@ -18,8 +17,7 @@ export default function BackTopBar(props: BackTopBarProps) {
                 </div>
                 <div className={"col-content row-start-1 font-bold"}>
                     <Link
-                        href={`/#${SectionId.codeExamples}`}
-                        scroll={true}
+                        href={`/`}
                         className={"inline-flex h-full items-center"}
                     >
                         <ChevronDown className={"mr-1 rotate-90"} />
