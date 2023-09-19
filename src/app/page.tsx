@@ -6,7 +6,7 @@ import AboutMe from "@/src/app/components/AboutMe/AboutMe";
 import WavesBackground from "@/src/app/components/AboutMe/WavesBackground/WavesBackground";
 import Footer from "@/src/app/components/Footer/Footer";
 import HomeNavigation from "@/src/app/components/HomeNavigation";
-import Modal from "@/src/components/Modal";
+import OverlayPage from "@/src/components/OverlayPage";
 import ConsultingGroupModal from "@/src/app/components/ConsultingGroupModal";
 import { ModalSearchParams } from "@/src/assets/modalSearchParams";
 
@@ -31,7 +31,9 @@ export default function Home(props: HomeProps) {
             </main>
             <Footer />
 
-            <Modal open={!!modalKey}>{modalKey === ModalSearchParams.consultingGroup && <ConsultingGroupModal />}</Modal>
+            <OverlayPage open={modalKey === ModalSearchParams.consultingGroup}>
+                <ConsultingGroupModal />
+            </OverlayPage>
         </>
     );
 }
