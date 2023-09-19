@@ -55,7 +55,7 @@ export default function Projects() {
             <Section sectionId={SectionId.projects}>
                 <SectionBackground
                     startDark={true}
-                    className={"m border-t border-gray-c lg:border-none"}
+                    className={"border-t border-gray-c lg:border-none"}
                     ref={ref}
                 >
                     <SectionGrid>
