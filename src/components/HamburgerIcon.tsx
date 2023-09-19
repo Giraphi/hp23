@@ -23,8 +23,6 @@ export interface HamburgerIconProps {
 }
 
 export default function HamburgerIcon(props: HamburgerIconProps) {
-    console.log(props.isCross);
-
     return (
         <>
             <svg
