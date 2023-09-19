@@ -63,7 +63,7 @@ export default function PageNavigation(props: PageNavigationProps) {
             {!keepOpen && (
                 <div
                     onClick={() => setIsOpen((x) => !x)}
-                    className={"relative z-20 col-start-1 row-start-1  cursor-pointer rounded-bl-md bg-black"}
+                    className={"relative z-20 col-start-1 row-start-1  h-12 w-12 cursor-pointer rounded-bl-md bg-black"}
                 >
                     <HamburgerIcon isCross={isOpen} />
                 </div>
