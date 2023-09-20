@@ -8,7 +8,7 @@ import useOutsideClick from "@/src/hooks/useOutsideClick";
 import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
 import { cn } from "@/src/util/functions";
 import { useHomeStore } from "@/src/store/useHomeStore";
-import HamburgerIcon from "@/src/components/HamburgerIcon";
+import MenuIcon from "@/src/components/MenuIcon";
 
 type Item = { id: SectionId; label: string };
 
@@ -65,29 +65,8 @@ export default function PageNavigation(props: PageNavigationProps) {
                     onClick={() => setIsOpen((x) => !x)}
                     className={"relative z-20 col-start-1 row-start-1 h-10 w-10 cursor-pointer rounded-bl-md bg-black md:h-12 md:w-12"}
                 >
-                    <HamburgerIcon isCross={isOpen} />
+                    <MenuIcon isCross={isOpen} />
                 </div>
-                // <div
-                //     className={cn(
-                //         `relative z-20 col-start-1 row-start-1 flex h-10 w-10 cursor-pointer flex-col justify-between
-                //         rounded-bl-md bg-black py-[0.9rem]  pl-[0.4rem] pr-[0.3rem]
-                //         transition-opacity md:h-12 md:w-12 md:py-[1.1rem] md:pl-[0.5rem] md:pr-[0.5rem]`,
-                //         props.visible || isOpen ? "opacity-1" : "opacity-0",
-                //         props.hamburgerClasses
-                //     )}
-                //     onClick={() => setIsOpen((x) => !x)}
-                // >
-                //     <div
-                //         className={cn(`h-[0.2rem] w-full rounded-sm bg-white transition-transform md:h-1`, {
-                //             "translate-y-[0.25rem] rotate-45 md:translate-y-[0.28rem]": isOpen,
-                //         })}
-                //     />
-                //     <div
-                //         className={cn(`h-[0.2rem] w-full rounded-sm bg-white transition-transform md:h-1`, {
-                //             "-translate-y-[0.25rem] -rotate-45 md:-translate-y-[0.28rem]": isOpen,
-                //         })}
-                //     />
-                // </div>
             )}
 
             <AnimatePresence>
