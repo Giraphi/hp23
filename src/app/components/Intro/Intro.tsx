@@ -66,7 +66,7 @@ export default function Intro() {
                                 type={"h1"}
                                 className={"pb-2 text-center lg:inline-flex lg:text-left"}
                             >
-                                Raphael Höpszzzzzz
+                                Raphael Höps
                             </Headline>
                         </Appear>
                         <Appear once={true}>
