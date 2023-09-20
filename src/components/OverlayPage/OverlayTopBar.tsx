@@ -28,7 +28,7 @@ export default function OverlayTopBar(props: OverlayTopBarProps) {
                 </Grid>
             </div>
 
-            <div className={"sticky right-0 top-0 flex h-12 justify-end"}>
+            <div className={"sticky right-0 top-0 z-30 flex h-12 justify-end"}>
                 <Link
                     href={`/`}
                     className={"h-full w-12 rounded-bl-md bg-black"}

@@ -7,7 +7,7 @@ import WavesBackground from "@/src/app/components/AboutMe/WavesBackground/WavesB
 import Footer from "@/src/app/components/Footer/Footer";
 import HomeNavigation from "@/src/app/components/HomeNavigation";
 import OverlayDialog from "@/src/components/OverlayDialog";
-import ConsultingGroupOverlay from "@/src/app/components/ConsultingGroupOverlay";
+import TechAndDesignOverlay from "@/src/app/components/TechAndDesignOverlay";
 import { ModalSearchParams } from "@/src/assets/modalSearchParams";
 
 export interface HomeProps {
@@ -31,8 +31,8 @@ export default function Home(props: HomeProps) {
             </main>
             <Footer />
 
-            <OverlayDialog open={modalKey === ModalSearchParams.consultingGroup}>
-                <ConsultingGroupOverlay />
+            <OverlayDialog open={modalKey === ModalSearchParams.techAndDesign}>
+                <TechAndDesignOverlay />
             </OverlayDialog>
         </>
     );

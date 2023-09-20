@@ -2,7 +2,8 @@
   "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended"],
     "rules": {
         "tailwindcss/no-custom-classname": ["warn",{
-            "cssFiles": ["**/*.css", "**/*.scss"]
+            "cssFiles": ["**/*.css", "**/*.scss"],
+            "callees": ["classnames", "clsx", "twMerge", "cn"]
         }]
     }
 }

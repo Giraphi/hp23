@@ -75,7 +75,7 @@ export default function Projects() {
                             <Card
                                 image={designUnit}
                                 headline={"Homepage for a tech and design unit of a large consulting group"}
-                                href={`/?modal=${ModalSearchParams.consultingGroup}`}
+                                href={`/?modal=${ModalSearchParams.techAndDesign}`}
                             >
                                 Implementation of a react frontend in collaboration with the Italian design studio{" "}
                                 <InlineTextLink
@@ -89,7 +89,7 @@ export default function Projects() {
                             <Card
                                 image={iceberg}
                                 headline={"3D presentational website for a large consulting group "}
-                                href={`/?modal=${ModalSearchParams.consultingGroup}`}
+                                href={`/?modal=${ModalSearchParams.techAndDesign}`}
                             >
                                 Implementation of a three.js/r3f internal website in collaboration with the designer and 3D artist{" "}
                                 <InlineTextLink
@@ -103,7 +103,7 @@ export default function Projects() {
                             <Card
                                 image={ubu2}
                                 headline={"Website for my band Ubu Imperator"}
-                                href={`/?modal=${ModalSearchParams.consultingGroup}`}
+                                href={`/?modal=${ModalSearchParams.techAndDesign}`}
                             >
                                 Design and full implementation of a next.js/react website making use of our drummer’s illustrations.
                             </Card>

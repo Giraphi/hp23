@@ -1,3 +1,3 @@
 export const ModalSearchParams = {
-    consultingGroup: "consulting-group",
+    techAndDesign: "tech-and-design",
 };
