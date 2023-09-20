@@ -4,9 +4,9 @@ import SectionGrid from "@/src/components/SectionGrid";
 import OverlayTopBar from "@/src/components/OverlayPage/OverlayTopBar";
 import OverlayPage from "@/src/components/OverlayPage/OverlayPage";
 
-export interface ConsultingGroupModalProps {}
+export interface TechAndDesignOverlayProps {}
 
-export default function ConsultingGroupOverlay(props: ConsultingGroupModalProps) {
+export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
     return (
         <OverlayPage>
             <div className={"col-span-4 col-start-2 mb-20"}>
