@@ -7,7 +7,7 @@ import SectionParagraph from "@/src/components/SectionParagraph";
 import SectionBackground from "@/src/components/SectionBackground";
 import Cards from "@/src/components/Cards/Cards";
 import Card from "@/src/components/Cards/Card";
-import designUnit from "@/src/assets/projects/design-unit.png";
+import designUnit from "@/src/assets/tech-and-design/design-unit.png";
 import iceberg from "@/src/assets/projects/iceberg.png";
 import ubu2 from "@/src/assets/projects/ubu2.png";
 import SectionText from "@/src/components/SectionText";

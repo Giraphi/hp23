@@ -23,7 +23,7 @@ export default function Page(props: PageProps) {
         <main className={"text-lg"}>
             <SectionBackground>
                 <SectionGrid className={"pb-0 lg:pb-0"}>
-                    <SectionText className={"pb-0 lg:pb-8 xl:pb-0"}>
+                    <SectionText className={"pb-0 lg:pb-8 xxl:pb-0"}>
                         <Headline className={"pb-6 lg:pb-8"}>Code Examples</Headline>
                         <p>
                             Take a look at some component I&rsquo;ve been coding recently. For each component there are links to the full

@@ -5,7 +5,8 @@ module.exports = {
         screens: {
             md: "768px",
             lg: "1024px",
-            xl: "1440px",
+            xl: "1280px",
+            xxl: "1440px",
         },
         fontFamily: {
             sans: ["var(--font-inter)"],
@@ -65,6 +66,7 @@ module.exports = {
             },
             aspectRatio: {
                 image: "1.618 / 1",
+                video: "1.618 / 1",
             },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(closest-side, var(--tw-gradient-stops))",

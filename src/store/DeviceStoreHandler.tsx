@@ -17,6 +17,9 @@ export default function DeviceStoreHandler(props: DeviceStoreHandlerProps) {
     const { setDevice } = useDeviceStore();
 
     function getDevice() {
+        if (matchMedia(`(min-width: ${screens.xxl})`).matches) {
+            return Device.xxl;
+        }
         if (matchMedia(`(min-width: ${screens.xl})`).matches) {
             return Device.xl;
         }

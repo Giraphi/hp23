@@ -7,5 +7,5 @@ export interface SectionTextProps {
 }
 
 export default function SectionText(props: SectionTextProps) {
-    return <div className={cn("col-content pb-4 lg:pb-8 xl:col-text", props.className)}>{props.children}</div>;
+    return <div className={cn("col-content pb-4 lg:pb-8 xxl:col-text", props.className)}>{props.children}</div>;
 }

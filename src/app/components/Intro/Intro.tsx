@@ -72,7 +72,7 @@ export default function Intro() {
                         <Appear once={true}>
                             <Headline
                                 type={"h1"}
-                                className={"pb-4 text-center text-pink-600 lg:inline-flex lg:pb-5 lg:text-left xl:pb-8"}
+                                className={"pb-4 text-center text-pink-600 lg:inline-flex lg:pb-5 lg:text-left xxl:pb-8"}
                             >
                                 Frontend Developer
                             </Headline>
@@ -80,8 +80,8 @@ export default function Intro() {
                     </div>
                 </div>
 
-                <div className={"col-start-content-left col-end-content-right row-start-3 lg:col-end-10 xl:col-end-9"}>
-                    <div className={"relative z-10 pb-4 text-center lg:pb-5 lg:text-left xl:pb-8 xl:text-2xl"}>
+                <div className={"col-start-content-left col-end-content-right row-start-3 lg:col-end-10 xxl:col-end-9"}>
+                    <div className={"relative z-10 pb-4 text-center lg:pb-5 lg:text-left xxl:pb-8 xxl:text-2xl"}>
                         <AppearWords
                             once={true}
                             delay={0.5}

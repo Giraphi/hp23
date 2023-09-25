@@ -19,7 +19,7 @@ export default function AboutMe(props: AboutMeProps) {
                     <div className={"col-content"}>
                         <SectionHeadline>About Me</SectionHeadline>
                     </div>
-                    <div className={"col-content xl:col-text"}>
+                    <div className={"col-content xxl:col-text"}>
                         <HeadlineWText
                             headline={"Education"}
                             classname={"pb-8"}

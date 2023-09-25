@@ -14,7 +14,7 @@ export default function Layout(props: LayoutProps) {
             <PageNavigation
                 visible={true}
                 hamburgerClasses={"bg-transparent"}
-                menuClasses={"bg-gray-1 xl:bg-transparent mt-10 pt-10 md:mt-0 md:pt-16 lg:pt-24"}
+                menuClasses={"bg-gray-1 xxl:bg-transparent mt-10 pt-10 md:mt-0 md:pt-16 lg:pt-24"}
                 alwaysOpenOnXl={true}
                 items={[
                     { id: SectionId.puzzle, label: "Puzzle Slider" },
