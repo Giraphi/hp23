@@ -33,13 +33,13 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                     . The content is controlled by headless CMS. Unfortunately, for legal reasons the client’s name can’t be named
                     explicitly.
                 </p>
-                <div className={"relative aspect-screenshot w-full overflow-hidden rounded-xl"}>
+                <div className={"relative w-full max-md:h-96 md:aspect-screenshot "}>
                     <Image
                         quality={90}
                         src={mobileScreenshot}
                         alt={"card picture"}
                         fill={true}
-                        className={"object-contain"}
+                        className={"rounded-xl object-contain"}
                         sizes={"300px"}
                     />
                 </div>

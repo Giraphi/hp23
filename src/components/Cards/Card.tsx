@@ -17,7 +17,7 @@ export default function Card(props: CardProps) {
             <div className={"flex h-full flex-col items-start gap-4 rounded-2xl bg-gray-1 p-4 md:p-8 lg:text-base xxl:gap-8 xxl:text-xl"}>
                 <Link
                     href={props.href}
-                    className={"group flex flex-col gap-4"}
+                    className={"group flex w-full flex-col gap-4"}
                     prefetch={true}
                 >
                     <div className={"relative z-20 aspect-image overflow-hidden rounded-xl"}>
