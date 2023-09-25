@@ -47,7 +47,7 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                         alt={"card picture"}
                         fill={true}
                         className={"object-contain"}
-                        sizes={"1000px"}
+                        sizes={"300px"}
                     />
                 </div>
             </OverlayTextArea>
@@ -55,7 +55,7 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
             <OverlayTextArea>
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Project Requirements</h3>
                 <UnorderedList className={"pb-4 md:pb-8"}>
-                    <li>Analyze content and setup a data structure to be controlled by a headless CMS</li>
+                    <li>Analyze content structure and setup a data concept to be controlled by a headless CMS</li>
                     <li>Implementation of a fast, secure, robust and responsive react.js frontend</li>
                     <li>
                         Page layout needs to be stable enough to deal with content changes, which can happen at any time through the CMS
