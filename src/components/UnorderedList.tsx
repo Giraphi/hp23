@@ -7,5 +7,5 @@ export interface UnorderedListProps {
 }
 
 export default function UnorderedList(props: UnorderedListProps) {
-    return <ul className={cn("list-disc pl-4 [&>li]:pb-4", props.className)}>{props.children}</ul>;
+    return <ul className={cn("list-disc pl-4 [&>li]:pb-2", props.className)}>{props.children}</ul>;
 }

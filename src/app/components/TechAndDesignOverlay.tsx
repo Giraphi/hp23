@@ -23,13 +23,13 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
         <OverlayPage>
             <OverlayTextArea>
                 <SectionHeadline className={"leading-tight md:leading-tight xxl:leading-tight"}>
-                    Homepage for a tech and design unit
+                    Homepage for a tech and design team
                 </SectionHeadline>
 
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Overview</h3>
 
                 <p className={"pb-4 md:pb-8"}>
-                    In this project, I’ve implemented a react.js frontend for a Homepage of a tech and design unit based on the designs by
+                    In this project, I’ve implemented a react.js frontend for a Homepage of a tech and design team based on the designs by
                     the Italian studio{" "}
                     <InlineTextLink
                         target={"_blank"}
@@ -40,19 +40,22 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                     . The content is controlled by headless CMS. Unfortunately, for legal reasons the client’s name can’t be named
                     explicitly.
                 </p>
-
-                <VideoPlayer
-                    className={"pb-2 md:pb-4"}
-                    mp4={"/tech-and-design/tech-and-design.mp4"}
-                    webm={"/tech-and-design/tech-and-design.webm"}
-                    poster={"tech-and-design/tech-and-design.webp"}
-                />
+                <div className={"relative aspect-image w-full overflow-hidden rounded-xl"}>
+                    <Image
+                        quality={90}
+                        src={mobileScreenshot}
+                        alt={"card picture"}
+                        fill={true}
+                        className={"object-contain"}
+                        sizes={"1000px"}
+                    />
+                </div>
             </OverlayTextArea>
 
             <OverlayTextArea>
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Project Requirements</h3>
                 <UnorderedList className={"pb-4 md:pb-8"}>
-                    <li>Analyze content structure and setup a data structure to be controlled by a headless CMS</li>
+                    <li>Analyze content and setup a data structure to be controlled by a headless CMS</li>
                     <li>Implementation of a fast, secure, robust and responsive react.js frontend</li>
                     <li>
                         Page layout needs to be stable enough to deal with content changes, which can happen at any time through the CMS
@@ -63,13 +66,14 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                     </li>
                     <li>SEO optimizations, including Server-side-rendering</li>
                 </UnorderedList>
-                <div className={"relative aspect-image w-full overflow-hidden rounded-xl"}>
+
+                <div className={"relative aspect-image w-full overflow-hidden rounded-xl pb-2 md:pb-4"}>
                     <Image
                         quality={90}
-                        src={mobileScreenshot}
+                        src={filterScreenshot}
                         alt={"card picture"}
                         fill={true}
-                        className={"object-contain"}
+                        className={"object-cover"}
                         sizes={"1000px"}
                     />
                 </div>
@@ -85,16 +89,12 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                     <li>Design and implementation of animated user interactions.</li>
                 </UnorderedList>
 
-                <div className={"relative aspect-image w-full overflow-hidden rounded-xl pb-2 md:pb-4"}>
-                    <Image
-                        quality={90}
-                        src={filterScreenshot}
-                        alt={"card picture"}
-                        fill={true}
-                        className={"object-cover"}
-                        sizes={"1000px"}
-                    />
-                </div>
+                <VideoPlayer
+                    className={"pb-2 md:pb-4"}
+                    mp4={"/tech-and-design/tech-and-design.mp4"}
+                    webm={"/tech-and-design/tech-and-design.webm"}
+                    poster={"tech-and-design/tech-and-design.webp"}
+                />
             </OverlayTextArea>
         </OverlayPage>
     );

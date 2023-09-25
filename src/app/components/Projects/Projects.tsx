@@ -74,7 +74,7 @@ export default function Projects() {
                         <Cards className={"col-content"}>
                             <Card
                                 image={designUnit}
-                                headline={"Homepage for a tech and design unit of a large consulting group"}
+                                headline={"Homepage for a tech and design team of a large consulting group"}
                                 href={`/?modal=${ModalSearchParams.techAndDesign}`}
                             >
                                 Implementation of a react frontend in collaboration with the Italian design studio{" "}
