@@ -8,7 +8,7 @@ import SectionBackground from "@/src/components/SectionBackground";
 import Cards from "@/src/components/Cards/Cards";
 import Card from "@/src/components/Cards/Card";
 import designUnit from "@/src/assets/tech-and-design/design-unit.png";
-import iceberg from "@/src/assets/projects/iceberg.png";
+import iceberg from "@/src/assets/3d-presentation/iceberg.png";
 import ubu2 from "@/src/assets/projects/ubu2.png";
 import SectionText from "@/src/components/SectionText";
 import Grid from "@/src/components/Grid/Grid";
@@ -88,8 +88,8 @@ export default function Projects() {
                             </Card>
                             <Card
                                 image={iceberg}
-                                headline={"3D presentational website for a large consulting group "}
-                                href={`/?modal=${ModalSearchParams.techAndDesign}`}
+                                headline={"3D presentation website for a large consulting group "}
+                                href={`/?modal=${ModalSearchParams.presentation}`}
                             >
                                 Implementation of a three.js/r3f internal website in collaboration with the designer and 3D artist{" "}
                                 <InlineTextLink
