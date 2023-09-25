@@ -1,18 +1,11 @@
-import Link from "next/link";
-import SectionBackground from "@/src/components/SectionBackground";
-import SectionGrid from "@/src/components/SectionGrid";
-import OverlayTopBar from "@/src/components/OverlayPage/OverlayTopBar";
 import OverlayPage from "@/src/components/OverlayPage/OverlayPage";
 import SectionHeadline from "@/src/components/SectionHeadline";
-import SectionText from "@/src/components/SectionText";
-import SectionParagraph from "@/src/components/SectionParagraph";
 import React from "react";
 import UnorderedList from "@/src/components/UnorderedList";
 import InlineTextLink from "@/src/components/InlineTextLink";
 import OverlayTextArea from "@/src/components/OverlayTextArea";
 import VideoPlayer from "@/src/components/VideoPlayer";
 import Image from "next/image";
-import designUnit from "@/src/assets/tech-and-design/design-unit.png";
 import mobileScreenshot from "@/src/assets/tech-and-design/mobile-screenshot.png";
 import filterScreenshot from "@/src/assets/tech-and-design/filter-screenshot.png";
 
@@ -40,7 +33,7 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                     . The content is controlled by headless CMS. Unfortunately, for legal reasons the client’s name can’t be named
                     explicitly.
                 </p>
-                <div className={"relative aspect-image w-full overflow-hidden rounded-xl"}>
+                <div className={"relative aspect-screenshot w-full overflow-hidden rounded-xl"}>
                     <Image
                         quality={90}
                         src={mobileScreenshot}
@@ -67,13 +60,13 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                     <li>SEO optimizations, including Server-side-rendering</li>
                 </UnorderedList>
 
-                <div className={"relative aspect-image w-full overflow-hidden rounded-xl pb-2 md:pb-4"}>
+                <div className={"relative mb-2 aspect-screenshot w-full overflow-hidden rounded-xl md:mb-4"}>
                     <Image
                         quality={90}
                         src={filterScreenshot}
                         alt={"card picture"}
                         fill={true}
-                        className={"object-cover"}
+                        className={"object-cover object-top"}
                         sizes={"1000px"}
                     />
                 </div>
@@ -90,7 +83,6 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                 </UnorderedList>
 
                 <VideoPlayer
-                    className={"pb-2 md:pb-4"}
                     mp4={"/tech-and-design/tech-and-design.mp4"}
                     webm={"/tech-and-design/tech-and-design.webm"}
                     poster={"tech-and-design/tech-and-design.webp"}

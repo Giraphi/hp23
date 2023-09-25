@@ -66,7 +66,8 @@ module.exports = {
             },
             aspectRatio: {
                 image: "1.618 / 1",
-                video: "1.618 / 1",
+                video: "16 / 9",
+                screenshot: "16 / 9",
             },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(closest-side, var(--tw-gradient-stops))",
