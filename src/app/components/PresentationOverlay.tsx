@@ -20,15 +20,15 @@ export default function PresentationOverlay(props: PresentationOverlayProps) {
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Overview</h3>
 
                 <p className={"pb-4 md:pb-8"}>
-                    On this presentation website I’ve implemented a 3D interactive based on the design and 3D Model by{" "}
+                    For this website I’ve implemented an interactive 3D scene based on the design and 3D model by{" "}
                     <InlineTextLink
                         href={"https://www.michaelflynnbost.com/"}
                         target={"_blank"}
                     >
                         Michael Flynn Bost
                     </InlineTextLink>
-                    . The site is used internally by a large consulting group. Unfortunately, for legal reasons the client’s name can’t be
-                    named explicitly.
+                    . The site is used internally for presentational purpose by a large consulting group. Unfortunately, for legal reasons
+                    the client’s name can’t be named explicitly.
                 </p>
                 <div className={"relative aspect-screenshot w-full overflow-hidden rounded-xl"}>
                     <Image
@@ -46,6 +46,7 @@ export default function PresentationOverlay(props: PresentationOverlayProps) {
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Project Requirements</h3>
                 <UnorderedList className={"pb-4 md:pb-8"}>
                     <li>Create an interactive 3D scene that works smoothly in the browser</li>
+                    <li>Conceptualize and implement the user actions, UI and camera animations</li>
                     <li>Close collaboration with the 3D artist</li>
                 </UnorderedList>
 
@@ -62,9 +63,38 @@ export default function PresentationOverlay(props: PresentationOverlayProps) {
             </OverlayTextArea>
 
             <OverlayTextArea>
-                <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>My Tasks</h3>
+                <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>What I did in detail</h3>
                 <UnorderedList className={"pb-2 md:pb-4"}>
-                    <li></li>
+                    <li>
+                        Set up a development pipeline to convert the 3D scene from Cinema4D into web format (
+                        <InlineTextLink
+                            target={"_blank"}
+                            href={"https://en.wikipedia.org/wiki/GlTF"}
+                        >
+                            gltf
+                        </InlineTextLink>
+                        ).
+                    </li>
+                    <li>
+                        Implement an app based on{" "}
+                        <InlineTextLink
+                            target={"_blank"}
+                            href={"https://docs.pmnd.rs/react-three-fiber/getting-started/introduction"}
+                        >
+                            react-three-fiber
+                        </InlineTextLink>{" "}
+                        that can render the scene and take control over camera movement etc.
+                    </li>
+                    <li>
+                        Conceptualize and implement animations and user interactions with{" "}
+                        <InlineTextLink
+                            target={"_blank"}
+                            href={"https://www.framer.com/motion/three-introduction/"}
+                        >
+                            framer-motion-3d
+                        </InlineTextLink>
+                        .
+                    </li>
                 </UnorderedList>
 
                 <VideoPlayer

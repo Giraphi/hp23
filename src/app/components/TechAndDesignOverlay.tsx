@@ -73,13 +73,39 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
             </OverlayTextArea>
 
             <OverlayTextArea>
-                <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>My Tasks</h3>
+                <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>What I did in detail</h3>
                 <UnorderedList className={"pb-2 md:pb-4"}>
-                    <li>Set up the frontend tech stack, selection of required technologies and frameworks</li>
-                    <li>Plan and implement communication to the headless CMS</li>
-                    <li>Write most parts of the react.js frontend code</li>
-                    <li>Close collaboration with the design team to optimize design decisions</li>
-                    <li>Design and implementation of animated user interactions.</li>
+                    <li>Set up the frontend tech stack, selection of required technologies and frameworks.</li>
+                    <li>Plan and implement communication to the headless CMS.</li>
+                    <li>
+                        Write most parts of the{" "}
+                        <InlineTextLink
+                            href={"https://react.dev/"}
+                            target={"_blank"}
+                        >
+                            react.js
+                        </InlineTextLink>{" "}
+                        frontend code.
+                    </li>
+                    <li>
+                        Collaborate closely with the design team to optimize design decisions. Implement styling system with{" "}
+                        <InlineTextLink
+                            href={"https://styled-components.com/"}
+                            target={"_blank"}
+                        >
+                            styled-components
+                        </InlineTextLink>{" "}
+                        according to Figma designs.
+                    </li>
+                    <li>
+                        Design and implement animated user interactions. Mostly with{" "}
+                        <InlineTextLink
+                            target={"_blank"}
+                            href={"https://www.framer.com/motion/"}
+                        >
+                            framer-motion
+                        </InlineTextLink>
+                    </li>
                 </UnorderedList>
 
                 <VideoPlayer

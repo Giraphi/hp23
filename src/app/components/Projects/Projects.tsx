@@ -88,7 +88,7 @@ export default function Projects() {
                             </Card>
                             <Card
                                 image={iceberg}
-                                headline={"3D presentation website for a large consulting group "}
+                                headline={"3D website for a large consulting group "}
                                 href={`/?modal=${ModalSearchParams.presentation}`}
                             >
                                 Implementation of a three.js/r3f internal website in collaboration with the designer and 3D artist{" "}
