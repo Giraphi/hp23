@@ -31,7 +31,7 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                         Vicine
                     </InlineTextLink>
                     . The content is controlled by headless CMS. Unfortunately, for legal reasons the client’s name can’t be named
-                    explicitly.
+                    explicitly. More about that on request.
                 </p>
                 <div className={"relative w-full max-md:h-96 md:aspect-screenshot "}>
                     <Image
