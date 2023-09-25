@@ -15,14 +15,13 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
     return (
         <OverlayPage>
             <SectionText>
-                <SectionHeadline>Homepage for a tech and design unit of a large consulting group</SectionHeadline>
+                <SectionHeadline>Homepage for a tech and design unit</SectionHeadline>
 
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Overview</h3>
 
                 <SectionParagraph>
                     In this project, I’ve implemented a react.js frontend based on the designs by the Italian studio Vicine. The content is
-                    controlled by a wordpress-based headless CMS. Unfortunately, for legal reasons the client’s name can’t be named
-                    explicitly.
+                    controlled by headless CMS. Unfortunately, for legal reasons the client’s name can’t be named explicitly.
                 </SectionParagraph>
             </SectionText>
 
