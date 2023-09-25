@@ -21,7 +21,7 @@ export default function Home(props: HomeProps) {
         <>
             <HomeNavigation />
             <main>
-                <Intro />
+                {/*<Intro />*/}
                 <Projects />
                 <Skills />
                 <CodeExamples />
