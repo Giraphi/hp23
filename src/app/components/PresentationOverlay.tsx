@@ -2,7 +2,6 @@ import OverlayTextArea from "@/src/components/OverlayTextArea";
 import SectionHeadline from "@/src/components/SectionHeadline";
 import InlineTextLink from "@/src/components/InlineTextLink";
 import Image from "next/image";
-import mobileScreenshot from "@/src/assets/tech-and-design/mobile-screenshot.png";
 import UnorderedList from "@/src/components/UnorderedList";
 import iceberg from "@/src/assets/3d-presentation/iceberg.png";
 import deepView from "@/src/assets/3d-presentation/deep-view.png";
