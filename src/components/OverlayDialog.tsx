@@ -31,7 +31,7 @@ export default function OverlayDialog(props: ModalProps) {
             onClose={handleClose}
             fullScreen
             TransitionComponent={Transition}
-            className={"md:ml-[17%]"}
+            className={"md:ml-[17%] [&>.MuiBackdrop-root]:backdrop-blur-sm"}
         >
             {props.children}
         </Dialog>

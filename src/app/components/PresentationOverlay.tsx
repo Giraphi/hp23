@@ -62,7 +62,7 @@ export default function PresentationOverlay(props: PresentationOverlayProps) {
                 </div>
             </OverlayTextArea>
 
-            <OverlayTextArea>
+            <OverlayTextArea disableSpace={true}>
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>What I did in detail</h3>
                 <UnorderedList className={"pb-2 md:pb-4"}>
                     <li>
