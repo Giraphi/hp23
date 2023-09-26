@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
+import { Device, useDeviceStore } from "@/store/useDeviceStore";
 import { motion } from "framer-motion";
 
 export interface CardAppearProps {

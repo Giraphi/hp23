@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import DotsRowLarge from "./DotsRowLarge";
 import DotsRowSmall from "./DotsRowSmall";
-import MousePositionContextProvider from "@/src/components/CodeExamples/DotsRow/context/MousePositionContextProvider";
+import MousePositionContextProvider from "@/components/CodeExamples/DotsRow/context/MousePositionContextProvider";
 
 export interface DotsRowProps {
     addHalfTop?: boolean;

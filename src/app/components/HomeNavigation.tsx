@@ -1,8 +1,8 @@
 "use client";
 
-import PageNavigation from "@/src/components/PageNavigation/PageNavigation";
-import { SectionId } from "@/src/store/useActiveSectionStore";
-import { useHomeStore } from "@/src/store/useHomeStore";
+import PageNavigation from "@/components/PageNavigation/PageNavigation";
+import { SectionId } from "@/store/useActiveSectionStore";
+import { useHomeStore } from "@/store/useHomeStore";
 
 export interface PageNavigationWrapperProps {}
 

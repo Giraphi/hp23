@@ -1,8 +1,8 @@
-import Grid from "@/src/components/Grid/Grid";
+import Grid from "@/components/Grid/Grid";
 import Link from "next/link";
-import ChevronDown from "@/src/assets/chevron-down.svg";
+import ChevronDown from "@/assets/chevron-down.svg";
 import React from "react";
-import MenuIcon from "@/src/components/MenuIcon";
+import MenuIcon from "@/components/MenuIcon";
 
 export interface OverlayTopBarProps {
     title?: string;

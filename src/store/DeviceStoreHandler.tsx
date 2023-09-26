@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
+import { Device, useDeviceStore } from "@/store/useDeviceStore";
 import { KeyValuePair, Screen } from "tailwindcss/types/config";
 
 import { theme } from "../../tailwind.config";

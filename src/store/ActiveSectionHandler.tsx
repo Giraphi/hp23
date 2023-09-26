@@ -1,5 +1,5 @@
 import { inView } from "framer-motion";
-import { SectionId, useActiveSectionStore } from "@/src/store/useActiveSectionStore";
+import { SectionId, useActiveSectionStore } from "@/store/useActiveSectionStore";
 import { useEffect } from "react";
 
 export enum SectionAreaId {

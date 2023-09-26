@@ -1,15 +1,15 @@
-import Intro from "@/src/app/components/Intro/Intro";
-import Projects from "@/src/app/components/Projects/Projects";
-import Skills from "@/src/app/components/Skills/Skills";
-import CodeExamples from "@/src/app/components/CodeExamples/CodeExamples";
-import AboutMe from "@/src/app/components/AboutMe/AboutMe";
-import WavesBackground from "@/src/app/components/AboutMe/WavesBackground/WavesBackground";
-import Footer from "@/src/app/components/Footer/Footer";
-import HomeNavigation from "@/src/app/components/HomeNavigation";
-import OverlayDialog from "@/src/components/OverlayDialog";
-import TechAndDesignOverlay from "@/src/app/components/TechAndDesignOverlay";
-import { ModalSearchParams } from "@/src/assets/modalSearchParams";
-import PresentationOverlay from "@/src/app/components/PresentationOverlay";
+import Intro from "@/app/components/Intro/Intro";
+import Projects from "@/app/components/Projects/Projects";
+import Skills from "@/app/components/Skills/Skills";
+import CodeExamples from "@/app/components/CodeExamples/CodeExamples";
+import AboutMe from "@/app/components/AboutMe/AboutMe";
+import WavesBackground from "@/app/components/AboutMe/WavesBackground/WavesBackground";
+import Footer from "@/app/components/Footer/Footer";
+import HomeNavigation from "@/app/components/HomeNavigation";
+import OverlayDialog from "@/components/OverlayDialog";
+import TechAndDesignOverlay from "@/app/components/TechAndDesignOverlay";
+import { ModalSearchParams } from "@/assets/modalSearchParams";
+import PresentationOverlay from "@/app/components/PresentationOverlay";
 
 export interface HomeProps {
     searchParams: Record<string, string> | null | undefined;

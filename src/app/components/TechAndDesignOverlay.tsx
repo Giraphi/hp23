@@ -1,13 +1,13 @@
-import OverlayPage from "@/src/components/OverlayPage/OverlayPage";
-import SectionHeadline from "@/src/components/SectionHeadline";
+import OverlayPage from "@/components/OverlayPage/OverlayPage";
+import SectionHeadline from "@/components/SectionHeadline";
 import React from "react";
-import UnorderedList from "@/src/components/UnorderedList";
-import InlineTextLink from "@/src/components/InlineTextLink";
-import OverlayTextArea from "@/src/components/OverlayTextArea";
-import VideoPlayer from "@/src/components/VideoPlayer";
+import UnorderedList from "@/components/UnorderedList";
+import InlineTextLink from "@/components/InlineTextLink";
+import OverlayTextArea from "@/components/OverlayTextArea";
+import VideoPlayer from "@/components/VideoPlayer";
 import Image from "next/image";
-import mobileScreenshot from "@/src/assets/tech-and-design/mobile-screenshot.png";
-import filterScreenshot from "@/src/assets/tech-and-design/filter-screenshot.png";
+import mobileScreenshot from "@/assets/tech-and-design/mobile-screenshot.png";
+import filterScreenshot from "@/assets/tech-and-design/filter-screenshot.png";
 
 export interface TechAndDesignOverlayProps {}
 

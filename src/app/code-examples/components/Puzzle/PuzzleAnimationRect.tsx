@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { RectConfig } from "@/src/app/code-examples/components/Puzzle/useClipPathConfig";
-import { PuzzleDimensions } from "@/src/app/code-examples/components/Puzzle/Puzzle";
+import { RectConfig } from "@/app/code-examples/components/Puzzle/useClipPathConfig";
+import { PuzzleDimensions } from "@/app/code-examples/components/Puzzle/Puzzle";
 
 export interface PuzzleAnimationRectProps {
     className?: string;

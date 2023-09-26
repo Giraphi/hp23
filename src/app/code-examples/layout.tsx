@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
-import BackTopBar from "@/src/components/BackTopBar";
-import PageNavigation from "@/src/components/PageNavigation/PageNavigation";
-import { SectionId } from "@/src/store/useActiveSectionStore";
+import BackTopBar from "@/components/BackTopBar";
+import PageNavigation from "@/components/PageNavigation/PageNavigation";
+import { SectionId } from "@/store/useActiveSectionStore";
 
 export interface LayoutProps {
     children: ReactNode;

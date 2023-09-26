@@ -1,8 +1,8 @@
 "use client";
 
-import MeCanvas from "@/src/app/components/Intro/MeScene/MeCanvas";
+import MeCanvas from "@/app/components/Intro/MeScene/MeCanvas";
 import { MotionValue, motion, useTransform, useInView } from "framer-motion";
-import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
+import { Device, useDeviceStore } from "@/store/useDeviceStore";
 import { MotionCanvas } from "framer-motion-3d";
 import { useRef } from "react";
 

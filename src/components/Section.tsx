@@ -1,8 +1,8 @@
 "use client";
 
 import { ReactNode, useRef } from "react";
-import useNavigationSection from "@/src/hooks/useNavigationSection";
-import { SectionId } from "@/src/store/useActiveSectionStore";
+import useNavigationSection from "@/hooks/useNavigationSection";
+import { SectionId } from "@/store/useActiveSectionStore";
 
 export interface SectionProps {
     sectionId: SectionId;

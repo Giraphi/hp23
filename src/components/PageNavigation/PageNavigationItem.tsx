@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { SectionId, useActiveSectionStore } from "@/src/store/useActiveSectionStore";
+import { SectionId, useActiveSectionStore } from "@/store/useActiveSectionStore";
 
 export interface TopBarItemProps {
     id: SectionId;

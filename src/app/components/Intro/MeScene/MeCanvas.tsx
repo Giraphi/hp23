@@ -2,9 +2,9 @@ import { Suspense, useRef, useState } from "react";
 import { AsciiRenderer, Sphere } from "@react-three/drei";
 import { Group } from "three";
 import { useFrame, useThree } from "@react-three/fiber";
-import ControlsSmall from "@/src/app/components/Intro/MeScene/ControlsSmall";
+import ControlsSmall from "@/app/components/Intro/MeScene/ControlsSmall";
 import { MotionValue } from "framer-motion";
-import MeGltf from "@/src/app/components/Intro/MeScene/MeGltf";
+import MeGltf from "@/app/components/Intro/MeScene/MeGltf";
 import { LayoutCamera } from "framer-motion-3d";
 
 export interface MeContentProps {

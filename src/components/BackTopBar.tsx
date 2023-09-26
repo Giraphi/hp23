@@ -1,9 +1,8 @@
 import React from "react";
-import Grid from "@/src/components/Grid/Grid";
-import ChevronDown from "@/src/assets/chevron-down.svg";
+import Grid from "@/components/Grid/Grid";
+import ChevronDown from "@/assets/chevron-down.svg";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { SectionId } from "@/src/store/useActiveSectionStore";
+import { SectionId } from "@/store/useActiveSectionStore";
 
 export interface BackTopBarProps {
     title?: string;

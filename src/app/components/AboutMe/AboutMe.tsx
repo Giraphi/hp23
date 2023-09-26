@@ -1,11 +1,11 @@
-import SectionBackground from "@/src/components/SectionBackground";
-import SectionGrid from "@/src/components/SectionGrid";
-import SectionHeadline from "@/src/components/SectionHeadline";
-import HeadlineWText from "@/src/components/HeadlineWText";
-import InlineTextLink from "@/src/components/InlineTextLink";
-import { SectionId } from "@/src/store/useActiveSectionStore";
-import ScrollTarget from "@/src/components/ScrollTarget";
-import Section from "@/src/components/Section";
+import SectionBackground from "@/components/SectionBackground";
+import SectionGrid from "@/components/SectionGrid";
+import SectionHeadline from "@/components/SectionHeadline";
+import HeadlineWText from "@/components/HeadlineWText";
+import InlineTextLink from "@/components/InlineTextLink";
+import { SectionId } from "@/store/useActiveSectionStore";
+import ScrollTarget from "@/components/ScrollTarget";
+import Section from "@/components/Section";
 
 export interface AboutMeProps {}
 

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import brutal1 from "./images/brutal1.jpg";
 import brutal2 from "./images/brutal2.jpg";
 import brutal3 from "./images/brutal3.jpg";
-import PuzzleContainer from "@/src/app/code-examples/components/Puzzle/PuzzleContainer";
+import PuzzleContainer from "@/app/code-examples/components/Puzzle/PuzzleContainer";
 
 export type PuzzleDimensions = { width: number; height: number };
 

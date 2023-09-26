@@ -1,10 +1,10 @@
 "use client";
 
 import { ReactNode, useRef } from "react";
-import SectionBackground from "@/src/components/SectionBackground";
-import WavesAnimation from "@/src/app/components/AboutMe/WavesBackground/WavesAnimation";
+import SectionBackground from "@/components/SectionBackground";
+import WavesAnimation from "@/app/components/AboutMe/WavesBackground/WavesAnimation";
 import { motion, useInView } from "framer-motion";
-import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
+import { Device, useDeviceStore } from "@/store/useDeviceStore";
 
 export interface WavesBackgroundProps {
     children: ReactNode;

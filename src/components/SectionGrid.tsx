@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Grid from "@/src/components/Grid/Grid";
+import Grid from "@/components/Grid/Grid";
 import { twMerge } from "tailwind-merge";
 
 export interface SectionGridProps {

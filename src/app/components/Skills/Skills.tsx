@@ -1,14 +1,14 @@
-import SectionBackground from "@/src/components/SectionBackground";
-import SectionGrid from "@/src/components/SectionGrid";
-import SectionHeadline from "@/src/components/SectionHeadline";
-import SectionParagraph from "@/src/components/SectionParagraph";
-import SectionText from "@/src/components/SectionText";
-import SkillItems from "@/src/app/components/Skills/SkillItems/SkillItems";
-import useNavigationSection from "@/src/hooks/useNavigationSection";
-import { SectionId } from "@/src/store/useActiveSectionStore";
+import SectionBackground from "@/components/SectionBackground";
+import SectionGrid from "@/components/SectionGrid";
+import SectionHeadline from "@/components/SectionHeadline";
+import SectionParagraph from "@/components/SectionParagraph";
+import SectionText from "@/components/SectionText";
+import SkillItems from "@/app/components/Skills/SkillItems/SkillItems";
+import useNavigationSection from "@/hooks/useNavigationSection";
+import { SectionId } from "@/store/useActiveSectionStore";
 import { useRef } from "react";
-import ScrollTarget from "@/src/components/ScrollTarget";
-import Section from "@/src/components/Section";
+import ScrollTarget from "@/components/ScrollTarget";
+import Section from "@/components/Section";
 
 export interface SkillsProps {}
 

@@ -3,7 +3,7 @@
 import { ReactNode, useRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { motion, useInView } from "framer-motion";
-import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
+import { Device, useDeviceStore } from "@/store/useDeviceStore";
 
 export interface CardsProps {
     children?: ReactNode;

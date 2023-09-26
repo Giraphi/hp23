@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import Headline from "@/src/components/Headline";
-import { cn } from "@/src/util/functions";
+import Headline from "@/components/Headline";
+import { cn } from "@/util/functions";
 
 export interface SectionHeadlineProps {
     children: ReactNode;

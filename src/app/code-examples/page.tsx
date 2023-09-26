@@ -1,15 +1,15 @@
 import React from "react";
-import CodeExampleSection from "@/src/app/code-examples/components/CodeExampleSection";
-import Headline from "@/src/components/Headline";
-import SectionParagraph from "@/src/components/SectionParagraph";
-import InlineTextLink from "@/src/components/InlineTextLink";
-import InlineCode from "@/src/components/InlineCode";
-import SectionBackground from "@/src/components/SectionBackground";
-import SectionGrid from "@/src/components/SectionGrid";
-import SectionText from "@/src/components/SectionText";
-import ScrollAnimation from "@/src/app/code-examples/components/ScrollAnimation/ScrollAnimation";
-import Puzzle from "@/src/app/code-examples/components/Puzzle/Puzzle";
-import { SectionId } from "@/src/store/useActiveSectionStore";
+import CodeExampleSection from "@/app/code-examples/components/CodeExampleSection";
+import Headline from "@/components/Headline";
+import SectionParagraph from "@/components/SectionParagraph";
+import InlineTextLink from "@/components/InlineTextLink";
+import InlineCode from "@/components/InlineCode";
+import SectionBackground from "@/components/SectionBackground";
+import SectionGrid from "@/components/SectionGrid";
+import SectionText from "@/components/SectionText";
+import ScrollAnimation from "@/app/code-examples/components/ScrollAnimation/ScrollAnimation";
+import Puzzle from "@/app/code-examples/components/Puzzle/Puzzle";
+import { SectionId } from "@/store/useActiveSectionStore";
 
 export const metadata = {
     title: "Code Examples",

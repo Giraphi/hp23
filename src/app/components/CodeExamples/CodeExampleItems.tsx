@@ -1,6 +1,6 @@
-import Cards from "@/src/components/Cards/Cards";
-import VideoCard from "@/src/components/Cards/VideoCard";
-import { SectionId } from "@/src/store/useActiveSectionStore";
+import Cards from "@/components/Cards/Cards";
+import VideoCard from "@/components/Cards/VideoCard";
+import { SectionId } from "@/store/useActiveSectionStore";
 
 export interface CodeExampleItemsProps {}
 

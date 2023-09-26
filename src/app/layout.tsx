@@ -1,7 +1,7 @@
 import "./globals.scss";
 import { Bungee, Dela_Gothic_One, Inter, Source_Code_Pro } from "next/font/google";
 import { ReactNode } from "react";
-import DeviceStoreHandler from "@/src/store/DeviceStoreHandler";
+import DeviceStoreHandler from "@/store/DeviceStoreHandler";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const delaGothicOne = Dela_Gothic_One({ subsets: ["latin"], weight: "400", variable: "--font-dela-gothic-one" });

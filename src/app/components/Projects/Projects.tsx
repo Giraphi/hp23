@@ -1,25 +1,25 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import SectionGrid from "@/src/components/SectionGrid";
-import SectionHeadline from "@/src/components/SectionHeadline";
-import SectionParagraph from "@/src/components/SectionParagraph";
-import SectionBackground from "@/src/components/SectionBackground";
-import Cards from "@/src/components/Cards/Cards";
-import Card from "@/src/components/Cards/Card";
-import designUnit from "@/src/assets/tech-and-design/design-unit.png";
-import iceberg from "@/src/assets/3d-presentation/iceberg.png";
-import ubu2 from "@/src/assets/projects/ubu2.png";
-import SectionText from "@/src/components/SectionText";
-import Grid from "@/src/components/Grid/Grid";
-import ScrollHint from "@/src/app/components/Intro/ScrollHint/ScrollHint";
+import SectionGrid from "@/components/SectionGrid";
+import SectionHeadline from "@/components/SectionHeadline";
+import SectionParagraph from "@/components/SectionParagraph";
+import SectionBackground from "@/components/SectionBackground";
+import Cards from "@/components/Cards/Cards";
+import Card from "@/components/Cards/Card";
+import designUnit from "@/assets/tech-and-design/design-unit.png";
+import iceberg from "@/assets/3d-presentation/iceberg.png";
+import ubu2 from "@/assets/projects/ubu2.png";
+import SectionText from "@/components/SectionText";
+import Grid from "@/components/Grid/Grid";
+import ScrollHint from "@/app/components/Intro/ScrollHint/ScrollHint";
 import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
-import InlineTextLink from "@/src/components/InlineTextLink";
-import { SectionId } from "@/src/store/useActiveSectionStore";
-import ScrollTarget from "@/src/components/ScrollTarget";
-import { useHomeStore } from "@/src/store/useHomeStore";
-import Section from "@/src/components/Section";
-import { ModalSearchParams } from "@/src/assets/modalSearchParams";
+import InlineTextLink from "@/components/InlineTextLink";
+import { SectionId } from "@/store/useActiveSectionStore";
+import ScrollTarget from "@/components/ScrollTarget";
+import { useHomeStore } from "@/store/useHomeStore";
+import Section from "@/components/Section";
+import { ModalSearchParams } from "@/assets/modalSearchParams";
 
 export default function Projects() {
     const ref = useRef(null);

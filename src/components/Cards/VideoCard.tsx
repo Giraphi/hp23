@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import CardAppear from "@/src/components/Cards/CardAppear";
+import CardAppear from "@/components/Cards/CardAppear";
 import Link from "next/link";
 
 export interface VideoCardProps {

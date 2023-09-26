@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SectionId } from "@/src/store/useActiveSectionStore";
+import { SectionId } from "@/store/useActiveSectionStore";
 import { AnimatePresence, motion } from "framer-motion";
-import PageNavigationItem from "@/src/components/PageNavigation/PageNavigationItem";
-import useOutsideClick from "@/src/hooks/useOutsideClick";
-import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
-import { cn } from "@/src/util/functions";
-import { useHomeStore } from "@/src/store/useHomeStore";
-import MenuIcon from "@/src/components/MenuIcon";
+import PageNavigationItem from "@/components/PageNavigation/PageNavigationItem";
+import useOutsideClick from "@/hooks/useOutsideClick";
+import { Device, useDeviceStore } from "@/store/useDeviceStore";
+import { cn } from "@/util/functions";
+import { useHomeStore } from "@/store/useHomeStore";
+import MenuIcon from "@/components/MenuIcon";
 
 type Item = { id: SectionId; label: string };
 

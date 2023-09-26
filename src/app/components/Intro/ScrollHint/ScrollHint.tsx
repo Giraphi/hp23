@@ -1,6 +1,6 @@
-import ChevronDown from "@/src/assets/chevron-down.svg";
+import ChevronDown from "@/assets/chevron-down.svg";
 import { motion } from "framer-motion";
-import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
+import { Device, useDeviceStore } from "@/store/useDeviceStore";
 
 export interface ScrollHintProps {
     appearDelay?: number;

@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import Image, { StaticImageData } from "next/image";
-import CardAppear from "@/src/components/Cards/CardAppear";
+import CardAppear from "@/components/Cards/CardAppear";
 import Link from "next/link";
-import TextLink from "@/src/components/TextLink";
+import TextLink from "@/components/TextLink";
 
 export interface CardProps {
     image: StaticImageData;

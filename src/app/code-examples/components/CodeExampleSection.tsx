@@ -1,15 +1,15 @@
 "use client";
 import React, { FC, ReactNode, useRef } from "react";
-import SectionBackground from "@/src/components/SectionBackground";
-import SectionGrid from "@/src/components/SectionGrid";
-import SectionText from "@/src/components/SectionText";
-import SectionParagraph from "@/src/components/SectionParagraph";
-import IconButton from "@/src/components/IconButton";
-import GithubIcon from "@/src/assets/github.svg";
-import CodesandboxIcon from "@/src/assets/codesandbox.svg";
-import useNavigationSection from "@/src/hooks/useNavigationSection";
-import { SectionId } from "@/src/store/useActiveSectionStore";
-import ScrollTarget from "@/src/components/ScrollTarget";
+import SectionBackground from "@/components/SectionBackground";
+import SectionGrid from "@/components/SectionGrid";
+import SectionText from "@/components/SectionText";
+import SectionParagraph from "@/components/SectionParagraph";
+import IconButton from "@/components/IconButton";
+import GithubIcon from "@/assets/github.svg";
+import CodesandboxIcon from "@/assets/codesandbox.svg";
+import useNavigationSection from "@/hooks/useNavigationSection";
+import { SectionId } from "@/store/useActiveSectionStore";
+import ScrollTarget from "@/components/ScrollTarget";
 
 export interface CodeExampleSectionProps {
     githubLink?: string;

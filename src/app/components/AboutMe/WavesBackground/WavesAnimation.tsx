@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
-import wavePaths from "@/src/app/components/AboutMe/WavesBackground/paths";
+import { Device, useDeviceStore } from "@/store/useDeviceStore";
+import wavePaths from "@/app/components/AboutMe/WavesBackground/paths";
 
 export interface WavesAnimationProps {}
 

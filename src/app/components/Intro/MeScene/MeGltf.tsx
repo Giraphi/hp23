@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 // import * as THREE from "three";
-import { Device, useDeviceStore } from "@/src/store/useDeviceStore";
+import { Device, useDeviceStore } from "@/store/useDeviceStore";
 import { MotionValue, useTransform } from "framer-motion";
 import { useFrame } from "@react-three/fiber";
 import { MathUtils, Mesh } from "three";

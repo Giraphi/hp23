@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import { cn } from "@/src/util/functions";
+import { cn } from "@/util/functions";
 
 export interface ButtonProps {
     href?: string;

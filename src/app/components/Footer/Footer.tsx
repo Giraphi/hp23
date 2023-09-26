@@ -1,5 +1,5 @@
-import SectionGrid from "@/src/components/SectionGrid";
-import InlineTextLink from "@/src/components/InlineTextLink";
+import SectionGrid from "@/components/SectionGrid";
+import InlineTextLink from "@/components/InlineTextLink";
 
 export interface FooterProps {}
 

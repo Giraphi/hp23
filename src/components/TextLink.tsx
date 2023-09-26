@@ -1,5 +1,5 @@
 import { HTMLProps, ReactNode } from "react";
-import { cn } from "@/src/util/functions";
+import { cn } from "@/util/functions";
 import Link from "next/link";
 
 export interface TextLinkProps {

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
-import MeCanvasLarge from "@/src/app/components/Intro/MeScene/large/MeCanvasLarge";
+import MeCanvasLarge from "@/app/components/Intro/MeScene/large/MeCanvasLarge";
 import { useInView } from "framer-motion";
 
 export interface MeSceneProps {}

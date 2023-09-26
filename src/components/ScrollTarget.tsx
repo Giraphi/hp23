@@ -1,6 +1,6 @@
 import React from "react";
-import { SectionId } from "@/src/store/useActiveSectionStore";
-import { cn } from "@/src/util/functions";
+import { SectionId } from "@/store/useActiveSectionStore";
+import { cn } from "@/util/functions";
 
 export interface ScrollTargetProps {
     id: SectionId;

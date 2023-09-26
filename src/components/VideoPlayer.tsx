@@ -1,4 +1,4 @@
-import { cn } from "@/src/util/functions";
+import { cn } from "@/util/functions";
 
 export interface VideoPlayerProps {
     mp4: string;

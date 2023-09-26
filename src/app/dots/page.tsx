@@ -1,4 +1,4 @@
-import DotsRow from "@/src/components/CodeExamples/DotsRow/DotsRow";
+import DotsRow from "@/components/CodeExamples/DotsRow/DotsRow";
 
 export interface PageProps {}
 

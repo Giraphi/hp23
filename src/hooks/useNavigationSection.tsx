@@ -1,5 +1,5 @@
 import { RefObject, useEffect } from "react";
-import { SectionId, useActiveSectionStore } from "@/src/store/useActiveSectionStore";
+import { SectionId, useActiveSectionStore } from "@/store/useActiveSectionStore";
 import { useInView } from "framer-motion";
 
 export default function useNavigationSection(ref: RefObject<HTMLElement>, id: SectionId) {

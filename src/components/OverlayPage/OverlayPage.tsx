@@ -1,7 +1,7 @@
-import SectionBackground from "@/src/components/SectionBackground";
-import SectionGrid from "@/src/components/SectionGrid";
+import SectionBackground from "@/components/SectionBackground";
+import SectionGrid from "@/components/SectionGrid";
 import { ReactNode } from "react";
-import OverlayTopBar from "@/src/components/OverlayPage/OverlayTopBar";
+import OverlayTopBar from "@/components/OverlayPage/OverlayTopBar";
 
 export interface OverlayPageProps {
     children: ReactNode;
