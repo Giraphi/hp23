@@ -31,7 +31,7 @@ export default function OverlayDialog(props: ModalProps) {
             onClose={handleClose}
             fullScreen
             TransitionComponent={Transition}
-            className={"md:ml-[10%]"}
+            className={"md:ml-[17%]"}
         >
             {props.children}
         </Dialog>
