@@ -45,9 +45,9 @@ export default function PresentationOverlay(props: PresentationOverlayProps) {
             <OverlayTextArea>
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Project Requirements</h3>
                 <UnorderedList className={"pb-4 md:pb-8"}>
-                    <li>Create an interactive 3D scene that works smoothly in the browser</li>
-                    <li>Conceptualize and implement the user actions, UI and camera animations</li>
-                    <li>Close collaboration with the 3D artist</li>
+                    <li>Create an interactive 3D scene that works smoothly in the browser.</li>
+                    <li>Conceptualize and implement the user actions, UI and camera animations.</li>
+                    <li>Close collaboration with the 3D artist.</li>
                 </UnorderedList>
 
                 <div className={"relative mb-2 aspect-screenshot w-full overflow-hidden rounded-xl md:mb-4"}>
@@ -83,7 +83,7 @@ export default function PresentationOverlay(props: PresentationOverlayProps) {
                         >
                             react-three-fiber
                         </InlineTextLink>{" "}
-                        that can render the scene and take control over camera movement etc.
+                        that can render the scene, take control over camera movement and render text on top of it.
                     </li>
                     <li>
                         Conceptualize and implement animations and user interactions with{" "}
@@ -95,7 +95,7 @@ export default function PresentationOverlay(props: PresentationOverlayProps) {
                         </InlineTextLink>
                         .
                     </li>
-                    <li>Embed the app as a sub-page into a larger site managed by a CMS system</li>
+                    <li>Embed the app as a sub-page into a larger site managed by a CMS system.</li>
                 </UnorderedList>
 
                 <VideoPlayer
