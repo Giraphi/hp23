@@ -7,6 +7,8 @@ import OverlayTextArea from "@/components/OverlayTextArea";
 import VideoPlayer from "@/components/VideoPlayer";
 import Image from "next/image";
 import mobileScreenshot from "@/assets/tech-and-design/mobile-screenshot.png";
+import mobileScreenshot2 from "@/assets/tech-and-design/mobile-screenshot-2.png";
+import mobileScreenshot3 from "@/assets/tech-and-design/mobile-screenshot-3.png";
 import filterScreenshot from "@/assets/tech-and-design/filter-screenshot.png";
 
 export interface TechAndDesignOverlayProps {}
@@ -21,7 +23,7 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
 
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Overview</h3>
 
-                <p className={"pb-4 md:pb-8"}>
+                <p className={"pb-4"}>
                     In this project, I’ve implemented a react.js frontend for a Homepage of a tech and design team based on the designs by
                     the Italian studio{" "}
                     <InlineTextLink
@@ -30,34 +32,56 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                     >
                         Vicine
                     </InlineTextLink>
-                    . The content is controlled by headless CMS. Unfortunately, for legal reasons the client’s name can’t be named
-                    explicitly. More about that on request.
+                    .
                 </p>
-                <div className={"relative w-full max-md:h-96 md:aspect-screenshot "}>
-                    <Image
-                        quality={90}
-                        src={mobileScreenshot}
-                        alt={"card picture"}
-                        fill={true}
-                        className={"rounded object-contain"}
-                        sizes={"300px"}
-                    />
+                <p className={"pb-4 md:pb-8"}>
+                    The content is controlled by headless CMS. Unfortunately, for legal reasons the site URL and the client’s name can’t be
+                    named explicitly. More about that on request.
+                </p>
+                <div className={"flex flex-col items-center gap-4 md:gap-6 lg:flex-row lg:items-stretch lg:gap-8"}>
+                    <div className={"relative w-full max-lg:w-56"}>
+                        <Image
+                            quality={90}
+                            src={mobileScreenshot}
+                            alt={"card picture"}
+                            className={"rounded-xl "}
+                            sizes={"300px"}
+                        />
+                    </div>
+                    <div className={"relative w-full max-lg:w-56"}>
+                        <Image
+                            quality={90}
+                            src={mobileScreenshot2}
+                            alt={"card picture"}
+                            className={"rounded-xl"}
+                            sizes={"300px"}
+                        />
+                    </div>
+                    <div className={"relative w-full max-lg:w-56"}>
+                        <Image
+                            quality={90}
+                            src={mobileScreenshot3}
+                            alt={"card picture"}
+                            className={"rounded-xl object-contain"}
+                            sizes={"300px"}
+                        />
+                    </div>
                 </div>
             </OverlayTextArea>
 
             <OverlayTextArea>
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Project Requirements</h3>
                 <UnorderedList className={"pb-4 md:pb-8"}>
-                    <li>Analyze content structure and setup a data concept to be controlled by a headless CMS</li>
-                    <li>Implementation of a fast, secure, robust and responsive react.js frontend</li>
+                    <li>Analyze content structure and setup a data concept to be controlled by a headless CMS.</li>
+                    <li>Implementation of a fast, secure, robust and responsive react.js frontend.</li>
                     <li>
-                        Page layout needs to be stable enough to deal with content changes, which can happen at any time through the CMS
+                        Page layout needs to be stable enough to deal with content changes, which can happen at any time through the CMS.
                     </li>
                     <li>
                         Carefully stick to the design specifications and support the design team with open points like mobile optimizations,
                         UX concerns and animation.
                     </li>
-                    <li>SEO optimizations, including Server-side-rendering</li>
+                    <li>SEO optimizations, including Server-side-rendering.</li>
                 </UnorderedList>
 
                 <div className={"relative mb-2 aspect-screenshot w-full overflow-hidden rounded md:mb-4"}>
@@ -105,6 +129,7 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                         >
                             framer-motion
                         </InlineTextLink>
+                        .
                     </li>
                 </UnorderedList>
 

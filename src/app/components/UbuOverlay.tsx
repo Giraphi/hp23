@@ -19,8 +19,7 @@ export default function UbuOverlay(props: UbuOverlayProps) {
         <OverlayPage>
             <OverlayTextArea>
                 <SectionHeadline className={"leading-tight md:leading-tight xxl:leading-tight"}>
-                    Website for my band <br />
-                    Ubu Imperator
+                    Website for my band Ubu&nbsp;Imperator
                 </SectionHeadline>
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Overview</h3>
 
@@ -114,8 +113,8 @@ export default function UbuOverlay(props: UbuOverlayProps) {
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>What I did in detail</h3>
                 <UnorderedList className={"pb-4 md:pb-8"}>
                     <li>Wireframe a site skeleton and write all text content.</li>
-                    <li>Select and organize media like fotos, videos and of course music.</li>
-                    <li>Create a website design based on clean layout, color animations and illustrations</li>
+                    <li>Select and organize media like photos, videos and of course music.</li>
+                    <li>Create a website design based on clean layout, color animations and illustrations.</li>
                     <li>
                         Implement the site using{" "}
                         <InlineTextLink
