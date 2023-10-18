@@ -10,6 +10,7 @@ import OverlayDialog from "@/components/OverlayDialog";
 import TechAndDesignOverlay from "@/app/components/TechAndDesignOverlay";
 import { ModalSearchParams } from "@/assets/modalSearchParams";
 import PresentationOverlay from "@/app/components/PresentationOverlay";
+import UbuOverlay from "@/app/components/UbuOverlay";
 
 export interface HomeProps {
     searchParams: Record<string, string> | null | undefined;
@@ -38,6 +39,10 @@ export default function Home(props: HomeProps) {
 
             <OverlayDialog open={modalKey === ModalSearchParams.presentation}>
                 <PresentationOverlay />
+            </OverlayDialog>
+
+            <OverlayDialog open={modalKey === ModalSearchParams.ubu}>
+                <UbuOverlay />
             </OverlayDialog>
         </>
     );

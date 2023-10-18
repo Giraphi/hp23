@@ -103,7 +103,7 @@ export default function Projects() {
                             <Card
                                 image={ubu2}
                                 headline={"Website for my band Ubu Imperator"}
-                                href={`/?modal=${ModalSearchParams.techAndDesign}`}
+                                href={`/?modal=${ModalSearchParams.ubu}`}
                             >
                                 Design and full implementation of a next.js/react website making use of our drummer’s illustrations.
                             </Card>
