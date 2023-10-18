@@ -18,6 +18,7 @@ export default function IconButton(props: IconButtonProps) {
                 "inline-flex cursor-pointer items-center rounded-lg bg-gray-1 px-3 py-2 font-bold text-white hover:text-lime-500 ",
                 props.className
             )}
+            target={"_blank"}
         >
             {Icon && <Icon className={"mr-2 h-6 w-6"} />}
             {props.children}

@@ -39,7 +39,7 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                         src={mobileScreenshot}
                         alt={"card picture"}
                         fill={true}
-                        className={"rounded-xl object-contain"}
+                        className={"rounded object-contain"}
                         sizes={"300px"}
                     />
                 </div>
@@ -60,7 +60,7 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                     <li>SEO optimizations, including Server-side-rendering</li>
                 </UnorderedList>
 
-                <div className={"relative mb-2 aspect-screenshot w-full overflow-hidden rounded-xl md:mb-4"}>
+                <div className={"relative mb-2 aspect-screenshot w-full overflow-hidden rounded md:mb-4"}>
                     <Image
                         quality={90}
                         src={filterScreenshot}

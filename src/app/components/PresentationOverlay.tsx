@@ -30,7 +30,7 @@ export default function PresentationOverlay(props: PresentationOverlayProps) {
                     . The site is used internally for presentational purpose by a large consulting group. Unfortunately, for legal reasons
                     the client’s name can’t be named explicitly. More about that on request.
                 </p>
-                <div className={"relative aspect-screenshot w-full overflow-hidden rounded-xl"}>
+                <div className={"relative aspect-screenshot w-full overflow-hidden rounded"}>
                     <Image
                         quality={90}
                         src={iceberg}
@@ -50,7 +50,7 @@ export default function PresentationOverlay(props: PresentationOverlayProps) {
                     <li>Close collaboration with the 3D artist.</li>
                 </UnorderedList>
 
-                <div className={"relative mb-2 aspect-screenshot w-full overflow-hidden rounded-xl md:mb-4"}>
+                <div className={"relative mb-2 aspect-screenshot w-full overflow-hidden rounded md:mb-4"}>
                     <Image
                         quality={90}
                         src={deepView}

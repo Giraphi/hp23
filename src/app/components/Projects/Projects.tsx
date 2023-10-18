@@ -65,7 +65,14 @@ export default function Projects() {
                         <SectionText>
                             <SectionParagraph>
                                 Here’s a small selection of projects I’ve been working on recently, mainly during my employment at the
-                                Munich web office funct.
+                                Munich web office{" "}
+                                <InlineTextLink
+                                    href={"https://funct.com/"}
+                                    target={"_blank"}
+                                >
+                                    funct
+                                </InlineTextLink>
+                                .
                             </SectionParagraph>
                             <SectionParagraph disableSpace={true}>
                                 For legal reasons some of the clients can’t be named explicitly.
