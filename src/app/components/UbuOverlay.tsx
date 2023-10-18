@@ -19,7 +19,8 @@ export default function UbuOverlay(props: UbuOverlayProps) {
         <OverlayPage>
             <OverlayTextArea>
                 <SectionHeadline className={"leading-tight md:leading-tight xxl:leading-tight"}>
-                    Website for my band Ubu Imperator
+                    Website for my band <br />
+                    Ubu Imperator
                 </SectionHeadline>
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Overview</h3>
 
