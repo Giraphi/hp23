@@ -141,9 +141,10 @@ export default function UbuOverlay(props: UbuOverlayProps) {
                     </li>
                 </UnorderedList>
 
+                {/* For unknown reasons the webm video doesn't work properly in the browser*/}
                 <VideoPlayer
                     mp4={"/ubu/ubu-full.mp4"}
-                    webm={"/ubu/ubu-full.webm"}
+                    // webm={"/ubu/ubu-full.webm"}
                     poster={"/ubu/ubu-placeholder.webp"}
                 />
             </OverlayTextArea>
