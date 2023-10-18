@@ -12,7 +12,7 @@ export default function VideoPlayer(props: VideoPlayerProps) {
         <div className={cn("aspect-video w-full", props.className)}>
             <video
                 controls={true}
-                className="h-full w-full rounded-xl object-cover  object-center"
+                className="h-full w-full rounded object-cover object-center"
                 poster={props.poster}
             >
                 <source

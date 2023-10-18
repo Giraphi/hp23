@@ -19,7 +19,7 @@ export default function UbuOverlay(props: UbuOverlayProps) {
                 </SectionHeadline>
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Overview</h3>
 
-                <div className={"aspect-video overflow-hidden rounded-xl"}>
+                <div className={"aspect-video overflow-hidden rounded"}>
                     <video
                         className={"h-full w-full max-w-none object-cover"}
                         loop={true}
