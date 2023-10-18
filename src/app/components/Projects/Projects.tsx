@@ -91,7 +91,7 @@ export default function Projects() {
                                 headline={"3D website for a large consulting group "}
                                 href={`/?modal=${ModalSearchParams.presentation}`}
                             >
-                                Implementation of a three.js/r3f internal website in collaboration with the designer and 3D artist{" "}
+                                Implementation of a 3D website with three.js/r3f in collaboration with the designer and 3D artist{" "}
                                 <InlineTextLink
                                     href={"https://www.michaelflynnbost.com/"}
                                     target={"_blank"}
