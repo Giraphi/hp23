@@ -74,12 +74,12 @@ export default function UbuOverlay(props: UbuOverlayProps) {
                 <UnorderedList className={"pb-4 md:pb-8"}>
                     <li>Design and implement a unique, mobile first and SEO optimized band site.</li>
                     <li>
-                        The site should be our band&rsquo;s main portfolio to introduce us and our music to audience and concert organisers.
+                        The site should be our band&rsquo;s main portfolio to introduce us and our music to audience and concert organizers.
                     </li>
                     <li>Collaborate with our illustrator to make best use of his illustrations.</li>
                 </UnorderedList>
-                <div className={"flex flex-col items-center gap-4 md:gap-6 lg:flex-row lg:items-stretch lg:gap-8"}>
-                    <div className={"relative w-full max-lg:w-56"}>
+                <div className={"flex flex-col items-center gap-4 md:gap-6 lg:flex-row lg:items-center lg:gap-8"}>
+                    <div className={"relative w-56 lg:w-72"}>
                         <Image
                             quality={90}
                             src={screenshot1}
@@ -88,7 +88,7 @@ export default function UbuOverlay(props: UbuOverlayProps) {
                             sizes={"300px"}
                         />
                     </div>
-                    <div className={"relative w-full max-lg:w-56"}>
+                    <div className={"relative w-56 lg:w-72"}>
                         <Image
                             quality={90}
                             src={screenshot2}
@@ -97,7 +97,7 @@ export default function UbuOverlay(props: UbuOverlayProps) {
                             sizes={"300px"}
                         />
                     </div>
-                    <div className={"relative w-full max-lg:w-56"}>
+                    <div className={"relative w-56 lg:w-72"}>
                         <Image
                             quality={90}
                             src={screenshot3}

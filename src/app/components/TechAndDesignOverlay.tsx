@@ -39,7 +39,7 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                     named explicitly. More about that on request.
                 </p>
                 <div className={"flex flex-col items-center gap-4 md:gap-6 lg:flex-row lg:items-stretch lg:gap-8"}>
-                    <div className={"relative w-full max-lg:w-56"}>
+                    <div className={"relative w-56 lg:w-72"}>
                         <Image
                             quality={90}
                             src={mobileScreenshot}
@@ -48,7 +48,7 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                             sizes={"300px"}
                         />
                     </div>
-                    <div className={"relative w-full max-lg:w-56"}>
+                    <div className={"relative w-56 lg:w-72"}>
                         <Image
                             quality={90}
                             src={mobileScreenshot2}
@@ -57,7 +57,7 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                             sizes={"300px"}
                         />
                     </div>
-                    <div className={"relative w-full max-lg:w-56"}>
+                    <div className={"relative w-56 lg:w-72"}>
                         <Image
                             quality={90}
                             src={mobileScreenshot3}
@@ -112,7 +112,8 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                         frontend code.
                     </li>
                     <li>
-                        Collaborate closely with the design team to optimize design decisions. Implement styling system with{" "}
+                        Collaborate closely with the design team to optimize design decisions also from a technical perspective. Implement
+                        styling system with{" "}
                         <InlineTextLink
                             href={"https://styled-components.com/"}
                             target={"_blank"}

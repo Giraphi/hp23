@@ -27,8 +27,8 @@ export default function PresentationOverlay(props: PresentationOverlayProps) {
                     >
                         Michael Flynn Bost
                     </InlineTextLink>
-                    . The site is used internally for presentational purpose by a large consulting group. Unfortunately, for legal reasons
-                    the client’s name can’t be named explicitly. More about that on request.
+                    . <br /> The site is used by the client internally for presentational purpose by a large consulting group.
+                    Unfortunately, for legal reasons the client’s name can’t be named explicitly. More about that on request.
                 </p>
                 <div className={"relative aspect-screenshot w-full overflow-hidden rounded"}>
                     <Image
