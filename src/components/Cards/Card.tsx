@@ -14,7 +14,11 @@ export interface CardProps {
 export default function Card(props: CardProps) {
     return (
         <CardAppear className={"w-full max-w-md"}>
-            <div className={"flex h-full flex-col items-start gap-4 rounded-2xl bg-gray-1 p-4 md:p-8 lg:text-base xxl:gap-8 xxl:text-xl"}>
+            <div
+                className={
+                    "flex h-full flex-col items-start gap-4 rounded-2xl bg-neutral-950 p-4 md:p-8 lg:text-base xxl:gap-8 xxl:text-xl"
+                }
+            >
                 <Link
                     href={props.href}
                     className={"group flex w-full flex-col gap-4"}
@@ -32,7 +36,7 @@ export default function Card(props: CardProps) {
                     </div>
                     <h3 className={"font-bold"}>{props.headline}</h3>
                 </Link>
-                <p className={"text-gray-c"}>{props.children}</p>
+                <p className={"text-neutral-300"}>{props.children}</p>
                 <TextLink
                     href={props.href}
                     className={"mt-auto"}

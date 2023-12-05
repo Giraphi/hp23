@@ -8,7 +8,7 @@ export interface SkillItemsGroupProps {
 export default function SkillItemsGroup(props: SkillItemsGroupProps) {
     return (
         <div className={"flex flex-col  gap-1"}>
-            <h5 className={"text-gray-c"}>{props.text}</h5>
+            <h5 className={"text-neutral-300"}>{props.text}</h5>
             <div className={"flex flex-wrap gap-2"}>{props.children}</div>
         </div>
     );

@@ -10,7 +10,7 @@ export default function InlineCode(props: InlineCodeProps) {
         <a
             target={"_blank"}
             href={props.href}
-            className={"whitespace-nowrap rounded bg-gray-c px-1 text-black"}
+            className={"whitespace-nowrap rounded bg-neutral-300 px-1 text-black"}
         >
             {props.children}
         </a>

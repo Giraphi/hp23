@@ -47,7 +47,7 @@ export default function Intro() {
             />
             <Grid
                 ref={rootRef}
-                className={`grid-rows-[15lvh_auto_auto_80lvh] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-gray-3 lg:to-gray-2`}
+                className={`grid-rows-[15lvh_auto_auto_80lvh] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-neutral-700 lg:to-neutral-900`}
             >
                 <div
                     className={"col-content row-span-3 row-start-1"}
@@ -55,7 +55,7 @@ export default function Intro() {
                 ></div>
                 <div
                     className={
-                        "sticky top-0 z-[-1] col-start-screen-left col-end-screen-right row-start-1 h-lvh bg-gradient-radial from-gray-3 to-gray-2 lg:hidden"
+                        "sticky top-0 z-[-1] col-start-screen-left col-end-screen-right row-start-1 h-lvh bg-gradient-radial from-neutral-700 to-neutral-900 lg:hidden"
                     }
                 ></div>
 

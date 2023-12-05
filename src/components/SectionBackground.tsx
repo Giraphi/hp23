@@ -11,7 +11,7 @@ const SectionBackground = forwardRef(function Section(props: SectionProps, ref: 
     return (
         <div
             className={twMerge(
-                `bg-gradient-to-b md:mb-0 ${props.startDark ? "from-gray-2 to-gray-3" : "from-gray-3 to-gray-2"}`,
+                `bg-gradient-to-b md:mb-0 ${props.startDark ? "from-neutral-900 to-neutral-800" : "from-neutral-800 to-neutral-900"}`,
                 props.className
             )}
             ref={ref}

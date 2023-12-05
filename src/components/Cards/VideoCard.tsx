@@ -17,7 +17,7 @@ export default function VideoCard(props: VideoCardProps) {
     return (
         <CardAppear
             className={
-                "flex w-full max-w-md flex-col items-start gap-4 rounded-2xl bg-gray-1 p-4 md:p-8 lg:text-base xxl:gap-8 xxl:text-xl"
+                "flex w-full max-w-md flex-col items-start gap-4 rounded-2xl bg-neutral-950 p-4 md:p-8 lg:text-base xxl:gap-8 xxl:text-xl"
             }
         >
             <Link
@@ -39,8 +39,8 @@ export default function VideoCard(props: VideoCardProps) {
                 </div>
             </Link>
             <h3 className={"font-bold"}>{props.headline}</h3>
-            <p className={"text-gray-c"}>{props.children}</p>
-            <div className="flex flex-wrap gap-4">
+            <p className={"text-neutral-300"}>{props.children}</p>
+            <div className="mt-auto flex flex-wrap gap-4">
                 <IconButton
                     className={"inline-flex bg-neutral-800 text-white"}
                     Icon={CodesandboxIcon}

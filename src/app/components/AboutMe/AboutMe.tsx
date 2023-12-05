@@ -26,11 +26,11 @@ export default function AboutMe(props: AboutMeProps) {
                         >
                             <div className={"grid grid-cols-1 md:grid-cols-[auto_1fr] md:gap-2"}>
                                 <div className={"pr-8 font-bold"}>2011 - 2014:</div>
-                                <div className={"pb-4 text-gray-c md:pb-0"}> Bachelor of Computer Science at TU Dresden</div>
+                                <div className={"pb-4 text-neutral-300 md:pb-0"}> Bachelor of Computer Science at TU Dresden</div>
                                 <div className={"pr-8 font-bold"}>2014/15:</div>
-                                <div className={"pb-4 text-gray-c md:pb-0"}>Study of Architecture at TU Dresden</div>
+                                <div className={"pb-4 text-neutral-300 md:pb-0"}>Study of Architecture at TU Dresden</div>
                                 <div className={"pr-8 font-bold"}>2015 - 2018:</div>
-                                <div className={"text-gray-c"}>
+                                <div className={"text-neutral-300"}>
                                     Master of Computational Linguistics at LMU Munich with Computer Science as minor subject. Master Thesis
                                     in the field of Artificial Intelligence.
                                 </div>
@@ -43,11 +43,11 @@ export default function AboutMe(props: AboutMeProps) {
                         >
                             <div className={"grid grid-cols-1 md:grid-cols-[auto_1fr] md:gap-2"}>
                                 <div className={"pr-8 font-bold"}>2012 - 2018:</div>
-                                <div className={"pb-4 text-gray-c md:pb-0"}>
+                                <div className={"pb-4 text-neutral-300 md:pb-0"}>
                                     Different Jobs as academic tutor at TU Dresden and LMU Munich
                                 </div>
                                 <div className={"pr-8 font-bold"}>2016 - 2018:</div>
-                                <div className={"pb-4 text-gray-c md:pb-0"}>
+                                <div className={"pb-4 text-neutral-300 md:pb-0"}>
                                     Working student jobs in Munich at Siemens and at the robotics startup{" "}
                                     <InlineTextLink
                                         target={"_blank"}
@@ -58,7 +58,7 @@ export default function AboutMe(props: AboutMeProps) {
                                     .
                                 </div>
                                 <div className={"pr-8 font-bold"}>Since 2018:</div>
-                                <div className={"text-gray-c"}>
+                                <div className={"text-neutral-300"}>
                                     Full time frontend developer at the web agency{" "}
                                     <InlineTextLink
                                         href={"https://funct.com/"}
@@ -73,8 +73,8 @@ export default function AboutMe(props: AboutMeProps) {
                         </HeadlineWText>
 
                         <HeadlineWText headline={"Interests"}>
-                            <div className={"pb-1 text-gray-c md:pb-2"}>Art / Digital Art / Design</div>
-                            <div className={"pb-1 text-gray-c md:pb-2"}>
+                            <div className={"pb-1 text-neutral-300 md:pb-2"}>Art / Digital Art / Design</div>
+                            <div className={"pb-1 text-neutral-300 md:pb-2"}>
                                 Synthesizer at my band{" "}
                                 <InlineTextLink
                                     href={"https://www.ubu-imperator.com/"}
@@ -83,7 +83,7 @@ export default function AboutMe(props: AboutMeProps) {
                                     Ubu Imperator
                                 </InlineTextLink>
                             </div>
-                            <div className={"text-gray-c"}>Modular synthesizers / electronic music</div>
+                            <div className={"text-neutral-300"}>Modular synthesizers / electronic music</div>
                         </HeadlineWText>
                     </div>
                 </SectionGrid>

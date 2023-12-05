@@ -40,7 +40,7 @@ export default function ScrollHint(props: ScrollHintProps) {
         <motion.div
             onClick={handleClick}
             key={"scrollHint"}
-            className={"flex h-12 w-12 cursor-pointer flex-col items-center justify-center rounded-full bg-gray-1"}
+            className={"flex h-12 w-12 cursor-pointer flex-col items-center justify-center rounded-full bg-neutral-950"}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: props.appearDelay ?? 0, duration: 1 }}

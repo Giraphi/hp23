@@ -12,11 +12,11 @@ export default function SkillItem(props: SkillItemProps) {
     const { Icon } = props;
     return (
         <a
-            className={"group flex h-14 gap-2 rounded-xl bg-gray-2 p-2"}
+            className={"group flex h-14 gap-2 rounded-xl bg-neutral-900 p-2"}
             href={props.href}
             target={"_blank"}
         >
-            <div className={"flex h-10 w-10 items-center justify-center rounded-lg bg-gray-1 p-2"}>
+            <div className={"flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-950 p-2"}>
                 <div className={"basis-full"}>
                     {Icon && <Icon />}
                     {props.iconImage && (

@@ -21,7 +21,7 @@ export interface SkillItemsProps {}
 
 export default function SkillItems(props: SkillItemsProps) {
     return (
-        <div className={"flex flex-col flex-wrap gap-4 rounded-2xl bg-gray-1 p-4 md:flex-row md:gap-8 md:p-8"}>
+        <div className={"flex flex-col flex-wrap gap-4 rounded-2xl bg-neutral-950 p-4 md:flex-row md:gap-8 md:p-8"}>
             <SkillItemsGroup text={"Fundamentals"}>
                 <SkillItem
                     Icon={HtmlIcon}

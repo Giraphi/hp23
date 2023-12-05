@@ -5,7 +5,7 @@ export interface FooterProps {}
 
 export default function Footer(props: FooterProps) {
     return (
-        <SectionGrid className={"border-t border-gray-c bg-black py-4 text-base text-white lg:py-4"}>
+        <SectionGrid className={"border-t border-neutral-300 bg-black py-4 text-base text-white lg:py-4"}>
             <div className={"col-content lg:col-span-6 lg:col-start-2"}>
                 <p>Design, Development and content by Raphael Höps.</p>
                 <p>
