@@ -10,9 +10,9 @@ export interface OverlayPageProps {
 
 export default function OverlayPage(props: OverlayPageProps) {
     return (
-        <SectionBackground className={"text-white"}>
+        <SectionBackground className={"flex flex-col items-end text-white"}>
             <OverlayTopBar title={props.title} />
-            <SectionGrid>{props.children}</SectionGrid>
+            <SectionGrid className="max-w-[1200px] self-center xl:mr-[10%]">{props.children}</SectionGrid>
         </SectionBackground>
     );
 }

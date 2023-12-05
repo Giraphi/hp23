@@ -63,7 +63,9 @@ export default function PageNavigation(props: PageNavigationProps) {
             {!keepOpen && (
                 <div
                     onClick={() => setIsOpen((x) => !x)}
-                    className={"relative z-20 col-start-1 row-start-1 h-10 w-10 cursor-pointer rounded-bl-md bg-black md:h-12 md:w-12"}
+                    className={
+                        "relative z-20 col-start-1 row-start-1 h-10 w-10 cursor-pointer rounded-bl-md bg-neutral-950 md:h-12 md:w-12"
+                    }
                 >
                     <MenuIcon isCross={isOpen} />
                 </div>
@@ -73,7 +75,7 @@ export default function PageNavigation(props: PageNavigationProps) {
                 {isOpen && (
                     <motion.div
                         className={cn(
-                            `relative z-10 col-start-1 row-start-1 flex h-[100lvh] flex-col items-end bg-black pl-6 pr-3 pt-16 lg:pt-24`,
+                            `relative z-10 col-start-1 row-start-1 flex h-[100lvh] flex-col items-end bg-neutral-950 pl-6 pr-3 pt-16 lg:pt-24`,
                             props.menuClasses
                         )}
                         variants={menuVariants}

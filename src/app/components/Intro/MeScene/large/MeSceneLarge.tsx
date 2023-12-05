@@ -31,7 +31,7 @@ export default function MeSceneLarge(props: MeSceneProps) {
                     {/*        id="default-range"*/}
                     {/*        type="range"*/}
                     {/*        value="50"*/}
-                    {/*        className="h-2 w-40 cursor-pointer appearance-none rounded-lg bg-black accent-white"*/}
+                    {/*        className="h-2 w-40 cursor-pointer appearance-none rounded-lg bg-neutral-950 accent-white"*/}
                     {/*    />*/}
                     {/*</div>*/}
                 </div>

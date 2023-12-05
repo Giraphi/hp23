@@ -31,7 +31,7 @@ export default function OverlayTopBar(props: OverlayTopBarProps) {
             <div className={"sticky right-0 top-0 z-30 hidden h-12 justify-end md:flex"}>
                 <Link
                     href={`/`}
-                    className={"h-full w-12 rounded-bl-md bg-black"}
+                    className={"h-full w-12 rounded-bl-md bg-neutral-950"}
                 >
                     <MenuIcon isCross={true} />
                 </Link>
