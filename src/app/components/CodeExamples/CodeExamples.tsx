@@ -25,7 +25,6 @@ export default function CodeExamples(props: CodeExamplesProps) {
                             If you’re up for some hands on code or maybe looking for some inspiration for your own projects, I’ve selected
                             some interesting components I’ve been coding recently.
                         </SectionParagraph>
-                        <SectionParagraph disableSpace={true}>Each example comes with a live demo on codesandbox.</SectionParagraph>
                     </SectionText>
 
                     <div className={"col-content"}>

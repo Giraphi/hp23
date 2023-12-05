@@ -12,6 +12,4 @@ TODO Homepage:
 
 Deepmodes
 
--   Text nicht zu wide
--   Pinke Überschriften doch größer
 -   Wording nochmal überall drüber schaun. Kein "unfortunately" benutzen.

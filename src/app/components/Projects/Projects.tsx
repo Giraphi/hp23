@@ -73,9 +73,6 @@ export default function Projects() {
                                 </InlineTextLink>
                                 .
                             </SectionParagraph>
-                            <SectionParagraph disableSpace={true}>
-                                For legal reasons some of the clients can’t be named explicitly.
-                            </SectionParagraph>
                         </SectionText>
                         <Cards className={"col-content"}>
                             <Card
