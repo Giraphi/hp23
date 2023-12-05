@@ -8,7 +8,7 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
     return (
         <Cards className={"col-content"}>
             <VideoCard
-                href={`/code-examples#${SectionId.puzzle}`}
+                href={`https://codesandbox.io/p/github/Giraphi/demo-puzzle/main?file=%2FREADME.md`}
                 videoName={"puzzle"}
                 headline={"Puzzle Slider"}
             >
@@ -17,7 +17,7 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
             </VideoCard>
 
             <VideoCard
-                href={`/code-examples#${SectionId.dots}`}
+                href={`https://codesandbox.io/p/github/Giraphi/demo-dots/main`}
                 videoName={"dots"}
                 headline={"Magnetic Dots"}
             >
@@ -26,7 +26,7 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
             </VideoCard>
 
             <VideoCard
-                href={`/code-examples#${SectionId.zoom}`}
+                href={`https://codesandbox.io/p/github/Giraphi/demo-scroll/main`}
                 videoName={"scroll"}
                 headline={"Zoom into Text"}
             >

@@ -12,7 +12,7 @@ export default function ScrollTarget(props: ScrollTargetProps) {
     return (
         <div
             id={`${props.id}`}
-            className={cn({ "relative bottom-5": !props.disableOffset }, props.className)}
+            className={cn({ "text- relative bottom-5": !props.disableOffset }, props.className)}
         />
     );
 }

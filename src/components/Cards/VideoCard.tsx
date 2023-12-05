@@ -11,7 +11,10 @@ export interface VideoCardProps {
 
 export default function VideoCard(props: VideoCardProps) {
     return (
-        <Link href={props.href}>
+        <Link
+            href={props.href}
+            target="_blank"
+        >
             <CardAppear
                 className={"flex w-full max-w-md flex-col gap-4 rounded-2xl bg-gray-1 p-4 md:p-8 lg:text-base xxl:gap-8 xxl:text-xl"}
             >
