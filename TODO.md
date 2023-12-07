@@ -13,3 +13,7 @@ TODO Homepage:
 Deepmodes
 
 -   Wording nochmal überall drüber schaun. Kein "unfortunately" benutzen.
+
+Code examples
+
+-   Readmes schreiben
