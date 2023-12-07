@@ -23,8 +23,8 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
                 videoName={"dots"}
                 headline={"Magnetic Dots"}
             >
-                Animate dots in a physically convincing and smooth motion. Perfect as a playful spacer. Implementation is based on
-                framer-motion.
+                Animate dots in a physically convincing and smooth motion. Perfect as a playful spacer. Implementation is based on vector
+                calculations and framer-motion.
             </VideoCard>
 
             <VideoCard
