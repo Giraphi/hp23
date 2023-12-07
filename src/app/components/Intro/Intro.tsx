@@ -10,17 +10,16 @@ import { useScroll } from "framer-motion";
 import MeSceneLarge from "@/app/components/Intro/MeScene/large/MeSceneLarge";
 import Appear from "@/components/Effects/Appear";
 import AppearWords from "@/components/Effects/AppearWords";
-import useNavigationSection from "@/hooks/useNavigationSection";
 import { SectionId } from "@/store/useActiveSectionStore";
 import ScrollTarget from "@/components/ScrollTarget";
+import Section from "@/components/Section";
 
 export default function Intro() {
     const device = useDeviceStore((state) => state.device);
     const measureRef = useRef<HTMLDivElement>(null);
-    const rootRef = useRef<HTMLDivElement>(null);
+    const ref = useRef<HTMLDivElement>(null);
     const [textContentHeight, setTextContentHeight] = useState(0);
-    const { scrollYProgress } = useScroll({ target: rootRef, offset: ["start start", "end start"] });
-    useNavigationSection(rootRef, SectionId.intro);
+    const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
 
     useEffect(() => {
         if (device >= Device.lg) {
@@ -40,13 +39,13 @@ export default function Intro() {
     }, [device]);
 
     return (
-        <>
+        <Section sectionId={SectionId.intro}>
             <ScrollTarget
                 id={SectionId.intro}
                 disableOffset={true}
             />
             <Grid
-                ref={rootRef}
+                ref={ref}
                 className={`grid-rows-[15lvh_auto_auto_80lvh] lg:h-screen lg:grid-rows-[1fr_auto_auto_1fr_auto] lg:bg-gradient-radial lg:from-neutral-700 lg:to-neutral-900`}
             >
                 <div
@@ -136,6 +135,6 @@ export default function Intro() {
                     </>
                 )}
             </Grid>
-        </>
+        </Section>
     );
 }

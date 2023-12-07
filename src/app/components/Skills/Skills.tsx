@@ -4,7 +4,6 @@ import SectionHeadline from "@/components/SectionHeadline";
 import SectionParagraph from "@/components/SectionParagraph";
 import SectionText from "@/components/SectionText";
 import SkillItems from "@/app/components/Skills/SkillItems/SkillItems";
-import useNavigationSection from "@/hooks/useNavigationSection";
 import { SectionId } from "@/store/useActiveSectionStore";
 import { useRef } from "react";
 import ScrollTarget from "@/components/ScrollTarget";
