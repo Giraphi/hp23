@@ -4,6 +4,7 @@ import CardAppear from "@/components/Cards/CardAppear";
 import Link from "next/link";
 import TextLink from "@/components/TextLink";
 import GlitchLink from "../GlitchLink/GlitchLink";
+import colors from "tailwindcss/colors";
 
 export interface CardProps {
     image: StaticImageData;
@@ -38,7 +39,10 @@ export default function Card(props: CardProps) {
                     <h3 className={"font-bold"}>{props.headline}</h3>
                 </Link>
                 <p className={"text-neutral-300"}>{props.children}</p>
-                <GlitchLink text={"Read More"} />
+                <GlitchLink
+                    text={"Read More"}
+                    bgColor={colors.neutral[950]}
+                />
                 {/* <TextLink
                     href={props.href}
                     className={"mt-auto"}
