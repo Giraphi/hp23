@@ -1,7 +1,5 @@
-import { cn } from "@/util/functions";
 import styles from "./styles.module.css";
-import { CSSProperties, ReactNode } from "react";
-import Link from "next/link";
+import { CSSProperties } from "react";
 
 export interface GlitchLinkProps {
     text: string;
@@ -14,12 +12,12 @@ export default function GlitchText(props: GlitchLinkProps) {
     } as CSSProperties;
 
     return (
-        <p
+        <span
             style={cssVars}
             data-text={props.text}
             className={styles.glitchLink}
         >
             {props.text}
-        </p>
+        </span>
     );
 }

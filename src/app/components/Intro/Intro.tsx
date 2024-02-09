@@ -13,6 +13,7 @@ import AppearWords from "@/components/Effects/AppearWords";
 import { SectionId } from "@/store/useActiveSectionStore";
 import ScrollTarget from "@/components/ScrollTarget";
 import Section from "@/components/Section";
+import GlitchText from "@/components/GlitchText/GlitchText";
 
 export default function Intro() {
     const device = useDeviceStore((state) => state.device);
@@ -96,7 +97,9 @@ export default function Intro() {
                             disableTransform={true}
                             once={true}
                         >
-                            <Button className={"relative z-10"}>Contact</Button>
+                            <Button className={"relative z-10"}>
+                                <GlitchText text={"Contact"} />
+                            </Button>
                         </Appear>
                     </div>
                 </div>
