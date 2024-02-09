@@ -19,7 +19,7 @@
     --b-cut: calc(var(--t-cut) + var(--v-height));
 
     content: attr(data-text);
-    /* font-weight: 700; */
+    font-weight: 400;
 
     position: absolute;
     width: 100%;
@@ -46,13 +46,13 @@
 :global(.glitchTextParent:hover) .glitchLink::before,
 .glitchLink:hover::before,
 .glitchLink.is-active::before {
-    animation: glitch-b 1s infinite alternate-reverse;
+    animation: glitch-b 0.9s infinite alternate-reverse;
 }
 
 :global(.glitchTextParent:hover) .glitchLink::after,
 .glitchLink:hover::after,
 .glitchLink.is-active::after {
-    animation: glitch-a 1.5s infinite alternate;
+    animation: glitch-a 1.4s infinite alternate;
 }
 
 @keyframes glitch-p {
