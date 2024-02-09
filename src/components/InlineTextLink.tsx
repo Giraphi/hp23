@@ -1,8 +1,9 @@
 import { HTMLProps, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
+import GlitchText from "./GlitchText/GlitchText";
 
 export interface TextLinkProps extends HTMLProps<HTMLAnchorElement> {
-    children: ReactNode;
+    children: string;
     inverse?: boolean;
 }
 
