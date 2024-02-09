@@ -45,6 +45,7 @@ export default function VideoCard(props: VideoCardProps) {
                     className={"inline-flex bg-neutral-800 text-white"}
                     Icon={CodesandboxIcon}
                     href={props.codesandBoxLink}
+                    target={"_blank"}
                 >
                     CodeSandbox
                 </IconButton>
@@ -52,6 +53,7 @@ export default function VideoCard(props: VideoCardProps) {
                     className={"inline-flex bg-neutral-800 text-white"}
                     Icon={GithubIcon}
                     href={props.githubLink}
+                    target={"_blank"}
                 >
                     GitHub
                 </IconButton>
