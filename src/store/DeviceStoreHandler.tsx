@@ -5,8 +5,7 @@ import { Device, useDeviceStore } from "@/store/useDeviceStore";
 import { KeyValuePair, Screen } from "tailwindcss/types/config";
 
 import config from "../../tailwind.config";
-
-const screens = config!.screens as KeyValuePair<string, string | Screen | Screen[]>;
+const screens = config.theme!.screens as KeyValuePair<string, string | Screen | Screen[]>;
 
 export interface DeviceStoreHandlerProps {}
 
