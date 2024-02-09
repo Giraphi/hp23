@@ -97,7 +97,7 @@ export default function Intro() {
                             disableTransform={true}
                             once={true}
                         >
-                            <Button className={"relative z-10"}>
+                            <Button className={"glitchTextParent relative z-10"}>
                                 <GlitchText text={"Contact"} />
                             </Button>
                         </Appear>

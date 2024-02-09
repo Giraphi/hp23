@@ -42,7 +42,7 @@ export default function Card(props: CardProps) {
 
                 <IconButton
                     href={props.href}
-                    className="mt-auto bg-neutral-800"
+                    className="glitchTextParent mt-auto bg-neutral-800"
                 >
                     <GlitchText
                         bgColor={colors.neutral[800]}

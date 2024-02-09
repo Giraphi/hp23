@@ -36,15 +36,22 @@
     clip-path: polygon(0% var(--t-cut), 100% var(--t-cut), 100% var(--b-cut), 0% var(--b-cut));
 }
 
-.glitchLink:hover {
+:global(.glitchTextParent:hover) .glitchLink,
+.glitchLink:hover,
+.glitchLink.is-active {
     animation: glitch-p 8s infinite alternate;
     color: theme("colors.lime.500");
 }
 
-.glitchLink:hover::before {
+:global(.glitchTextParent:hover) .glitchLink::before,
+.glitchLink:hover::before,
+.glitchLink.is-active::before {
     animation: glitch-b 1s infinite alternate-reverse;
 }
-.glitchLink:hover::after {
+
+:global(.glitchTextParent:hover) .glitchLink::after,
+.glitchLink:hover::after,
+.glitchLink.is-active::after {
     animation: glitch-a 1.5s infinite alternate;
 }
 
