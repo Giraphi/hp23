@@ -1,9 +1,12 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended"],
+    "extends": ["next/babel", "next/core-web-vitals", "plugin:tailwindcss/recommended"],
     "rules": {
-        "tailwindcss/no-custom-classname": ["warn",{
-            "cssFiles": ["**/*.css", "**/*.scss"],
-            "callees": ["classnames", "clsx", "twMerge", "cn"]
-        }]
+        "tailwindcss/no-custom-classname": [
+            "warn",
+            {
+                "cssFiles": ["**/*.css", "**/*.scss"],
+                "callees": ["classnames", "clsx", "twMerge", "cn"]
+            }
+        ]
     }
 }
