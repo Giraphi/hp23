@@ -5,7 +5,7 @@
     line-height: 1;
     text-align: center;
     transform: scaleX(var(--scale, 1));
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 .glitchLink::before,
@@ -19,7 +19,7 @@
     --b-cut: calc(var(--t-cut) + var(--v-height));
 
     content: attr(data-text);
-    font-weight: 700;
+    /* font-weight: 700; */
 
     position: absolute;
     width: 100%;
@@ -50,13 +50,19 @@
 
 @keyframes glitch-p {
     17% {
-        --scale: 0.92;
+        --scale: 0.9;
     }
     31% {
         --scale: 1.05;
     }
     37% {
         --scale: 1.07;
+    }
+    40% {
+        --scale: 0.85;
+    }
+    43% {
+        --scale: 1.1;
     }
     47% {
         --scale: 0.94;
