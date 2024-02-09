@@ -4,12 +4,9 @@ import { useEffect } from "react";
 import { Device, useDeviceStore } from "@/store/useDeviceStore";
 import { KeyValuePair, Screen } from "tailwindcss/types/config";
 
-import { theme } from "../../tailwind.config";
+import config from "../../tailwind.config";
 
-// theme!.screens is of type ScreensConfig = string[] | KeyValuePair<string, string | Screen | Screen[]>
-// To make indexing possible (like screens.lg) we cast it to KeyValuePair.
-// Note that things like theme.colors.black work without that
-const screens = theme!.screens as KeyValuePair<string, string | Screen | Screen[]>;
+const screens = config!.screens as KeyValuePair<string, string | Screen | Screen[]>;
 
 export interface DeviceStoreHandlerProps {}
 

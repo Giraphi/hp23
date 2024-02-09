@@ -5,7 +5,7 @@ module.exports = {
     env: { browser: true, es2020: true, node: true },
     extends: ["next/core-web-vitals", "plugin:tailwindcss/recommended"],
     rules: {
-        "tailwindcss/no-custom-classname": ["warn", { whitelist: ["page-grid", "touch-action-y"] }],
+        "tailwindcss/no-custom-classname": ["warn", { whitelist: ["page-grid", "touch-action-y", "glitchTextParent"] }],
     },
     ignorePatterns: ["dist"],
     parser: "@typescript-eslint/parser",
@@ -13,7 +13,7 @@ module.exports = {
     settings: {
         tailwindcss: {
             // There was an issue where `npm run lint` in the console would work fine, but the eslint process in VSCode wasn't
-            // working properly because it couldn't find/resolve the tailwind.config.js file. So it couldn't deal with
+            // working properly because it couldn't find/resolve the tailwind.config file. So it couldn't deal with
             // classes based on custom values like color-brand-primary.
             //
             // The issue is gone if we explicitly reference the config file here with __dirname

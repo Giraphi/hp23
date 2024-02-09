@@ -1,6 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from "tailwindcss";
 
-module.exports = {
+const config: Config = {
     content: ["./src/pages/**/*.{js,ts,jsx,tsx,mdx}", "./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
     theme: {
         screens: {
@@ -92,9 +92,10 @@ module.exports = {
                 grid: "1480px",
             },
             height: {
-                lvh: ["100vh /* fallback for Opera, IE and etc. */", "100lvh"],
+                lvh: "100lvh",
             },
         },
     },
     plugins: [],
 };
+export default config;
