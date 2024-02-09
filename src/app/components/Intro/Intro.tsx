@@ -14,6 +14,7 @@ import { SectionId } from "@/store/useActiveSectionStore";
 import ScrollTarget from "@/components/ScrollTarget";
 import Section from "@/components/Section";
 import GlitchText from "@/components/GlitchText/GlitchText";
+import colors from "tailwindcss/colors";
 
 export default function Intro() {
     const device = useDeviceStore((state) => state.device);
@@ -98,7 +99,10 @@ export default function Intro() {
                             once={true}
                         >
                             <Button className={"glitchTextParent relative z-10"}>
-                                <GlitchText text={"Contact"} />
+                                <GlitchText
+                                    bgColor={colors.neutral[950]}
+                                    text={"Contact"}
+                                />
                             </Button>
                         </Appear>
                     </div>
