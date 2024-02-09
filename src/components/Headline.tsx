@@ -8,7 +8,8 @@ export interface HeadlineProps {
 }
 
 export default function Headline(props: HeadlineProps) {
-    const className = twMerge("font-delaGothicOne text-4xl xxl:text-7xl md:text-5xl", props.className);
+    const className = twMerge("font-delaGothicOne text-4xl md:text-5xl xxl:text-7xl ", props.className);
+
     const type = props.type || "h2";
 
     return (
