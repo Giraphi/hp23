@@ -52,12 +52,32 @@
 :global(.glitchTextParent:hover) .glitchLink,
 .glitchLink:hover,
 .glitchLink.is-active {
-    @include active;
+    color: theme("colors.lime.500");
+    animation: glitch-p 8s infinite alternate;
+
+    .glitchA {
+        animation: glitch-a 1.4s infinite alternate;
+        display: inline-block;
+    }
+
+    .glitchB {
+        animation: glitch-b 0.9s infinite alternate-reverse;
+        display: inline-block;
+    }
 }
 
+// more subtle glitch on mobile which is always on
 @media (max-width: theme("screens.md")) {
     .glitchLink {
-        @include active;
+        .glitchA {
+            animation: glitch-a 2.2s infinite alternate;
+            display: inline-block;
+        }
+
+        .glitchB {
+            animation: glitch-b 1.9s infinite alternate-reverse;
+            display: inline-block;
+        }
     }
 }
 
