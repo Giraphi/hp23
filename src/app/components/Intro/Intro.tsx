@@ -102,7 +102,9 @@ export default function Intro() {
                                 className={"glitchTextParent relative z-10"}
                                 href="mailto:hoeps.raphael@gmail.com"
                             >
-                                <GlitchText bgColor={colors.neutral[950]}>Contact</GlitchText>
+                                <GlitchText bgColor={colors.neutral[950]}>
+                                    <span className="font-bold uppercase">Contact</span>
+                                </GlitchText>
                             </Button>
                         </Appear>
                     </div>
