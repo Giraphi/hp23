@@ -18,7 +18,7 @@ export default function Footer(props: FooterProps) {
                     Also visit my previous <InlineTextLink>Website</InlineTextLink> from 2020.
                 </div>
                 <div>
-                    <InlineTextLink>Imprint</InlineTextLink> | <InlineTextLink>Data Privacy</InlineTextLink>
+                    <InlineTextLink href="/privacy-policy">Imprint & Privacy Policy</InlineTextLink>
                 </div>
             </div>
         </SectionGrid>

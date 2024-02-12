@@ -101,6 +101,7 @@ export default function Intro() {
                             <Button
                                 className={"glitchTextParent relative z-10"}
                                 href="mailto:hoeps.raphael@gmail.com"
+                                target="_blank"
                             >
                                 <GlitchText bgColor={colors.neutral[950]}>
                                     <span className="font-bold uppercase">Contact</span>

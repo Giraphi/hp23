@@ -9,8 +9,9 @@ const sourceCodePro = Source_Code_Pro({ subsets: ["latin"], variable: "--font-so
 const bungee = Bungee({ subsets: ["latin"], weight: "400", variable: "--font-bungee" });
 
 export const metadata = {
-    title: "Title",
-    description: "Portfolio Site",
+    title: "Raphael Höps",
+    description: "Raphael Höps - Portfolio Site",
+    viewport: "width=device-width, initial-scale=1.0",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
