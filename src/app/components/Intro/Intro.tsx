@@ -75,7 +75,7 @@ export default function Intro() {
                                 type={"h1"}
                                 className={"pb-4 text-center text-pink-600 lg:inline-flex lg:pb-5 lg:text-left xxl:pb-8"}
                             >
-                                Frontend Developer
+                                Web Developer
                             </Headline>
                         </Appear>
                     </div>
@@ -87,7 +87,7 @@ export default function Intro() {
                             once={true}
                             delay={0.5}
                             text={
-                                "Hi! I’m a Munich based frontend developer with a strong background in computer science and a high understanding of design and modern UI/UX concepts."
+                                "Hi! I’m a Munich based web/frontend developer with a strong background in computer science and a high understanding of design and modern UI/UX concepts."
                             }
                         />
                     </div>
@@ -98,11 +98,11 @@ export default function Intro() {
                             disableTransform={true}
                             once={true}
                         >
-                            <Button className={"glitchTextParent relative z-10"}>
-                                <GlitchText
-                                    bgColor={colors.neutral[950]}
-                                    text={"Contact"}
-                                />
+                            <Button
+                                className={"glitchTextParent relative z-10"}
+                                href="mailto:hoeps.raphael@gmail.com"
+                            >
+                                <GlitchText bgColor={colors.neutral[950]}>Contact</GlitchText>
                             </Button>
                         </Appear>
                     </div>

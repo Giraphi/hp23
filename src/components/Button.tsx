@@ -12,7 +12,7 @@ export default function Button(props: ButtonProps) {
         <a
             href={props.href}
             className={cn(
-                "inline-flex cursor-pointer items-center rounded-lg bg-neutral-950 px-8 py-2 font-bold uppercase text-white hover:text-lime-500 md:px-8 md:py-4",
+                "inline-flex cursor-pointer items-center rounded-lg bg-neutral-950 px-8 py-2  text-white hover:text-lime-500 md:px-8 md:py-4",
                 props.className
             )}
         >

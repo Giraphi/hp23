@@ -42,20 +42,10 @@ export default function Card(props: CardProps) {
 
                 <IconButton
                     href={props.href}
-                    className="glitchTextParent mt-auto bg-neutral-800"
+                    className=" mt-auto bg-neutral-800"
                 >
-                    <GlitchText
-                        bgColor={colors.neutral[800]}
-                        text="Read More"
-                    />
+                    <GlitchText bgColor={colors.neutral[800]}>Read more</GlitchText>
                 </IconButton>
-                {/* <TextLink
-                                    href={props.href}
-
-                    className={"mt-auto"}
-                >
-                    Read More
-                </TextLink> */}
             </div>
         </CardAppear>
     );
