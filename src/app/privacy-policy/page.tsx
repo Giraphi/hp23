@@ -13,8 +13,7 @@ export default function Page() {
                         <div>Raphael Höps</div>
                         <div>E-mail: hoeps.raphael [at] gmail.com</div>
                         ---------------------
-                        <h2>Datenschutzerklärung</h2>
-                        <h3 id="dsg-general-intro"></h3>
+                        <h1>Datenschutzerklärung</h1>
                         <p>
                             Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen
                             Daten (nachfolgend kurz „Daten“) im Rahmen der Erbringung unserer Leistungen sowie innerhalb unseres
@@ -24,12 +23,10 @@ export default function Page() {
                             Definitionen im Art. 4 der Datenschutzgrundverordnung (DSGVO). <br />
                             <br />
                         </p>
-                        <h3 id="dsg-general-controller">Verantwortlicher</h3>
                         <div>
                             Raphael Höps
                             <br />
                             <div>E-mail: hoeps.raphael [at] gmail.com</div>
-                            <br />
                             <br />
                             (To make it more difficult for bots to read the e-mail address, we used [...] instead of real symbols Simply
                             replace [at-symbol] with &quot;@&quot; and [dot-symbol] with &quot;.&quot;)
