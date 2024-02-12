@@ -255,38 +255,6 @@ export default function Page() {
                             oder eine sonstige individuelle Benachrichtigung erforderlich wird.
                         </p>
                         <p></p>
-                        <h3 id="dsg-musicpodcast-soundcloud">Bandcamp</h3>
-                        <p></p>
-                        <p>
-                            <span>
-                                Unsere Podcasts werden auf der Plattform „Bandcamp“ gespeichert und werden von dieser Plattform aus
-                                wiedergegeben.
-                                <br />
-                                <br />
-                                Zu diesem Zweck binden wir sog. Bandcamp-Widgets in unsere Website ein. Dabei handelt es sich um
-                                Abspielsoftware, mit der Nutzer die Podcasts abspielen können. Hierbei kann Bandcamp messen, welche Podcasts
-                                in welchem Umfang gehört werden und diese Information pseudonym für statistische und betriebswirtschaftliche
-                                Zwecke verarbeiten. Hierzu können Cookies in den Browsern der Nuzer gespeichert und zwecks Bildung von
-                                Nutzerprofilen, z.B. für Zwecke der Ausgabee von Anzeigen, die den potentiellen Interessen der Nutzer
-                                entsprechen, verarbeitet werden. Im Fall von Nutzern, die bei Bandcamp registriert sind, kann Bandcamp die
-                                Hörinformationen deren Profilen zuordnen.
-                                <br />
-                                <br />
-                                Die Nutzung erfolgt auf Grundlage unserer berechtigten Interessen, d.h. Interesse an einer sicheren und
-                                effizienten Bereitstellung, Analyse sowie Optimierung unseres Audioangebotes gem. Art. 6 Abs. 1 lit. f.
-                                DSGVO. <br />
-                                <br />
-                                Weitere Informationen und Widerspruchsmöglichkeiten finden sich in der Datenschutzerklärung von Bandcamp:{" "}
-                                <a
-                                    target="_blank"
-                                    href="https://bandcamp.com/privacy"
-                                >
-                                    https://bandcamp.com/privacy
-                                </a>
-                                .
-                            </span>
-                        </p>
-                        <p></p>
                         <h3 id="dsg-socialmedia">Onlinepräsenzen in sozialen Medien</h3>
                         <p></p>
                         <p>
@@ -473,14 +441,6 @@ export default function Page() {
                                     href="https://wakelet.com/privacy.html"
                                 >
                                     https://wakelet.com/privacy.html
-                                </a>
-                                .<br />
-                                <br />- Bandcamp - Datenschutzerklärung/ Opt-Out:{" "}
-                                <a
-                                    target="_blank"
-                                    href="https://bandcamp.com/privacy"
-                                >
-                                    https://bandcamp.com/privacy
                                 </a>
                                 .
                             </span>
