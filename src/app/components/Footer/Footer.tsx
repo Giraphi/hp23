@@ -15,7 +15,7 @@ export default function Footer(props: FooterProps) {
 
             <div className={"col-content lg:col-span-6 lg:col-start-8 "}>
                 <div>
-                    Also visit my previous <InlineTextLink>Website</InlineTextLink> from 2020.
+                    Also check out my old <InlineTextLink href="https://giraphi.github.io/exp">Website</InlineTextLink>.
                 </div>
                 <div>
                     <InlineTextLink
