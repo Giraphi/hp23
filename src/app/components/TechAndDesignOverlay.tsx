@@ -35,8 +35,8 @@ export default function TechAndDesignOverlay(props: TechAndDesignOverlayProps) {
                     .
                 </p>
                 <p className={"pb-4 md:pb-8"}>
-                    The content is controlled by headless CMS. Unfortunately, for legal reasons the site URL and the client’s name can’t be
-                    named explicitly. More about that on request.
+                    The content is controlled by a headless CMS. For legal reasons the live URL cannot be named explicitly. More about that
+                    on request.
                 </p>
                 <div className={"flex flex-col items-center gap-4 md:gap-6 lg:flex-row lg:items-stretch lg:gap-8"}>
                     <div className={"relative w-56 lg:w-72"}>
