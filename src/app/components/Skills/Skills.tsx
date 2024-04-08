@@ -23,11 +23,11 @@ export default function Skills(props: SkillsProps) {
                     </div>
                     <SectionText>
                         <SectionParagraph>
-                            I believe beeing able to quickly adapt to new technologies is one of the most valueabe skills for developers,
+                            I believe being able to quickly adapt to new technologies is one of the most valueabe skills for developers,
                             especially in the rapidly aternating field of web development.
                         </SectionParagraph>
                         <SectionParagraph>
-                            That beeing said, I’m always keen on studying new technologies and frameworks to add as much tools to my toolbox
+                            That being said, I’m always keen on studying new technologies and frameworks to add as much tools to my toolbox
                             as possible.
                         </SectionParagraph>
                         <SectionParagraph disableSpace={true}>
