@@ -23,8 +23,8 @@ export default function Skills(props: SkillsProps) {
                     </div>
                     <SectionText>
                         <SectionParagraph>
-                            I believe being able to quickly adapt to new technologies is one of the most valueabe skills for developers,
-                            especially in the rapidly aternating field of web development.
+                            I believe being able to quickly adapt to new technologies is one of the most valuable skills for developers,
+                            especially in the rapidly alternating field of web development.
                         </SectionParagraph>
                         <SectionParagraph>
                             That being said, I’m always keen on studying new technologies and frameworks to add as much tools to my toolbox
