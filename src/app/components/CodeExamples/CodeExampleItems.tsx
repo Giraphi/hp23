@@ -13,8 +13,8 @@ export default function CodeExampleItems(props: CodeExampleItemsProps) {
                 videoName={"puzzle"}
                 headline={"Puzzle Slider"}
             >
-                Spice up image sliders with some cool puzzle-style visuals to keep the users interested. Implementation is based around svg
-                clip paths.
+                Spice up image sliders with some puzzle-style visuals to keep the users interested. Implementation is based around svg clip
+                paths.
             </VideoCard>
 
             <VideoCard
