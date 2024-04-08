@@ -20,15 +20,14 @@ export default function PresentationOverlay(props: PresentationOverlayProps) {
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Overview</h3>
 
                 <p className={"pb-4 md:pb-8"}>
-                    For this website I’ve implemented an interactive 3D scene based on the design and 3D model by{" "}
+                    For this website I’ve implemented an interactive 3D scene based on the design and 3D model by the 3D and video artist{" "}
                     <InlineTextLink
                         href={"https://www.michaelflynnbost.com/"}
                         target={"_blank"}
                     >
                         Michael Flynn Bost
                     </InlineTextLink>
-                    . <br /> The site is used by the client internally for presentational purpose by a large consulting group.
-                    Unfortunately, for legal reasons the client’s name can’t be named explicitly. More about that on request.
+                    . <br /> The site is used by a large consulting group internally for presentational purpose. More about that on request.
                 </p>
                 <div className={"relative aspect-screenshot w-full overflow-hidden rounded"}>
                     <Image
@@ -46,8 +45,8 @@ export default function PresentationOverlay(props: PresentationOverlayProps) {
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Project Requirements</h3>
                 <UnorderedList className={"pb-4 md:pb-8"}>
                     <li>Create an interactive 3D scene that works smoothly in the browser.</li>
-                    <li>Conceptualize and implement the user actions, UI and camera animations.</li>
-                    <li>Close collaboration with the 3D artist.</li>
+                    <li>Conceptualize and implement the UI and camera animations.</li>
+                    <li>Collaborate closely with the 3D artist</li>
                 </UnorderedList>
 
                 <div className={"relative mb-2 aspect-screenshot w-full overflow-hidden rounded md:mb-4"}>

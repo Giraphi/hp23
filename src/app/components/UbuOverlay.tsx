@@ -24,8 +24,8 @@ export default function UbuOverlay(props: UbuOverlayProps) {
                 <h3 className={"pb-2 font-bold text-pink-600 md:pb-4"}>Overview</h3>
 
                 <p className={"pb-4 md:pb-8"}>
-                    Making music together with my band is a very important part of my life and therefore I was very excited and motivated to
-                    create a website for us :)
+                    Making music together with my band is a very important part of my life and therefore I was very excited to create a
+                    website for us :)
                 </p>
 
                 <p className={"pb-4 md:pb-8"}>
